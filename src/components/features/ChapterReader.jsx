@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, ChevronRight, ChevronLeft, Award, CheckCircle, Quote, Sparkles, Book, ImageIcon, Camera } from 'lucide-react';
+import { AnimatePresence } from 'framer-motion';
+import { ArrowLeft, ChevronRight, ChevronLeft, Award, CheckCircle, Quote, Sparkles, Book, Image as ImageIcon, Camera } from 'lucide-react';
 import { FadeContent } from '../ui/FadeContent';
 import { MagnetButton } from '../ui/MagnetButton';
 import { QuizInterface } from './QuizInterface';
@@ -64,17 +64,19 @@ export const ChapterReader = ({ chapter, onBack }) => {
       case 'paragraph':
         return <p key={idx} className={cn("text-[#4A4A4A] leading-8 text-lg font-serif text-justify mb-6", commonClasses)} dangerouslySetInnerHTML={{ __html: formatText(block.text) }} />;
 
-      case 'image':
+      case 'image': {  // <--- Tambahkan kurung kurawal pembuka
         const isLeft = block.position === 'left';
         return (
           <figure key={idx} className={cn("mb-6 flex flex-col w-full", isLeft ? "md:float-left md:mr-8 md:w-[45%]" : "md:float-right md:ml-8 md:w-[45%]", commonClasses)}>
             <div className="rounded-2xl overflow-hidden shadow-lg border border-[#EAE0D5] relative group bg-white">
+              {/* Pastikan ImageIcon di bawah ini sudah sesuai import Anda (Image as ImageIcon) */}
               <div className="absolute inset-0 bg-[#FAF9F6] flex items-center justify-center -z-10"><ImageIcon className="text-[#EAE0D5]" size={40}/></div>
               <img src={block.src} alt={block.caption} className="w-full h-auto object-cover aspect-[4/3]" loading="eager" />
             </div>
             {block.caption && <figcaption className="text-center text-sm text-[#8A8A8A] mt-2 font-sans italic px-2" dangerouslySetInnerHTML={{ __html: formatText(block.caption) }} />}
           </figure>
         );
+      } // <--- Tambahkan kurung kurawal penutup
 
       case 'quote':
         return (

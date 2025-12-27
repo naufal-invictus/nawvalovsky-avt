@@ -1,6 +1,7 @@
-import { useRef } from 'react';
+// HAPUS: import { useRef } from 'react'; (Karena tidak dipakai)
+// PERTAHANKAN: motion (Karena dipakai di <motion.div> bawah)
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Copy, Terminal, Mail } from 'lucide-react'; // FIX: Added Mail import
+import { ArrowUpRight, Copy, Terminal, Mail } from 'lucide-react';
 import { FadeContent } from '../components/ui/FadeContent';
 import { MagnetButton } from '../components/ui/MagnetButton';
 import { PROFILE, PROJECTS, HOBBIES } from '../data/personalData';
@@ -11,12 +12,10 @@ export const LandingPage = () => {
 
       {/* SECTION 1: HEADER & PROFILE */}
       <section className="relative min-h-[90vh] flex items-center justify-center px-6 py-20">
-         {/* Decorative Gradient Background (5 Colors: Gold, Rose, BlueGrey, Cream, Olive) */}
          <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full blur-[120px] pointer-events-none opacity-20 bg-gradient-to-br from-[#D4AF37] via-[#E6C2BF] to-[#C9D6DF]" />
          <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full blur-[100px] pointer-events-none opacity-10 bg-gradient-to-tr from-[#B5C99A] via-[#F2E2CE] to-[#D4AF37]" />
 
          <div className="max-w-6xl w-full mx-auto flex flex-col-reverse md:flex-row items-center gap-16 md:gap-24 relative z-10">
-            {/* Left: Text Info */}
             <div className="flex-1 text-center md:text-left space-y-6">
                 <FadeContent>
                     <div className="inline-block px-3 py-1 mb-4 rounded-full border border-[#D4AF37]/30 text-[#F2E2CE] text-[10px] font-bold tracking-[0.2em] uppercase bg-[#252422]/50 backdrop-blur-sm">
@@ -31,7 +30,6 @@ export const LandingPage = () => {
                         {PROFILE.role}
                     </p>
 
-                    {/* Personality & Cert Tags */}
                     <div className="flex flex-wrap justify-center md:justify-start gap-2 pt-4">
                         {PROFILE.tags.map((tag, i) => (
                             <span key={i} className="px-3 py-1.5 bg-[#252422] border border-[#3A3936] text-[#CCC5B9] text-xs font-bold uppercase tracking-wider rounded-md hover:border-[#D4AF37] hover:text-[#D4AF37] transition-colors cursor-default">
@@ -48,7 +46,6 @@ export const LandingPage = () => {
                 </FadeContent>
             </div>
 
-            {/* Right: Photo Card */}
             <div className="w-full max-w-[350px] md:max-w-[400px] relative group">
                 <FadeContent delay={0.2}>
                     <div className="aspect-[3/4] rounded-2xl overflow-hidden border-[2px] border-[#3A3936] shadow-2xl shadow-[#000]/50 relative z-10 bg-[#252422]">
@@ -58,7 +55,6 @@ export const LandingPage = () => {
                             className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-all duration-700 group-hover:scale-105"
                          />
                     </div>
-                    {/* Decorative Border */}
                     <div className="absolute -inset-4 border border-[#D4AF37]/20 rounded-3xl -z-10 scale-95 group-hover:scale-100 transition-transform duration-500" />
                 </FadeContent>
             </div>
