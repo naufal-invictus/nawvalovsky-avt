@@ -2,38 +2,83 @@
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
   --font-serif: "Playfair Display", ui-serif, Georgia, serif;
 }
 
 :root {
-  /* TEMA 1: DEFAULT (Dark Pastel Cream) */
-  --bg-primary: #1A1918;
-  --bg-secondary: #252422;
-  --text-primary: #F7F2E8;
-  --text-secondary: #CCC5B9;
-  --accent: #D4AF37;
-  --border: #3A3936;
+  /* --- TEMA 1: BLUE (DEFAULT / HYPRLAND) --- */
+  --bg-primary: #0f172a;
+  --bg-secondary: rgba(30, 41, 59, 0.7);
+  --text-primary: #e0f2fe;
+  --text-secondary: #94a3b8;
+  --accent: #38bdf8;
+  --border: #1e3a8a;
+  --glass: rgba(15, 23, 42, 0.6);
+  --bg-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
 }
 
-[data-theme="blue"] {
-  /* TEMA 2: BLUE CERAH (5 Color Gradient Aesthetic) */
-  /* Palet: White, Sky Blue, Deep Blue, Cyan, Purple */
-  --bg-primary: #F0F9FF; /* Sky 50 */
-  --bg-secondary: #FFFFFF;
-  --text-primary: #0F172A; /* Slate 900 */
-  --text-secondary: #334155; /* Slate 700 */
-  --accent: #0EA5E9; /* Sky 500 */
-  --border: #BAE6FD; /* Sky 200 */
+/* --- TEMA 2: GREEN (HACKER / MATRIX) --- */
+[data-theme="green"] {
+  --bg-primary: #020617;
+  --bg-secondary: rgba(20, 83, 45, 0.3);
+  --text-primary: #dcfce7;
+  --text-secondary: #4ade80;
+  --accent: #22c55e;
+  --border: #14532d;
+  --glass: rgba(2, 6, 23, 0.8);
+  --bg-image: url('https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&q=80&w=2000');
+}
+
+/* --- TEMA 3: RED (SITH / WARNING) --- */
+[data-theme="red"] {
+  --bg-primary: #180505;
+  --bg-secondary: rgba(69, 10, 10, 0.5);
+  --text-primary: #fee2e2;
+  --text-secondary: #fca5a5;
+  --accent: #ef4444;
+  --border: #7f1d1d;
+  --glass: rgba(24, 5, 5, 0.7);
+  --bg-image: url('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=2000');
+}
+
+/* --- TEMA 4: ANIME (BRIGHT / DAY MODE) --- */
+[data-theme="anime"] {
+  --bg-primary: #fdf2f8; /* Pinkish White */
+  --bg-secondary: rgba(255, 255, 255, 0.6);
+  --text-primary: #475569;
+  --text-secondary: #64748b;
+  --accent: #ec4899; /* Pink Hot */
+  --border: #fbcfe8;
+  --glass: rgba(255, 255, 255, 0.4);
+  --bg-image: url('https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&q=80&w=2000');
+}
+
+/* --- TEMA 5: AMETHYST (PURPLE / VAPORWAVE) --- */
+[data-theme="purple"] {
+  --bg-primary: #2e1065;
+  --bg-secondary: rgba(88, 28, 135, 0.5);
+  --text-primary: #f3e8ff;
+  --text-secondary: #d8b4fe;
+  --accent: #a855f7;
+  --border: #6b21a8;
+  --glass: rgba(46, 16, 101, 0.6);
+  --bg-image: url('https://images.unsplash.com/photo-1502134249126-9f3755a50d78?auto=format&fit=crop&q=80&w=2000');
 }
 
 body {
   background-color: var(--bg-primary);
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: var(--text-primary);
-  transition: background-color 0.5s ease, color 0.5s ease;
+  transition: all 0.5s ease;
+  min-height: 100vh;
 }
 
-/* Fix Scrollbar */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--bg-primary); }
-::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--bg-secondary); border-radius: 10px; border: 1px solid var(--border); }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent); }

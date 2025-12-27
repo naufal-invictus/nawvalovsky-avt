@@ -1,7 +1,6 @@
 import chapterCysec from './json/Chapter-Cysec.json';
 
-// Export array data agar bisa dipakai di BlogList
+// Gunakan Named Export (tanpa default)
 export const LEARNING_DATA = [
-  chapterCysec, // Taruh paling atas agar muncul sebagai post terbaru
-
+  chapterCysec,
 ];

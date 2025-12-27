@@ -1,14 +1,21 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import { Navbar } from './components/layout/Navbar';
 import { LandingPage } from './pages/LandingPage';
 import { BlogList } from './pages/BlogList';
 import { ChapterReader } from './components/features/ChapterReader';
 import { FadeContent } from './components/ui/FadeContent';
-import { Mail } from 'lucide-react';
+import { Mail, Users } from 'lucide-react';
 
 function App() {
   const [activeTab, setActiveTab] = useState('home');
   const [selectedPost, setSelectedPost] = useState(null);
+  const [theme, setTheme] = useState('blue'); // Default theme
+
+  // Inject theme ke atribut HTML root
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
 
   const renderContent = () => {
     if (selectedPost) {
@@ -17,45 +24,51 @@ function App() {
 
     switch (activeTab) {
       case 'home': return <LandingPage />;
-
       case 'blog': return <BlogList onSelectPost={setSelectedPost} />;
-
+      case 'team':
+        return (
+            <div className="min-h-screen flex items-center justify-center px-6 text-center pt-20">
+                <FadeContent>
+                    <div className="w-16 h-16 bg-[var(--bg-secondary)] border border-[var(--border)] rounded-full flex items-center justify-center mx-auto mb-6 text-[var(--accent)] backdrop-blur-md">
+                        <Users size={32} />
+                    </div>
+                    <h2 className="font-serif text-3xl mb-4 text-[var(--text-primary)]">Meet the Team</h2>
+                    <p className="text-[var(--text-secondary)] max-w-md mx-auto mb-8">
+                        The brilliant minds behind the code.
+                    </p>
+                </FadeContent>
+            </div>
+        );
       case 'contact': return (
-        <div className="min-h-screen flex items-center justify-center px-6 text-center bg-[#1A1918]">
+        <div className="min-h-screen flex items-center justify-center px-6 text-center pt-20">
             <FadeContent>
-                <div className="w-16 h-16 bg-[#252422] border border-[#3A3936] rounded-full flex items-center justify-center mx-auto mb-6 text-[#D4AF37]">
+                <div className="w-16 h-16 bg-[var(--bg-secondary)] border border-[var(--border)] rounded-full flex items-center justify-center mx-auto mb-6 text-[var(--accent)] backdrop-blur-md">
                     <Mail size={32} />
                 </div>
-                <h2 className="font-serif text-3xl mb-4 text-[#F7F2E8]">Hubungi Saya</h2>
-                <p className="text-[#A8A29E] max-w-md mx-auto mb-8">
-                    Silakan kirim email untuk kerjasama atau pertanyaan.
-                </p>
-                <div className="space-y-2">
-                    <p className="text-xl font-serif text-[#D4AF37]">nawvalovsky@proton.me</p>
-                    <p className="text-sm text-[#666]">Bandung, Indonesia</p>
-                </div>
+                <h2 className="font-serif text-3xl mb-4 text-[var(--text-primary)]">Hubungi Saya</h2>
+                <p className="text-xl font-serif text-[var(--accent)]">nawvalovsky@proton.me</p>
             </FadeContent>
         </div>
       );
-
       default: return <LandingPage />;
     }
   };
 
   return (
-    <div className="bg-[#1A1918] min-h-screen text-[#F7F2E8] selection:bg-[#D4AF37] selection:text-[#1A1918]">
-      {renderContent()}
-
+    <div className="min-h-screen text-[var(--text-primary)] overflow-hidden font-sans">
       {!selectedPost && (
-        <>
-            <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
-            <footer className="py-8 text-center bg-[#1A1918] border-t border-[#3A3936] mb-20 md:mb-0">
-                <p className="text-[#666] text-[10px] uppercase tracking-[0.2em]">
-                    © 2025 Nawvalovsky[]. All Rights Reserved.
-                </p>
-            </footer>
-        </>
+        <Navbar
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+            currentTheme={theme}
+            setTheme={setTheme}
+        />
       )}
+      <AnimatePresence mode="wait">
+        <div key={activeTab} className="w-full h-full">
+            {renderContent()}
+        </div>
+      </AnimatePresence>
     </div>
   );
 }

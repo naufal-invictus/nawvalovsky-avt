@@ -1,189 +1,262 @@
-// HAPUS: import { useRef } from 'react'; (Karena tidak dipakai)
-// PERTAHANKAN: motion (Karena dipakai di <motion.div> bawah)
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Copy, Terminal, Mail } from 'lucide-react';
-import { FadeContent } from '../components/ui/FadeContent';
-import { MagnetButton } from '../components/ui/MagnetButton';
-import { PROFILE, PROJECTS, HOBBIES } from '../data/personalData';
+import { ArrowUpRight, Cloud, Layers, Music, Cpu, Database, Mail, Calendar, Shield, MapPin, Globe } from 'lucide-react';
+import { PROFILE, PROJECTS } from '../data/personalData';
 
 export const LandingPage = () => {
   return (
-    <div className="min-h-screen bg-[#1A1918] text-[#F7F2E8] overflow-x-hidden font-sans selection:bg-[#D4AF37] selection:text-[#1A1918]">
+    <motion.div
+      initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+      className="h-screen w-full overflow-hidden p-3 pt-24 font-sans text-sm"
+    >
+      {/* Dynamic Background Overlay */}
+      <div className="absolute inset-0 bg-[var(--bg-primary)]/60 backdrop-blur-[1px] -z-10 transition-colors duration-700" />
 
-      {/* SECTION 1: HEADER & PROFILE */}
-      <section className="relative min-h-[90vh] flex items-center justify-center px-6 py-20">
-         <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full blur-[120px] pointer-events-none opacity-20 bg-gradient-to-br from-[#D4AF37] via-[#E6C2BF] to-[#C9D6DF]" />
-         <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full blur-[100px] pointer-events-none opacity-10 bg-gradient-to-tr from-[#B5C99A] via-[#F2E2CE] to-[#D4AF37]" />
+      <div className="grid grid-cols-1 md:grid-cols-12 grid-rows-6 gap-4 h-full max-w-7xl mx-auto pb-4">
 
-         <div className="max-w-6xl w-full mx-auto flex flex-col-reverse md:flex-row items-center gap-16 md:gap-24 relative z-10">
-            <div className="flex-1 text-center md:text-left space-y-6">
-                <FadeContent>
-                    <div className="inline-block px-3 py-1 mb-4 rounded-full border border-[#D4AF37]/30 text-[#F2E2CE] text-[10px] font-bold tracking-[0.2em] uppercase bg-[#252422]/50 backdrop-blur-sm">
-                        System Online
-                    </div>
+          {/* === COLUMN 1: PROFILE & TERMINAL (LEFT) === */}
 
-                    <h1 className="font-serif text-5xl md:text-7xl leading-[1.1] text-transparent bg-clip-text bg-gradient-to-r from-[#F7F2E8] via-[#E6C2BF] to-[#D4AF37]">
-                        {PROFILE.name}
-                    </h1>
+          {/* WIDGET 1: PROFILE CARD (Expanded) */}
+          <motion.div
+              initial={{ x: -20, opacity: 0 }} animate={{ x: 0, opacity: 1 }}
+              className="col-span-12 md:col-span-4 row-span-2 bg-[var(--glass)] border border-[var(--border)] rounded-2xl p-5 relative overflow-hidden group shadow-2xl flex flex-col justify-between hover:border-[var(--accent)]/30 transition-all"
+          >
+              {/* Decorative Background */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--accent)]/10 rounded-full blur-3xl -z-10 transition-all group-hover:bg-[var(--accent)]/20" />
 
-                    <p className="text-xl text-[#CCC5B9] font-light max-w-lg mx-auto md:mx-0">
-                        {PROFILE.role}
-                    </p>
+              <div className="flex items-start gap-4">
+                   <div className="relative">
+                       <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[var(--accent)] to-blue-600 flex items-center justify-center text-[var(--bg-primary)] font-bold text-2xl shadow-lg shadow-[var(--accent)]/30">
+                         N
+                       </div>
+                       <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 border-2 border-[var(--bg-primary)] rounded-full" title="Online" />
+                   </div>
+                   <div>
+                      <h1 className="text-xl font-bold text-[var(--text-primary)] tracking-tight leading-none mb-1">{PROFILE.name}</h1>
+                      <div className="flex items-center gap-1 text-[var(--accent)] text-[10px] uppercase tracking-widest font-bold mb-2">
+                        <Shield size={10} /> System Administrator
+                      </div>
+                      {/* Deskripsi Singkat */}
+                      <p className="text-[var(--text-secondary)] text-xs leading-relaxed line-clamp-2">
+                        Building secure digital fortresses & scalable cloud architectures.
+                        Let's secure the future.
+                      </p>
+                   </div>
+              </div>
 
-                    <div className="flex flex-wrap justify-center md:justify-start gap-2 pt-4">
-                        {PROFILE.tags.map((tag, i) => (
-                            <span key={i} className="px-3 py-1.5 bg-[#252422] border border-[#3A3936] text-[#CCC5B9] text-xs font-bold uppercase tracking-wider rounded-md hover:border-[#D4AF37] hover:text-[#D4AF37] transition-colors cursor-default">
-                                {tag}
-                            </span>
-                        ))}
-                    </div>
-
-                    <div className="pt-8 flex justify-center md:justify-start gap-4">
-                         <MagnetButton onClick={() => document.getElementById('about').scrollIntoView({behavior: 'smooth'})}>
-                            Explore Profile
-                         </MagnetButton>
-                    </div>
-                </FadeContent>
-            </div>
-
-            <div className="w-full max-w-[350px] md:max-w-[400px] relative group">
-                <FadeContent delay={0.2}>
-                    <div className="aspect-[3/4] rounded-2xl overflow-hidden border-[2px] border-[#3A3936] shadow-2xl shadow-[#000]/50 relative z-10 bg-[#252422]">
-                         <img
-                            src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=800"
-                            alt="Profile"
-                            className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-all duration-700 group-hover:scale-105"
-                         />
-                    </div>
-                    <div className="absolute -inset-4 border border-[#D4AF37]/20 rounded-3xl -z-10 scale-95 group-hover:scale-100 transition-transform duration-500" />
-                </FadeContent>
-            </div>
-         </div>
-      </section>
-
-      {/* SECTION 2: ABOUT & SKILLS */}
-      <section id="about" className="py-24 px-6 max-w-5xl mx-auto">
-         <FadeContent>
-             <div className="grid md:grid-cols-2 gap-16">
-                 <div>
-                     <h2 className="font-serif text-3xl mb-6 text-[#D4AF37]">01. About Me</h2>
-                     <p className="text-[#CCC5B9] leading-relaxed text-lg mb-8">
-                         {PROFILE.about}
-                     </p>
-
-                     <div className="space-y-4">
-                        <h3 className="font-bold text-sm uppercase tracking-widest text-[#F7F2E8]">Certifications</h3>
-                        {PROFILE.certs.map((cert, i) => (
-                             <div key={i} className="flex items-center gap-3 text-[#A8A29E]">
-                                 <div className="w-1.5 h-1.5 bg-[#B5C99A] rounded-full"/>
-                                 {cert}
-                             </div>
-                         ))}
-                     </div>
+              <div className="mt-auto space-y-2">
+                 <div className="flex justify-between items-center text-[10px] text-[var(--text-secondary)] font-bold uppercase tracking-wider">
+                    <span>System Integrity</span>
+                    <span className="text-[var(--accent)]">100%</span>
                  </div>
-
-                 <div className="bg-[#252422] p-8 rounded-2xl shadow-lg border border-[#3A3936]">
-                     <h3 className="font-serif text-2xl mb-6 text-[#F7F2E8]">Technical Arsenal</h3>
-                     <div className="flex flex-wrap gap-2">
-                         {PROFILE.skills.map((skill, i) => (
-                             <span key={i} className="px-3 py-2 bg-[#1A1918] text-[#CCC5B9] text-sm border border-[#3A3936] rounded hover:bg-[#D4AF37] hover:text-[#1A1918] hover:border-[#D4AF37] transition-all cursor-default">
-                                 {skill}
-                             </span>
-                         ))}
-                     </div>
+                 <div className="h-1.5 w-full bg-[var(--bg-primary)] rounded-full overflow-hidden border border-[var(--border)]">
+                    <motion.div
+                        initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 1.5, delay: 0.5 }}
+                        className="h-full bg-gradient-to-r from-[var(--accent)] to-purple-500"
+                    />
                  </div>
-             </div>
-         </FadeContent>
-      </section>
+              </div>
+          </motion.div>
 
-      {/* SECTION 3: PROJECTS CAROUSEL */}
-      <section className="py-24 bg-[#1F1E1D] border-y border-[#3A3936] overflow-hidden">
-         <div className="max-w-7xl mx-auto px-6 mb-10 flex items-end justify-between">
-             <div>
-                 <span className="text-[#E6C2BF] font-bold tracking-widest text-xs uppercase">Selected Works</span>
-                 <h2 className="font-serif text-4xl mt-2 text-[#F7F2E8]">My Projects</h2>
-             </div>
-             <div className="hidden md:flex gap-2 text-[#8A8A8A] text-xs uppercase tracking-wider items-center">
-                 Scroll Horizontal <ArrowUpRight size={14}/>
-             </div>
-         </div>
+          {/* WIDGET 2: TERMINAL "REAL" (Left Bottom) */}
+          <motion.div
+              initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.1 }}
+              className="col-span-12 md:col-span-4 row-span-4 relative rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/5 group flex flex-col"
+          >
+              {/* Real Blur Backdrop */}
+              <div className="absolute inset-0 bg-[#0f172a]/85 backdrop-blur-2xl z-0" />
 
-         <div className="flex gap-6 overflow-x-auto pb-12 px-6 md:px-[max(2rem,calc((100vw-80rem)/2))] snap-x snap-mandatory scroll-smooth" style={{ scrollbarWidth: 'none' }}>
-             {PROJECTS.map((project) => (
-                 <motion.div
-                    key={project.id}
-                    className="min-w-[85vw] md:min-w-[400px] snap-center bg-[#252422] p-4 rounded-2xl border border-[#3A3936] group hover:border-[#D4AF37]/50 transition-colors"
-                    whileHover={{ y: -5 }}
-                 >
-                     <div className="aspect-video overflow-hidden rounded-xl mb-4 relative">
-                         <img src={project.thumbnail} alt={project.title} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700"/>
-                         <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"/>
+              {/* Screen Glare Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/50 pointer-events-none z-10" />
+
+              {/* Title Bar (Mac Style) */}
+              <div className="relative z-20 bg-white/5 border-b border-white/5 px-4 py-2.5 flex items-center justify-between shrink-0">
+                  <div className="flex gap-2">
+                      <div className="w-3 h-3 rounded-full bg-[#ff5f56] border border-[#e0443e] hover:brightness-110 transition-all shadow-inner"/>
+                      <div className="w-3 h-3 rounded-full bg-[#ffbd2e] border border-[#dea123] hover:brightness-110 transition-all shadow-inner"/>
+                      <div className="w-3 h-3 rounded-full bg-[#27c93f] border border-[#1aab29] hover:brightness-110 transition-all shadow-inner"/>
+                  </div>
+                  <div className="flex items-center gap-2 text-[10px] font-medium text-slate-400">
+                     <Shield size={10} />
+                     <span>root@nawvalovsky:~</span>
+                  </div>
+                  <div className="w-10"></div> {/* Spacer balance */}
+              </div>
+
+              {/* Terminal Content Area */}
+              <div className="relative z-20 p-4 font-mono text-[11px] leading-relaxed text-slate-300 flex-1 overflow-hidden flex flex-col">
+
+                  {/* Command History */}
+                  <div className="opacity-60 mb-2">
+                      <div className="flex gap-2">
+                          <span className="text-green-400">➜</span> <span className="text-blue-400">~</span> <span className="text-slate-400">whoami</span>
+                      </div>
+                      <div className="pl-4 text-slate-500">root</div>
+                  </div>
+
+                  {/* Current Active Command */}
+                  <div className="flex gap-2 mb-3">
+                      <span className="text-green-400">➜</span> <span className="text-blue-400">~</span> <span className="text-[var(--text-primary)]">neofetch</span>
+                  </div>
+
+                  {/* Neofetch Output */}
+                  <div className="flex gap-4 items-start">
+                      <div className="text-[var(--accent)] font-bold text-[9px] leading-[10px] shrink-0 pt-1 select-none">
+<pre>{`
+      /\\
+     /  \\
+    /    \\
+   /      \\
+  /   ,,   \\
+ /   |  |   \\
+/_-''    ''-_\\
+`}</pre>
+                      </div>
+                      <div className="space-y-1 w-full">
+                          <div className="flex gap-2 border-b border-white/5 pb-1"><span className="text-[var(--accent)] font-bold">OS</span> <span className="text-slate-100">Arch Linux x86_64</span></div>
+                          <div className="flex gap-2 border-b border-white/5 pb-1"><span className="text-[var(--accent)] font-bold">Kernel</span> <span className="text-slate-100">6.8.9-zen</span></div>
+                          <div className="flex gap-2 border-b border-white/5 pb-1"><span className="text-[var(--accent)] font-bold">Uptime</span> <span className="text-slate-100">24 days, 3 hrs</span></div>
+                          <div className="flex gap-2 border-b border-white/5 pb-1"><span className="text-[var(--accent)] font-bold">Shell</span> <span className="text-slate-100">zsh 5.9</span></div>
+                          <div className="flex gap-2"><span className="text-[var(--accent)] font-bold">Mem</span> <span className="text-yellow-400">4096MiB / 16GiB</span></div>
+                      </div>
+                  </div>
+
+                  {/* Active Prompt with Blinking Cursor */}
+                  <div className="mt-auto pt-4 flex items-center gap-2">
+                     <span className="text-green-400 font-bold">➜</span>
+                     <span className="text-blue-400 font-bold">~</span>
+                     <div className="flex items-center">
+                        <span className="text-slate-400">awaiting_input</span>
+                        <span className="w-2 h-4 bg-[var(--text-primary)] ml-1 animate-pulse shadow-[0_0_8px_var(--text-primary)]"></span>
                      </div>
+                  </div>
+              </div>
+          </motion.div>
 
-                     <div className="flex gap-2 mb-3 flex-wrap">
-                        {project.tags.map(t => (
-                            <span key={t} className="text-[10px] uppercase font-bold text-[#1A1918] bg-[#F2E2CE] px-2 py-1 rounded">{t}</span>
-                        ))}
-                     </div>
-                     <h3 className="font-serif text-2xl mb-2 text-[#F7F2E8]">{project.title}</h3>
-                     <p className="text-[#A8A29E] text-sm leading-relaxed mb-4">{project.desc}</p>
-                 </motion.div>
-             ))}
-         </div>
-      </section>
+          {/* === COLUMN 2: STATS & ACTIONS (MIDDLE) === */}
 
-      {/* SECTION 4: HOBBY & FOCUS */}
-      <section className="py-24 px-6 max-w-4xl mx-auto">
-         <FadeContent>
-             <div className="text-center mb-16">
-                <h2 className="font-serif text-3xl mb-2 text-[#F7F2E8]">Personal Interests</h2>
-                <p className="text-[#8A8A8A]">Beyond the code.</p>
-             </div>
+          {/* WIDGET 3: MUSIC PLAYER & STATS */}
+          <motion.div
+              initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }}
+              className="col-span-12 md:col-span-4 row-span-3 bg-[var(--glass)] border border-[var(--border)] rounded-2xl p-4 flex flex-col gap-3 backdrop-blur-md shadow-lg"
+          >
+              <div className="flex items-center gap-3 bg-[var(--bg-primary)]/40 p-3 rounded-xl border border-[var(--border)] relative overflow-hidden group cursor-pointer hover:border-[var(--accent)] transition-colors">
+                  <div className="absolute inset-0 bg-gradient-to-r from-[var(--accent)]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="w-10 h-10 bg-green-500/20 text-green-500 rounded-lg flex items-center justify-center shadow-inner">
+                      <Music size={20} />
+                  </div>
+                  <div className="flex-1 min-w-0 z-10">
+                      <div className="flex gap-0.5 items-end h-3 mb-1">
+                           {[...Array(12)].map((_,i) => (
+                              <motion.div key={i} animate={{ height: [4, 12, 6, 14, 4] }} transition={{ repeat: Infinity, duration: 1.2, delay: i * 0.1 }} className="w-1 bg-[var(--accent)] rounded-full" />
+                           ))}
+                      </div>
+                      <p className="text-[10px] text-[var(--text-secondary)] font-medium">Spotify • Lofi Girl Radio</p>
+                  </div>
+              </div>
 
-             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-12">
-                 {HOBBIES.map((hobby, i) => (
-                     <div key={i} className="p-6 rounded-xl bg-[#252422] border border-[#3A3936] text-center hover:shadow-lg hover:shadow-[#D4AF37]/5 transition-all group">
-                         <div className="text-3xl mb-3 grayscale group-hover:grayscale-0 transition-all">{hobby.icon}</div>
-                         <h4 className="font-bold text-[#F7F2E8] text-sm mb-1">{hobby.title}</h4>
-                         <p className="text-xs text-[#A8A29E]">{hobby.desc}</p>
-                     </div>
-                 ))}
-             </div>
+              <div className="grid grid-cols-2 gap-3 flex-1">
+                  <div className="bg-[var(--bg-primary)]/40 rounded-xl p-3 flex flex-col justify-between border border-[var(--border)] hover:bg-[var(--bg-primary)]/60 transition-colors">
+                      <div className="flex justify-between items-start">
+                        <Cpu size={16} className="text-[var(--accent)]"/>
+                        <span className="text-[9px] text-green-400 bg-green-400/10 px-1.5 py-0.5 rounded-full">Optimal</span>
+                      </div>
+                      <div>
+                         <span className="text-2xl font-bold text-[var(--text-primary)]">14%</span>
+                         <p className="text-[10px] text-[var(--text-secondary)]">CPU Load</p>
+                      </div>
+                  </div>
+                  <div className="bg-[var(--bg-primary)]/40 rounded-xl p-3 flex flex-col justify-between border border-[var(--border)] hover:bg-[var(--bg-primary)]/60 transition-colors">
+                      <div className="flex justify-between items-start">
+                        <Database size={16} className="text-purple-400"/>
+                        <span className="text-[9px] text-purple-400 bg-purple-400/10 px-1.5 py-0.5 rounded-full">Cached</span>
+                      </div>
+                      <div>
+                         <span className="text-2xl font-bold text-[var(--text-primary)]">4.2GB</span>
+                         <p className="text-[10px] text-[var(--text-secondary)]">RAM Usage</p>
+                      </div>
+                  </div>
+              </div>
+          </motion.div>
 
-             <div className="bg-gradient-to-r from-[#252422] to-[#1F1E1D] text-[#F7F2E8] p-8 md:p-10 rounded-2xl relative overflow-hidden flex items-center justify-between border border-[#3A3936]">
-                 <div className="relative z-10">
-                     <h3 className="text-[#D4AF37] font-bold uppercase tracking-widest text-xs mb-3">Current Focus</h3>
-                     <p className="font-serif text-xl italic opacity-90 max-w-lg">
-                         "Mendedikasikan waktu untuk eksplorasi Cloud Architecture dan membaca buku-buku self-development."
-                     </p>
-                 </div>
-                 <Terminal className="text-[#D4AF37]/10 absolute right-4 md:right-10 top-1/2 -translate-y-1/2 w-32 h-32" />
-             </div>
-         </FadeContent>
-      </section>
+          {/* WIDGET 4: ACTIONS */}
+          <motion.div
+              initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.3 }}
+              className="col-span-12 md:col-span-4 row-span-3 grid grid-cols-2 gap-3"
+          >
+               <div className="bg-[var(--accent)]/10 border border-[var(--accent)]/20 rounded-2xl flex flex-col items-center justify-center text-center hover:bg-[var(--accent)]/20 hover:scale-[1.02] transition-all cursor-pointer group p-4 shadow-lg">
+                    <div className="w-10 h-10 rounded-full bg-[var(--accent)]/20 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                        <Mail size={20} className="text-[var(--accent)]"/>
+                    </div>
+                    <span className="text-[var(--text-primary)] font-bold text-xs">Email Me</span>
+                    <span className="text-[var(--text-secondary)] text-[9px] mt-0.5">Encrypted</span>
+               </div>
 
-      {/* SECTION 5: CALL TO ACTION */}
-      <section className="py-20 px-6 bg-[#252422]/50 border-t border-[#3A3936]">
-         <div className="max-w-2xl mx-auto text-center">
-             <FadeContent>
-                 <h2 className="font-serif text-4xl mb-6 text-[#F7F2E8]">Let's Connect</h2>
-                 <p className="text-[#A8A29E] mb-8">
-                     Terbuka untuk kolaborasi, diskusi teknologi, atau sekadar menyapa.
-                 </p>
+               <div className="bg-[var(--bg-secondary)] border border-[var(--border)] rounded-2xl flex flex-col items-center justify-center text-center hover:bg-[var(--bg-primary)] hover:scale-[1.02] transition-all cursor-pointer group p-4 shadow-lg">
+                    <div className="w-10 h-10 rounded-full bg-sky-500/20 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                        <Cloud size={20} className="text-sky-400"/>
+                    </div>
+                    <span className="text-[var(--text-primary)] font-bold text-xs">Resume</span>
+                    <span className="text-[var(--text-secondary)] text-[9px] mt-0.5">.PDF</span>
+               </div>
 
-                 <div className="flex flex-col gap-3 items-center">
-                     {PROFILE.emails.map((email) => (
-                         <div key={email} className="flex items-center gap-3 px-5 py-3 bg-[#1A1918] rounded-lg border border-[#3A3936] shadow-sm w-full md:w-auto justify-center group cursor-pointer hover:bg-[#D4AF37] hover:text-[#1A1918] transition-colors"
-                              onClick={() => navigator.clipboard.writeText(email)}>
-                            <Mail size={16} />
-                            <span className="font-mono text-sm">{email}</span>
-                            <Copy size={14} className="opacity-0 group-hover:opacity-100 transition-opacity ml-2"/>
-                         </div>
-                     ))}
-                 </div>
-             </FadeContent>
-         </div>
-      </section>
-    </div>
+               <div className="col-span-2 bg-gradient-to-r from-indigo-900/60 to-purple-900/60 border border-[var(--border)] rounded-2xl p-4 flex items-center justify-between shadow-lg hover:shadow-purple-500/20 transition-all cursor-pointer group">
+                    <div className="flex items-center gap-3">
+                        <div className="p-2 bg-white/10 rounded-lg">
+                             <Calendar size={18} className="text-[var(--text-primary)]"/>
+                        </div>
+                        <div className="text-left">
+                            <p className="text-[var(--text-primary)] font-bold text-xs">Schedule Call</p>
+                            <p className="text-[var(--text-secondary)] text-[10px]">Via Google Meet</p>
+                        </div>
+                    </div>
+                    <ArrowUpRight size={16} className="text-[var(--text-primary)] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"/>
+               </div>
+          </motion.div>
+
+          {/* === COLUMN 3: PROJECTS (RIGHT) === */}
+
+          {/* WIDGET 5: ACTIVE PROJECTS */}
+          <motion.div
+               initial={{ x: 20, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.4 }}
+               className="col-span-12 md:col-span-4 row-span-6 bg-[var(--glass)] border border-[var(--border)] rounded-2xl p-5 flex flex-col shadow-2xl backdrop-blur-md"
+          >
+              <div className="flex items-center justify-between mb-5">
+                   <div className="flex items-center gap-2 text-[var(--accent)] uppercase tracking-widest text-[10px] font-bold">
+                      <Layers size={14}/> Active Processes
+                  </div>
+                  <span className="text-[9px] bg-[var(--bg-secondary)] px-2 py-1 rounded-md text-[var(--text-secondary)] border border-[var(--border)] font-mono">PID: {PROJECTS.length}</span>
+              </div>
+
+              <div className="space-y-3 overflow-y-auto pr-1 flex-1 scrollbar-thin scrollbar-thumb-[var(--border)] scrollbar-track-transparent">
+                  {PROJECTS.map((project, idx) => (
+                      <motion.div
+                          key={project.id}
+                          initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 + (idx * 0.1) }}
+                          className="group bg-[var(--bg-primary)]/40 hover:bg-[var(--bg-primary)]/80 border border-[var(--border)] hover:border-[var(--accent)] p-3 rounded-xl transition-all cursor-pointer relative overflow-hidden shadow-sm hover:shadow-md"
+                      >
+                          {/* Hover Indicator */}
+                          <div className="absolute left-0 top-0 bottom-0 w-1 bg-[var(--accent)] opacity-0 group-hover:opacity-100 transition-opacity" />
+
+                          <div className="flex justify-between items-start mb-1">
+                              <h3 className="text-[var(--text-primary)] font-bold text-xs group-hover:text-[var(--accent)] transition-colors">{project.title}</h3>
+                              <ArrowUpRight size={10} className="text-[var(--text-secondary)] opacity-0 group-hover:opacity-100 transition-opacity" />
+                          </div>
+
+                          <p className="text-[var(--text-secondary)] text-[10px] line-clamp-2 mb-2 leading-relaxed">{project.desc}</p>
+
+                          <div className="flex flex-wrap gap-1">
+                              {project.tags.slice(0, 3).map(tag => (
+                                  <span key={tag} className="text-[8px] px-1.5 py-0.5 rounded bg-[var(--bg-secondary)] text-[var(--text-secondary)] border border-[var(--border)] group-hover:border-[var(--accent)]/30 transition-colors">
+                                      {tag}
+                                  </span>
+                              ))}
+                          </div>
+                      </motion.div>
+                  ))}
+              </div>
+          </motion.div>
+
+      </div>
+    </motion.div>
   );
 };

@@ -1,7 +1,6 @@
 import { BookOpen, ArrowRight } from 'lucide-react';
 import { FadeContent } from '../components/ui/FadeContent';
-import chapters from '../data/chapters';
-
+import { LEARNING_DATA as chapters } from '../data/chapters';
 export const BlogList = ({ onSelectPost }) => {
   return (
     // FIX: Gunakan var(--bg-primary) dan text-primary agar dinamis mengikuti tema
