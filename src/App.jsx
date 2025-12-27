@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
+
+// GUNAKAN KURUNG KURAWAL (NAMED IMPORT)
 import { Navbar } from './components/layout/Navbar';
+
 import { LandingPage } from './pages/LandingPage';
 import { BlogList } from './pages/BlogList';
 import { ChapterReader } from './components/features/ChapterReader';
@@ -10,9 +13,9 @@ import { Mail, Users } from 'lucide-react';
 function App() {
   const [activeTab, setActiveTab] = useState('home');
   const [selectedPost, setSelectedPost] = useState(null);
-  const [theme, setTheme] = useState('blue'); // Default theme
+  const [theme, setTheme] = useState('blue');
 
-  // Inject theme ke atribut HTML root
+  // Inject theme
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
@@ -55,7 +58,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen text-[var(--text-primary)] overflow-hidden font-sans">
+    <div className="min-h-screen text-[var(--text-primary)] overflow-hidden font-sans bg-[var(--bg-primary)] transition-colors duration-500">
       {!selectedPost && (
         <Navbar
             activeTab={activeTab}

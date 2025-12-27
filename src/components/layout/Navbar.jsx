@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Home, Book, Users, Mail, Wifi, BatteryMedium, Volume2, Palette, ChevronDown, Bluetooth, Bell, Settings } from 'lucide-react';
+import { Home, Book, Users, Mail, Wifi, Bluetooth, Bell, Settings, Palette, ChevronDown } from 'lucide-react';
 import { cn } from '../../lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 
+// GUNAKAN EXPORT CONST (NAMED EXPORT)
 export const Navbar = ({ activeTab, setActiveTab, currentTheme, setTheme }) => {
   const [time, setTime] = useState(new Date());
   const [isThemeOpen, setIsThemeOpen] = useState(false);
@@ -34,7 +35,7 @@ export const Navbar = ({ activeTab, setActiveTab, currentTheme, setTheme }) => {
     >
       <div className="max-w-7xl mx-auto bg-[var(--glass)] backdrop-blur-xl border border-[var(--border)] rounded-2xl px-4 py-2 flex items-center justify-between shadow-2xl shadow-black/10 transition-all duration-500">
 
-        {/* KIRI: Logo Branding */}
+        {/* KIRI: Logo */}
         <div className="flex items-center gap-3 w-[25%]">
            <div className="w-8 h-8 flex items-center justify-center bg-gradient-to-br from-[var(--accent)] to-blue-600 rounded-lg text-[var(--bg-primary)] shadow-lg shadow-[var(--accent)]/20">
              <span className="font-bold font-mono text-lg">{`>_`}</span>
@@ -45,7 +46,7 @@ export const Navbar = ({ activeTab, setActiveTab, currentTheme, setTheme }) => {
           </div>
         </div>
 
-        {/* TENGAH: Menu Navigasi */}
+        {/* TENGAH: Menu */}
         <div className="flex items-center justify-center gap-1 flex-1">
           {navItems.map((item) => (
             <button
@@ -64,10 +65,8 @@ export const Navbar = ({ activeTab, setActiveTab, currentTheme, setTheme }) => {
           ))}
         </div>
 
-        {/* KANAN: Status Bar (UPGRADED) */}
+        {/* KANAN: Status */}
         <div className="flex items-center justify-end gap-3 w-[25%]">
-
-          {/* Theme Dropdown */}
           <div className="relative">
             <button
                 onClick={() => setIsThemeOpen(!isThemeOpen)}
@@ -100,7 +99,6 @@ export const Navbar = ({ activeTab, setActiveTab, currentTheme, setTheme }) => {
             </AnimatePresence>
           </div>
 
-          {/* System Icons Group */}
           <div className="hidden sm:flex items-center gap-3 px-3 py-1.5 bg-[var(--bg-secondary)]/30 rounded-lg border border-[var(--border)] text-[var(--text-secondary)]">
              <Bluetooth size={14} className="hover:text-blue-400 transition-colors cursor-pointer" />
              <Wifi size={14} className="hover:text-[var(--accent)] transition-colors cursor-pointer" />
@@ -112,13 +110,11 @@ export const Navbar = ({ activeTab, setActiveTab, currentTheme, setTheme }) => {
              <Settings size={14} className="hover:text-[var(--text-primary)] transition-colors cursor-pointer animate-spin-slow" />
           </div>
 
-          {/* Time */}
           <div className="text-right leading-tight hidden md:block">
             <div className="font-bold text-xs text-[var(--text-primary)] font-mono">
                 {time.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })}
             </div>
           </div>
-
         </div>
       </div>
     </motion.nav>
