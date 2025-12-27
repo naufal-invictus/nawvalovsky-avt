@@ -1,57 +1,59 @@
-import { motion, AnimatePresence } from 'framer-motion';
-import { Calendar, ArrowRight } from 'lucide-react';
+import { BookOpen, ArrowRight } from 'lucide-react';
 import { FadeContent } from '../components/ui/FadeContent';
-import { LEARNING_DATA } from '../data/chapters';
+import chapters from '../data/chapters';
+
 export const BlogList = ({ onSelectPost }) => {
   return (
-    <div className="pt-32 pb-32 px-6 max-w-4xl mx-auto min-h-screen">
-      <FadeContent>
-        <div className="mb-16 border-b border-[#E5E5E5] pb-8">
-            <h1 className="font-serif text-5xl text-[#333] mb-4">Journal</h1>
-            <p className="text-[#8A8A8A] font-sans-modern text-lg">
-                Thoughts on Code, Philosophy, and Life.
+    // FIX: Gunakan var(--bg-primary) dan text-primary agar dinamis mengikuti tema
+    <div className="min-h-screen pt-32 px-6 pb-20 bg-[var(--bg-primary)] text-[var(--text-primary)] transition-colors duration-500">
+      <div className="max-w-4xl mx-auto">
+
+        <FadeContent>
+          <div className="text-center mb-16">
+            <span className="text-[var(--accent)] font-bold tracking-widest text-xs uppercase px-4 py-2 bg-[var(--bg-secondary)] rounded-full border border-[var(--border)]">
+              Pemikiran & Tulisan
+            </span>
+            <h1 className="font-serif text-5xl md:text-6xl mt-6 mb-4 leading-tight">Jurnal Digital</h1>
+            <p className="text-[var(--text-secondary)] max-w-lg mx-auto">
+              Kumpulan artikel seputar teknologi, keamanan siber, dan arsitektur sistem.
             </p>
-        </div>
-      </FadeContent>
+          </div>
+        </FadeContent>
 
-      <div className="space-y-12">
-        <AnimatePresence>
-          {LEARNING_DATA.map((post) => (
-            <motion.div
-              key={post.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="group cursor-pointer"
-              onClick={() => onSelectPost(post)}
-            >
-              <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-start">
-                  <div className="w-full md:w-48 aspect-video rounded-lg overflow-hidden bg-gray-100 shrink-0">
-                      <img src={post.metadata.thumbnail} alt="" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+        <div className="grid gap-6">
+          {chapters.map((chapter, index) => (
+            <FadeContent key={chapter.id} delay={index * 0.1}>
+              <div
+                onClick={() => onSelectPost(chapter)}
+                className="group relative bg-[var(--bg-secondary)] rounded-[2.5rem] p-8 border border-[var(--border)] hover:border-[var(--accent)] transition-all cursor-pointer overflow-hidden shadow-lg hover:shadow-[var(--accent)]/10"
+              >
+                {/* Decorative Hover Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[var(--accent)]/0 via-[var(--accent)]/5 to-[var(--accent)]/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+
+                <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                  <div>
+                    <div className="flex items-center gap-3 mb-3">
+                       <span className="text-xs font-bold text-[var(--accent)] uppercase tracking-wider">Chapter 0{index + 1}</span>
+                       <span className="w-1 h-1 bg-[var(--text-secondary)] rounded-full"></span>
+                       <span className="text-xs text-[var(--text-secondary)]">{chapter.readTime || "5 min read"}</span>
+                    </div>
+                    <h3 className="font-serif text-2xl md:text-3xl mb-2 group-hover:text-[var(--accent)] transition-colors">
+                      {chapter.title}
+                    </h3>
+                    <p className="text-[var(--text-secondary)] line-clamp-2 text-sm max-w-xl">
+                      {chapter.excerpt || "Klik untuk membaca artikel lengkap mengenai topik ini..."}
+                    </p>
                   </div>
 
-                  <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-2 text-xs font-bold uppercase tracking-widest text-[#D4AF37]">
-                          <span>{post.metadata.category}</span>
-                          <span className="w-1 h-1 rounded-full bg-[#ccc]"/>
-                          <span className="text-[#8A8A8A] flex items-center gap-1"><Calendar size={10}/> 2025</span>
-                      </div>
-
-                      <h2 className="font-serif text-2xl md:text-3xl text-[#333] mb-3 group-hover:text-[#D4AF37] transition-colors leading-tight">
-                          {post.metadata.title}
-                      </h2>
-                      <p className="text-[#6B6B6B] leading-relaxed mb-4 line-clamp-2">
-                          {post.metadata.description}
-                      </p>
-
-                      <button className="text-sm font-bold text-[#333] flex items-center gap-2 border-b border-transparent group-hover:border-[#333] transition-all pb-0.5">
-                          Read Article <ArrowRight size={14}/>
-                      </button>
+                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[var(--bg-primary)] border border-[var(--border)] text-[var(--text-secondary)] group-hover:bg-[var(--accent)] group-hover:text-[var(--bg-primary)] transition-all shrink-0">
+                    <ArrowRight size={20} className="-rotate-45 group-hover:rotate-0 transition-transform duration-300" />
                   </div>
+                </div>
               </div>
-            </motion.div>
+            </FadeContent>
           ))}
-        </AnimatePresence>
+        </div>
+
       </div>
     </div>
   );
