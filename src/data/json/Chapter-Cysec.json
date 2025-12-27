@@ -1,0 +1,253 @@
+{
+  "id": "chapter-cysec",
+  "metadata": {
+    "title": "Cybersecurity 101: Jadi Satpam buat Data Sendiri",
+    "subtitle": "Kenapa Password '123456' Itu Bahaya Banget?",
+    "description": "Panduan survival di hutan digital. Mulai dari cara bikin password anti-jebol, memahami hacker, sampai kenapa WiFi gratisan itu trap.",
+    "thumbnail": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800",
+    "tags": ["Security", "Teknologi", "Life Skill"],
+    "category": "Teknologi"
+  },
+  "content": [
+    {
+      "section_id": "intro",
+      "blocks": [
+        { "type": "heading", "text": "POV: Hari Sial Gara-gara Klik Link" },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1563206767-5b1d975373e7?auto=format&fit=crop&q=80&w=800",
+          "caption": "Jangan sampai layar laptop lo jadi begini (Ransomware).",
+          "position": "right"
+        },
+        {
+          "type": "paragraph",
+          "text": "Bayangin lo bangun tidur, buka HP, eh Instagram ke-logout sendiri. Pas coba login, password salah. Cek M-Banking, saldo jadi Rp 0. Panik? Pasti."
+        },
+        {
+          "type": "paragraph",
+          "text": "Selamat datang di dunia maya yang kejam. Di sini, **Cybersecurity** bukan cuma mainan hacker ala Mr. Robot, tapi *survival skill* wajib buat siapa aja yang punya akun medsos. Kalau lo nggak ngerti cara ngamanin diri, lo cuma 'makanan empuk' buat para penjahat siber."
+        }
+      ]
+    },
+    {
+      "section_id": "cia-triad",
+      "blocks": [
+        { "type": "heading", "text": "Segitiga Suci: CIA Triad" },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80&w=800",
+          "caption": "Konsep dasar yang wajib diketahui anak IT.",
+          "position": "left"
+        },
+        {
+          "type": "paragraph",
+          "text": "Bukan CIA intelijen Amerika ya. Di dunia keamanan siber, kita punya konsep dasar namanya **CIA Triad**. Ini adalah tiga pilar yang harus dijaga mati-matian:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Confidentiality (Kerahasiaan):** Data lo cuma boleh dilihat sama yang berhak. Kayak chat rahasia lo sama doi, jangan sampe nyebar ke grup angkatan.",
+            "**Integrity (Keutuhan):** Data nggak boleh diubah-ubah sama orang iseng. Bayangin lo transfer 100 ribu, tapi diubah hacker jadi 10 juta.",
+            "**Availability (Ketersediaan):** Sistem harus bisa dipake pas butuh. Kalau server down pas lo mau war tiket konser, itu berarti aspek *Availability*-nya gagal."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "password-logic",
+      "blocks": [
+        { "type": "heading", "text": "Password Lo Lemah? Kelar Hidup Lo" },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&q=80&w=800",
+          "caption": "Kunci gembok aja nggak cukup kalau kuncinya ditaruh di bawah keset.",
+          "position": "right"
+        },
+        {
+          "type": "paragraph",
+          "text": "Masih pakai password '123456', 'qwerty', atau tanggal lahir? **Tolong bertobat.** Hacker punya *tools* yang bisa nebak password kayak gitu dalam hitungan detik (metode *Brute Force*)."
+        },
+        {
+          "type": "analogy",
+          "title": "Analogi Sempak",
+          "text": "Password itu kayak sikat gigi atau pakaian dalam. Jangan pinjemin ke orang lain, ganti secara berkala, dan jangan taro sembarangan di meja umum."
+        },
+        {
+          "type": "paragraph",
+          "text": "Solusinya? Gunakan **Passphrase** (kalimat panjang) dan wajib aktifkan **2FA (Two-Factor Authentication)**. 2FA itu benteng terakhir kalau password lo jebol."
+        }
+      ]
+    },
+    {
+      "section_id": "social-engineering",
+      "blocks": [
+        { "type": "heading", "text": "Phishing: Mancing Mania Mantap" },
+        {
+          "type": "paragraph",
+          "text": "Hacker jago nggak selalu ngetik kode hijau di layar hitam. Kadang mereka cuma modal 'mulut manis'. Ini namanya **Social Engineering**."
+        },
+        {
+          "type": "paragraph",
+          "text": "Teknik paling umum adalah **Phishing**. Lo dikasih link palsu: *'Selamat Anda menang iPhone 15 Pro Max!'* atau *'Akun Anda akan diblokir, klik di sini'*. Pas lo klik dan login, data lo langsung *bye-bye*."
+        },
+        {
+          "type": "quote",
+          "text": "Celah keamanan terbesar dalam sistem komputer bukanlah hardware atau software, tapi 'Human Error' (Manusia).",
+          "author": "Kevin Mitnick (Hacker Legendaris)"
+        }
+      ]
+    },
+    {
+      "section_id": "public-wifi",
+      "blocks": [
+        { "type": "heading", "text": "Bahaya WiFi Gratisan" },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&q=80&w=800",
+          "caption": "Nongkrong sih asik, tapi datanya aman nggak?",
+          "position": "left"
+        },
+        {
+          "type": "paragraph",
+          "text": "Lagi nongkrong di kafe, nemu WiFi tanpa password. Wah rejeki anak soleh? **BUKAN!** Itu jebakan Batman."
+        },
+        {
+          "type": "analogy",
+          "title": "Kartu Pos vs Amplop Besi",
+          "text": "Konek ke WiFi publik tanpa pengaman itu kayak kirim kartu pos. Semua orang di kantor pos (jaringan) bisa baca tulisan lo. Kalau mau aman, pake VPN. VPN itu kayak masukin surat lo ke amplop baja yang digembok."
+        },
+        {
+          "type": "paragraph",
+          "text": "Hacker bisa melakukan serangan *Man-in-the-Middle*, alias nyegat data di tengah jalan pas lo lagi login M-Banking pakai WiFi kafe."
+        }
+      ]
+    },
+    {
+      "section_id": "malware",
+      "blocks": [
+        { "type": "heading", "text": "Malware: Virus Jahat Digital" },
+        {
+          "type": "paragraph",
+          "text": "Jangan asal download file *crack* game atau software bajakan. Seringkali di dalamnya ada **Malware** (Malicious Software)."
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Trojan:** Nyamar jadi aplikasi baik-baik, pas diinstall isinya jahat. Kayak Kuda Troya sejarah Yunani.",
+            "**Ransomware:** Ini paling ngeri. Data lo dikunci (dienkripsi), terus hacker minta tebusan duit kalau mau dibuka lagi. Kalau nggak bayar, data hilang selamanya.",
+            "**Spyware:** Diam-diam ngintip apa yang lo ketik (termasuk password) dan lapor ke tuannya."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "white-hat",
+      "blocks": [
+        { "type": "heading", "text": "Topi Putih vs Topi Hitam" },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800",
+          "caption": "Hacker itu nggak semuanya jahat, bro.",
+          "position": "right"
+        },
+        {
+          "type": "paragraph",
+          "text": "Di dunia hacker, ada kasta berdasarkan etika:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Black Hat:** Penjahat murni. Ngerusak, nyuri data, cari duit haram.",
+            "**White Hat:** 'Hacker Budiman'. Mereka disewa perusahaan buat nyari celah keamanan supaya bisa diperbaiki (Pentester).",
+            "**Grey Hat:** Di tengah-tengah. Kadang iseng ngehack, tapi nggak ngerusak, cuma buat pamer atau ngasih peringatan."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "closing",
+      "blocks": [
+        { "type": "heading", "text": "Gimana Cara Mulai Belajar?" },
+        {
+          "type": "paragraph",
+          "text": "Tertarik jadi penjaga dunia digital? Jangan cuma nonton film hacker. Mulai pelajari **Jaringan Dasar (Networking)**, **Linux**, dan **Coding (Python/Bash)**."
+        },
+        {
+          "type": "paragraph",
+          "text": "Tapi yang paling penting sekarang: Amankan diri lo sendiri dulu. Aktifin 2FA, ganti password, dan jangan kepo klik link sembarangan!"
+        },
+        {
+          "type": "reflection",
+          "text": "Teknologi secanggih apapun nggak guna kalau penggunanya ceroboh. Firewall terbaik di dunia adalah **otak kita sendiri**. Think before you click!"
+        }
+      ]
+    }
+  ],
+  "references": [
+    "Kevin Mitnick: The Art of Deception",
+    "CompTIA Security+ Study Guide",
+    "OWASP Top 10 Security Risks"
+  ],
+  "quiz": [
+    {
+      "question": "Apa kepanjangan dari konsep CIA Triad dalam keamanan siber?",
+      "options": ["Central Intelligence Agency", "Confidentiality, Integrity, Availability", "Control, Intelligence, Access", "Cyber, Internet, Attack"],
+      "correct": 1,
+      "feedback": "Benar! Kerahasiaan, Keutuhan, dan Ketersediaan."
+    },
+    {
+      "question": "Teknik penipuan di mana hacker menyamar (lewat link/email) untuk mencuri data disebut...",
+      "options": ["Phishing", "Fishing", "Doxing", "Hacking"],
+      "correct": 0,
+      "feedback": "Tepat! Hati-hati sama link pancingan."
+    },
+    {
+      "question": "Kenapa WiFi publik tanpa password itu berbahaya?",
+      "options": ["Internetnya lambat", "Hacker bisa menyadap data kita (Man-in-the-Middle)", "Boros baterai", "Banyak iklan"],
+      "correct": 1,
+      "feedback": "Betul. Data lo bisa diintip orang satu jaringan."
+    },
+    {
+      "question": "Apa fungsi dari 2FA (Two-Factor Authentication)?",
+      "options": ["Bikin login jadi ribet", "Menambah lapisan keamanan selain password", "Mempercepat internet", "Menghapus virus"],
+      "correct": 1,
+      "feedback": "Benar. 2FA adalah benteng terakhir akun lo."
+    },
+    {
+      "question": "Jenis malware yang mengunci data korban dan meminta tebusan uang disebut...",
+      "options": ["Spyware", "Ransomware", "Adware", "Worm"],
+      "correct": 1,
+      "feedback": "Tepat. Ransom artinya tebusan."
+    },
+    {
+      "question": "Hacker yang bekerja secara etis untuk mencari celah keamanan demi kebaikan disebut...",
+      "options": ["Black Hat", "Red Hat", "White Hat", "No Hat"],
+      "correct": 2,
+      "feedback": "Benar. Mereka adalah 'satpam' digital."
+    },
+    {
+      "question": "Apa itu Social Engineering?",
+      "options": ["Memperbaiki medsos", "Memanipulasi psikologi manusia untuk dapat data", "Membuat robot sosial", "Coding aplikasi chat"],
+      "correct": 1,
+      "feedback": "Betul. Menipu manusia seringkali lebih mudah daripada menembus firewall."
+    },
+    {
+      "question": "Manakah password yang paling AMAN di bawah ini?",
+      "options": ["P@ssw0rd123", "TanggalLahirGue", "KudaT3rbangMakanB4kso!#", "Admin123"],
+      "correct": 2,
+      "feedback": "Benar. Panjang, kombinasi unik, dan sulit ditebak."
+    },
+    {
+      "question": "Apa yang dimaksud dengan Integrity dalam data?",
+      "options": ["Data dirahasiakan", "Data tidak berubah/dimanipulasi tanpa izin", "Data selalu tersedia", "Data dihapus"],
+      "correct": 1,
+      "feedback": "Tepat. Data harus utuh dan asli."
+    },
+    {
+      "question": "Alat apa yang disarankan dipakai saat menggunakan WiFi publik agar data terenkripsi?",
+      "options": ["GPS", "VPN (Virtual Private Network)", "Antivirus", "WinRAR"],
+      "correct": 1,
+      "feedback": "Benar. VPN membungkus koneksi lo supaya aman."
+    }
+  ]
+}
