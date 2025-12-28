@@ -1,7 +1,7 @@
 import { Coffee, Book, Camera, Shield, Cpu, Terminal, Globe } from 'lucide-react';
 
 export const PROFILE = {
-  name: "Nawvalovsky",
+  name: "Nawvalovsky[]",
   role: "Cybersecurity & Cloud Architect",
   bio: "Mahasiswa Teknik Informatika yang berfokus pada OS dan Cloud. Berpengalaman dalam menangani berbagai problem teknis sistem operasi dan jaringan.",
   tags: ["Cloud Practitioner", "NetSec", "Network Administration", "Linux"],
