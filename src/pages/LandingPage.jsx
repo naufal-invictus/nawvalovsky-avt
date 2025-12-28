@@ -1,87 +1,51 @@
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-
-// Import Components
-import ProfileCard from '../components/landing/ProfileCard';
-import ProjectList from '../components/landing/ProjectList';
-import WelcomeMarquee from '../components/landing/WelcomeMarquee';
+// FIX: Menggunakan Default Import (tanpa kurung kurawal)
 import TerminalSection from '../components/landing/TerminalSection';
-import ActionToolbar from '../components/landing/ActionToolbar';
-import MusicPlayer from '../components/landing/MusicPlayer';
 import SystemMonitor from '../components/landing/SystemMonitor';
-import ThemeSwitcher from '../components/landing/ThemeSwitcher';
-import SocialLinks from '../components/landing/SocialLinks';
-import FooterSection from '../components/landing/FooterSection';
+import ProjectList from '../components/landing/ProjectList';
+import ProfileCard from '../components/landing/ProfileCard';
+import MusicPlayer from '../components/landing/MusicPlayer';
+import ActionToolbar from '../components/landing/ActionToolbar';
 
 export const LandingPage = () => {
-  const [sysStats, setSysStats] = useState({ cpu: 14, ram: 4.2, ping: 24 });
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setSysStats({
-        cpu: Math.floor(Math.random() * (35 - 12) + 12),
-        ram: (Math.random() * (6.5 - 3.8) + 3.8).toFixed(1),
-        ping: Math.floor(Math.random() * (45 - 18) + 18)
-      });
-    }, 2000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <motion.div
-      initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-      className="h-screen w-full overflow-hidden p-3 pt-24 font-sans text-sm"
-    >
-      <style>{`
-        @keyframes marquee {
-          0% { transform: translateX(100%); }
-          100% { transform: translateX(-100%); }
-        }
-        .animate-marquee {
-          animation: marquee 15s linear infinite;
-        }
-        @keyframes music-beat {
-          0%, 100% { height: 4px; }
-          50% { height: 16px; }
-        }
-        .animate-music-beat {
-          animation: music-beat 0.8s ease-in-out infinite;
-        }
-        .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-        }
-      `}</style>
+    <div className="pt-24 pb-12 px-4 max-w-7xl mx-auto space-y-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-      {/* REMOVED: Div overlay background dihapus agar background image dari body::before
-         bisa terlihat jelas dan tidak flat.
-      */}
+        {/* LEFT COLUMN */}
+        <div className="space-y-6">
+          <div className="border border-[var(--border)] bg-[var(--bg-secondary)] rounded-xl overflow-hidden shadow-lg">
+            <ProfileCard />
+          </div>
 
-      {/* MAIN GRID */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 h-full max-w-[1800px] mx-auto pb-1 min-h-0">
-
-        {/* COLUMN 1: Profile & Projects */}
-        <div className="lg:col-span-3 flex flex-col gap-3 h-full overflow-hidden min-h-0">
-          <ProfileCard />
-          <ProjectList />
-        </div>
-
-        {/* COLUMN 2: Center (Marquee, Terminal, CTA) */}
-        <div className="lg:col-span-6 flex flex-col gap-3 h-full min-h-0">
-          <WelcomeMarquee />
-          <TerminalSection stats={sysStats} />
           <ActionToolbar />
+
+          <div className="border border-[var(--border)] bg-[var(--bg-secondary)] rounded-xl overflow-hidden shadow-lg relative z-10">
+            <MusicPlayer />
+          </div>
         </div>
 
-        {/* COLUMN 3: Right (Tools & Footer) */}
-        <div className="lg:col-span-3 flex flex-col gap-3 h-full min-h-0">
-          <MusicPlayer />
-          <SystemMonitor stats={sysStats} />
-          <ThemeSwitcher />
-          <SocialLinks />
-          <FooterSection stats={sysStats} />
+        {/* RIGHT COLUMN */}
+        <div className="lg:col-span-2 space-y-6">
+          {/* Terminal Section */}
+          <div className="border border-[var(--border)] bg-[var(--bg-secondary)]/50 rounded-xl p-1 overflow-hidden">
+             <TerminalSection stats={{ cpu: 12, ram: 8.4, ping: 24 }} />
+          </div>
+
+          {/* Monitor Section */}
+          <div className="border border-[var(--border)] bg-[var(--bg-secondary)]/30 rounded-xl p-4">
+             <SystemMonitor stats={{ cpu: 12, ram: 8.4, ping: 24 }} />
+          </div>
+
+          {/* Projects Section */}
+          <div className="border border-[var(--border)] bg-[var(--bg-secondary)]/30 rounded-xl p-4">
+            <h3 className="font-mono text-[var(--accent)] text-xs mb-4 border-b border-[var(--border)] pb-2 uppercase tracking-widest">
+              // ACTIVE_DEPLOYMENTS
+            </h3>
+            <ProjectList />
+          </div>
         </div>
 
       </div>
-    </motion.div>
+    </div>
   );
 };

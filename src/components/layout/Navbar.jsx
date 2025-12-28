@@ -1,20 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Home, Book, Users, Mail, Wifi, Bluetooth, Bell, Settings, Palette, ChevronDown } from 'lucide-react';
+import { Home, Book, Users, Mail, Wifi, Bluetooth, Bell, Settings } from 'lucide-react';
 import { cn } from '../../lib/utils';
-import { motion, AnimatePresence } from 'framer-motion';
+// Hapus framer-motion yang berat di navbar jika masih lag, tapi keep simple transition
+import { motion } from 'framer-motion';
 
-// GUNAKAN EXPORT CONST (NAMED EXPORT)
-export const Navbar = ({ activeTab, setActiveTab, currentTheme, setTheme }) => {
+export const Navbar = ({ activeTab, setActiveTab }) => {
   const [time, setTime] = useState(new Date());
-  const [isThemeOpen, setIsThemeOpen] = useState(false);
-
-  const themes = [
-    { id: 'blue', label: 'Arch Blue', color: 'bg-blue-500' },
-    { id: 'green', label: 'Matrix', color: 'bg-green-500' },
-    { id: 'red', label: 'Sith Red', color: 'bg-red-500' },
-    { id: 'purple', label: 'Amethyst', color: 'bg-purple-500' },
-    { id: 'anime', label: 'Day Mode', color: 'bg-pink-400' },
-  ];
 
   useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 1000);
@@ -29,11 +20,8 @@ export const Navbar = ({ activeTab, setActiveTab, currentTheme, setTheme }) => {
   ];
 
   return (
-    <motion.nav
-      initial={{ y: -100 }} animate={{ y: 0 }} transition={{ duration: 0.5, type: 'spring' }}
-      className="fixed top-0 left-0 right-0 z-50 px-4 py-3 font-sans"
-    >
-      <div className="max-w-7xl mx-auto bg-[var(--glass)] backdrop-blur-xl border border-[var(--border)] rounded-2xl px-4 py-2 flex items-center justify-between shadow-2xl shadow-black/10 transition-all duration-500">
+    <nav className="fixed top-0 left-0 right-0 z-50 px-4 py-3 font-sans">
+      <div className="max-w-7xl mx-auto bg-[var(--glass)] backdrop-blur-md border border-[var(--border)] rounded-2xl px-4 py-2 flex items-center justify-between shadow-2xl shadow-black/10">
 
         {/* KIRI: Logo */}
         <div className="flex items-center gap-3 w-[25%]">
@@ -53,7 +41,7 @@ export const Navbar = ({ activeTab, setActiveTab, currentTheme, setTheme }) => {
               key={item.id}
               onClick={() => setActiveTab(item.id)}
               className={cn(
-                "relative px-3 py-2 rounded-xl text-[10px] md:text-xs font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-2 group",
+                "relative px-3 py-2 rounded-xl text-[10px] md:text-xs font-bold uppercase tracking-wider transition-all duration-200 flex items-center gap-2",
                 activeTab === item.id
                   ? "text-[var(--bg-primary)] bg-[var(--accent)] shadow-lg shadow-[var(--accent)]/20"
                   : "text-[var(--text-secondary)] hover:bg-[var(--text-primary)]/5 hover:text-[var(--text-primary)]"
@@ -65,40 +53,8 @@ export const Navbar = ({ activeTab, setActiveTab, currentTheme, setTheme }) => {
           ))}
         </div>
 
-        {/* KANAN: Status */}
+        {/* KANAN: Status (Tanpa Theme Switcher) */}
         <div className="flex items-center justify-end gap-3 w-[25%]">
-          <div className="relative">
-            <button
-                onClick={() => setIsThemeOpen(!isThemeOpen)}
-                className="flex items-center gap-2 px-2 py-1.5 rounded-lg border border-[var(--border)] bg-[var(--bg-secondary)]/50 hover:bg-[var(--bg-secondary)] hover:border-[var(--accent)] transition-all"
-                title="Change Theme"
-            >
-                <Palette size={14} className="text-[var(--accent)]"/>
-                <ChevronDown size={12} className={`text-[var(--text-secondary)] transition-transform ${isThemeOpen ? 'rotate-180' : ''}`}/>
-            </button>
-
-            <AnimatePresence>
-                {isThemeOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, y: 10, scale: 0.95 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                        className="absolute top-full right-0 mt-2 w-36 bg-[var(--bg-primary)] border border-[var(--border)] rounded-xl shadow-2xl overflow-hidden py-1 z-50"
-                    >
-                        <div className="px-3 py-1 text-[9px] font-bold text-[var(--text-secondary)] uppercase tracking-wider opacity-50">Select Scheme</div>
-                        {themes.map(t => (
-                            <button
-                                key={t.id}
-                                onClick={() => { setTheme(t.id); setIsThemeOpen(false); }}
-                                className="w-full text-left px-3 py-2 text-[10px] uppercase font-bold text-[var(--text-secondary)] hover:bg-[var(--accent)] hover:text-[var(--bg-primary)] flex items-center gap-2 transition-colors"
-                            >
-                                <div className={`w-2 h-2 rounded-full ${t.color} ring-1 ring-white/20`} />
-                                {t.label}
-                            </button>
-                        ))}
-                    </motion.div>
-                )}
-            </AnimatePresence>
-          </div>
-
           <div className="hidden sm:flex items-center gap-3 px-3 py-1.5 bg-[var(--bg-secondary)]/30 rounded-lg border border-[var(--border)] text-[var(--text-secondary)]">
              <Bluetooth size={14} className="hover:text-blue-400 transition-colors cursor-pointer" />
              <Wifi size={14} className="hover:text-[var(--accent)] transition-colors cursor-pointer" />
@@ -117,6 +73,6 @@ export const Navbar = ({ activeTab, setActiveTab, currentTheme, setTheme }) => {
           </div>
         </div>
       </div>
-    </motion.nav>
+    </nav>
   );
 };
