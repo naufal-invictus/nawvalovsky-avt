@@ -87,7 +87,7 @@ const ProjectSection = () => {
              Want to see the source code?
            </p>
            <a
-            href="https://github.com/naufal-invictus"
+            href="https://github.com/"
             className="inline-flex items-center gap-3 px-8 py-3 bg-transparent border border-[var(--accent)] text-[var(--accent)] text-xs font-bold uppercase tracking-widest hover:bg-[var(--accent)] hover:text-[var(--bg-main)] transition-all rounded-sm shadow-[0_0_15px_rgba(56,189,248,0.1)]"
            >
              Access GitHub Archive <ArrowRightIcon size={14} />
