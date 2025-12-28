@@ -14,8 +14,6 @@ import SocialLinks from '../components/landing/SocialLinks';
 import FooterSection from '../components/landing/FooterSection';
 
 export const LandingPage = () => {
-  // Global Monitoring State
-  // Disimpan disini agar angka sinkron antara Terminal, Monitor Widget, dan Footer
   const [sysStats, setSysStats] = useState({ cpu: 14, ram: 4.2, ping: 24 });
 
   useEffect(() => {
@@ -54,8 +52,9 @@ export const LandingPage = () => {
         }
       `}</style>
 
-      {/* Dynamic Background */}
-      <div className="absolute inset-0 bg-[var(--bg-primary)]/60 backdrop-blur-[1px] -z-10 transition-colors duration-700" />
+      {/* REMOVED: Div overlay background dihapus agar background image dari body::before
+         bisa terlihat jelas dan tidak flat.
+      */}
 
       {/* MAIN GRID */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 h-full max-w-[1800px] mx-auto pb-1 min-h-0">
@@ -69,7 +68,6 @@ export const LandingPage = () => {
         {/* COLUMN 2: Center (Marquee, Terminal, CTA) */}
         <div className="lg:col-span-6 flex flex-col gap-3 h-full min-h-0">
           <WelcomeMarquee />
-          {/* Pass stats to terminal for dynamic Neofetch */}
           <TerminalSection stats={sysStats} />
           <ActionToolbar />
         </div>

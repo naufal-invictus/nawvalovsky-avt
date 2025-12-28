@@ -9,7 +9,7 @@
 :root {
   /* Default: Blue Planet (Space/Sci-Fi) */
   --bg-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
-  --overlay: rgba(15, 23, 42, 0.85); /* Gelap agar teks putih terbaca */
+  --overlay: rgba(15, 23, 42, 0.65); /* Opasitas dikurangi (0.85 -> 0.65) agar gambar terlihat */
 
   --bg-primary: #0f172a;      /* Deep Space Blue */
   --bg-secondary: rgba(30, 41, 59, 0.7); /* Glassy Panel */
@@ -18,51 +18,85 @@
   --text-secondary: #94a3b8;  /* Slate Text */
   --accent: #38bdf8;          /* Cyan Neon */
   --accent-glow: rgba(56, 189, 248, 0.5);
+
+  --glass: rgba(15, 23, 42, 0.6); /* Variable baru untuk glass effect konsisten */
 }
 
 /* Theme 2: Nature (Pohon/Hutan) */
 [data-theme='nature'] {
   --bg-image: url('https://images.unsplash.com/photo-1448375240586-dfd8d395ea6c?q=80&w=2070&auto=format&fit=crop');
-  --overlay: rgba(20, 39, 20, 0.8); /* Dark Green Overlay */
+  --overlay: rgba(20, 39, 20, 0.6);
 
-  --bg-primary: #142714;      /* Deep Forest */
+  --bg-primary: #142714;
   --bg-secondary: rgba(40, 56, 40, 0.7);
   --border: rgba(74, 222, 128, 0.2);
-  --text-primary: #f0fdf4;    /* Mint Cream */
-  --text-secondary: #bbf7d0;  /* Light Green Text */
-  --accent: #4ade80;          /* Fresh Green Leaf */
+  --text-primary: #f0fdf4;
+  --text-secondary: #bbf7d0;
+  --accent: #4ade80;
   --accent-glow: rgba(74, 222, 128, 0.5);
+
+  --glass: rgba(20, 39, 20, 0.6);
 }
 
 /* Theme 3: Anime Sakura (Pastel Pink) */
 [data-theme='sakura'] {
   --bg-image: url('https://images.unsplash.com/photo-1522383225653-ed111181a951?q=80&w=2076&auto=format&fit=crop');
-  --overlay: rgba(255, 255, 255, 0.85); /* Putih terang agar teks hitam terbaca */
+  --overlay: rgba(255, 255, 255, 0.6);
 
-  --bg-primary: #fff1f2;      /* Rose 50 */
+  --bg-primary: #fff1f2;
   --bg-secondary: rgba(255, 255, 255, 0.6);
   --border: rgba(244, 114, 182, 0.3);
-  --text-primary: #881337;    /* Deep Rose Text (Kontras tinggi) */
-  --text-secondary: #be123c;  /* Rose 700 */
-  --accent: #db2777;          /* Pink 600 */
+  --text-primary: #881337;
+  --text-secondary: #be123c;
+  --accent: #db2777;
   --accent-glow: rgba(219, 39, 119, 0.4);
+
+  --glass: rgba(255, 255, 255, 0.4);
 }
 
 /* --- GLOBAL STYLES --- */
 body {
-  /* Logic Background Image + Overlay */
-  background-image: linear-gradient(var(--overlay), var(--overlay)), var(--bg-image);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; /* Parallax effect simple */
-
+  /* Menggunakan pseudo-element untuk background agar performa lebih baik */
+  background-color: var(--bg-primary);
   color: var(--text-primary);
-
-  /* Smooth Transition untuk menghilangkan efek patah-patah */
-  transition: background-image 0.5s ease-in-out, color 0.3s ease, border-color 0.3s ease;
-
   font-family: var(--font-body);
   min-height: 100vh;
+  position: relative;
+
+  /* Transisi warna saja, JANGAN transisi background-image untuk hindari lag */
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Layer Background Image */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  /* Tidak ada transisi di sini untuk instant switch tanpa lag */
+}
+
+/* Layer Overlay */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: var(--overlay);
+  transition: background-color 0.3s ease;
+  pointer-events: none; /* Agar klik tembus ke elemen di bawahnya */
 }
 
 /* Glassmorphism Utilities */
@@ -71,4 +105,5 @@ body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
