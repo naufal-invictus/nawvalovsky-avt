@@ -3,33 +3,52 @@ import { Coffee, Book, Camera, Shield, Cpu, Terminal, Globe } from 'lucide-react
 export const PROFILE = {
   name: "Nawvalovsky",
   role: "Cybersecurity & Cloud Architect",
-  bio: "Mahasiswa Teknik Informatika yang berfokus pada keamanan infrastruktur dan arsitektur cloud. Berpengalaman dalam menangani berbagai problem teknis sistem operasi dan jaringan.",
-  tags: ["Cloud Architecture", "NetSec", "Ethical Hacking", "DevSecOps", "Linux"],
+  bio: "Mahasiswa Teknik Informatika yang berfokus pada OS dan Cloud. Berpengalaman dalam menangani berbagai problem teknis sistem operasi dan jaringan.",
+  tags: ["Cloud Practitioner", "NetSec", "Network Administration", "Linux"],
   email: "nawvalovsky@proton.me",
 
-  // List Pengalaman Teknikal (Hanya List Kasus)
+  // --- LIST PENGALAMAN TEKNIKAL ---
   experience: [
-    { technical_case: "Pernah menangani Bootloader not found pada lingkungan Dual-Boot Linux" },
-    { technical_case: "Otomasi backup database PostgreSQL ke AWS S3 menggunakan Python Script" },
-    { technical_case: "Konfigurasi Hardening SSH dan IPTables untuk mitigasi Brute Force" },
-    { technical_case: "Troubleshooting Latency Network pada cluster Kubernetes di Google Cloud" },
-    { technical_case: "Implementasi SSL/TLS Zero-Trust pada infrastruktur Nginx Reverse Proxy" }
+    { technical_case: "Instalasi dan optimasi sistem operasi Windows (XP/7/10/11) serta GNU Linux (Mint/Arch/Ubuntu/Debian 8/11)" },
+    { technical_case: "Instalasi driver dan software esensial untuk berbagai komponen hardware pada PC klien" },
+    { technical_case: "Konfigurasi perangkat jaringan Router Mercusys, TP-Link, dan Mikrotik" },
+    { technical_case: "Instalasi dan manajemen perangkat cetak Printer (Canon, Epson, HP) serta Fotocopy Konica Minolta BIZ 250" },
+    { technical_case: "Konfigurasi sistem Printer Jaringan, Jaringan LAN, dan akses Internet" },
+    { technical_case: "Setup dan manajemen File Server berbasis protokol FTP" },
+    { technical_case: "Diagnosis dan perbaikan masalah bootloader serta konfigurasi BIOS pada PC klien" },
+    { technical_case: "Diagnosis dan optimasi masalah resolusi monitor pada PC instan kelurahan" },
+    { technical_case: "Penanganan masalah koneksi fisik dan pemulihan kerusakan partisi pada media penyimpanan" },
+    { technical_case: "Troubleshooting koneksi printer jaringan dan restorasi status online perangkat" },
+    { technical_case: "Penanganan crash aplikasi kritikal seperti Microsoft Office pada PC instansi LPM" },
+    { technical_case: "Optimalisasi performa laptop/PC melalui pembersihan software dan identifikasi bottleneck hardware" },
+    { technical_case: "Diagnosis infrastruktur jaringan mulai dari kabel LAN, konfigurasi IP, hingga gangguan router" },
+    { technical_case: "Peningkatan performa multitasking melalui upgrade kapasitas RAM pada laptop klien" },
+    { technical_case: "Optimasi waktu booting sistem melalui manajemen startup program yang efisien" },
+    { technical_case: "Implementasi prosedur backup data penting secara berkala untuk mencegah kehilangan data klien" }
   ],
 
   // Daftar Skill
   skills: [
-    "Vulnerability Assessment",
-    "AWS Cloud Infrastructure",
-    "Docker & Kubernetes",
-    "Python Automation",
-    "Linux Administration"
+    "Maintenance",
+    "Network Administration",
+    "Linux Administration",
+    "AWS Cloud Practitioner",
+    "OS Instalation & Configuration",
+    "Disk Partitioning & File Systems",
+    "Help Desk Support",
   ],
 
-  // Sertifikasi
+  // --- SERTIFIKASI TERBARU ---
   certs: [
-    { name: "CEH Master (Ethical Hacker)", org: "EC-Council", id: "ECC-12345" },
-    { name: "AWS Solutions Architect", org: "Amazon Web Services", id: "AWS-99887" },
-    { name: "Google Cybersecurity Cert", org: "Google", id: "GCS-55443" }
+    { name: "Mikrotik Certified Network Associate (MTCNA)", org: "MikroTik Academy" },
+    { name: "AI Upskilling Program with RSA", org: "AVPN, InfraDigital, Google.org & ADB" },
+    { name: "IT Infrastructure Services and Systems Administration", org: "Google IT Support & InfraDigital" },
+    { name: "Mechanical Engineer CAD ASEAN", org: "BNSP" },
+    { name: "Bootcamp Quality Assurance", org: "GITS.ID" },
+    { name: "The Ins and Outs of Computer Networking", org: "Google" },
+    { name: "Foundations of Cybersecurity", org: "Google" },
+    { name: "CEH Master (Ethical Hacker)", org: "EC-Council" },
+    { name: "AWS Solutions Architect", org: "Amazon Web Services" }
   ],
 
   // Data Buku & Hobi (Untuk Footer)
@@ -53,6 +72,5 @@ export const PROJECTS = [
     category: "Security",
     desc: "Sistem monitoring anomali jaringan berbasis Python.",
     image: "https://images.unsplash.com/photo-1558494949-ef526b01201b?q=80&w=1000",
-  },
-  // Tambahkan proyek lainnya di sini...
+  }
 ];

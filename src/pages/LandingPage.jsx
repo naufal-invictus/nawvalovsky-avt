@@ -1,15 +1,17 @@
 import HeroSection from '../components/landing/HeroSection';
 import BioSection from '../components/landing/BioSection';
-import FooterRich from '../components/landing/FooterRich';
 import ProjectSection from '../components/landing/ProjectSection';
+import LinuxSection from '../components/landing/LinuxSection'; // Ganti GallerySection
+import InterestSection from '../components/landing/InterestSection';
+
 export const LandingPage = () => {
   return (
     <div className="w-full overflow-x-hidden">
       <HeroSection />
       <BioSection />
       <ProjectSection />
-      {/* FooterRich sudah ada dari langkah sebelumnya, pastikan filenya ada */}
-      <FooterRich />
+      <LinuxSection /> {/* Section Linux Environments */}
+      <InterestSection />
     </div>
   );
 };

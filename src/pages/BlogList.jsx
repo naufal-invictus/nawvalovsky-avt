@@ -1,51 +1,79 @@
-import { BookOpen, ArrowRight } from 'lucide-react';
+import { ArrowRight, ExternalLink, Clock, Tag } from 'lucide-react';
 import { FadeContent } from '../components/ui/FadeContent';
-import { LEARNING_DATA as chapters } from '../data/chapters';
+import { LEARNING_DATA as articles } from '../data/chapters';
+
 export const BlogList = ({ onSelectPost }) => {
   return (
-    // FIX: Gunakan var(--bg-primary) dan text-primary agar dinamis mengikuti tema
-    <div className="min-h-screen pt-32 px-6 pb-20 bg-[var(--bg-primary)] text-[var(--text-primary)] transition-colors duration-500">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen pt-32 px-6 pb-20 bg-[var(--bg-main)]">
+      <div className="container-safe">
 
+        {/* Header Section */}
         <FadeContent>
-          <div className="text-center mb-16">
-            <span className="text-[var(--accent)] font-bold tracking-widest text-xs uppercase px-4 py-2 bg-[var(--bg-secondary)] rounded-full border border-[var(--border)]">
-              Pemikiran & Tulisan
-            </span>
-            <h1 className="font-serif text-5xl md:text-6xl mt-6 mb-4 leading-tight">Jurnal Digital</h1>
-            <p className="text-[var(--text-secondary)] max-w-lg mx-auto">
-              Kumpulan artikel seputar teknologi, keamanan siber, dan arsitektur sistem.
-            </p>
+          <div className="mb-16">
+            <div className="flex items-center gap-3 mb-4">
+               <div className="w-10 h-[1px] bg-[var(--accent)]"></div>
+               <span className="text-[var(--accent)] font-bold tracking-widest text-[10px] uppercase">
+                 Knowledge_Base
+               </span>
+            </div>
+            <h1 className="font-display text-4xl md:text-5xl text-[var(--text-primary)] font-bold leading-tight">
+              Arsip Digital & <br/>
+              <span className="text-[var(--link-normal)]">Catatan Teknis.</span>
+            </h1>
           </div>
         </FadeContent>
 
-        <div className="grid gap-6">
-          {chapters.map((chapter, index) => (
-            <FadeContent key={chapter.id} delay={index * 0.1}>
+        {/* Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {articles.map((post, index) => (
+            <FadeContent key={post.id || index} delay={index * 0.1}>
               <div
-                onClick={() => onSelectPost(chapter)}
-                className="group relative bg-[var(--bg-secondary)] rounded-[2.5rem] p-8 border border-[var(--border)] hover:border-[var(--accent)] transition-all cursor-pointer overflow-hidden shadow-lg hover:shadow-[var(--accent)]/10"
+                onClick={() => onSelectPost(post)}
+                className="group cursor-pointer bg-[var(--bg-card)] rounded-2xl border border-[var(--border-card)] overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full"
               >
-                {/* Decorative Hover Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[var(--accent)]/0 via-[var(--accent)]/5 to-[var(--accent)]/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
 
-                <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-                  <div>
-                    <div className="flex items-center gap-3 mb-3">
-                       <span className="text-xs font-bold text-[var(--accent)] uppercase tracking-wider">Chapter 0{index + 1}</span>
-                       <span className="w-1 h-1 bg-[var(--text-secondary)] rounded-full"></span>
-                       <span className="text-xs text-[var(--text-secondary)]">{chapter.readTime || "5 min read"}</span>
-                    </div>
-                    <h3 className="font-serif text-2xl md:text-3xl mb-2 group-hover:text-[var(--accent)] transition-colors">
-                      {chapter.title}
-                    </h3>
-                    <p className="text-[var(--text-secondary)] line-clamp-2 text-sm max-w-xl">
-                      {chapter.excerpt || "Klik untuk membaca artikel lengkap mengenai topik ini..."}
-                    </p>
+                {/* Thumbnail Image dengan Hover Zoom */}
+                <div className="aspect-video w-full overflow-hidden bg-[var(--bg-surface)] relative">
+                  <img
+                    src={post.metadata?.thumbnail || post.thumbnail}
+                    alt={post.metadata?.title || post.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out opacity-90 group-hover:opacity-100"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--text-primary)]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </div>
+
+                {/* Content Area */}
+                <div className="p-6 flex flex-col flex-grow">
+                  {/* Tag & Meta */}
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="flex items-center gap-1.5 px-2.5 py-1 text-[9px] font-bold uppercase tracking-wider bg-[var(--badge-bg)] text-[var(--badge-text)] rounded-md border border-[var(--badge-border)]">
+                      <Tag size={10} />
+                      {post.metadata?.category || post.category || "Technology"}
+                    </span>
+                    <span className="flex items-center gap-1 text-[10px] text-[var(--text-secondary)] font-mono">
+                      <Clock size={12} />
+                      {post.readTime || "5 Min"}
+                    </span>
                   </div>
 
-                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[var(--bg-primary)] border border-[var(--border)] text-[var(--text-secondary)] group-hover:bg-[var(--accent)] group-hover:text-[var(--bg-primary)] transition-all shrink-0">
-                    <ArrowRight size={20} className="-rotate-45 group-hover:rotate-0 transition-transform duration-300" />
+                  {/* Title */}
+                  <h3 className="font-display text-xl font-bold text-[var(--link-normal)] mb-3 leading-snug group-hover:text-[var(--link-hover)] transition-colors duration-300">
+                    {post.metadata?.title || post.title}
+                  </h3>
+
+                  {/* Excerpt */}
+                  <p className="text-[var(--text-body)] text-xs md:text-sm line-clamp-3 mb-6 opacity-80 group-hover:opacity-100 transition-opacity">
+                    {post.metadata?.description || post.excerpt}
+                  </p>
+
+                  {/* Footer Card */}
+                  <div className="mt-auto flex items-center justify-between pt-4 border-t border-[var(--border-dim)]">
+                    <span className="text-[11px] font-bold uppercase tracking-widest text-[var(--text-secondary)] group-hover:text-[var(--link-normal)] transition-colors">
+                      Read Entry
+                    </span>
+                    <div className="w-8 h-8 rounded-full bg-[var(--bg-surface)] flex items-center justify-center text-[var(--text-secondary)] group-hover:bg-[var(--link-normal)] group-hover:text-white transition-all duration-300">
+                      <ArrowRight size={16} className="-rotate-45 group-hover:rotate-0 transition-transform" />
+                    </div>
                   </div>
                 </div>
               </div>

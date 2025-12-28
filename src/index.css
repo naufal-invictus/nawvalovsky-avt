@@ -6,36 +6,47 @@
 }
 
 :root {
-  /* --- PALETTE: DEEP CYBER BLUE --- */
+  /* --- PALETTE: CREAMY BLUE OCEAN --- */
 
-  /* Backgrounds: Menggunakan Very Dark Blue/Slate */
-  --bg-main: #020617;       /* Slate 950 - Dasar Abyss */
-  --bg-surface: #0f172a;    /* Slate 900 - Card/Surface */
-
-  /* Borders: Biru tipis transparan */
-  --border-dim: rgba(56, 189, 248, 0.1);
+  /* Backgrounds */
+  --bg-main: #FDFBF7;       /* Cream Dasar */
+  --bg-surface: #F0F4F8;    /* Biru Abu Muda (Cool Surface) */
+  --bg-card: #FFFFFF;       /* Putih Bersih */
+  --bg-nav: #E2E8F0;        /* Navbar Background */
 
   /* Typography */
-  --text-primary: #f1f5f9;  /* Slate 100 - Putih Bersih */
-  --text-secondary: #94a3b8;/* Slate 400 - Biru Abu Muted */
-  --text-muted: #475569;    /* Slate 600 - Gelap untuk detail kecil */
+  --text-primary: #1E293B;   /* Header/Judul (Deep Slate Blue) */
+  --text-secondary: #475569; /* Subheader (Cool Grey) */
+  --text-body: #334155;      /* Paragraf (Slate 700) */
+  --text-nav: #1E293B;       /* Navbar Text */
 
-  /* Accent: Electric Sky Blue (Representasi Data/Listrik) */
-  --accent: #38bdf8;        /* Sky 400 */
+  /* Interactive/Links */
+  --link-normal: #3B82F6;    /* Bright Blue */
+  --link-hover: #1D4ED8;     /* Deep Blue Hover */
+  --nav-active: #60A5FA;     /* Active State */
 
-  /* Glow Effect khusus biru */
-  --accent-glow: rgba(56, 189, 248, 0.2);
+  /* Accents & Brand */
+  --accent: #60A5FA;         /* Brand Utama (Soft Blue) */
+  --accent-secondary: #93C5FD;
+  --accent-highlight: #DBEAFE;
+
+  /* UI Elements */
+  --border-dim: #CBD5E1;     /* Garis Halus */
+  --border-card: #E2E8F0;    /* Border Card */
+
+  /* Buttons & Badges */
+  --btn-primary-bg: #3B82F6;
+  --btn-primary-hover: #2563EB;
+  --btn-primary-text: #FFFFFF;
 }
 
 html, body {
   background-color: var(--bg-main);
-  color: var(--text-primary);
+  color: var(--text-body);
   font-family: var(--font-body);
   width: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  selection-background-color: var(--accent);
-  selection-color: var(--bg-main);
 }
 
 .container-safe {
@@ -45,19 +56,24 @@ html, body {
   padding: 0 1.5rem;
 }
 
-/* Custom Scrollbar Blue Theme */
-::-webkit-scrollbar {
-  width: 8px;
+/* Scrollbar Experience Minimalis */
+.experience-scroll {
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 0.75rem;
 }
-::-webkit-scrollbar-track {
-  background: var(--bg-main);
+
+.experience-scroll::-webkit-scrollbar {
+  width: 2px;
 }
-::-webkit-scrollbar-thumb {
-  background: #1e293b; /* Slate 800 */
-  border-radius: 4px;
+
+.experience-scroll::-webkit-scrollbar-thumb {
+  background: var(--border-dim);
 }
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent);
+
+.experience-item-hover:hover {
+  background-color: var(--bg-surface);
+  padding-left: 0.5rem;
 }
 
 .hide-scroll::-webkit-scrollbar {
@@ -66,27 +82,4 @@ html, body {
 .hide-scroll {
   -ms-overflow-style: none;
   scrollbar-width: none;
-}
-/* Custom Scrollbar untuk List Pengalaman */
-.experience-scroll {
-  max-height: 450px; /* Batasi tinggi agar tidak menjulur ke bawah */
-  overflow-y: auto;
-  padding-right: 15px;
-}
-
-.experience-scroll::-webkit-scrollbar {
-  width: 4px;
-}
-
-.experience-scroll::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.experience-scroll::-webkit-scrollbar-thumb {
-  background: var(--border-dim);
-  border-radius: 10px;
-}
-
-.experience-scroll:hover::-webkit-scrollbar-thumb {
-  background: var(--accent); /* Warna biru menyala saat di-hover */
 }
