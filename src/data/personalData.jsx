@@ -1,42 +1,58 @@
-import { Code2, Terminal, Cpu, Globe, Coffee, Book, Music, Camera } from 'lucide-react';
+import { Coffee, Book, Camera, Shield, Cpu, Terminal, Globe } from 'lucide-react';
 
 export const PROFILE = {
-  name: "Nawvalovsky[]",
-  role: "Founder of TypologyID | CEO & Founder of Aeviathan Sentinel",
-  about: "Saya adalah arsitek di balik layar digital. Sebagai Founder TypologyID dan Aeviathan Sentinel, saya menggabungkan visi kepemimpinan dengan ketajaman teknis. Fokus saya adalah membangun sistem yang aman, elegan, dan berdampak besar.",
-  tags: ["Founder", "CEO", "Fullstack", "Cybersec", "Cloud Arch", "Visionary"],
-  emails: ["nawvalovsky@proton.me", "ceo@aeviathan.com"],
-  certs: ["CEH Master", "AWS Solutions Architect", "Google Cloud Pro"],
-  skills: ["React", "Node.js", "Python", "Rust", "Kubernetes", "Ethical Hacking", "System Design"]
+  name: "Nawvalovsky",
+  role: "Cybersecurity & Cloud Architect",
+  bio: "Mahasiswa Teknik Informatika yang berfokus pada keamanan infrastruktur dan arsitektur cloud. Berpengalaman dalam menangani berbagai problem teknis sistem operasi dan jaringan.",
+  tags: ["Cloud Architecture", "NetSec", "Ethical Hacking", "DevSecOps", "Linux"],
+  email: "nawvalovsky@proton.me",
+
+  // List Pengalaman Teknikal (Hanya List Kasus)
+  experience: [
+    { technical_case: "Pernah menangani Bootloader not found pada lingkungan Dual-Boot Linux" },
+    { technical_case: "Otomasi backup database PostgreSQL ke AWS S3 menggunakan Python Script" },
+    { technical_case: "Konfigurasi Hardening SSH dan IPTables untuk mitigasi Brute Force" },
+    { technical_case: "Troubleshooting Latency Network pada cluster Kubernetes di Google Cloud" },
+    { technical_case: "Implementasi SSL/TLS Zero-Trust pada infrastruktur Nginx Reverse Proxy" }
+  ],
+
+  // Daftar Skill
+  skills: [
+    "Vulnerability Assessment",
+    "AWS Cloud Infrastructure",
+    "Docker & Kubernetes",
+    "Python Automation",
+    "Linux Administration"
+  ],
+
+  // Sertifikasi
+  certs: [
+    { name: "CEH Master (Ethical Hacker)", org: "EC-Council", id: "ECC-12345" },
+    { name: "AWS Solutions Architect", org: "Amazon Web Services", id: "AWS-99887" },
+    { name: "Google Cybersecurity Cert", org: "Google", id: "GCS-55443" }
+  ],
+
+  // Data Buku & Hobi (Untuk Footer)
+  reading: {
+    title: "Ghost in the Wires",
+    author: "Kevin Mitnick",
+    cover: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=200",
+    quote: "People are the weakest link in security."
+  },
+  interests: [
+    { title: "Photography", icon: <Camera size={18}/> },
+    { title: "Philosophy", icon: <Book size={18}/> },
+    { title: "Brewing", icon: <Coffee size={18}/> }
+  ]
 };
 
 export const PROJECTS = [
   {
     id: 1,
-    title: "Aeviathan Core",
-    desc: "Sistem keamanan siber berbasis AI yang memprediksi ancaman sebelum terjadi. Digunakan oleh perusahaan enterprise.",
-    tags: ["AI", "Security", "Python"],
-    thumbnail: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000"
+    title: "Sentinel Grid",
+    category: "Security",
+    desc: "Sistem monitoring anomali jaringan berbasis Python.",
+    image: "https://images.unsplash.com/photo-1558494949-ef526b01201b?q=80&w=1000",
   },
-  {
-    id: 2,
-    title: "Typology Dashboard",
-    desc: "Platform analitik kepribadian dan manajemen tim yang intuitif dengan visualisasi data real-time.",
-    tags: ["React", "D3.js", "Firebase"],
-    thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000"
-  },
-  {
-    id: 3,
-    title: "Neural Nexus",
-    desc: "Eksplorasi jaringan saraf tiruan untuk pemrosesan bahasa alami (NLP) Bahasa Indonesia.",
-    tags: ["Machine Learning", "NLP"],
-    thumbnail: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=1000"
-  }
-];
-
-export const HOBBIES = [
-  { title: "Kopi & Kode", icon: <Coffee />, desc: "Mencari kafein terbaik." },
-  { title: "Membaca", icon: <Book />, desc: "Filosofi & Tech." },
-  { title: "Fotografi", icon: <Camera />, desc: "Street photography." },
-  { title: "Musik Lo-Fi", icon: <Music />, desc: "Teman coding." },
+  // Tambahkan proyek lainnya di sini...
 ];

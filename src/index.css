@@ -5,105 +5,88 @@
   --font-body: "Inter", sans-serif;
 }
 
-/* --- THEME CONFIGURATION --- */
 :root {
-  /* Default: Blue Planet (Space/Sci-Fi) */
-  --bg-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
-  --overlay: rgba(15, 23, 42, 0.65); /* Opasitas dikurangi (0.85 -> 0.65) agar gambar terlihat */
+  /* --- PALETTE: DEEP CYBER BLUE --- */
 
-  --bg-primary: #0f172a;      /* Deep Space Blue */
-  --bg-secondary: rgba(30, 41, 59, 0.7); /* Glassy Panel */
-  --border: rgba(56, 189, 248, 0.2);     /* Cyan border low opacity */
-  --text-primary: #f8fafc;    /* White Text */
-  --text-secondary: #94a3b8;  /* Slate Text */
-  --accent: #38bdf8;          /* Cyan Neon */
-  --accent-glow: rgba(56, 189, 248, 0.5);
+  /* Backgrounds: Menggunakan Very Dark Blue/Slate */
+  --bg-main: #020617;       /* Slate 950 - Dasar Abyss */
+  --bg-surface: #0f172a;    /* Slate 900 - Card/Surface */
 
-  --glass: rgba(15, 23, 42, 0.6); /* Variable baru untuk glass effect konsisten */
+  /* Borders: Biru tipis transparan */
+  --border-dim: rgba(56, 189, 248, 0.1);
+
+  /* Typography */
+  --text-primary: #f1f5f9;  /* Slate 100 - Putih Bersih */
+  --text-secondary: #94a3b8;/* Slate 400 - Biru Abu Muted */
+  --text-muted: #475569;    /* Slate 600 - Gelap untuk detail kecil */
+
+  /* Accent: Electric Sky Blue (Representasi Data/Listrik) */
+  --accent: #38bdf8;        /* Sky 400 */
+
+  /* Glow Effect khusus biru */
+  --accent-glow: rgba(56, 189, 248, 0.2);
 }
 
-/* Theme 2: Nature (Pohon/Hutan) */
-[data-theme='nature'] {
-  --bg-image: url('https://images.unsplash.com/photo-1448375240586-dfd8d395ea6c?q=80&w=2070&auto=format&fit=crop');
-  --overlay: rgba(20, 39, 20, 0.6);
-
-  --bg-primary: #142714;
-  --bg-secondary: rgba(40, 56, 40, 0.7);
-  --border: rgba(74, 222, 128, 0.2);
-  --text-primary: #f0fdf4;
-  --text-secondary: #bbf7d0;
-  --accent: #4ade80;
-  --accent-glow: rgba(74, 222, 128, 0.5);
-
-  --glass: rgba(20, 39, 20, 0.6);
-}
-
-/* Theme 3: Anime Sakura (Pastel Pink) */
-[data-theme='sakura'] {
-  --bg-image: url('https://images.unsplash.com/photo-1522383225653-ed111181a951?q=80&w=2076&auto=format&fit=crop');
-  --overlay: rgba(255, 255, 255, 0.6);
-
-  --bg-primary: #fff1f2;
-  --bg-secondary: rgba(255, 255, 255, 0.6);
-  --border: rgba(244, 114, 182, 0.3);
-  --text-primary: #881337;
-  --text-secondary: #be123c;
-  --accent: #db2777;
-  --accent-glow: rgba(219, 39, 119, 0.4);
-
-  --glass: rgba(255, 255, 255, 0.4);
-}
-
-/* --- GLOBAL STYLES --- */
-body {
-  /* Menggunakan pseudo-element untuk background agar performa lebih baik */
-  background-color: var(--bg-primary);
+html, body {
+  background-color: var(--bg-main);
   color: var(--text-primary);
   font-family: var(--font-body);
-  min-height: 100vh;
-  position: relative;
-
-  /* Transisi warna saja, JANGAN transisi background-image untuk hindari lag */
-  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
-}
-
-/* Layer Background Image */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  z-index: -2;
-
-  background-image: var(--bg-image);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-
-  /* Tidak ada transisi di sini untuk instant switch tanpa lag */
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  selection-background-color: var(--accent);
+  selection-color: var(--bg-main);
 }
 
-/* Layer Overlay */
-body::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
+.container-safe {
   width: 100%;
-  height: 100%;
-  z-index: -1;
-  background-color: var(--overlay);
-  transition: background-color 0.3s ease;
-  pointer-events: none; /* Agar klik tembus ke elemen di bawahnya */
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
-/* Glassmorphism Utilities */
-.glass-panel {
-  background: var(--bg-secondary);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--border);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+/* Custom Scrollbar Blue Theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b; /* Slate 800 */
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+.hide-scroll::-webkit-scrollbar {
+  display: none;
+}
+.hide-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+/* Custom Scrollbar untuk List Pengalaman */
+.experience-scroll {
+  max-height: 450px; /* Batasi tinggi agar tidak menjulur ke bawah */
+  overflow-y: auto;
+  padding-right: 15px;
+}
+
+.experience-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.experience-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.experience-scroll::-webkit-scrollbar-thumb {
+  background: var(--border-dim);
+  border-radius: 10px;
+}
+
+.experience-scroll:hover::-webkit-scrollbar-thumb {
+  background: var(--accent); /* Warna biru menyala saat di-hover */
 }

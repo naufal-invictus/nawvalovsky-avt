@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useSpring, useMotionValue } from 'framer-motion';
-import { cn } from '../../lib/utils'; // Pastikan utils sudah ada (lihat no. 3)
+import { cn } from '../../lib/utils';
 
 export const MagnetButton = ({ children, onClick, className, variant = "primary" }) => {
   const ref = useRef(null);
@@ -26,9 +26,9 @@ export const MagnetButton = ({ children, onClick, className, variant = "primary"
   };
 
   const variants = {
-    primary: "bg-[#D4AF37] text-white hover:bg-[#C5A028] shadow-lg shadow-[#D4AF37]/20",
-    secondary: "bg-[#EAE0D5] text-[#4A4A4A] hover:bg-[#D6C6B0]",
-    outline: "border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10"
+    primary: "bg-[var(--accent)] text-[var(--bg-primary)] hover:bg-[#C5B595]",
+    secondary: "bg-[var(--bg-secondary)] text-[var(--text-primary)] hover:bg-[var(--border)]",
+    outline: "border border-[var(--border)] text-[var(--text-primary)] hover:border-[var(--accent)] hover:text-[var(--accent)] bg-transparent"
   };
 
   return (
@@ -38,7 +38,7 @@ export const MagnetButton = ({ children, onClick, className, variant = "primary"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ x: xSpring, y: ySpring }}
-      className={cn("relative px-6 py-3 rounded-xl font-medium transition-colors duration-300 flex items-center justify-center gap-2 font-sans", variants[variant], className)}
+      className={cn("relative px-8 py-4 rounded-sm font-medium transition-colors duration-300 flex items-center justify-center gap-2 font-sans uppercase tracking-widest text-xs", variants[variant], className)}
     >
       {children}
     </motion.button>
