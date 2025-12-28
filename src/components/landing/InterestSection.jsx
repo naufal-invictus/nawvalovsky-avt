@@ -3,10 +3,10 @@ import { Book, Heart, Activity, Target } from 'lucide-react';
 
 const InterestSection = () => {
   const interests = {
-    books: ["The Pragmatic Programmer", "Digital Fortress", "Clean Architecture", "Ghost in the Wires", "Zero to One"],
-    topics: ["Cybersecurity", "Cloud Computing", "AI/ML Integration", "Linux Kernel", "Network Protocols"],
-    hobbies: ["Photography", "IEM Auditing", "Mountain Biking", "Mechanical Keyboards", "Retro Gaming"],
-    focus: ["OSCP Certification", "Cloud Security Automation", "Open Source Contribution"]
+    books: ["Overthinking", "Insecure", "Super Advice", "WW2 Plans That Never Happened", "Stoicism"],
+    topics: ["IT Support", "Cloud Computing", "Geopolitics", "Linux", "Network"],
+    hobbies: ["HEMA", "Reading", "Mountain Biking", "Mechanical Engineering CAD", "Strategy Gaming"],
+    focus: ["OSCP Certification", "CASN", "CPNS"]
   };
 
   return (
@@ -34,7 +34,7 @@ const InterestSection = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-2 text-[var(--text-primary)]">
               <Book size={18} className="text-[var(--accent)]" />
-              <h4 className="font-display font-bold text-sm uppercase tracking-wider">Reading_List</h4>
+              <h4 className="font-display font-bold text-sm uppercase tracking-wider">Favourite Books</h4>
             </div>
             <ul className="space-y-2">
               {interests.books.map((item, i) => (

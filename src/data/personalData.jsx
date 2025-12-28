@@ -46,9 +46,7 @@ export const PROFILE = {
     { name: "Mechanical Engineer CAD ASEAN", org: "BNSP" },
     { name: "Bootcamp Quality Assurance", org: "GITS.ID" },
     { name: "The Ins and Outs of Computer Networking", org: "Google" },
-    { name: "Foundations of Cybersecurity", org: "Google" },
-    { name: "CEH Master (Ethical Hacker)", org: "EC-Council" },
-    { name: "AWS Solutions Architect", org: "Amazon Web Services" }
+    { name: "Foundations of Cybersecurity", org: "Google" }
   ],
 
   // Data Buku & Hobi (Untuk Footer)
@@ -59,18 +57,32 @@ export const PROFILE = {
     quote: "People are the weakest link in security."
   },
   interests: [
-    { title: "Photography", icon: <Camera size={18}/> },
+    { title: "Reading", icon: <Camera size={18}/> },
     { title: "Philosophy", icon: <Book size={18}/> },
-    { title: "Brewing", icon: <Coffee size={18}/> }
+    { title: "Self-Dev", icon: <Coffee size={18}/> }
   ]
 };
 
 export const PROJECTS = [
   {
     id: 1,
-    title: "Sentinel Grid",
+    title: "Aeviathan Sentinel",
     category: "Security",
-    desc: "Sistem monitoring anomali jaringan berbasis Python.",
-    image: "https://images.unsplash.com/photo-1558494949-ef526b01201b?q=80&w=1000",
+    desc: "Sistem monitoring berbasis Whatsapp & Javascript.",
+    image: "https://i.ibb.co.com/XZJVfGSG/Aeviathan.png",
+  },
+    {
+    id: 2,
+    title: "Aeviathan Sovereign",
+    category: "General",
+    desc: "Sistem bot whatsapp serbaguna berbasis Baileys.",
+    image: "https://i.ibb.co.com/rG7tbSDX/Sovereign.png",
+  },
+    {
+    id: 3,
+    title: "TypologyID",
+    category: "General",
+    desc: "Typology Card Generator berbasis React.js",
+    image: "https://i.ibb.co.com/kV0W87zn/typologyid.png",
   }
 ];

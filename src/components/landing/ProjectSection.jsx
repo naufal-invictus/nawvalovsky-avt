@@ -55,12 +55,7 @@ const ProjectSection = () => {
                       {project.title}
                     </h3>
                   </div>
-                  <a
-                    href={project.link || "#"}
-                    className="p-2 bg-[var(--bg-main)] rounded-full border border-[var(--border-dim)] text-[var(--text-secondary)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-all"
-                  >
-                    <ExternalLink size={14} />
-                  </a>
+
                 </div>
 
                 <p className="text-sm text-[var(--text-secondary)] leading-relaxed mb-6 flex-grow line-clamp-3">

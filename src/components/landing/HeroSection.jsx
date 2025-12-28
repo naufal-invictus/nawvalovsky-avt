@@ -52,7 +52,7 @@ const HeroSection = () => {
 
               <div className="absolute inset-0 bg-gradient-to-br from-slate-800 to-[var(--bg-main)] rounded-full border border-[var(--border-dim)] overflow-hidden z-10">
                   <img
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400"
+                    src="https://i.ibb.co.com/RGZ7rDDk/pp.png"
                     alt="Profile"
                     className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500 grayscale hover:grayscale-0"
                   />

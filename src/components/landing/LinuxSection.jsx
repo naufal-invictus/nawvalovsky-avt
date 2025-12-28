@@ -2,29 +2,37 @@ import { useRef } from 'react';
 import { Terminal, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const LINUX_SETUPS = [
+
   {
-    title: "Minimalist Workspace",
+    title: "My Box",
     year: "2024",
     distro: "Arch Linux",
-    img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=600"
+    img: "https://i.ibb.co.com/jZxm9xbn/Arch-Linux.png"
   },
-  {
-    title: "Security Research Box",
+      {
+    title: "ST-AT Linux",
     year: "2023",
-    distro: "Kali Linux",
-    img: "https://images.unsplash.com/photo-1558494949-ef526b01201b?q=80&w=600"
+    distro: "Artic Linux 2",
+    img: "  https://i.ibb.co.com/9mBcLX7Y/SAVE-20240305-210429.jpg"
   },
-  {
-    title: "Production Server",
-    year: "2023",
-    distro: "Debian 12",
-    img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=600"
-  },
-  {
-    title: "Development Environment",
+
+    {
+    title: "ST-AT Linux",
     year: "2022",
-    distro: "Fedora Workstation",
-    img: "https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?q=80&w=600"
+    distro: "Artic Linux Arch",
+    img: "https://i.ibb.co.com/HLDY84wd/artic.jpg"
+  },
+    {
+    title: "ST-GH Linux",
+    year: "2022",
+    distro: "Black Arch",
+    img: "https://i.ibb.co.com/nJh5HYr/Black-Arch.png"
+  },
+  {
+    title: "Debian Workspace",
+    year: "2019",
+    distro: "Debian",
+    img: "https://i.ibb.co.com/RGVbY3MF/Debian.jpg"
   }
 ];
 
@@ -107,7 +115,7 @@ const LinuxSection = () => {
                   </span>
                 </div>
                 <p className="text-[10px] font-mono uppercase tracking-widest text-[var(--accent)]">
-                  System_Ready // 0{index + 1}
+                  LINUX_ // 0{index + 1}
                 </p>
               </div>
             </div>
