@@ -4,7 +4,11 @@ import { Terminal, Cloud, Heart } from 'lucide-react'; // Ikon representatif
 
 const ThemeSwitcher = () => {
   const { theme, setTheme } = useTheme();
-
+const themes = [
+  { id: 'planet', label: 'Blue Planet', icon: '🌌' },
+  { id: 'nature', label: 'Forest', icon: '🌲' },
+  { id: 'sakura', label: 'Sakura', icon: '🌸' },
+];
   // Helper untuk class active
   const getBtnClass = (targetTheme) => {
     const isActive = theme === targetTheme;
@@ -22,8 +26,8 @@ const ThemeSwitcher = () => {
     >
       {/* 1. ARCH (Default) */}
       <button
-        onClick={() => setTheme('arch')}
-        className={getBtnClass('arch')}
+        onClick={() => setTheme('planet')}
+        className={getBtnClass('planet')}
       >
         <Terminal size={14} className={theme === 'arch' ? 'text-[var(--accent)]' : 'text-slate-400'} />
         <span className="text-[8px] font-bold text-[var(--text-primary)]">ARCH</span>
@@ -31,8 +35,8 @@ const ThemeSwitcher = () => {
 
       {/* 2. SKY */}
       <button
-        onClick={() => setTheme('sky')}
-        className={getBtnClass('sky')}
+        onClick={() => setTheme('nature')}
+        className={getBtnClass('nature')}
       >
         <Cloud size={14} className={theme === 'sky' ? 'text-[var(--accent)]' : 'text-slate-400'} />
         <span className="text-[8px] font-bold text-[var(--text-primary)]">SKY</span>
@@ -40,11 +44,11 @@ const ThemeSwitcher = () => {
 
       {/* 3. ANIME */}
       <button
-        onClick={() => setTheme('anime')}
-        className={getBtnClass('anime')}
+        onClick={() => setTheme('sakura')}
+        className={getBtnClass('sakura')}
       >
         <Heart size={14} className={theme === 'anime' ? 'text-[var(--accent)]' : 'text-slate-400'} />
-        <span className="text-[8px] font-bold text-[var(--text-primary)]">ANIME</span>
+        <span className="text-[8px] font-   bold text-[var(--text-primary)]">ANIME</span>
       </button>
     </motion.div>
   );

@@ -3,23 +3,18 @@ import { createContext, useContext, useEffect, useState } from 'react';
 const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  // Cek local storage atau default ke 'arch'
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('site-theme') || 'arch';
+    // Default fallback ke 'planet'
+    return localStorage.getItem('site-theme') || 'planet';
   });
 
   useEffect(() => {
     const root = window.document.documentElement;
-
-    // Hapus atribut theme lama jika ada
+    // Hapus atribut lama
     root.removeAttribute('data-theme');
-
-    // Jika bukan default (arch), set atribut data-theme
-    if (theme !== 'arch') {
-      root.setAttribute('data-theme', theme);
-    }
-
-    // Simpan ke local storage
+    // Set tema baru
+    root.setAttribute('data-theme', theme);
+    // Simpan
     localStorage.setItem('site-theme', theme);
   }, [theme]);
 

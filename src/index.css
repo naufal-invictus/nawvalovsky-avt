@@ -1,57 +1,74 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* 1. DEFAULT THEME (ARCH LINUX - DARK) */
+@theme {
+  --font-display: "Clash Display", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+/* --- THEME CONFIGURATION --- */
 :root {
-  --bg-primary: #0f172a;      /* Slate 900 */
-  --bg-secondary: #1e293b;    /* Slate 800 */
-  --glass: rgba(15, 23, 42, 0.7);
-  --border: rgba(255, 255, 255, 0.1);
-  --text-primary: #f8fafc;    /* Slate 50 */
-  --text-secondary: #94a3b8;  /* Slate 400 */
-  --accent: #0ea5e9;          /* Sky 500 (Cyan-ish) */
-  --accent-glow: rgba(14, 165, 233, 0.5);
-  --terminal-bg: #020617;     /* Darker Slate */
+  /* Default: Blue Planet (Space/Sci-Fi) */
+  --bg-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
+  --overlay: rgba(15, 23, 42, 0.85); /* Gelap agar teks putih terbaca */
+
+  --bg-primary: #0f172a;      /* Deep Space Blue */
+  --bg-secondary: rgba(30, 41, 59, 0.7); /* Glassy Panel */
+  --border: rgba(56, 189, 248, 0.2);     /* Cyan border low opacity */
+  --text-primary: #f8fafc;    /* White Text */
+  --text-secondary: #94a3b8;  /* Slate Text */
+  --accent: #38bdf8;          /* Cyan Neon */
+  --accent-glow: rgba(56, 189, 248, 0.5);
 }
 
-/* 2. SKY THEME (BRIGHT BLUE SKY - LIGHT) */
-[data-theme='sky'] {
-  --bg-primary: #f0f9ff;      /* Sky 50 */
-  --bg-secondary: #ffffff;    /* White */
-  --glass: rgba(255, 255, 255, 0.8);
-  --border: rgba(14, 165, 233, 0.2);
-  --text-primary: #0c4a6e;    /* Sky 900 */
-  --text-secondary: #64748b;  /* Slate 500 */
-  --accent: #0284c7;          /* Sky 600 */
-  --accent-glow: rgba(2, 132, 199, 0.3);
-  --terminal-bg: #e0f2fe;     /* Very Light Blue */
+/* Theme 2: Nature (Pohon/Hutan) */
+[data-theme='nature'] {
+  --bg-image: url('https://images.unsplash.com/photo-1448375240586-dfd8d395ea6c?q=80&w=2070&auto=format&fit=crop');
+  --overlay: rgba(20, 39, 20, 0.8); /* Dark Green Overlay */
+
+  --bg-primary: #142714;      /* Deep Forest */
+  --bg-secondary: rgba(40, 56, 40, 0.7);
+  --border: rgba(74, 222, 128, 0.2);
+  --text-primary: #f0fdf4;    /* Mint Cream */
+  --text-secondary: #bbf7d0;  /* Light Green Text */
+  --accent: #4ade80;          /* Fresh Green Leaf */
+  --accent-glow: rgba(74, 222, 128, 0.5);
 }
 
-/* 3. ANIME THEME (PINK - PASTEL) */
-[data-theme='anime'] {
-  --bg-primary: #fff0f5;      /* Lavender Blush */
-  --bg-secondary: #ffffff;    /* White */
-  --glass: rgba(255, 255, 255, 0.8);
+/* Theme 3: Anime Sakura (Pastel Pink) */
+[data-theme='sakura'] {
+  --bg-image: url('https://images.unsplash.com/photo-1522383225653-ed111181a951?q=80&w=2076&auto=format&fit=crop');
+  --overlay: rgba(255, 255, 255, 0.85); /* Putih terang agar teks hitam terbaca */
+
+  --bg-primary: #fff1f2;      /* Rose 50 */
+  --bg-secondary: rgba(255, 255, 255, 0.6);
   --border: rgba(244, 114, 182, 0.3);
-  --text-primary: #831843;    /* Pink 900 */
-  --text-secondary: #db2777;  /* Pink 600 */
-  --accent: #ec4899;          /* Pink 500 */
-  --accent-glow: rgba(236, 72, 153, 0.4);
-  --terminal-bg: #fce7f3;     /* Light Pink */
+  --text-primary: #881337;    /* Deep Rose Text (Kontras tinggi) */
+  --text-secondary: #be123c;  /* Rose 700 */
+  --accent: #db2777;          /* Pink 600 */
+  --accent-glow: rgba(219, 39, 119, 0.4);
 }
 
+/* --- GLOBAL STYLES --- */
 body {
-  background-color: var(--bg-primary);
+  /* Logic Background Image + Overlay */
+  background-image: linear-gradient(var(--overlay), var(--overlay)), var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Parallax effect simple */
+
   color: var(--text-primary);
-  transition: background-color 0.5s ease, color 0.5s ease;
+
+  /* Smooth Transition untuk menghilangkan efek patah-patah */
+  transition: background-image 0.5s ease-in-out, color 0.3s ease, border-color 0.3s ease;
+
+  font-family: var(--font-body);
+  min-height: 100vh;
 }
 
-/* Utilities */
-.animate-spin-slow {
-  animation: spin 8s linear infinite;
-}
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: var(--bg-secondary);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
 }
