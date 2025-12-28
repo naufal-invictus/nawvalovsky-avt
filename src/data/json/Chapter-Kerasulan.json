@@ -1,0 +1,143 @@
+{
+  "id": "chapter-kerasulan",
+  "metadata": {
+    "title": "Nabi & Rasul: The Real Influencers",
+    "subtitle": "Kenalan sama Manusia-Manusia Pilihan",
+    "description": "Siapa sih sebenernya Nabi dan Rasul itu? Apa bedanya? Terus kenapa kita dilarang milih pemimpin yang suka mainin agama? Cek detailnya di sini.",
+    "thumbnail": "https://images.unsplash.com/photo-1598522646738-4cf29b478ebc?auto=format&fit=crop&q=80&w=800",
+    "tags": ["Tokoh", "Sejarah", "Leadership"],
+    "category": "History"
+  },
+  "content": [
+    {
+      "section_id": "intro",
+      "blocks": [
+        { "type": "heading", "text": "1. Nabi vs Rasul: Apa Bedanya?" },
+        { "type": "paragraph", "text": "Sering ketuker gak sih? Nih bedanya:" },
+        { "type": "paragraph", "text": "**Nabi:** Dari kata 'Naba' (Berita). Dia dapet wahyu (info A1 dari Langit) buat dirinya sendiri. Gak wajib disebar." },
+        { "type": "paragraph", "text": "**Rasul:** Dia dapet wahyu DAN **wajib** nyampain ke umatnya. Jadi Rasul itu punya tugas *Broadcasting*." },
+        { "type": "paragraph", "text": "**Malaikat juga Rasul?**" },
+        { "type": "paragraph", "text": "Iya, di **Q.S. Faathir ayat 1**, Malaikat disebut sebagai utusan (Rasul) yang punya sayap (ada yang 2, 3, 4) buat ngurusin tugas-tugas teknis dari Allah." }
+      ]
+    },
+    {
+      "section_id": "aulia",
+      "blocks": [
+        { "type": "heading", "text": "2. Hati-Hati Milih Circle (Aulia)" },
+        { "type": "paragraph", "text": "**Q.S. Al-Maaidah Ayat 57**" },
+        { "type": "quote", "text": "Hai orang-orang beriman, janganlah kamu mengambil jadi pemimpinmu (Aulia)... orang-orang yang membuat agamamu jadi buah ejekan..." },
+        { "type": "paragraph", "text": "**Penjelasan Simpel:**" },
+        { "type": "paragraph", "text": "Aulia itu bisa berarti Pemimpin, Pelindung, atau Bestie yang kita andalkan. Allah ngingetin: Jangan jadiin orang yang suka nge-prank atau ngejek agama sebagai pemimpin kalian." },
+        { "type": "paragraph", "text": "Kenapa? Ya logis aja, agama aja dipermainkan, apalagi nasib rakyat?" }
+      ]
+    },
+    {
+      "section_id": "ulama",
+      "blocks": [
+        { "type": "heading", "text": "3. Siapa Itu Ulama?" },
+        { "type": "paragraph", "text": "**Q.S. Faathir Ayat 28**" },
+        { "type": "quote", "text": "...Di antara hamba-hamba Allah yang takut kepada-Nya, hanyalah para ulama." },
+        { "type": "paragraph", "text": "**Penjelasan Simpel:**" },
+        { "type": "paragraph", "text": "Ulama itu bentuk jamak dari 'Alim' (Orang Berilmu). Ciri utama Ulama yang beneran itu satu: **Takut sama Allah**." },
+        { "type": "paragraph", "text": "Jadi kalau ada orang pinter tapi gak takut dosa, itu belum Ulama sejati. Semakin tinggi ilmu, harusnya semakin nunduk (ilmu padi, bos!)." }
+      ]
+    },
+    {
+      "section_id": "manusia-biasa",
+      "blocks": [
+        { "type": "heading", "text": "4. Kenapa Rasul Itu Manusia, Bukan Malaikat?" },
+        { "type": "paragraph", "text": "**Q.S. Al-Anbiyaa Ayat 7-8**" },
+        { "type": "quote", "text": "Kami tiada mengutus rasul-rasul sebelum kamu... melainkan beberapa orang laki-laki... Kami tidak menjadikan tubuh-tubuh mereka tidak memakan makanan..." },
+        { "type": "paragraph", "text": "**Penjelasan Simpel:**" },
+        { "type": "paragraph", "text": "Biar *Relate*! Kalau Rasul itu Malaikat, kita bakal ngeles: 'Ah dia mah enak gak punya nafsu, lah kita manusia godaannya banyak'. Makanya Allah kirim Rasul yang juga makan, minum, dan jalan-jalan di pasar, tapi tetep bisa taat. Jadi gak ada alesan buat kita gak nyontoh." }
+      ]
+    },
+    {
+      "section_id": "bahasa",
+      "blocks": [
+        { "type": "heading", "text": "5. Pake Bahasa Lokal Biar Nyambung" },
+        { "type": "paragraph", "text": "**Q.S. Ibrahim Ayat 4**" },
+        { "type": "quote", "text": "Kami tidak mengutus seorang rasul pun, melainkan dengan bahasa kaumnya..." },
+        { "type": "paragraph", "text": "**Penjelasan Simpel:**" },
+        { "type": "paragraph", "text": "Komunikasi itu kuncinya nyambung. Rasul diutus pake bahasa kaumnya biar penjelasannya terang benderang. Tujuannya buat edukasi dan ngebangun nilai-nilai kehidupan biar gampang dipahami." }
+      ]
+    },
+    {
+      "section_id": "tugas-utama",
+      "blocks": [
+        { "type": "heading", "text": "6. Job Desc Utama Rasul" },
+        { "type": "paragraph", "text": "Tugas mereka berat guys, bukan cuma duduk manis:" },
+        { "type": "paragraph", "text": "1. **Menyampaikan Risalah:** Nyampein pesan dari Pusat (Allah)." },
+        { "type": "paragraph", "text": "2. **Mengajarkan Tauhid:** Ngajak orang buat cuma nyembah Allah." },
+        { "type": "paragraph", "text": "3. **Memperbaiki Moral:** Benerin masyarakat yang lagi *chaos* atau rusak akhlaknya." },
+        { "type": "paragraph", "text": "4. **Role Model:** Jadi contoh nyata cara hidup yang bener." }
+      ]
+    },
+    {
+      "section_id": "estafet",
+      "blocks": [
+        { "type": "heading", "text": "7. Satu Misi Beda Generasi" },
+        { "type": "paragraph", "text": "**Q.S. Asy-Syuura Ayat 13**" },
+        { "type": "paragraph", "text": "Agama yang dibawa Nabi Muhammad itu *Legacy* atau warisan dari nabi-nabi sebelumnya (Nuh, Ibrahim, Musa, Isa). Intinya sama: **Tegakkan Agama dan Jangan Berpecah Belah**." },
+        { "type": "paragraph", "text": "Jadi sebenernya semua Rasul itu satu tim, estafet nyampein Tauhid." }
+      ]
+    },
+    {
+      "section_id": "rahmat",
+      "blocks": [
+        { "type": "heading", "text": "8. Kasih Sayang Buat Semesta (Rahmatan Lil Alamin)" },
+        { "type": "paragraph", "text": "**Q.S. Al-Anbiyaa Ayat 107**" },
+        { "type": "quote", "text": "Dan tiadalah Kami mengutus kamu, melainkan untuk (menjadi) rahmat bagi semesta alam." },
+        { "type": "paragraph", "text": "**Penjelasan Simpel:**" },
+        { "type": "paragraph", "text": "Nabi Muhammad SAW diutus bukan cuma buat orang Arab atau orang Islam doang. Tapi buat seluruh alam semesta!" },
+        { "type": "paragraph", "text": "Hewan, tumbuhan, lingkungan, semuanya dapet efek kasih sayang dari ajaran beliau. Islam itu damai dan ngejaga alam, bukan ngerusak." }
+      ]
+    },
+    {
+      "section_id": "uswatun",
+      "blocks": [
+        { "type": "heading", "text": "9. The Ultimate Influencer (Uswatun Hasanah)" },
+        { "type": "paragraph", "text": "**Q.S. Al-Ahzab Ayat 21**" },
+        { "type": "quote", "text": "Sesungguhnya telah ada pada (diri) Rasulullah itu suri teladan yang baik bagimu..." },
+        { "type": "paragraph", "text": "**Penjelasan Simpel:**" },
+        { "type": "paragraph", "text": "Beliau adalah **Uswatun Hasanah** (Contoh Terbaik). Beliau gak cuma ngomong teori, tapi beliau pelaku pertama dari apa yang diajarkan." },
+        { "type": "paragraph", "text": "Mau tau cara jadi pemimpin yang baik? Cara jadi suami yang baik? Cara jadi pedagang jujur? Liat aja Nabi Muhammad. *Walk the talk* banget orangnya." }
+      ]
+    },
+    {
+      "section_id": "closing",
+      "blocks": [
+        { "type": "heading", "text": "10. Norma Kehidupan Lengkap" },
+        { "type": "paragraph", "text": "Ajaran Nabi itu paket lengkap. Mengatur hubungan kita sama Allah (Hablum minallah), sama diri sendiri, sama manusia lain, sampe sama binatang dan tumbuhan." },
+        { "type": "paragraph", "text": "Semua norma ini diwujudkan lewat Akhlak beliau. Jadi kalau kita ngaku fans Nabi, harusnya akhlak kita juga keren kayak beliau." }
+      ]
+    }
+  ],
+  "quiz": [
+    { "question": "Kata 'Nabi' berasal dari 'Naba' yang artinya...", "options": ["Pembawa berita besar", "Pemimpin", "Penulis", "Pahlawan"], "correct": 0, "feedback": "Naba artinya Berita." },
+    { "question": "Perbedaan utama Nabi dan Rasul adalah...", "options": ["Nabi wajib menyampaikan, Rasul tidak", "Rasul wajib menyampaikan wahyu kepada umat, Nabi tidak", "Nabi punya sayap", "Rasul lebih kaya"], "correct": 1, "feedback": "Kewajiban menyampaikan (Tabligh) ada pada Rasul." },
+    { "question": "Siapa yang dimaksud 'Aulia' dalam Q.S. Al-Maaidah 57?", "options": ["Musuh", "Pemimpin/Pelindung", "Rakyat", "Pedagang"], "correct": 1, "feedback": "Aulia = Pemimpin/Penolong." },
+    { "question": "Siapa yang dilarang dijadikan Aulia?", "options": ["Orang mukmin", "Orang yang mempermainkan agama", "Orang miskin", "Orang asing"], "correct": 1, "feedback": "Jangan pilih yang menjadikan agama bahan ejekan." },
+    { "question": "Ulama adalah orang yang...", "options": ["Punya sorban", "Takut kepada Allah karena ilmunya", "Kaya raya", "Punya jabatan"], "correct": 1, "feedback": "Innama yakhsyallaha min ibadihil ulama." },
+    { "question": "Dalam Q.S. Faathir ayat 1, Malaikat disebut sebagai...", "options": ["Anak Tuhan", "Utusan (Rasul) bersayap", "Cahaya", "Angin"], "correct": 1, "feedback": "Rasul yang mempunyai sayap." },
+    { "question": "Kenapa Rasul diutus dari golongan manusia (laki-laki)?", "options": ["Biar bisa makan", "Supaya bisa jadi teladan nyata bagi manusia", "Karena malaikat sibuk", "Iseng aja"], "correct": 1, "feedback": "Agar relate dan bisa dicontoh." },
+    { "question": "Rasul diutus dengan bahasa kaumnya agar...", "options": ["Terlihat keren", "Penjelasannya terang/jelas", "Melestarikan budaya", "Beda dari yang lain"], "correct": 1, "feedback": "Komunikasi yang jelas." },
+    { "question": "Ayat yang menyebutkan Nabi Muhammad sebagai Rahmatan Lil Alamin adalah...", "options": ["Q.S. Al-Anbiyaa: 107", "Q.S. Al-Fatihah", "Q.S. Yasin", "Q.S. Al-Ikhlas"], "correct": 0, "feedback": "Rahmat bagi semesta alam." },
+    { "question": "Apa arti 'Rahmatan Lil Alamin'?", "options": ["Rahmat bagi orang Arab", "Rahmat bagi semesta alam", "Rahmat bagi keluarga Nabi", "Rahmat bagi orang kaya"], "correct": 1, "feedback": "Kasih sayang untuk seluruh alam." },
+    { "question": "Q.S. Asy-Syuura ayat 13 menjelaskan bahwa agama para nabi itu...", "options": ["Berbeda-beda Tuhannya", "Satu kesatuan (Estafet Tauhid)", "Saling musuhan", "Baru dibuat"], "correct": 1, "feedback": "Meneruskan wasiat nabi-nabi terdahulu." },
+    { "question": "Apa arti 'Uswatun Hasanah'?", "options": ["Wajah ganteng", "Suri tauladan yang baik", "Suara merdu", "Kekayaan melimpah"], "correct": 1, "feedback": "Contoh/Teladan yang baik." },
+    { "question": "Ayat tentang Uswatun Hasanah terdapat di...", "options": ["Q.S. Al-Ahzab: 21", "Q.S. Al-Baqarah", "Q.S. An-Nas", "Q.S. Al-Falaq"], "correct": 0, "feedback": "Al-Ahzab ayat 21." },
+    { "question": "Tugas utama Rasul adalah...", "options": ["Berbisnis", "Menyampaikan Risalah Ilahi & Memperbaiki Akhlak", "Perang", "Tidur"], "correct": 1, "feedback": "Menyampaikan wahyu dan jadi teladan." },
+    { "question": "Siapa pelaksana pertama dari ajaran Islam?", "options": ["Umatnya", "Rasulullah SAW sendiri", "Malaikat", "Presiden"], "correct": 1, "feedback": "Rasul mempraktekkan dulu sebelum menyuruh." },
+    { "question": "Bentuk jamak dari kata 'Alim' adalah...", "options": ["Ulama", "Aulia", "Umat", "Amal"], "correct": 0, "feedback": "Alim -> Ulama." },
+    { "question": "Tujuan pembangunan nilai oleh Rasul adalah...", "options": ["Biar terkenal", "Memperbaiki keadaan umat yang rusak", "Cari uang", "Iseng"], "correct": 1, "feedback": "Memperbaiki kerusakan moral." },
+    { "question": "Ajaran Nabi Muhammad berlaku untuk...", "options": ["Hanya bangsa Arab", "Seluruh manusia dan alam", "Hanya keluarganya", "Hanya orang kaya"], "correct": 1, "feedback": "Universal untuk seluruh manusia." },
+    { "question": "Sayap malaikat dalam Q.S. Faathir 1 jumlahnya...", "options": ["Satu saja", "Dua, Tiga, atau Empat", "Tak terhingga", "Tidak punya sayap"], "correct": 1, "feedback": "Matsna, wa tsulatsa, wa ruba' (2, 3, 4)." },
+    { "question": "Q.S. An-Nisaa 63-64 menekankan pentingnya perkataan yang...", "options": ["Kasar", "Membekas pada jiwa (Qaulan Baligha)", "Pelan", "Cepat"], "correct": 1, "feedback": "Komunikasi yang efektif." },
+    { "question": "Sifat wajib bagi Rasul 'Tabligh' artinya...", "options": ["Jujur", "Menyampaikan", "Cerdas", "Dapat dipercaya"], "correct": 1, "feedback": "Tabligh = Menyampaikan." },
+    { "question": "Hubungan yang diatur dalam ajaran Nabi mencakup...", "options": ["Hanya Tuhan", "Tuhan, Manusia, dan Alam", "Hanya Diri Sendiri", "Hanya Negara"], "correct": 1, "feedback": "Lengkap: Hablum minallah, minannas, minal alam." },
+    { "question": "Inti ajaran semua Rasul adalah...", "options": ["Tauhid (Mengesakan Allah)", "Syirik", "Atheis", "Liberal"], "correct": 0, "feedback": "Tauhid adalah core utamanya." },
+    { "question": "Apa yang harus kita lakukan terhadap Sunnah Rasul?", "options": ["Mengabaikan", "Menjadikan pedoman hidup", "Mencela", "Ragu-ragu"], "correct": 1, "feedback": "Ikuti sebagai bentuk cinta Allah." },
+    { "question": "Pesan dari bab Kerasulan ini adalah...", "options": ["Jadikan Nabi idola nomor satu", "Lupakan sejarah", "Fokus dunia saja", "Jangan belajar"], "correct": 0, "feedback": "Meneladani Nabi dalam kehidupan." }
+  ]
+}

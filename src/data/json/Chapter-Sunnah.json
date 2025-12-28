@@ -1,0 +1,134 @@
+{
+  "id": "chapter-sunnah",
+  "metadata": {
+    "title": "Sunnah Rasul: The Official SOP",
+    "subtitle": "Panduan Teknis Hidup ala Nabi",
+    "description": "Kalau Al-Qur'an itu UUD-nya, Sunnah itu Juklak-nya. Belajar cara validasi Hadits biar gak kena hoax, dan kenapa kita wajib taat sama Rasul.",
+    "thumbnail": "https://images.unsplash.com/photo-1584291411281-450f6d6349c2?auto=format&fit=crop&q=80&w=800",
+    "tags": ["Hukum", "Fiqih", "Validasi"],
+    "category": "Law"
+  },
+  "content": [
+    {
+      "section_id": "intro",
+      "blocks": [
+        { "type": "heading", "text": "1. Sunnah vs Hadits: Apa Bedanya?" },
+        { "type": "paragraph", "text": "Biar gak bingung, ini definisinya:" },
+        { "type": "paragraph", "text": "**Sunnah:** Ini 'Barang'-nya. Segala perkataan, perbuatan, dan kebiasaan Nabi Muhammad SAW." },
+        { "type": "paragraph", "text": "**Hadits:** Ini 'Laporan'-nya. Catatan atau berita tentang Sunnah tadi yang nyampe ke kita." },
+        { "type": "paragraph", "text": "Jadi Sunnah itu *The Act*, Hadits itu *The Record*." }
+      ]
+    },
+    {
+      "section_id": "bentuk",
+      "blocks": [
+        { "type": "heading", "text": "2. Tiga Bentuk Sunnah" },
+        { "type": "paragraph", "text": "Sunnah itu gak cuma omongan doang, ada 3 macem:" },
+        { "type": "paragraph", "text": "1. **Qauli (Perkataan):** Apa yang Nabi omongin (Sabda)." },
+        { "type": "paragraph", "text": "2. **Fi'li (Perbuatan):** Apa yang Nabi lakuin (Contoh: Cara sholat, cara wudhu)." },
+        { "type": "paragraph", "text": "3. **Taqriri (Persetujuan):** Ini unik. Sahabat ngelakuin sesuatu depan Nabi, terus Nabi DIEM aja (gak ngelarang). Berarti itu boleh/approve." }
+      ]
+    },
+    {
+      "section_id": "istilah",
+      "blocks": [
+        { "type": "heading", "text": "3. Istilah-Istilah Penting" },
+        { "type": "paragraph", "text": "**Sunnatullah:** Hukum alam (kayak gravitasi) yang pasti terjadi." },
+        { "type": "paragraph", "text": "**Atsar:** Perkataan/perbuatan Sahabat Nabi (bukan Nabi langsung)." },
+        { "type": "paragraph", "text": "**Khabar:** Berita secara umum, bisa dari Nabi atau orang lain." }
+      ]
+    },
+    {
+      "section_id": "validitas",
+      "blocks": [
+        { "type": "heading", "text": "4. Cek Validitas Data (Derajat Hadits)" },
+        { "type": "paragraph", "text": "Gak semua info 'Katanya Nabi' itu valid. Harus di-filter dulu kualitasnya:" },
+        { "type": "paragraph", "text": "**Shahih:** Valid 100%. Sanad nyambung, perawinya terpercaya, gak ada cacat. Ini *Gold Standard*." },
+        { "type": "paragraph", "text": "**Hasan:** Valid juga, cuma hafalan perawinya agak kurang dikit dibanding Shahih." },
+        { "type": "paragraph", "text": "**Dha'if (Lemah):** Sanad putus atau perawinya bermasalah. Jangan dipake buat hukum berat." },
+        { "type": "paragraph", "text": "**Maudlu (Palsu):** HOAX. Ini hadits buatan orang iseng yang ngaku-ngaku sabda Nabi. *Big No!*." }
+      ]
+    },
+    {
+      "section_id": "diterima-ditolak",
+      "blocks": [
+        { "type": "heading", "text": "5. Diterima atau Ditolak?" },
+        { "type": "paragraph", "text": "**Maqbul (Diterima):** Hadits Shahih dan Hasan wajib kita terima dan amalkan." },
+        { "type": "paragraph", "text": "**Mardud (Ditolak):** Hadits Dha'if banget atau Maudlu (Palsu) harus kita tolak. Jangan disebar lagi di grup WA keluarga!" }
+      ]
+    },
+    {
+      "section_id": "taat-allah-rasul",
+      "blocks": [
+        { "type": "heading", "text": "6. Satu Paket: Taat Allah & Rasul" },
+        { "type": "paragraph", "text": "**Q.S. Al-Anfaal Ayat 20 & An-Nisaa Ayat 80**" },
+        { "type": "quote", "text": "Hai orang-orang yang beriman, taatlah kepada Allah dan Rasul-Nya..." },
+        { "type": "quote", "text": "Barangsiapa yang mentaati Rasul itu, sesungguhnya ia telah mentaati Allah..." },
+        { "type": "paragraph", "text": "**Penjelasan Simpel:**" },
+        { "type": "paragraph", "text": "Taat ke Rasul itu satu paket sama taat ke Allah. Gak bisa dipisah. Rasul itu 'Jubir Resmi' Allah. Apa yang diputuskan Rasul, itu sah sebagai keputusan Allah." }
+      ]
+    },
+    {
+      "section_id": "ancaman",
+      "blocks": [
+        { "type": "heading", "text": "7. Awas Kena Banned!" },
+        { "type": "paragraph", "text": "**Q.S. Al-Anfaal Ayat 13**" },
+        { "type": "quote", "text": "...barangsiapa menentang Allah dan Rasul-Nya, maka sesungguhnya Allah amat keras siksaan-Nya." },
+        { "type": "paragraph", "text": "**Penjelasan Simpel:**" },
+        { "type": "paragraph", "text": "Ini peringatan keras (Alert). Jangan coba-coba jadi oposisi (Menentang) Rasul. Sanksinya berat banget: Siksa yang pedih." }
+      ]
+    },
+    {
+      "section_id": "hakim",
+      "blocks": [
+        { "type": "heading", "text": "8. Rasul Sebagai Hakim" },
+        { "type": "paragraph", "text": "**Q.S. An-Nisaa Ayat 65**" },
+        { "type": "quote", "text": "Maka demi Tuhanmu, mereka tidak beriman hingga mereka menjadikan kamu hakim terhadap perkara yang mereka perselisihkan..." },
+        { "type": "paragraph", "text": "**Penjelasan Simpel:**" },
+        { "type": "paragraph", "text": "Iman kita belum dianggap 'Full' kalau kita belum bisa nerima keputusan Rasul dengan lapang dada. Kalau ada sengketa, balikin ke aturan Nabi, dan hati kita harus ridho, jangan ngganjel." }
+      ]
+    },
+    {
+      "section_id": "fungsi",
+      "blocks": [
+        { "type": "heading", "text": "9. Kenapa Butuh Sunnah?" },
+        { "type": "paragraph", "text": "Fungsi utama Sunnah itu sebagai **Tafsir** (Penjelas) Al-Qur'an. Al-Qur'an itu isinya garis besar (UUD), nah Sunnah itu rincian teknisnya (Juklak/Juknis)." },
+        { "type": "paragraph", "text": "Contoh: Di Qur'an disuruh 'Sholat', tapi cara ruku' dan sujudnya ada di Sunnah." }
+      ]
+    },
+    {
+      "section_id": "kedudukan",
+      "blocks": [
+        { "type": "heading", "text": "10. Posisi Sunnah" },
+        { "type": "paragraph", "text": "Sunnah adalah sumber hukum Islam **kedua** setelah Al-Qur'an. Bedanya, Al-Qur'an itu Absolut (pasti bener dari Allah), kalau Hadits ada tingkatan validitasnya (perlu dicek Shahih/tidaknya)." }
+      ]
+    }
+  ],
+  "quiz": [
+    { "question": "Apa arti 'Sunnah' secara bahasa?", "options": ["Hukum", "Tradisi/Jalan yang biasa dilalui", "Berita", "Baru"], "correct": 1, "feedback": "Sunnah = Tradisi." },
+    { "question": "Hadits secara bahasa artinya...", "options": ["Lama", "Baru/Khabar (Berita)", "Suci", "Pedoman"], "correct": 1, "feedback": "Hadits = Berita." },
+    { "question": "Apa itu Sunnah Qauli?", "options": ["Perbuatan Nabi", "Perkataan/Sabda Nabi", "Diamnya Nabi", "Cita-cita Nabi"], "correct": 1, "feedback": "Qauli = Perkataan." },
+    { "question": "Jika Nabi melihat sahabat melakukan sesuatu dan Nabi diam saja, itu disebut Sunnah...", "options": ["Fi'li", "Qauli", "Taqriri", "Hammi"], "correct": 2, "feedback": "Taqriri = Ketetapan/Persetujuan." },
+    { "question": "Hadits yang diriwayatkan orang banyak dan mustahil mereka sepakat bohong disebut...", "options": ["Ahad", "Mutawatir", "Palsu", "Dha'if"], "correct": 1, "feedback": "Mutawatir = Massif." },
+    { "question": "Kualitas hadits yang paling tinggi (sehat, tanpa cacat) adalah...", "options": ["Hasan", "Dha'if", "Shahih", "Maudlu"], "correct": 2, "feedback": "Shahih = Sehat/Valid." },
+    { "question": "Hadits Maudlu artinya...", "options": ["Lemah", "Palsu/HOAX", "Kuat", "Diterima"], "correct": 1, "feedback": "Maudlu = Palsu." },
+    { "question": "Q.S. An-Nisaa ayat 80 menegaskan bahwa taat kepada Rasul berarti...", "options": ["Taat kepada Allah", "Taat kepada pemerintah", "Taat kepada orang tua", "Taat kepada diri sendiri"], "correct": 0, "feedback": "Satu paket: Taat Rasul = Taat Allah." },
+    { "question": "Apa ancaman bagi penentang Rasul (Q.S. Al-Anfaal 13)?", "options": ["Didenda", "Siksa yang pedih", "Dipenjara", "Diasingkan"], "correct": 1, "feedback": "Siksa Allah amat keras." },
+    { "question": "Hadits Mardud artinya hadits yang...", "options": ["Diterima", "Ditolak", "Disimpan", "Diragukan"], "correct": 1, "feedback": "Mardud = Tertolak." },
+    { "question": "Atsar adalah istilah untuk perkataan...", "options": ["Nabi", "Sahabat Nabi", "Allah", "Malaikat"], "correct": 1, "feedback": "Atsar/Mauquf = Sahabat." },
+    { "question": "Sunnatullah artinya...", "options": ["Hukum Fiqih", "Hukum Alam ciptaan Allah (Objektif)", "Sunnah Nabi", "Adat istiadat"], "correct": 1, "feedback": "Hukum alam yang pasti." },
+    { "question": "Fungsi Sunnah terhadap Al-Qur'an adalah...", "options": ["Pengganti", "Penjelas (Tafsir)", "Penghapus", "Saingan"], "correct": 1, "feedback": "Menjelaskan yang masih global." },
+    { "question": "Hadits yang sanadnya terputus disebut...", "options": ["Munqathi", "Muttashil", "Marfu", "Aziz"], "correct": 0, "feedback": "Munqathi = Putus." },
+    { "question": "Hadits Hasan kualitasnya...", "options": ["Sangat lemah", "Sedikit di bawah Shahih (Hafalan perawi)", "Palsu", "Sempurna"], "correct": 1, "feedback": "Valid tapi hafalannya gak sekuat Shahih." },
+    { "question": "Kedudukan Sunnah dalam hukum Islam adalah sumber ke-...", "options": ["1", "2", "3", "4"], "correct": 1, "feedback": "Kedua setelah Al-Qur'an." },
+    { "question": "Hadits Maqtu adalah hadits yang disandarkan kepada...", "options": ["Nabi", "Sahabat", "Tabi'in", "Allah"], "correct": 2, "feedback": "Maqtu = Putus sampai Tabi'in." },
+    { "question": "Hadits Awamir berisi tentang...", "options": ["Larangan", "Perintah", "Kisah", "Kiamat"], "correct": 1, "feedback": "Awamir = Perintah." },
+    { "question": "Kenapa kita butuh Sunnah?", "options": ["Karena Al-Qur'an butuh penjelasan teknis", "Biar beda sama yang lain", "Iseng aja", "Biar susah"], "correct": 0, "feedback": "Sunnah itu teknis pelaksanaannya." },
+    { "question": "Hadits Qudsi adalah...", "options": ["Firman Allah yang redaksinya dari Nabi", "Perkataan Nabi murni", "Perkataan Sahabat", "Ayat Al-Qur'an"], "correct": 0, "feedback": "Makna dari Allah, lafal dari Nabi." },
+    { "question": "Sikap terhadap hadits Shahih adalah...", "options": ["Maqbul (Diterima)", "Mardud (Ditolak)", "Ragu-ragu", "Cuek"], "correct": 0, "feedback": "Wajib diterima dan diamalkan." },
+    { "question": "Q.S. An-Nisaa 65 mewajibkan kita menjadikan Rasul sebagai...", "options": ["Teman", "Hakim/Pemutus Perkara", "Raja", "Saudara"], "correct": 1, "feedback": "Hakim dalam perselisihan." },
+    { "question": "Contoh Sunnatullah di alam adalah...", "options": ["Sholat Subuh", "Benda jatuh ke bawah (Gravitasi)", "Puasa", "Zakat"], "correct": 1, "feedback": "Hukum fisika alam." },
+    { "question": "Hadits yang diriwayatkan oleh satu orang atau sedikit disebut...", "options": ["Ahad", "Mutawatir", "Masyhur", "Palsu"], "correct": 0, "feedback": "Ahad (Satu/Sedikit)." },
+    { "question": "Pesan utama bab ini adalah...", "options": ["Hafal semua hadits", "Jadikan Sunnah sebagai standar hidup (SOP)", "Debat hadits", "Koleksi buku"], "correct": 1, "feedback": "Sunnah sebagai panduan hidup." }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "id": "chapter-iman",
+  "metadata": {
+    "title": "Iman & Aqidah: System Core",
+    "subtitle": "Maintenance Hati Biar Gak 'Lag'",
+    "description": "Iman itu kayak baterai HP, bisa lowbat. Pelajari 6 Rukun Iman sebagai 'Tech Stack' hidup lo, dan cara nge-charge hati biar tetep connect ke Langit.",
+    "thumbnail": "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&q=80&w=800",
+    "tags": ["Spiritual", "Mental Health", "Aqidah"],
+    "category": "Spirituality"
+  },
+  "content": [
+    {
+      "section_id": "definisi",
+      "blocks": [
+        { "type": "heading", "text": "1. Apa itu Iman? (The Core OS)" },
+        { "type": "paragraph", "text": "Iman itu bukan cuma status di KTP ya. Iman itu ibarat **Operating System (OS)** di jiwa lo. Kalau OS-nya *corrupt*, semua aplikasi hidup (karir, jodoh, ibadah) bakal nge-*crash*." },
+        { "type": "paragraph", "text": "Definisi Iman yang valid itu paket 3-in-1:" },
+        { "type": "paragraph", "text": "1. **Di Hati:** Yakin 100% tanpa ragu." },
+        { "type": "paragraph", "text": "2. **Di Lisan:** Ngucapin Syahadat." },
+        { "type": "paragraph", "text": "3. **Di Perbuatan:** Bukti nyata lewat aksi (Sholat, Puasa, Akhlak)." }
+      ]
+    },
+    {
+      "section_id": "fluktuasi",
+      "blocks": [
+        { "type": "heading", "text": "2. Iman Bisa Naik Turun (Yazid wa Yanqus)" },
+        { "type": "paragraph", "text": "Wajar banget kalau kadang lo ngerasa rajin ibadah, kadang males banget. Iman itu dinamis." },
+        { "type": "paragraph", "text": "**Yazid (Naik):** Pas lagi taat, ngaji, kumpul sama orang sholeh." },
+        { "type": "paragraph", "text": "**Yanqus (Turun):** Pas lagi maksiat atau kebanyakan main yang gak faedah." },
+        { "type": "paragraph", "text": "Kuncinya: Pas lagi *Low Battery*, buruan cari charger (Majelis Ilmu, Istighfar), jangan dibiarin mati total." }
+      ]
+    },
+    {
+      "section_id": "rukun-1-2",
+      "blocks": [
+        { "type": "heading", "text": "3. Tech Stack Iman (Part 1)" },
+        { "type": "paragraph", "text": "**1. Iman Kepada Allah:** The Developer & Admin Mutlak. Yakin Allah itu Pencipta (Rububiyah), Satu-satunya yang disembah (Uluhiyah), dan punya Nama-Nama Keren (Asma wa Sifat)." },
+        { "type": "paragraph", "text": "**2. Iman Kepada Malaikat:** System Workers/Bots yang selalu taat. Mereka gak punya nafsu, kerjanya 24/7 ngurusin teknis alam semesta sesuai perintah Allah." }
+      ]
+    },
+    {
+      "section_id": "rukun-3-4",
+      "blocks": [
+        { "type": "heading", "text": "4. Tech Stack Iman (Part 2)" },
+        { "type": "paragraph", "text": "**3. Iman Kepada Kitab:** Documentation/Manual Book. Al-Qur'an itu buku manual hidup kita. Kalau bingung, baca manualnya." },
+        { "type": "paragraph", "text": "**4. Iman Kepada Rasul:** Senior Engineer/Mentor. Mereka dikirim buat ngejelasin isi manual book tadi lewat contoh nyata." }
+      ]
+    },
+    {
+      "section_id": "rukun-5-6",
+      "blocks": [
+        { "type": "heading", "text": "5. Tech Stack Iman (Part 3)" },
+        { "type": "paragraph", "text": "**5. Iman Kepada Hari Akhir:** The Big Reset/Deadline. Hidup di dunia ini cuma versi 'Trial'. Versi 'Full'-nya nanti di akhirat. Semua ada hitung-hitungannya." },
+        { "type": "paragraph", "text": "**6. Iman Kepada Qada & Qadar:** The Algorithm/Masterplan. Yakin kalau segala sesuatu yang terjadi (baik/buruk) itu udah masuk dalam skenario terbaik Allah." }
+      ]
+    },
+    {
+      "section_id": "syirik",
+      "blocks": [
+        { "type": "heading", "text": "6. Virus Paling Bahaya: Syirik" },
+        { "type": "paragraph", "text": "Syirik (Menduakan Allah) itu **Malware** paling ganas. Sekali kena, data pahala lo bisa ke-*Wipe* bersih (Hapus total). Dan kalau mati bawa virus ini tanpa tobat, gak ada fitur *Restore* (Neraka selamanya)." },
+        { "type": "paragraph", "text": "Jauhi dukun, zodiak, jimat, pelet. Itu semua *Scam* yang bikin akun akhirat lo kena *Banned*!" }
+      ]
+    },
+    {
+      "section_id": "halawatul",
+      "blocks": [
+        { "type": "heading", "text": "7. Manisnya Iman" },
+        { "type": "paragraph", "text": "Iman itu ada rasanya lho, manis banget (Halawatul Iman). Lo bakal ngerasain ini kalau:" },
+        { "type": "paragraph", "text": "1. Allah & Rasul jadi yang paling lo cinta di atas segalanya." },
+        { "type": "paragraph", "text": "2. Lo cinta/benci sesuatu cuma karena Allah." },
+        { "type": "paragraph", "text": "3. Lo benci balik ke maksiat kayak lo benci dilempar ke api." }
+      ]
+    },
+    {
+      "section_id": "maintenance",
+      "blocks": [
+        { "type": "heading", "text": "8. Tips Maintenance Hati" },
+        { "type": "paragraph", "text": "**Update Rutin:** Ngaji minimal seminggu sekali. Otak butuh nutrisi ilmu." },
+        { "type": "paragraph", "text": "**Clear Cache:** Banyakin Istighfar buat ngehapus dosa-dosa kecil yang bikin lemot." },
+        { "type": "paragraph", "text": "**Firewall:** Jauhi *toxic circle* yang ngajak maksiat. Cari temen yang ngingetin sholat." }
+      ]
+    },
+    {
+      "section_id": "ihsan",
+      "blocks": [
+        { "type": "heading", "text": "9. Level Tertinggi: Ihsan" },
+        { "type": "paragraph", "text": "Ihsan itu level 'Pro Player'. Artinya: Lo ibadah seolah-olah lo liat Allah. Kalau gak bisa, yakinlah Allah liat lo (CCTV Allah on terus)." },
+        { "type": "paragraph", "text": "Kalau udah di level ini, lo gak bakal berani maksiat walaupun lagi sendirian di kamar." }
+      ]
+    },
+    {
+      "section_id": "closing",
+      "blocks": [
+        { "type": "heading", "text": "10. Penutup: Aqidah Dulu, Baru Amal" },
+        { "type": "paragraph", "text": "Aqidah itu pondasi. Kalau pondasinya rapuh (Iman lemah), bangunan setinggi apa pun (Amal banyak) bakal rubuh." },
+        { "type": "paragraph", "text": "Jadi, pastiin 'System Core' lo sehat dulu, baru aplikasi yang lain bakal jalan lancar." }
+      ]
+    }
+  ],
+  "quiz": [
+    { "question": "Secara bahasa, Aqidah artinya...", "options": ["Ikatan yang kuat", "Kebebasan", "Keraguan", "Angan-angan"], "correct": 0, "feedback": "Aqada = Mengikat." },
+    { "question": "Tiga unsur Iman adalah...", "options": ["Harta, Tahta, Wanita", "Hati, Lisan, Perbuatan", "Ilmu, Amal, Jabatan", "Niat saja"], "correct": 1, "feedback": "Hati meyakini, Lisan mengucapkan, Perbuatan membuktikan." },
+    { "question": "Iman itu 'Yazid wa Yanqus', artinya...", "options": ["Stabil terus", "Bertambah dan Berkurang", "Hilang timbul", "Selalu naik"], "correct": 1, "feedback": "Dinamis sesuai ketaatan." },
+    { "question": "Dosa yang tidak diampuni jika terbawa mati adalah...", "options": ["Mencuri", "Zina", "Syirik", "Ghibah"], "correct": 2, "feedback": "Syirik (Menyekutukan Allah)." },
+    { "question": "Tingkatan agama tertinggi setelah Islam dan Iman adalah...", "options": ["Ihsan", "Ilmu", "Amal", "Ikhlas"], "correct": 0, "feedback": "Ihsan (Merasa diawasi Allah)." },
+    { "question": "Ada berapa Rukun Iman?", "options": ["5", "6", "99", "10"], "correct": 1, "feedback": "Ada 6." },
+    { "question": "Beriman kepada Takdir (Qada & Qadar) artinya...", "options": ["Pasrah tanpa usaha", "Yakin segala sesuatu terjadi atas izin Allah & tetap ikhtiar", "Menyalahkan keadaan", "Bebas berbuat"], "correct": 1, "feedback": "Percaya skenario Allah + Usaha." },
+    { "question": "Contoh Syirik Asghar (Kecil) adalah...", "options": ["Menyembah patung", "Riya' (Pamer ibadah)", "Murtad", "Sihir"], "correct": 1, "feedback": "Riya' adalah syirik tersembunyi." },
+    { "question": "Fungsi Istighfar adalah...", "options": ["Menambah dosa", "Menghapus noda dosa (Clear Cache)", "Biar dipuji", "Syarat kaya"], "correct": 1, "feedback": "Penghapus dosa." },
+    { "question": "Kalimat Tauhid yang utama adalah...", "options": ["Subhanallah", "Laa ilaaha illallah", "Alhamdulillah", "Allahu Akbar"], "correct": 1, "feedback": "Tiada Tuhan selain Allah." },
+    { "question": "Ciri orang munafik adalah...", "options": ["Jujur", "Lain di mulut lain di hati (Bohong/Khianat)", "Setia", "Amanah"], "correct": 1, "feedback": "Bicara bohong, janji ingkar, amanah khianat." },
+    { "question": "Cara men-charge iman yang lagi lowbat adalah...", "options": ["Main game", "Hadir di majelis ilmu", "Tidur seharian", "Jalan-jalan"], "correct": 1, "feedback": "Ilmu adalah nutrisi iman." },
+    { "question": "Wala' wal Bara' artinya...", "options": ["Loyalitas pada kebenaran & Benci kebatilan", "Perang terus", "Damai sama maksiat", "Cuek"], "correct": 0, "feedback": "Prinsip cinta dan benci karena Allah." },
+    { "question": "Malaikat diciptakan dari...", "options": ["Api", "Tanah", "Cahaya (Nur)", "Air"], "correct": 2, "feedback": "Cahaya." },
+    { "question": "Iman kepada Kitab mencakup...", "options": ["Hanya Al-Qur'an", "Semua kitab samawi (Taurat, Zabur, Injil, Qur'an)", "Koran", "Majalah"], "correct": 1, "feedback": "Semua kitab dari Allah wajib diimani asalnya." },
+    { "question": "Hari Kiamat disebut Yaumul Hisab artinya...", "options": ["Hari Perhitungan", "Hari Kebangkitan", "Hari Pembalasan", "Hari Penimbangan"], "correct": 0, "feedback": "Hisab = Hitung." },
+    { "question": "Musuh nyata manusia yang ingin merusak iman adalah...", "options": ["Tetangga", "Setan/Iblis", "Teman", "Guru"], "correct": 1, "feedback": "Setan musuh yang nyata." },
+    { "question": "Arti Ihsan adalah...", "options": ["Beribadah seolah melihat Allah / Merasa diawasi", "Sedekah banyak", "Haji berkali-kali", "Puasa tiap hari"], "correct": 0, "feedback": "Muraqabah (Merasa diawasi)." },
+    { "question": "Cabang iman yang paling rendah adalah...", "options": ["Menyingkirkan gangguan dari jalan", "Senyum", "Sholat", "Jihad"], "correct": 0, "feedback": "Imathatul adza anit thariq." },
+    { "question": "Kenapa Syirik disebut dosa besar?", "options": ["Karena merugikan orang lain", "Karena mengambil hak Allah untuk disembah", "Karena mahal", "Karena susah"], "correct": 1, "feedback": "Kedzaliman yang besar." },
+    { "question": "Takdir Muallaq adalah takdir yang...", "options": ["Pasti terjadi", "Bisa berubah dengan doa & ikhtiar", "Rahasia", "Buruk"], "correct": 1, "feedback": "Muallaq = Tergantung (Bisa diubah)." },
+    { "question": "Manisnya iman dirasakan jika...", "options": ["Allah & Rasul lebih dicintai dari segalanya", "Punya banyak uang", "Sehat terus", "Terkenal"], "correct": 0, "feedback": "Halawatul Iman." },
+    { "question": "Penyebab utama turunnya iman adalah...", "options": ["Ketaatan", "Maksiat dan Kebodohan", "Sedekah", "Puasa"], "correct": 1, "feedback": "Dosa menggerogoti iman." },
+    { "question": "Tauhid Rububiyah meyakini bahwa...", "options": ["Allah satu-satunya Pencipta & Pengatur", "Allah satu-satunya yang disembah", "Allah punya nama indah", "Allah ada dimana-mana"], "correct": 0, "feedback": "Rububiyah = Penciptaan/Pengaturan." },
+    { "question": "Pondasi utama dalam Islam adalah...", "options": ["Akhlak", "Aqidah", "Muamalah", "Politik"], "correct": 1, "feedback": "Aqidah adalah fondasi bangunan." }
+  ]
+}
