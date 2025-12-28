@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, Suspense, lazy } from 'react'; // Import Suspense & Lazy
 import { AnimatePresence } from 'framer-motion';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
@@ -6,8 +6,19 @@ import { LandingPage } from './pages/LandingPage';
 import { BlogList } from './pages/BlogList';
 import { ChapterReader } from './components/features/ChapterReader';
 import { FadeContent } from './components/ui/FadeContent';
-import { Mail, Users } from 'lucide-react';
-import { BottomSection } from './components/layout/BottomSection'
+import { Mail, Users, Loader2 } from 'lucide-react'; // Tambah Loader icon
+import { BottomSection } from './components/layout/BottomSection';
+
+// Lazy Load halaman Apps
+const AppList = lazy(() => import('./pages/AppList'));
+
+// Komponen Loading sederhana saat transisi lazy load
+const LoadingFallback = () => (
+  <div className="min-h-[60vh] flex items-center justify-center">
+    <Loader2 className="animate-spin text-[var(--accent)]" size={32} />
+  </div>
+);
+
 function App() {
   const [activeTab, setActiveTab] = useState('home');
   const [selectedPost, setSelectedPost] = useState(null);
@@ -19,6 +30,14 @@ function App() {
 
     switch (activeTab) {
       case 'home': return <LandingPage />;
+
+      // Case baru untuk Apps dengan Suspense
+      case 'apps': return (
+        <Suspense fallback={<LoadingFallback />}>
+          <AppList />
+        </Suspense>
+      );
+
       case 'blog': return <BlogList onSelectPost={setSelectedPost} />;
       case 'team': return (
           <div className="min-h-[60vh] flex items-center justify-center px-6 text-center pt-20">
@@ -63,7 +82,8 @@ function App() {
           </div>
         </AnimatePresence>
       </main>
-{!selectedPost && <BottomSection />}
+
+      {!selectedPost && activeTab === 'home' && <BottomSection />}
       {!selectedPost && <Footer />}
     </div>
   );

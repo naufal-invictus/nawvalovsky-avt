@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { cn } from '../../lib/utils';
-import { Home, FolderGit2, BookOpen, Mail } from 'lucide-react';
+// Ganti FolderGit2 dengan Grid atau AppWindow jika mau, tapi FolderGit2 masih oke
+import { Home, FolderGit2, BookOpen, Mail, Grid } from 'lucide-react';
 
 export const Navbar = ({ activeTab, setActiveTab }) => {
   const [scrolled, setScrolled] = useState(false);
@@ -12,8 +13,8 @@ export const Navbar = ({ activeTab, setActiveTab }) => {
   }, []);
 
   const navItems = [
-    { id: 'home', label: 'Overview', icon: Home },
-    { id: 'projects', label: 'Projects', icon: FolderGit2 },
+    { id: 'home', label: 'Home', icon: Home },
+    { id: 'apps', label: 'Apps', icon: Grid }, // Mengubah Projects -> Apps
     { id: 'blog', label: 'Journal', icon: BookOpen },
     { id: 'contact', label: 'Contact', icon: Mail },
   ];
@@ -29,7 +30,6 @@ export const Navbar = ({ activeTab, setActiveTab }) => {
     >
       <div className="container-safe flex items-center justify-between">
 
-        {/* Brand Accent: Menggunakan warna aksen baru */}
         <div className="flex items-center gap-3">
            <div className="w-2 h-2 rounded-full bg-[var(--accent)] animate-pulse shadow-[0_0_8px_rgba(200,155,123,0.6)]" />
            <span className="font-display font-bold text-lg tracking-wide text-[var(--text-nav)]">
@@ -37,7 +37,6 @@ export const Navbar = ({ activeTab, setActiveTab }) => {
            </span>
         </div>
 
-        {/* Navigation */}
         <nav className="flex items-center gap-1 bg-[var(--bg-surface)] p-1 rounded-lg border border-[var(--border-dim)]">
           {navItems.map((item) => (
             <button
@@ -46,7 +45,7 @@ export const Navbar = ({ activeTab, setActiveTab }) => {
               className={cn(
                 "px-4 py-1.5 rounded-md text-xs font-medium transition-all flex items-center gap-2",
                 activeTab === item.id
-                  ? "bg-[var(--nav-active)] text-white shadow-md" // Active state
+                  ? "bg-[var(--nav-active)] text-white shadow-md"
                   : "text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--border-card)]"
               )}
             >
