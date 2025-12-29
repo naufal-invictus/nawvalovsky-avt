@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route, useLocation } from 'react-router-dom'; // Ubah BrowserRouter ke HashRouter
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { LandingPage } from './pages/LandingPage';
@@ -9,7 +9,7 @@ import { BottomSection } from './components/layout/BottomSection';
 
 // Import Applikasi Kamu
 import { TobatkanTypology } from './components/apps/TobatkanTypology';
-import { NicknameRoaster } from './components/apps/NicknameRoaster'; // Pastikan file ini sudah dibuat
+import { NicknameRoaster } from './components/apps/NicknameRoaster';
 import { FadeContent } from './components/ui/FadeContent';
 import { Mail, Users } from 'lucide-react';
 
@@ -17,6 +17,8 @@ function AppContent() {
   const location = useLocation();
 
   // Sembunyikan Footer/BottomSection jika sedang di dalam mode baca/aplikasi penuh
+  // Note: Karena menggunakan HashRouter, pathname mungkin perlu penyesuaian di beberapa kasus logic manual,
+  // tapi useLocation() dari react-router-dom otomatis menanganinya dengan benar.
   const isHideBottom = location.pathname.startsWith('/blog/') || location.pathname.startsWith('/apps/');
 
   return (
@@ -31,21 +33,21 @@ function AppContent() {
           {/* Halaman List Apps */}
           <Route path="/apps" element={<AppList />} />
 
-          {/* Routing Spesifik untuk Apps (Agar punya link sendiri) */}
-          {/* Pass prop onBack agar tombol close berfungsi kembali ke list */}
+          {/* Routing Spesifik untuk Apps */}
+          {/* Untuk navigasi manual window.location.href, kita ganti ke navigate hook atau sesuaikan linknya */}
           <Route
             path="/apps/tobatkan-typology"
-            element={<TobatkanTypology onBack={() => window.location.href = '/apps'} />}
+            element={<TobatkanTypology onBack={() => window.location.href = '#/apps'} />}
           />
           <Route
             path="/apps/nickname-roaster"
-            element={<NicknameRoaster onBack={() => window.location.href = '/apps'} />}
+            element={<NicknameRoaster onBack={() => window.location.href = '#/apps'} />}
           />
 
           {/* Halaman Blog */}
           <Route path="/blog" element={<BlogList />} />
 
-          {/* Routing Dinamis untuk Blog (Contoh: /blog/cysec-101) */}
+          {/* Routing Dinamis untuk Blog (Contoh: /#/blog/cysec-101) */}
           <Route path="/blog/:slug" element={<ChapterWrapper />} />
 
           {/* Halaman Statis Lainnya */}
@@ -79,6 +81,7 @@ function AppContent() {
         </Routes>
       </main>
 
+      {/* Logic tampilan BottomSection disesuaikan agar hanya muncul di Home */}
       {!isHideBottom && location.pathname === '/' && <BottomSection />}
       {!isHideBottom && <Footer />}
     </div>
@@ -87,8 +90,9 @@ function AppContent() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    // Menggunakan HashRouter memperbaiki masalah 404 saat refresh di semua static hosting
+    <HashRouter>
       <AppContent />
-    </BrowserRouter>
+    </HashRouter>
   );
 }
