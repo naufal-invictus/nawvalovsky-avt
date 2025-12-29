@@ -4,7 +4,6 @@ import chapterKerasulan from './json/Chapter-Kerasulan.json';
 import chapterSunnah from './json/Chapter-Sunnah.json';
 import chapterIman from './json/Chapter-Iman.json';
 
-// Helper function buat ngerapihin data
 const formatChapter = (chapter, readTime) => ({
   ...chapter,
   title: chapter.metadata.title,
@@ -14,15 +13,11 @@ const formatChapter = (chapter, readTime) => ({
   readTime: readTime
 });
 
-export const LEARNING_DATA = [
-  // Materi Kuliah (Gen Z Edition)
+// PENTING: Nama variabel export harus 'chapters'
+export const chapters = [
   formatChapter(chapterKekuasaan, "15 min read"),
   formatChapter(chapterKerasulan, "15 min read"),
   formatChapter(chapterSunnah, "20 min read"),
-
-  // Materi Tambahan
   formatChapter(chapterIman, "12 min read"),
-
-  // Chapter Original (Cysec)
   formatChapter(chapterCysec, "8 min read"),
 ];

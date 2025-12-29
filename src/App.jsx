@@ -1,46 +1,56 @@
-import { useState, Suspense, lazy } from 'react'; // Import Suspense & Lazy
-import { AnimatePresence } from 'framer-motion';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { LandingPage } from './pages/LandingPage';
 import { BlogList } from './pages/BlogList';
-import { ChapterReader } from './components/features/ChapterReader';
-import { FadeContent } from './components/ui/FadeContent';
-import { Mail, Users, Loader2 } from 'lucide-react'; // Tambah Loader icon
+import { ChapterWrapper } from './components/features/ChapterWrapper';
+import AppList from './pages/AppList';
 import { BottomSection } from './components/layout/BottomSection';
 
-// Lazy Load halaman Apps
-const AppList = lazy(() => import('./pages/AppList'));
+// Import Applikasi Kamu
+import { TobatkanTypology } from './components/apps/TobatkanTypology';
+import { NicknameRoaster } from './components/apps/NicknameRoaster'; // Pastikan file ini sudah dibuat
+import { FadeContent } from './components/ui/FadeContent';
+import { Mail, Users } from 'lucide-react';
 
-// Komponen Loading sederhana saat transisi lazy load
-const LoadingFallback = () => (
-  <div className="min-h-[60vh] flex items-center justify-center">
-    <Loader2 className="animate-spin text-[var(--accent)]" size={32} />
-  </div>
-);
+function AppContent() {
+  const location = useLocation();
 
-function App() {
-  const [activeTab, setActiveTab] = useState('home');
-  const [selectedPost, setSelectedPost] = useState(null);
+  // Sembunyikan Footer/BottomSection jika sedang di dalam mode baca/aplikasi penuh
+  const isHideBottom = location.pathname.startsWith('/blog/') || location.pathname.startsWith('/apps/');
 
-  const renderContent = () => {
-    if (selectedPost) {
-        return <ChapterReader chapter={selectedPost} onBack={() => setSelectedPost(null)} />;
-    }
+  return (
+    <div className="min-h-screen flex flex-col text-[var(--text-body)] bg-[var(--bg-main)] font-sans transition-colors duration-500">
+      <Navbar />
 
-    switch (activeTab) {
-      case 'home': return <LandingPage />;
+      <main className="flex-grow">
+        <Routes>
+          {/* Halaman Utama */}
+          <Route path="/" element={<LandingPage />} />
 
-      // Case baru untuk Apps dengan Suspense
-      case 'apps': return (
-        <Suspense fallback={<LoadingFallback />}>
-          <AppList />
-        </Suspense>
-      );
+          {/* Halaman List Apps */}
+          <Route path="/apps" element={<AppList />} />
 
-      case 'blog': return <BlogList onSelectPost={setSelectedPost} />;
-      case 'team': return (
-          <div className="min-h-[60vh] flex items-center justify-center px-6 text-center pt-20">
+          {/* Routing Spesifik untuk Apps (Agar punya link sendiri) */}
+          {/* Pass prop onBack agar tombol close berfungsi kembali ke list */}
+          <Route
+            path="/apps/tobatkan-typology"
+            element={<TobatkanTypology onBack={() => window.location.href = '/apps'} />}
+          />
+          <Route
+            path="/apps/nickname-roaster"
+            element={<NicknameRoaster onBack={() => window.location.href = '/apps'} />}
+          />
+
+          {/* Halaman Blog */}
+          <Route path="/blog" element={<BlogList />} />
+
+          {/* Routing Dinamis untuk Blog (Contoh: /blog/cysec-101) */}
+          <Route path="/blog/:slug" element={<ChapterWrapper />} />
+
+          {/* Halaman Statis Lainnya */}
+          <Route path="/team" element={
+             <div className="min-h-[60vh] flex items-center justify-center px-6 text-center pt-20">
               <FadeContent>
                   <div className="bg-[var(--bg-card)] border border-[var(--border-card)] p-12 rounded-2xl max-w-lg mx-auto shadow-sm">
                       <div className="w-16 h-16 bg-[var(--bg-surface)] border border-[var(--border-dim)] rounded-full flex items-center justify-center mx-auto mb-6 text-[var(--accent)]">
@@ -51,9 +61,10 @@ function App() {
                   </div>
               </FadeContent>
           </div>
-      );
-      case 'contact': return (
-        <div className="min-h-[60vh] flex items-center justify-center px-6 text-center pt-20">
+          } />
+
+          <Route path="/contact" element={
+            <div className="min-h-[60vh] flex items-center justify-center px-6 text-center pt-20">
             <FadeContent>
                 <div className="bg-[var(--bg-card)] border border-[var(--border-card)] p-12 rounded-2xl max-w-lg mx-auto shadow-sm">
                     <div className="w-16 h-16 bg-[var(--bg-surface)] border border-[var(--border-dim)] rounded-full flex items-center justify-center mx-auto mb-6 text-[var(--accent)]">
@@ -64,29 +75,20 @@ function App() {
                 </div>
             </FadeContent>
         </div>
-      );
-      default: return <LandingPage />;
-    }
-  };
-
-  return (
-   <div className="min-h-screen flex flex-col text-[var(--text-body)] bg-[var(--bg-main)] font-sans transition-colors duration-500">
-      {!selectedPost && (
-        <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
-      )}
-
-      <main className="flex-grow">
-        <AnimatePresence mode="wait">
-          <div key={activeTab} className="w-full">
-              {renderContent()}
-          </div>
-        </AnimatePresence>
+          } />
+        </Routes>
       </main>
 
-      {!selectedPost && activeTab === 'home' && <BottomSection />}
-      {!selectedPost && <Footer />}
+      {!isHideBottom && location.pathname === '/' && <BottomSection />}
+      {!isHideBottom && <Footer />}
     </div>
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
+  );
+}

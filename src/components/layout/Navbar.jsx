@@ -1,61 +1,82 @@
+import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { cn } from '../../lib/utils';
-// Ganti FolderGit2 dengan Grid atau AppWindow jika mau, tapi FolderGit2 masih oke
-import { Home, FolderGit2, BookOpen, Mail, Grid } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+// ThemeToggle dihapus karena file tidak ada
 
-export const Navbar = ({ activeTab, setActiveTab }) => {
-  const [scrolled, setScrolled] = useState(false);
+export const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
-    { id: 'home', label: 'Home', icon: Home },
-    { id: 'apps', label: 'Apps', icon: Grid }, // Mengubah Projects -> Apps
-    { id: 'blog', label: 'Journal', icon: BookOpen },
-    { id: 'contact', label: 'Contact', icon: Mail },
+  // Helper untuk menentukan class aktif
+  const getLinkClass = (path) => {
+    const isActive = location.pathname === path || (path !== '/' && location.pathname.startsWith(path));
+    return `relative text-sm font-medium transition-colors duration-300 ${
+      isActive ? 'text-[var(--accent)]' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
+    }`;
+  };
+
+  const navLinks = [
+    { name: 'Home', path: '/' },
+    { name: 'Apps', path: '/apps' },
+    { name: 'Blog', path: '/blog' },
+    { name: 'Team', path: '/team' },
+    { name: 'Contact', path: '/contact' },
   ];
 
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b",
-        scrolled
-          ? "bg-[var(--bg-nav)]/90 backdrop-blur-md border-[var(--border-dim)] py-3 shadow-sm"
-          : "bg-transparent border-transparent py-5"
-      )}
-    >
-      <div className="container-safe flex items-center justify-between">
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      isScrolled ? 'bg-[var(--bg-main)]/80 backdrop-blur-md border-b border-[var(--border-dim)] py-4' : 'bg-transparent py-6'
+    }`}>
+      <div className="container mx-auto px-6 flex items-center justify-between">
+        <Link to="/" className="text-xl font-display font-bold text-[var(--text-primary)] tracking-tight">
+          Nawvalovsky<span className="text-[var(--accent)]">.</span>
+        </Link>
 
-        <div className="flex items-center gap-3">
-           <div className="w-2 h-2 rounded-full bg-[var(--accent)] animate-pulse shadow-[0_0_8px_rgba(200,155,123,0.6)]" />
-           <span className="font-display font-bold text-lg tracking-wide text-[var(--text-nav)]">
-             NAWVALOVSKY<span className="text-[var(--text-secondary)] text-sm font-normal ml-2 hidden md:inline">/ CLOUD_ARCH</span>
-           </span>
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center gap-8">
+          {navLinks.map((link) => (
+            <Link key={link.name} to={link.path} className={getLinkClass(link.path)}>
+              {link.name}
+              {location.pathname === link.path && (
+                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[var(--accent)] rounded-full animate-in fade-in slide-in-from-left-2" />
+              )}
+            </Link>
+          ))}
+          {/* ThemeToggle dihapus dari sini */}
         </div>
 
-        <nav className="flex items-center gap-1 bg-[var(--bg-surface)] p-1 rounded-lg border border-[var(--border-dim)]">
-          {navItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => setActiveTab(item.id)}
-              className={cn(
-                "px-4 py-1.5 rounded-md text-xs font-medium transition-all flex items-center gap-2",
-                activeTab === item.id
-                  ? "bg-[var(--nav-active)] text-white shadow-md"
-                  : "text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--border-card)]"
-              )}
-            >
-              <item.icon size={14} />
-              <span className="hidden md:inline">{item.label}</span>
-            </button>
-          ))}
-        </nav>
-
+        {/* Mobile Toggle */}
+        <div className="md:hidden flex items-center gap-4">
+          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-[var(--text-primary)]">
+            {isMobileMenuOpen ? <X /> : <Menu />}
+          </button>
+        </div>
       </div>
-    </header>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden absolute top-full left-0 w-full bg-[var(--bg-main)] border-b border-[var(--border-dim)] py-4 px-6 shadow-xl animate-in slide-in-from-top-2">
+          <div className="flex flex-col gap-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                to={link.path}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`text-lg font-medium ${location.pathname === link.path ? 'text-[var(--accent)]' : 'text-[var(--text-secondary)]'}`}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+    </nav>
   );
 };
