@@ -91,8 +91,8 @@ function AppContent() {
 export default function App() {
   return (
     // Menggunakan HashRouter memperbaiki masalah 404 saat refresh di semua static hosting
-    <HashRouter>
+    <BrowserRouter>
       <AppContent />
-    </HashRouter>
+    </BrowserRouter>
   );
 }
