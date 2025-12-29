@@ -1,0 +1,331 @@
+{
+  "id": "chapter-cpp-sorting",
+  "metadata": {
+    "title": "C++ Sorting: Seni Merapikan Hidup (dan Array)",
+    "subtitle": "Bubble Sort & Selection Sort buat Pemula",
+    "description": "Panduan lengkap algoritma sorting klasik. Dari Bubble yang 'blub-blub' sampai Selection yang pilih-pilih. Lengkap dengan kode C++.",
+    "thumbnail": "/images/blog/CysecThumbnail.webp",
+    "tags": ["Coding", "C++", "Algoritma"],
+    "category": "Programming"
+  },
+  "content": [
+    {
+      "section_id": "intro-sorting",
+      "blocks": [
+        { "type": "heading", "text": "Kenapa Hidup Harus Urut?" },
+        {
+          "type": "paragraph",
+          "text": "Bayangin lo masuk perpustakaan, tapi bukunya ditaruh sembarangan. Buku masak nyampur sama buku fisika nuklir. Pusing kan? Nah, di dunia coding, data yang berantakan itu musibah."
+        },
+        {
+          "type": "paragraph",
+          "text": "Makanya kita butuh **Sorting** (Pengurutan). Tujuannya simpel: biar data rapi, gampang dicari, dan enak dilihat. Hari ini kita bakal belajar dua jurus kungfu dasar sorting: **Bubble Sort** dan **Selection Sort**."
+        }
+      ]
+    },
+    {
+      "section_id": "analogy-sorting",
+      "blocks": [
+        { "type": "heading", "text": "Analogy: Baris Berbaris" },
+        {
+          "type": "paragraph",
+          "text": "Bayangin lo jadi ketua kelas yang lagi ngatur barisan upacara berdasarkan tinggi badan. Ada dua cara buat ngatur temen-temen lo:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Cara Bubble:** Lo suruh mereka tuker-tukeran posisi sama tetangga sebelahnya kalau tingginya nggak pas, terus diulang-ulang sampe rapi.",
+            "**Cara Selection:** Lo cari siapa yang paling pendek, terus lo tarik dia ke depan barisan. Terus cari lagi yang paling pendek kedua, tarik lagi, dst."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "bubble-concept",
+      "blocks": [
+        { "type": "heading", "text": "1. Bubble Sort: Gelembung Naik" },
+        {
+          "type": "image",
+          "src": "/images/blog/Gembok.webp",
+          "caption": "Angka yang besar bakal 'mengapung' ke atas (kanan) kayak gelembung.",
+          "position": "right"
+        },
+        {
+          "type": "paragraph",
+          "text": "Filosofi **Bubble Sort** itu sederhana: Bandingkan dua angka yang sebelahan. Kalau urutannya salah, TUKAR (Swap). Ulangi terus dari awal sampai ujung array."
+        },
+        {
+          "type": "paragraph",
+          "text": "Disebut 'Bubble' karena angka yang paling besar seolah-olah 'mengapung' pelan-pelan ke posisi paling belakang di setiap putaran (loop)."
+        }
+      ]
+    },
+    {
+      "section_id": "bubble-code-asc",
+      "blocks": [
+        { "type": "heading", "text": "Kode Bubble Sort (Ascending)" },
+        {
+          "type": "paragraph",
+          "text": "Ini versi urut dari kecil ke besar (Ascending). Perhatiin fungsi `int bubble()` di bawah ini. Kita pake dua looping (looping dalam & luar)."
+        },
+        {
+          "type": "code",
+          "language": "cpp",
+          "code": "int bubble(int arr[], int n) {\n    for(int i = 0; i < n-1; i++) {\n        // Loop j cuma sampe n-i-1 karena bagian belakang udah urut\n        for(int j = 0; j < n-i-1; j++) {\n            // Cek tetangga: Kalau KIRI > KANAN, tuker!\n            if(arr[j] > arr[j+1]) {\n                int temp = arr[j];\n                arr[j] = arr[j+1];\n                arr[j+1] = temp;\n            }\n        }\n    }\n    return 0; // Sukses\n}"
+        }
+      ]
+    },
+    {
+      "section_id": "bubble-dry-run",
+      "blocks": [
+        { "type": "heading", "text": "Simulasi Bubble (Dry Run)" },
+        {
+          "type": "paragraph",
+          "text": "Misal array: `[5, 1, 4, 2]`"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Banding `5` & `1`. `5 > 1`? Ya. Tukar! -> `[1, 5, 4, 2]`",
+            "Banding `5` & `4`. `5 > 4`? Ya. Tukar! -> `[1, 4, 5, 2]`",
+            "Banding `5` & `2`. `5 > 2`? Ya. Tukar! -> `[1, 4, 2, 5]`",
+            "**Hasil Ronde 1:** Angka `5` (paling gede) udah aman di pojok kanan."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "bubble-desc",
+      "blocks": [
+        { "type": "heading", "text": "Bubble Sort: Dari Belakang (Descending)" },
+        {
+          "type": "paragraph",
+          "text": "Gimana kalau mau urut dari Gede ke Kecil? Gampang banget, bro. Tinggal balik tanda perbandingannya."
+        },
+        {
+          "type": "code",
+          "language": "cpp",
+          "code": "// Ubah '>' jadi '<'\nif(arr[j] < arr[j+1]) {\n    // Kalau KIRI LEBIH KECIL dari KANAN, tuker!\n    // Biar yang gede pindah ke kiri.\n    swap(arr[j], arr[j+1]);\n}"
+        },
+        {
+          "type": "paragraph",
+          "text": "Logikanya: Kita mau 'gelembung' yang kecil yang ngapung ke kanan, biar yang gede ngumpul di kiri."
+        }
+      ]
+    },
+    {
+      "section_id": "selection-concept",
+      "blocks": [
+        { "type": "heading", "text": "2. Selection Sort: Si Pemilih" },
+        {
+          "type": "paragraph",
+          "text": "Kalau Bubble Sort itu kerja keras (tuker mulu), **Selection Sort** itu kerja cerdas. Dia nggak nuker-nuker terus, tapi **MENCARI** dulu."
+        },
+        {
+          "type": "paragraph",
+          "text": "Caranya: Scan seluruh array, cari angka paling kecil (Minimum). Kalau udah ketemu, baru tuker sama posisi depan. Jadi dalam satu putaran, cuma ada SATU kali tukar."
+        }
+      ]
+    },
+    {
+      "section_id": "selection-code-asc",
+      "blocks": [
+        { "type": "heading", "text": "Kode Selection Sort" },
+        {
+          "type": "paragraph",
+          "text": "Perhatiin variabel `minIndex`. Itu kunci rahasianya buat nyimpen lokasi angka terkecil."
+        },
+        {
+          "type": "code",
+          "language": "cpp",
+          "code": "int selection(int arr[], int n) {\n    for(int i = 0; i < n-1; i++) {\n        int minIndex = i; // Anggap posisi i itu paling kecil sementara\n        \n        // Cari yang lebih kecil di sisa array\n        for(int j = i+1; j < n; j++) {\n            if(arr[j] < arr[minIndex]) {\n                minIndex = j; // Update calon angka terkecil\n            }\n        }\n        \n        // Tukar angka di posisi i dengan angka terkecil yang ketemu\n        int temp = arr[minIndex];\n        arr[minIndex] = arr[i];\n        arr[i] = temp;\n    }\n    return 0;\n}"
+        }
+      ]
+    },
+    {
+      "section_id": "selection-dry-run",
+      "blocks": [
+        { "type": "heading", "text": "Simulasi Selection" },
+        {
+          "type": "paragraph",
+          "text": "Array: `[64, 25, 12, 22]`"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Ronde 1 (i=0):** Posisi awal `64`. Scan ke kanan... ketemu `25` (lebih kecil), scan lagi... ketemu `12` (paling kecil!).",
+            "Tukar `64` dengan `12`. Array jadi: `[12, 25, 64, 22]`.",
+            "Angka `12` udah dikunci di depan. Lanjut ke posisi kedua."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "selection-desc",
+      "blocks": [
+        { "type": "heading", "text": "Selection Sort: Descending" },
+        {
+          "type": "paragraph",
+          "text": "Buat urut Gede -> Kecil, logikanya dibalik: Cari angka paling **BESAR** (Max), terus taruh di depan."
+        },
+        {
+          "type": "code",
+          "language": "cpp",
+          "code": "// Ganti < jadi > buat cari Max\nif(arr[j] > arr[maxIndex]) {\n    maxIndex = j;\n}"
+        },
+        {
+          "type": "paragraph",
+          "text": "Konsepnya sama: Pilih 'juara' (bisa juara terkecil atau terbesar), lalu tempatkan di podium (posisi index yang sesuai)."
+        }
+      ]
+    },
+    {
+      "section_id": "comparison",
+      "blocks": [
+        { "type": "heading", "text": "Bubble vs Selection: Bagus Mana?" },
+        {
+          "type": "paragraph",
+          "text": "Dua-duanya sebenernya algoritma 'lambat' (O(n²)), nggak cocok buat data jutaan. Tapi ada bedanya:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Bubble Sort:** Banyak banget proses tukar-menukar (Swap). Boros tenaga kalau datanya bener-bener acak.",
+            "**Selection Sort:** Minim swap (cuma 1x per putaran), tapi tetep rajin ngecek (comparing).",
+            "**Kesimpulan:** Kalau nulis data ke memori itu mahal/berat, Selection Sort lebih oke dikit karena jarang nulis (swap)."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "full-code-main",
+      "blocks": [
+        { "type": "heading", "text": "Gabungin di int main()" },
+        {
+          "type": "paragraph",
+          "text": "Sekarang kita panggil fungsi-fungsi tadi di program utama. Jangan lupa include library ya."
+        },
+        {
+          "type": "code",
+          "language": "cpp",
+          "code": "#include <iostream>\nusing namespace std;\n\n// ... (masukin fungsi bubble/selection di sini)\n\nint main() {\n    int data[] = {64, 34, 25, 12, 22, 11, 90};\n    int n = sizeof(data)/sizeof(data[0]);\n\n    cout << \"Sebelum Sorting: \";\n    for(int i=0; i<n; i++) cout << data[i] << \" \";\n    cout << endl;\n\n    bubble(data, n); // Panggil fungsi sakti\n\n    cout << \"Setelah Sorting: \";\n    for(int i=0; i<n; i++) cout << data[i] << \" \";\n    \n    return 0;\n}"
+        }
+      ]
+    },
+    {
+      "section_id": "mistakes",
+      "blocks": [
+        { "type": "heading", "text": "Kesalahan Pemula (Error Alert!)" },
+        {
+          "type": "image",
+          "src": "/images/blog/Ransom.webp",
+          "caption": "Jangan sampe codingan lo error merah semua.",
+          "position": "left"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Salah Batas Loop:** Sering banget nulis `j < n` padahal harusnya `j < n-1`. Akibatnya? Index out of bound (akses memori gaib).",
+            "**Lupa Reset Index:** Di Selection Sort, lupa reset `minIndex = i` di awal loop luar. Hasilnya ngaco.",
+            "**Infinite Loop:** Lupa `i++` atau `j++`. Komputer lo bakal nge-hang selamanya."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "optimization",
+      "blocks": [
+        { "type": "heading", "text": "Tips Pro: Bubble Sort Pinter" },
+        {
+          "type": "paragraph",
+          "text": "Bubble sort bisa diakali biar lebih cepet. Gimana kalau datanya ternyata udah urut dari awal? Ngapain dicek terus?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Tambahkan *flag* (penanda). Kalau dalam satu putaran loop **tidak ada swap sama sekali**, berarti data udah urut! Langsung `break` aja. Hemat waktu."
+        }
+      ]
+    },
+    {
+      "section_id": "closing-sort",
+      "blocks": [
+        { "type": "heading", "text": "Penutup: Jalan Ninja Coding" },
+        {
+          "type": "paragraph",
+          "text": "Sorting adalah basic logic. Walaupun nanti di dunia kerja lo tinggal pake `std::sort()` bawaan C++ yang super cepet, paham cara kerja Bubble & Selection itu wajib hukumnya buat melatih logika algoritma."
+        },
+        {
+          "type": "reflection",
+          "text": "Data yang rapi adalah awal dari sistem yang efisien. Sama kayak kamar lo, kalau rapi, nyari kolor nggak perlu sejam. Happy Coding!"
+        }
+      ]
+    }
+  ],
+  "references": [
+    "GeeksforGeeks: Bubble Sort",
+    "Programiz: Selection Sort",
+    "C++ Standard Library Documentation"
+  ],
+  "quiz": [
+    {
+      "question": "Apa ciri khas utama dari Bubble Sort?",
+      "options": ["Memilih angka terkecil dulu", "Membagi array jadi dua", "Menukar elemen bersebelahan terus menerus", "Menggunakan pohon biner"],
+      "correct": 2,
+      "feedback": "Benar! Bubble sort itu hobi nuker tetangga."
+    },
+    {
+      "question": "Pada Selection Sort (Ascending), apa yang dicari di setiap putaran?",
+      "options": ["Angka Terbesar (Max)", "Angka Terkecil (Min)", "Angka Tengah", "Angka Genap"],
+      "correct": 1,
+      "feedback": "Tepat. Cari yang paling kecil (Min), lalu taruh depan."
+    },
+    {
+      "question": "Jika kita ingin mengurutkan dari Besar ke Kecil (Descending) pada Bubble Sort, apa yang diubah?",
+      "options": ["Tanda '>' jadi '<'", "Tipe data jadi float", "Nama variabel", "Hapus loop"],
+      "correct": 0,
+      "feedback": "Benar. Tinggal balik logika perbandingannya."
+    },
+    {
+      "question": "Berapa banyak swap (tukar) yang terjadi dalam satu putaran loop luar pada Selection Sort?",
+      "options": ["Banyak sekali", "Tidak ada", "Maksimal 1 kali", "10 kali"],
+      "correct": 2,
+      "feedback": "Betul. Selection sort cuma nuker sekali setelah nemu targetnya."
+    },
+    {
+      "question": "Apa nama kondisi error jika kita mengakses index array melebihi batas (misal arr[10] di array ukuran 5)?",
+      "options": ["Syntax Error", "Index Out of Bounds", "Stack Overflow", "Blue Screen"],
+      "correct": 1,
+      "feedback": "Hati-hati! Ini error paling sering kejadian."
+    },
+    {
+      "question": "Fungsi int main() digunakan untuk...",
+      "options": ["Deklarasi variabel saja", "Titik awal eksekusi program C++", "Membuat komentar", "Menghapus memori"],
+      "correct": 1,
+      "feedback": "Benar. Tanpa main(), program nggak jalan."
+    },
+    {
+      "question": "Kenapa Bubble Sort disebut algoritma yang lambat?",
+      "options": ["Karena kodenya panjang", "Karena kompleksitas waktunya O(n²) / kuadratik", "Karena komputernya jadul", "Karena pakai bahasa C++"],
+      "correct": 1,
+      "feedback": "Tepat. Untuk data besar, O(n²) itu berat banget."
+    },
+    {
+      "question": "Variabel 'temp' dalam proses swapping (tukar) berfungsi sebagai...",
+      "options": ["Tempat sampah", "Penyimpanan sementara nilai biar nggak ketimpa", "Variabel global", "Penghitung loop"],
+      "correct": 1,
+      "feedback": "Betul. Kayak mindahin air dari gelas A ke B, butuh gelas C (temp)."
+    },
+    {
+      "question": "Manakah loop yang benar untuk Bubble Sort standar (Loop luar)?",
+      "options": ["for(int i=0; i<n; i++)", "for(int i=0; i<n-1; i++)", "for(int i=10; i>0; i--)", "while(true)"],
+      "correct": 1,
+      "feedback": "Benar. Cukup sampai n-1 karena elemen terakhir otomatis urut."
+    },
+    {
+      "question": "Apa arti 'Ascending'?",
+      "options": ["Urut dari Besar ke Kecil", "Urut dari Kecil ke Besar", "Acak", "Terbalik"],
+      "correct": 1,
+      "feedback": "Benar. Ascending = Naik (Kecil ke Besar)."
+    }
+  ]
+}
