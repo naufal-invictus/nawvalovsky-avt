@@ -5,7 +5,6 @@ import { Suspense, lazy } from 'react'; // IMPORT INI PENTING
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { BottomSection } from './components/layout/BottomSection';
-import { LoadingScreen } from './components/ui/LoadingScreen'; // Gunakan loading screen Anda
 
 // Ikon
 import { Mail, Users } from 'lucide-react';
@@ -31,7 +30,6 @@ function AppContent() {
 
       <main className="flex-grow">
         {/* Suspense akan menampilkan LoadingScreen saat pindah halaman */}
-        <Suspense fallback={<LoadingScreen />}>
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/apps" element={<AppList />} />
@@ -73,7 +71,6 @@ function AppContent() {
               </div>
             } />
           </Routes>
-        </Suspense>
       </main>
 
       {!isHideBottom && location.pathname === '/' && <BottomSection />}
