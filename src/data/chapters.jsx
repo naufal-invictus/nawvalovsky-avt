@@ -4,6 +4,7 @@ import chapterKerasulan from './json/Chapter-Kerasulan.json';
 import chapterSunnah from './json/Chapter-Sunnah.json';
 import chapterIman from './json/Chapter-Iman.json';
 import chapterSoceng from './json/Chapter-Soceng.json';
+import chapterScamUpdate from './json/Chapter-Scam-Update.json';
 
 
 const formatChapter = (chapter, readTime) => ({
@@ -21,11 +22,14 @@ const formatChapter = (chapter, readTime) => ({
 });
 
 export const chapters = [
+    formatChapter(chapterCysec, "8 min read"),
+    formatChapter(chapterSoceng, "8 min read"),
+    formatChapter(chapterScamUpdate, "12 min read"),
+
   formatChapter(chapterKekuasaan, "15 min read"),
   formatChapter(chapterKerasulan, "15 min read"),
   formatChapter(chapterSunnah, "20 min read"),
   formatChapter(chapterIman, "12 min read"),
-  formatChapter(chapterCysec, "8 min read"),
-    formatChapter(chapterSoceng, "8 min read"),
+
 
 ];

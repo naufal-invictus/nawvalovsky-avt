@@ -1,0 +1,238 @@
+{
+  "id": "chapter-scam-update",
+  "metadata": {
+    "title": "Waspada Scammer 2.0: AI & QR Code Jahat",
+    "subtitle": "Ketika Penipu Lebih Canggih dari Korbannya",
+    "description": "Kumpulan modus penipuan terbaru yang wajib lo tau. Mulai dari scan QR Code beracun, suara AI yang nyeremin, sampai loker freelance palsu.",
+    "thumbnail": "/images/blog/CysecThumbnail.webp",
+    "tags": ["Keamanan", "Viral"],
+    "category": "Teknologi"
+  },
+  "content": [
+    {
+      "section_id": "intro-evolution",
+      "blocks": [
+        { "type": "heading", "text": "Penipu Udah Nggak Minta Pulsa Lagi" },
+        {
+          "type": "image",
+          "src": "/images/blog/Ransom.webp",
+          "caption": "Penjahat siber terus upgrade skill, lo jangan mau kalah.",
+          "position": "right"
+        },
+        {
+          "type": "paragraph",
+          "text": "Masih inget zaman 'Mama Minta Pulsa'? Itu mah jadul banget. Sekarang, penipu udah pake teknologi canggih kayak **AI (Artificial Intelligence)** dan manipulasi psikologi tingkat dewa."
+        },
+        {
+          "type": "paragraph",
+          "text": "Di bab ini, kita bakal bedah modus-modus *fresh from the oven* yang lagi viral. Jangan sampe lo jadi korban karena kudet (kurang update) sama trik baru mereka."
+        }
+      ]
+    },
+    {
+      "section_id": "quishing",
+      "blocks": [
+        { "type": "heading", "text": "Quishing: QR Code Beracun" },
+        {
+          "type": "paragraph",
+          "text": "Lagi parkir atau mau liat menu resto, lo liat stiker QR Code. Lo scan, eh malah masuk ke website aneh yang minta login M-Banking. Hati-hati, itu **Quishing (QR Phishing)**."
+        },
+        {
+          "type": "analogy",
+          "title": "Stiker Timpa Stiker",
+          "text": "Modusnya simpel tapi jahat: Penipu nempelin stiker QR Code palsu mereka DI ATAS stiker QR Code asli milik toko/parkiran. Pas lo scan, yang kebuka bukan menu makanan, tapi link download malware."
+        },
+        {
+          "type": "paragraph",
+          "text": "Tips: Cek fisik stikernya. Kalau berasa tebal atau kayak tempelan baru, waspada! Jangan input data sensitif lewat link hasil scan QR sembarangan."
+        }
+      ]
+    },
+    {
+      "section_id": "ai-voice",
+      "blocks": [
+        { "type": "heading", "text": "Teror Telepon Suara AI" },
+        {
+          "type": "image",
+          "src": "/images/blog/Hat.webp",
+          "caption": "Suara di telepon bisa dimanipulasi jadi siapa aja.",
+          "position": "left"
+        },
+        {
+          "type": "paragraph",
+          "text": "Tiba-tiba ada nomor asing nelpon, suaranya persis kayak adek/anak lo lagi nangis-nangis: *'Kak, tolong aku kecelakaan, butuh transfer sekarang!'*. Lo panik? Jelas."
+        },
+        {
+          "type": "paragraph",
+          "text": "Padahal adek lo lagi tidur di kamar. Itu adalah **AI Voice Cloning**. Penipu cuma butuh sampel suara 3 detik dari instastory/TikTok korban buat bikin tiruan suara yang mirip banget pake AI. Serem kan?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Solusi: Bikin 'Kata Sandi Keluarga' (Safe Word) yang cuma kalian yang tau. Kalau ada telepon darurat, tanya sandinya apa."
+        }
+      ]
+    },
+    {
+      "section_id": "task-scam",
+      "blocks": [
+        { "type": "heading", "text": "Loker Freelance: Like & Subscribe" },
+        {
+          "type": "paragraph",
+          "text": "Dapet tawaran kerja santai lewat WA/Telegram? Tugasnya cuma *like* video YouTube atau *follow* akun TikTok, dibayar 10rb per tugas. Awalnya sih beneran dibayar (buat mancing)."
+        },
+        {
+          "type": "paragraph",
+          "text": "Tapi abis itu, lo diminta **Deposit** duit (Top Up) buat dapet 'Tugas Premium' dengan komisi gede. Pas lo transfer juta-jutan, adminnya ilang, grup dibubarin. Ini namanya **Ponzi Scheme** berkedok loker."
+        },
+        {
+          "type": "quote",
+          "text": "If it sounds too good to be true, it probably is. Nggak ada kerjaan gampang gaji selangit.",
+          "author": "Logika Dasar"
+        }
+      ]
+    },
+    {
+      "section_id": "pig-butchering",
+      "blocks": [
+        { "type": "heading", "text": "Love Scam: Pig Butchering" },
+        {
+          "type": "image",
+          "src": "/images/blog/Gembok.webp",
+          "caption": "Hati-hati naruh hati, nanti dompet ikut mati.",
+          "position": "right"
+        },
+        {
+          "type": "paragraph",
+          "text": "Istilah ngerinya **Pig Butchering** (Potong Babi). Korban 'digemukkan' dulu dengan rasa sayang, baru 'disembelih' duitnya."
+        },
+        {
+          "type": "paragraph",
+          "text": "Biasanya kenalan lewat Dating App atau salah sambung di WA. Profilnya cakep, tajir, sopan. Lama-lama diajak bisnis Crypto atau investasi bodong. Pas lo invest banyak, websitenya ilang. Modus ini mainnya sabar, bisa berbulan-bulan PDKT dulu."
+        }
+      ]
+    },
+    {
+      "section_id": "juice-jacking",
+      "blocks": [
+        { "type": "heading", "text": "Juice Jacking: Colokan Maut" },
+        {
+          "type": "paragraph",
+          "text": "Baterai lowbat pas lagi di bandara/stasiun? Liat ada port USB nganggur, langsung colok? **JANGAN!**"
+        },
+        {
+          "type": "paragraph",
+          "text": "Kabel USB itu punya dua fungsi: ngisi daya & transfer data. Hacker bisa memodifikasi port USB umum buat nyedot data HP lo atau nanam virus pas lo lagi ngecas. Ini namanya **Juice Jacking**."
+        },
+        {
+          "type": "paragraph",
+          "text": "Solusi: Bawa kepala charger/powerbank sendiri, atau pake kabel *USB Data Blocker* (kabel yang cuma bisa ngecas, gabisa transfer data)."
+        }
+      ]
+    },
+    {
+      "section_id": "wrong-transfer",
+      "blocks": [
+        { "type": "heading", "text": "Modus 'Salah Transfer' Pinjol" },
+        {
+          "type": "paragraph",
+          "text": "Tiba-tiba ada duit masuk 5 juta ke rekening lo. Terus ada orang nelpon marah-marah minta dibalikin karena 'salah transfer'. Lo balikin dong karena lo orang jujur."
+        },
+        {
+          "type": "paragraph",
+          "text": "Besoknya, lo ditagih Debt Collector Pinjol. Ternyata, data lo dipake buat minjem duit online, dan duit yang masuk itu duit pencairan pinjaman. Pas lo 'balikin' ke penipu, lo sebenernya ngasih duit itu ke dia, tapi utang Pinjol-nya tetep atas nama LO."
+        },
+        {
+          "type": "paragraph",
+          "text": "Tips: Jangan transfer balik sendiri! Lapor ke Bank biar pihak Bank yang urus pembatalannya."
+        }
+      ]
+    },
+    {
+      "section_id": "closing-scam",
+      "blocks": [
+        { "type": "heading", "text": "Prinsip Zero Trust" },
+        {
+          "type": "image",
+          "src": "/images/blog/Triad.webp",
+          "caption": "Jangan percaya siapapun, verifikasi segalanya.",
+          "position": "left"
+        },
+        {
+          "type": "paragraph",
+          "text": "Di era digital ini, kita harus pake prinsip **Zero Trust**. Jangan percaya siapapun secara default, mau itu yang ngaku polisi, orang bank, atau bahkan saudara (di telepon)."
+        },
+        {
+          "type": "reflection",
+          "text": "Kejahatan siber nggak akan mati, cuma ganti kulit. Update terus pengetahuan lo, karena **Knowledge is the best Firewall**."
+        }
+      ]
+    }
+  ],
+  "references": [
+    "FBI Internet Crime Report",
+    "Kaspersky Security Bulletin",
+    "CekRekening.id"
+  ],
+  "quiz": [
+    {
+      "question": "Apa itu 'Quishing'?",
+      "options": ["Mancing ikan di laut", "Phishing menggunakan QR Code palsu", "Aplikasi kuis online", "Teknik coding cepat"],
+      "correct": 1,
+      "feedback": "Benar! QR Phishing = Quishing."
+    },
+    {
+      "question": "Bagaimana cara kerja modus 'AI Voice Cloning'?",
+      "options": ["Mengirim robot ke rumah", "Meniru suara orang terdekat menggunakan AI", "Menggunakan suara hantu", "Merekam suara secara manual"],
+      "correct": 1,
+      "feedback": "Tepat. Suara keluarga bisa dipalsukan buat minta duit."
+    },
+    {
+      "question": "Apa tanda-tanda loker freelance palsu (Task Scam)?",
+      "options": ["Ada kontrak kerja jelas", "Diminta deposit uang di awal", "Wawancara langsung di kantor", "Gaji sesuai UMR"],
+      "correct": 1,
+      "feedback": "Betul. Kerja itu DIBAYAR, bukan MEMBAYAR."
+    },
+    {
+      "question": "Istilah 'Pig Butchering' merujuk pada modus penipuan...",
+      "options": ["Jual beli ternak", "Asmara (Love Scam) berujung investasi bodong", "Pencurian resep masakan", "Hack akun game"],
+      "correct": 1,
+      "feedback": "Benar. Korban dimanjakan dulu sebelum 'disembelih' hartanya."
+    },
+    {
+      "question": "Bahaya menggunakan port USB publik sembarangan disebut...",
+      "options": ["Juice Jacking", "Power Nap", "Quick Charge", "Data Mining"],
+      "correct": 0,
+      "feedback": "Tepat. Bisa nyedot data sambil ngecas."
+    },
+    {
+      "question": "Jika tiba-tiba menerima transfer nyasar dan ada yang minta dikembalikan, sebaiknya...",
+      "options": ["Langsung transfer balik", "Pakai buat belanja", "Lapor ke Bank, jangan transfer sendiri", "Marah-marah di medsos"],
+      "correct": 2,
+      "feedback": "Benar. Biar bank yang memproses secara legal."
+    },
+    {
+      "question": "Apa fungsi 'Kata Sandi Keluarga' (Safe Word)?",
+      "options": ["Buat masuk rumah", "Verifikasi identitas saat ada telepon darurat mencurigakan", "Password wifi rumah", "Kode brankas"],
+      "correct": 1,
+      "feedback": "Tepat. Untuk melawan penipuan suara AI."
+    },
+    {
+      "question": "Kenapa stiker QR Code di tempat umum harus dicek fisiknya?",
+      "options": ["Biar estetik", "Takut ada stiker palsu ditimpa di atasnya", "Mencari hadiah", "Mengecek masa berlaku"],
+      "correct": 1,
+      "feedback": "Betul. Waspada QR code timpaan."
+    },
+    {
+      "question": "Apa prinsip keamanan siber yang disarankan di era sekarang?",
+      "options": ["Trust Everyone", "Zero Trust (Jangan percaya siapapun)", "Blind Trust", "Trust Issue"],
+      "correct": 1,
+      "feedback": "Benar. Verifikasi dulu, baru percaya."
+    },
+    {
+      "question": "Alat apa yang bisa mencegah Juice Jacking saat ngecas di tempat umum?",
+      "options": ["Kabel Data Blocker", "Kabel Ties", "Kabel Jumper", "Kabel LAN"],
+      "correct": 0,
+      "feedback": "Tepat. Alat ini memblokir jalur data USB."
+    }
+  ]
+}
