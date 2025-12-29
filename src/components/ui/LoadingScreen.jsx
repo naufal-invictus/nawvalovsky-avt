@@ -11,17 +11,17 @@ const LoadingScreen = ({ onComplete }) => {
   const [show, setShow] = useState(true);
 
   useEffect(() => {
-    // 1. Pilih Quote Acak saat mount
+    // 1. Pilih Quote Acak
     const randomQuote = sadQuotes[Math.floor(Math.random() * sadQuotes.length)];
     setQuote(randomQuote);
 
-    // 2. Tentukan durasi random antara 3000ms (3s) sampai 6000ms (6s)
+    // 2. Durasi random 3-6 detik
     const duration = Math.floor(Math.random() * 3000) + 3000;
 
-    // 3. Timer untuk trigger selesai
+    // 3. Timer
     const timer = setTimeout(() => {
-      setShow(false); // Trigger animasi exit
-      setTimeout(onComplete, 500); // Tunggu animasi exit selesai baru unmount
+      setShow(false);
+      setTimeout(onComplete, 500);
     }, duration);
 
     return () => clearTimeout(timer);
@@ -42,39 +42,41 @@ const LoadingScreen = ({ onComplete }) => {
         {/* Icon Animasi */}
         <div className="flex justify-center mb-6">
            <div className="relative">
-             <Cloud className="w-12 h-12 text-blue-300 absolute -top-4 -right-6 animate-bounce delay-100 opacity-80" />
-             <Moon className="w-8 h-8 text-blue-200 absolute top-4 -left-6 animate-pulse delay-700" />
-             <div className="bg-white p-4 rounded-2xl shadow-sm border border-blue-50 relative z-10">
-                <Code2 className="w-10 h-10 text-blue-500/80 animate-spin-slow" strokeWidth={1.5} />
+             <Cloud className="w-12 h-12 text-blue-400 absolute -top-4 -right-6 animate-bounce delay-100 opacity-80" />
+             <Moon className="w-8 h-8 text-blue-300 absolute top-4 -left-6 animate-pulse delay-700" />
+             <div className="bg-white p-4 rounded-2xl shadow-sm border border-blue-100 relative z-10">
+                <Code2 className="w-10 h-10 text-blue-600 animate-spin-slow" strokeWidth={1.5} />
              </div>
            </div>
         </div>
 
-        {/* Quote Section */}
+        {/* Quote Section (CONTRAST FIX) */}
         <div className="space-y-3">
-          <p className="font-serif text-xl md:text-2xl text-slate-600 leading-relaxed italic animate-in slide-in-from-bottom-4 fade-in duration-1000">
+          {/* Perbaikan: text-slate-600 -> text-slate-800 (Lebih Gelap) */}
+          <p className="font-serif text-xl md:text-2xl text-slate-800 leading-relaxed italic animate-in slide-in-from-bottom-4 fade-in duration-1000">
             "{quote}"
           </p>
-          <p className="text-xs font-sans font-medium tracking-widest text-blue-400 uppercase opacity-70">
+          {/* Perbaikan: text-blue-400 + opacity -> text-blue-600 (Tanpa Opacity) */}
+          <p className="text-xs font-sans font-bold tracking-widest text-blue-600 uppercase">
             ~ Dev Journal
           </p>
         </div>
 
-        {/* Minimalist Loading Bar */}
+        {/* Loading Bar */}
         <div className="w-full max-w-[200px] mx-auto pt-6">
-           <div className="h-1 w-full bg-blue-50 rounded-full overflow-hidden">
-             <div className="h-full bg-blue-300/80 w-full origin-left animate-progress-indeterminate rounded-full"></div>
+           <div className="h-1 w-full bg-blue-100 rounded-full overflow-hidden">
+             <div className="h-full bg-blue-500 w-full origin-left animate-progress-indeterminate rounded-full"></div>
            </div>
         </div>
 
       </div>
 
-      {/* Footer Version */}
-      <div className="absolute bottom-8 text-[10px] text-slate-400 font-sans tracking-widest opacity-60">
+      {/* Footer Version (CONTRAST FIX) */}
+      {/* Perbaikan: text-slate-400 opacity-60 -> text-slate-500 opacity-100 */}
+      <div className="absolute bottom-8 text-[10px] text-slate-500 font-bold font-sans tracking-widest">
         NAWVALOVSKY V.0.0.1
       </div>
 
-      {/* Styles untuk animasi custom jika Tailwind config belum ada */}
       <style>{`
         @keyframes progress-indeterminate {
           0% { transform: translateX(-100%); }

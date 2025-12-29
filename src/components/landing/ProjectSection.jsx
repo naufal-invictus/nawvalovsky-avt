@@ -22,7 +22,7 @@ const ProjectSection = () => {
           </p>
         </div>
 
-        {/* Project Grid - No Overlap, Clean & Rich */}
+        {/* Project Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {PROJECTS.map((project, i) => (
             <div
@@ -30,11 +30,17 @@ const ProjectSection = () => {
               className="group relative flex flex-col bg-[var(--bg-surface)] border border-[var(--border-dim)] rounded-xl overflow-hidden hover:border-[var(--accent)] transition-all duration-500 shadow-2xl shadow-blue-900/10"
             >
               {/* Image Container with Cyber Overlay */}
-              <div className="aspect-video overflow-hidden relative">
+              <div className="aspect-video overflow-hidden relative bg-[var(--bg-surface)]">
                 <div className="absolute inset-0 bg-blue-950/40 group-hover:bg-transparent transition-colors duration-500 z-10" />
+
+                {/* OPTIMASI GAMBAR DI SINI */}
                 <img
                   src={project.image}
                   alt={project.title}
+                  loading="lazy"        // Load hanya saat di-scroll
+                  decoding="async"      // Decode async
+                  width="600"           // Hint width agar browser tau rasionya
+                  height="337"          // Hint height (16:9)
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 grayscale-[50%] group-hover:grayscale-0"
                 />
 
@@ -55,7 +61,6 @@ const ProjectSection = () => {
                       {project.title}
                     </h3>
                   </div>
-
                 </div>
 
                 <p className="text-sm text-[var(--text-secondary)] leading-relaxed mb-6 flex-grow line-clamp-3">
@@ -81,7 +86,7 @@ const ProjectSection = () => {
           ))}
         </div>
 
-        {/* View More - Simple Call to Action */}
+        {/* View More */}
         <div className="mt-16 text-center">
            <p className="text-[var(--text-muted)] text-xs font-mono uppercase tracking-[0.2em] mb-4">
              Want to see the source code?
@@ -98,7 +103,6 @@ const ProjectSection = () => {
   );
 };
 
-// Helper Icon
 const ArrowRightIcon = ({size}) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
 );

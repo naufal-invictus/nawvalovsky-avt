@@ -2,27 +2,25 @@ import { useRef } from 'react';
 import { Terminal, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const LINUX_SETUPS = [
-
   {
     title: "My Box",
     year: "2024",
     distro: "Arch Linux",
     img: "/images/linux/Arch1.webp"
   },
-      {
+  {
     title: "ST-AT Linux",
     year: "2023",
     distro: "Artic Linux 2",
     img: "/images/linux/Artic.webp"
   },
-
-    {
+  {
     title: "ST-AT Linux",
     year: "2022",
     distro: "Artic Linux Arch",
     img: "/images/linux/Artic2.webp"
   },
-    {
+  {
     title: "ST-GH Linux",
     year: "2022",
     distro: "Black Arch",
@@ -42,7 +40,7 @@ const LinuxSection = () => {
   const scroll = (direction) => {
     if (scrollRef.current) {
       const { current } = scrollRef;
-      const scrollAmount = 350; // Sesuaikan dengan lebar kartu
+      const scrollAmount = 350;
       current.scrollBy({
         left: direction === 'left' ? -scrollAmount : scrollAmount,
         behavior: 'smooth',
@@ -54,7 +52,7 @@ const LinuxSection = () => {
     <section className="py-16 bg-[var(--bg-main)] border-t border-[var(--border-dim)]">
       <div className="container-safe px-6 md:px-8">
 
-        {/* Header Section dengan Tombol Navigasi */}
+        {/* Header Section */}
         <div className="flex items-center justify-between mb-8">
           <div className="flex items-center gap-3">
             <Terminal className="text-[var(--accent)]" size={18} />
@@ -63,7 +61,6 @@ const LinuxSection = () => {
             </h3>
           </div>
 
-          {/* Tombol Slide Kiri Kanan */}
           <div className="flex gap-2">
             <button
               onClick={() => scroll('left')}
@@ -92,10 +89,15 @@ const LinuxSection = () => {
               key={index}
               className="flex-shrink-0 w-72 md:w-80 group snap-center"
             >
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-[var(--border-card)] shadow-sm mb-4 relative">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-[var(--border-card)] shadow-sm mb-4 relative bg-[var(--bg-surface)]">
+                {/* OPTIMASI GAMBAR DI SINI */}
                 <img
                   src={setup.img}
                   alt={setup.title}
+                  loading="lazy"        // Load hanya saat di-scroll dekat
+                  decoding="async"      // Decode gambar di thread terpisah
+                  width="320"           // Hint ukuran render (sesuai w-80)
+                  height="240"          // Hint ukuran render (sesuai aspect 4/3)
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute top-3 right-3 px-3 py-1 bg-[var(--bg-main)]/80 backdrop-blur-md border border-[var(--border-dim)] rounded-full shadow-sm">

@@ -8,22 +8,19 @@ export default defineConfig({
     tailwindcss(),
   ],
   build: {
-    // Optimasi Build
-    target: 'esnext',
-    minify: 'esbuild',
-    cssCodeSplit: true, // Memecah CSS per file JS
     rollupOptions: {
       output: {
-        // STRATEGI PENTING: Memisahkan Vendor (Library) dari Kode Aplikasi
         manualChunks: {
-          // Core React dipisah agar browser bisa cache
+          // 1. Pisahkan React Core (Wajib load duluan)
           'vendor-react': ['react', 'react-dom', 'react-router-dom'],
-          // UI Library dipisah (biasanya berat)
+
+          // 2. Pisahkan Library UI Berat (Framer Motion & Lucide)
+          // Browser bisa men-download ini secara paralel (bersamaan) dengan main code
           'vendor-ui': ['framer-motion', 'lucide-react', 'clsx', 'tailwind-merge'],
         },
       },
     },
-    // Menghindari warning chunk size jika di bawah 1000kb
+    // Menghilangkan warning ukuran chunk jika masih di bawah 500kb (default vite limit)
     chunkSizeWarningLimit: 1000,
   },
 })
