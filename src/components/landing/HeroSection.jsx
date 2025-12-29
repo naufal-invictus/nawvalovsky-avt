@@ -16,7 +16,7 @@ const HeroSection = () => {
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[var(--border-dim)] bg-[var(--bg-surface)] text-[10px] text-[var(--accent)] tracking-widest uppercase shadow-sm"
           >
             <Terminal size={12} />
-            <span>VER 2.5</span>
+            <span>2.5</span>
           </motion.div>
 
           <motion.h1
@@ -53,8 +53,14 @@ const HeroSection = () => {
 
               <div className="absolute inset-0 bg-gradient-to-br from-slate-800 to-[var(--bg-main)] rounded-full border border-[var(--border-dim)] overflow-hidden z-10">
                   <img
-                    src={profileImg} alt="Profile"
-                    className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500 grayscale hover:grayscale-0" loading="eager"
+                    src={profileImg}
+                    alt="Profile"
+                    // LCP FIX: Prioritas Tinggi & Ukuran Eksplisit
+                    fetchPriority="high"
+                    width="320"
+                    height="320"
+                    className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500 grayscale hover:grayscale-0"
+                    loading="eager"
                   />
               </div>
               {/* Decorative Rings Cyan */}

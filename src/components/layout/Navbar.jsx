@@ -1,7 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-// ThemeToggle dihapus karena file tidak ada
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -14,7 +13,6 @@ export const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Helper untuk menentukan class aktif
   const getLinkClass = (path) => {
     const isActive = location.pathname === path || (path !== '/' && location.pathname.startsWith(path));
     return `relative text-sm font-medium transition-colors duration-300 ${
@@ -49,12 +47,16 @@ export const Navbar = () => {
               )}
             </Link>
           ))}
-          {/* ThemeToggle dihapus dari sini */}
         </div>
 
         {/* Mobile Toggle */}
         <div className="md:hidden flex items-center gap-4">
-          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-[var(--text-primary)]">
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="text-[var(--text-primary)]"
+            // ACCESSIBILITY FIX
+            aria-label="Toggle navigation menu"
+          >
             {isMobileMenuOpen ? <X /> : <Menu />}
           </button>
         </div>

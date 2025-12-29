@@ -8,7 +8,8 @@ export const Footer = () => {
           <span className="text-xs font-bold uppercase tracking-widest text-[var(--text-primary)]">
             {PROFILE.name} © 2025
           </span>
-          <span className="text-[10px] text-[var(--text-secondary)] opacity-70 mt-1">
+          {/* CONTRAST FIX: Opacity increased to 90 */}
+          <span className="text-[10px] text-[var(--text-secondary)] opacity-90 mt-1">
             IT Support & Cloud Practitioner
           </span>
         </div>

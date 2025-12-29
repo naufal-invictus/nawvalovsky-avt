@@ -14,7 +14,7 @@ const InterestSection = () => {
       <div className="container-safe px-6 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-          {/* Focus Utama (Highlighted) */}
+          {/* Focus Utama */}
           <div className="space-y-4">
             <div className="flex items-center gap-2 text-[var(--text-primary)]">
               <Target size={18} className="text-[var(--link-normal)]" />
@@ -23,7 +23,8 @@ const InterestSection = () => {
             <ul className="space-y-2">
               {interests.focus.map((item, i) => (
                 <li key={i} className="text-[13px] font-semibold text-[var(--link-normal)] flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--link-normal)] opacity-60"></span>
+                  {/* CONTRAST FIX: Opacity increased to 100 */}
+                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--link-normal)]"></span>
                   {item}
                 </li>
               ))}
@@ -54,7 +55,8 @@ const InterestSection = () => {
             <ul className="space-y-2">
               {interests.topics.map((item, i) => (
                 <li key={i} className="text-[12px] text-[var(--text-secondary)] flex items-center gap-2">
-                  <span className="text-[10px] opacity-40 font-mono">[{i+1}]</span>
+                   {/* CONTRAST FIX: Opacity increased to 70 */}
+                  <span className="text-[10px] opacity-70 font-mono">[{i+1}]</span>
                   {item}
                 </li>
               ))}
