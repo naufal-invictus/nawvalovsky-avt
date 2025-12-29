@@ -1,0 +1,242 @@
+{
+  "id": "chapter-soceng",
+  "metadata": {
+    "title": "Social Engineering: Awas Hacker Gadungan!",
+    "subtitle": "Modal Omong Doang, Dompet Lo Melayang",
+    "description": "Membongkar trik penipu online yang ngaku-ngaku hacker atau petugas bank. Jangan sampai kena tipu daya mulut manis mereka.",
+    "thumbnail": "/images/blog/CysecThumbnail.webp",
+    "tags": ["Keamanan", "Penipuan"],
+    "category": "Teknologi"
+  },
+  "content": [
+    {
+      "section_id": "hook-intro",
+      "blocks": [
+        { "type": "heading", "text": "Dapet Hadiah iPhone? Tunggu Dulu!" },
+        {
+          "type": "image",
+          "src": "/images/blog/Ransom.webp",
+          "caption": "Niat untung malah buntung kalau asal klik.",
+          "position": "right"
+        },
+        {
+          "type": "paragraph",
+          "text": "Pernah dapet WA dari nomor asing? Isinya: *'Selamat! Nomor Anda terpilih mendapatkan hadiah Rp 50 Juta!'* atau *'Paket Anda tertahan, cek resi di sini.'* Hati lo langsung dag-dig-dug seneng campur panik."
+        },
+        {
+          "type": "paragraph",
+          "text": "Tahan jempol lo! Jangan diklik. Itu bukan rejeki nomplok, tapi **Social Engineering**. Penipu zaman *now* nggak perlu jago coding buat nge-hack lo, mereka cuma perlu jago ngomong buat bikin lo nyerahin kunci rumah lo sendiri."
+        }
+      ]
+    },
+    {
+      "section_id": "what-is-soceng",
+      "blocks": [
+        { "type": "heading", "text": "Apa Itu Social Engineering?" },
+        {
+          "type": "paragraph",
+          "text": "Kalau hacker di film-film ngejebol sistem lewat layar hitam penuh kode (teknis), **Social Engineer** ngejebol *psikologi* manusianya."
+        },
+        {
+          "type": "analogy",
+          "title": "Analogi Satpam & Maling",
+          "text": "Hacker teknis itu kayak maling yang susah payah ngebobol brankas pake bor. Social Engineer itu maling yang nyamar jadi teknisi AC, ngetok pintu, terus lo sendiri yang bukain pintu sambil senyum."
+        },
+        {
+          "type": "paragraph",
+          "text": "Intinya: Mereka memanipulasi lo supaya lo melakukan kesalahan fatal, kayak ngasih password atau transfer duit."
+        }
+      ]
+    },
+    {
+      "section_id": "fake-hacker",
+      "blocks": [
+        { "type": "heading", "text": "Jasa Hack Akun: Mitos atau Fakta?" },
+        {
+          "type": "image",
+          "src": "/images/blog/Hat.webp",
+          "caption": "Jangan percaya 'Jasa Hack' di kolom komentar.",
+          "position": "left"
+        },
+        {
+          "type": "paragraph",
+          "text": "Sering liat di komen IG/TikTok: *'Ka, makasih ya udah balikin akun aku, yang mau jasanya hubungi nomor ini...'*? **FIX ITU PENIPUAN.**"
+        },
+        {
+          "type": "paragraph",
+          "text": "Hacker beneran (White Hat) sibuk kerja profesional, nggak bakal ngiklan jasa receh di kolom komen. Si 'Hacker Gadungan' ini biasanya minta duit duluan, atau malah minta password lo dengan alasan 'buat verifikasi'. Hasilnya? Duit ilang, akun makin nggak balik."
+        }
+      ]
+    },
+    {
+      "section_id": "apk-scam",
+      "blocks": [
+        { "type": "heading", "text": "Teror File .APK (Undangan Nikah)" },
+        {
+          "type": "paragraph",
+          "text": "Ini modus yang lagi rame banget. Ada yang kirim file di WA judulnya: *'Surat Tilang.apk'*, *'Undangan Pernikahan.apk'*, atau *'Resi Paket.apk'*."
+        },
+        {
+          "type": "paragraph",
+          "text": "Inget ya teman-teman, undangan itu formatnya gambar (.jpg) atau link web, BUKAN aplikasi (.apk). Kalau lo install, aplikasi jahat itu bakal nyedot SMS lo (termasuk kode OTP bank). Tiba-tiba saldo ludes tanpa lo sadari."
+        },
+        {
+          "type": "quote",
+          "text": "Curiosity killed the cat. Kepo sembarangan bisa membunuh saldo rekening lo.",
+          "author": "Pepatah Digital"
+        }
+      ]
+    },
+    {
+      "section_id": "otp-rule",
+      "blocks": [
+        { "type": "heading", "text": "Kode OTP = Nyawa Akun Lo" },
+        {
+          "type": "image",
+          "src": "/images/blog/Gembok.webp",
+          "caption": "OTP itu rahasia, bahkan Tuhan pun nggak akan minta OTP lo.",
+          "position": "right"
+        },
+        {
+          "type": "paragraph",
+          "text": "Modus lain: Ada yang nelpon ngaku 'CS Bank' atau 'Kasir Minimarket'. Bilangnya salah kirim pulsa atau mau upgrade fitur bank. Ujung-ujungnya minta kode 4-6 angka yang masuk ke SMS lo."
+        },
+        {
+          "type": "paragraph",
+          "text": "Itu kode **OTP (One-Time Password)**. Sekali lo kasih, mereka bisa ambil alih akun lo (WA, Gojek, Bank). **Aturan Emas:** Pihak resmi TIDAK PERNAH minta OTP lewat telepon/chat."
+        }
+      ]
+    },
+    {
+      "section_id": "urgency-tactic",
+      "blocks": [
+        { "type": "heading", "text": "Senjata Mereka: Bikin Lo Panik" },
+        {
+          "type": "paragraph",
+          "text": "Kenapa banyak orang pinter tetep kena tipu? Karena penipu mainin emosi **Takut** atau **Serakah**."
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Takut:** 'Rekening Anda diblokir! Segera konfirmasi dalam 5 menit!' (Biar lo nggak sempet mikir).",
+            "**Serakah:** 'Anda menang mobil! Pajak ditanggung pemenang, transfer sekarang!' (Biar lo nafsu)."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Kalau ada yang maksa lo buru-buru, tarik napas. *Slow down*. Itu tanda bahaya."
+        }
+      ]
+    },
+    {
+      "section_id": "defense-steps",
+      "blocks": [
+        { "type": "heading", "text": "Jurus Anti Kena Tipu" },
+        {
+          "type": "image",
+          "src": "/images/blog/Triad.webp",
+          "caption": "Kuatkan pertahanan diri lo.",
+          "position": "left"
+        },
+        {
+          "type": "paragraph",
+          "text": "Gimana cara ngelawan hacker psikologis ini? Pake teknik **S.T.O.P**:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**S - Stop:** Jangan buru-buru klik atau bales.",
+            "**T - Think:** Masuk akal nggak? Masa dapet hadiah padahal nggak ikut lomba?",
+            "**O - Observe:** Cek nomornya. Cek link-nya (typo nggak?).",
+            "**P - Protect:** Jangan kasih data pribadi (NIK, Nama Ibu, OTP) sembarangan."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "closing-soceng",
+      "blocks": [
+        { "type": "heading", "text": "Jadilah Netizen yang Skeptis" },
+        {
+          "type": "paragraph",
+          "text": "Di dunia online, **rasa curiga (skeptis)** itu sehat. Jangan gampang percaya sama foto profil ganteng/cantik atau logo bank di WA. Itu semua bisa dipalsukan dalam hitungan detik."
+        },
+        {
+          "type": "paragraph",
+          "text": "Jadilah 'satpam' buat diri sendiri dan keluarga. Kalau ada info mencurigakan, mending kroscek dulu ke sumber aslinya (telepon call center resmi)."
+        },
+        {
+          "type": "reflection",
+          "text": "Keamanan bukan cuma soal software antivirus, tapi soal 'Mindset'. Be smart, stay safe!"
+        }
+      ]
+    }
+  ],
+  "references": [
+    "Kevin Mitnick: The Art of Deception",
+    "Kominfo: Awas Penipuan Online",
+    "Siber Polri Education Series"
+  ],
+  "quiz": [
+    {
+      "question": "Apa itu Social Engineering?",
+      "options": ["Teknik merakit komputer", "Memanipulasi psikologi orang untuk mencuri data", "Membuat media sosial", "Belajar sosiologi"],
+      "correct": 1,
+      "feedback": "Benar! Ini soal nge-hack manusia, bukan mesin."
+    },
+    {
+      "question": "Jika ada yang menawarkan 'Jasa Balikin Akun IG' di kolom komentar, kemungkinan besar mereka adalah...",
+      "options": ["Hacker Profesional", "Karyawan Instagram", "Penipu (Scammer)", "Robin Hood"],
+      "correct": 2,
+      "feedback": "Tepat. Itu biasanya modus penipuan."
+    },
+    {
+      "question": "File jenis apa yang sering dipakai penipu lewat WA (modus undangan/kurir)?",
+      "options": [".jpg (Gambar)", ".pdf (Dokumen)", ".apk (Aplikasi)", ".mp3 (Lagu)"],
+      "correct": 2,
+      "feedback": "Betul. Jangan pernah install file .apk sembarangan!"
+    },
+    {
+      "question": "Apa kepanjangan OTP yang tidak boleh diberikan ke siapapun?",
+      "options": ["Only Top Player", "One-Time Password", "Open Transfer Payment", "Orang Tidak Penting"],
+      "correct": 1,
+      "feedback": "Benar. OTP itu kunci rahasia sekali pakai."
+    },
+    {
+      "question": "Apakah CS Bank resmi boleh meminta kode PIN atau OTP lewat telepon?",
+      "options": ["Boleh, kalau darurat", "TIDAK PERNAH BOLEH", "Boleh, untuk verifikasi", "Boleh, kalau CS-nya sopan"],
+      "correct": 1,
+      "feedback": "Tepat. Pihak resmi tidak akan pernah meminta data rahasia itu."
+    },
+    {
+      "question": "Salah satu ciri utama serangan Social Engineering adalah...",
+      "options": ["Menciptakan rasa panik atau buru-buru (Urgency)", "Menggunakan komputer canggih", "Koneksi internet lambat", "Menggunakan bahasa alien"],
+      "correct": 0,
+      "feedback": "Benar. Panik membuat logika kita mati."
+    },
+    {
+      "question": "Apa yang harus dilakukan jika menerima link mencurigakan dari nomor tak dikenal?",
+      "options": ["Langsung klik", "Teruskan ke grup keluarga", "Abaikan dan hapus", "Marah-marah ke nomornya"],
+      "correct": 2,
+      "feedback": "Betul. Jangan berinteraksi, langsung hapus saja."
+    },
+    {
+      "question": "Modus penipuan yang mengirim link website palsu menyerupai aslinya disebut...",
+      "options": ["Phishing", "Hiking", "Camping", "Surfing"],
+      "correct": 0,
+      "feedback": "Benar. Phishing = Memancing korban."
+    },
+    {
+      "question": "Apa langkah 'S' pertama dalam metode S.T.O.P?",
+      "options": ["Start", "Stop (Berhenti sejenak)", "Speed", "Search"],
+      "correct": 1,
+      "feedback": "Tepat. Jangan gegabah, berhenti dulu."
+    },
+    {
+      "question": "Kenapa kita harus curiga (skeptis) di dunia maya?",
+      "options": ["Supaya dianggap pintar", "Karena identitas online mudah dipalsukan", "Biar nggak punya teman", "Supaya hemat kuota"],
+      "correct": 1,
+      "feedback": "Benar. Siapapun bisa mengaku jadi siapapun di internet."
+    }
+  ]
+}

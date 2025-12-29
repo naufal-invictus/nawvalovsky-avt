@@ -3,6 +3,8 @@ import chapterKekuasaan from './json/Chapter-Kekuasaan.json';
 import chapterKerasulan from './json/Chapter-Kerasulan.json';
 import chapterSunnah from './json/Chapter-Sunnah.json';
 import chapterIman from './json/Chapter-Iman.json';
+import chapterSoceng from './json/Chapter-Soceng.json';
+
 
 const formatChapter = (chapter, readTime) => ({
   ...chapter,
@@ -24,4 +26,6 @@ export const chapters = [
   formatChapter(chapterSunnah, "20 min read"),
   formatChapter(chapterIman, "12 min read"),
   formatChapter(chapterCysec, "8 min read"),
+    formatChapter(chapterSoceng, "8 min read"),
+
 ];
