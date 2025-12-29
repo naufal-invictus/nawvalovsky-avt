@@ -74,7 +74,7 @@ const LoadingScreen = ({ onComplete }) => {
       {/* Footer Version (CONTRAST FIX) */}
       {/* Perbaikan: text-slate-400 opacity-60 -> text-slate-500 opacity-100 */}
       <div className="absolute bottom-8 text-[10px] text-slate-500 font-bold font-sans tracking-widest">
-        NAWVALOVSKY V.0.0.1
+        NAWVALOVSKY V.2.5
       </div>
 
       <style>{`
