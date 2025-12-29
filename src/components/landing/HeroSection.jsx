@@ -16,7 +16,7 @@ const HeroSection = () => {
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[var(--border-dim)] bg-[var(--bg-surface)] text-[10px] text-[var(--accent)] tracking-widest uppercase shadow-sm"
           >
             <Terminal size={12} />
-            <span>2.5</span>
+            <span>VER 2.5</span>
           </motion.div>
 
           <motion.h1
