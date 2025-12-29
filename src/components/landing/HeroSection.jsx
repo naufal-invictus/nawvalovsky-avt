@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { PROFILE } from '../../data/personalData';
 import { Terminal, ArrowDown } from 'lucide-react';
+import profileImg from '../../assets/images/pp.webp';
 
 const HeroSection = () => {
   return (
@@ -52,9 +53,8 @@ const HeroSection = () => {
 
               <div className="absolute inset-0 bg-gradient-to-br from-slate-800 to-[var(--bg-main)] rounded-full border border-[var(--border-dim)] overflow-hidden z-10">
                   <img
-                    src="https://i.ibb.co.com/RGZ7rDDk/pp.png"
-                    alt="Profile"
-                    className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500 grayscale hover:grayscale-0"
+                    src={profileImg} alt="Profile"
+                    className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500 grayscale hover:grayscale-0" loading="eager"
                   />
               </div>
               {/* Decorative Rings Cyan */}

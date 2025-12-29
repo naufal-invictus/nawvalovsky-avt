@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import Groq from 'groq-sdk';
 import { Send, AlertCircle, RefreshCw, Hash, X, Hourglass } from 'lucide-react'; // Ganti icon Cpu jadi Hash/Tag
-import { FadeContent } from '../ui/FadeContent';
 
 // Inisialisasi Groq (Menggunakan ENV yang sama)
 const groq = new Groq({
@@ -105,7 +104,6 @@ export const NicknameRoaster = ({ onBack }) => {
 
   return (
     <div className="min-h-screen pt-32 pb-12 w-full flex flex-col items-center justify-center px-4">
-      <FadeContent>
         <div className="w-full max-w-3xl relative">
 
           {/* Main Card */}
@@ -203,7 +201,6 @@ export const NicknameRoaster = ({ onBack }) => {
           )}
 
         </div>
-      </FadeContent>
     </div>
   );
 };

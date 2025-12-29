@@ -4,8 +4,8 @@
     "title": "Cybersecurity 101: Jadi Satpam buat Data Sendiri",
     "subtitle": "Kenapa Password '123456' Itu Bahaya Banget?",
     "description": "Panduan survival di hutan digital. Mulai dari cara bikin password anti-jebol, memahami hacker, sampai kenapa WiFi gratisan itu trap.",
-    "thumbnail": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800",
-    "tags": ["Security", "Teknologi", "Life Skill"],
+    "thumbnail": "/images/blog/CysecThumbnail.webp",
+    "tags": ["Teknologi"],
     "category": "Teknologi"
   },
   "content": [
@@ -15,7 +15,7 @@
         { "type": "heading", "text": "POV: Hari Sial Gara-gara Klik Link" },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1563206767-5b1d975373e7?auto=format&fit=crop&q=80&w=800",
+          "src": "/images/blog/Ransom.webp",
           "caption": "Jangan sampai layar laptop lo jadi begini (Ransomware).",
           "position": "right"
         },
@@ -35,7 +35,7 @@
         { "type": "heading", "text": "Segitiga Suci: CIA Triad" },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80&w=800",
+          "src": "/images/blog/Triad.webp",
           "caption": "Konsep dasar yang wajib diketahui anak IT.",
           "position": "left"
         },
@@ -59,7 +59,7 @@
         { "type": "heading", "text": "Password Lo Lemah? Kelar Hidup Lo" },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&q=80&w=800",
+          "src": "/images/blog/Gembok.webp",
           "caption": "Kunci gembok aja nggak cukup kalau kuncinya ditaruh di bawah keset.",
           "position": "right"
         },
@@ -103,7 +103,7 @@
         { "type": "heading", "text": "Bahaya WiFi Gratisan" },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&q=80&w=800",
+          "src": "/images/blog/Nongkrong.webp",
           "caption": "Nongkrong sih asik, tapi datanya aman nggak?",
           "position": "left"
         },
@@ -146,7 +146,7 @@
         { "type": "heading", "text": "Topi Putih vs Topi Hitam" },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800",
+          "src": "/images/blog/Hat.webp",
           "caption": "Hacker itu nggak semuanya jahat, bro.",
           "position": "right"
         },

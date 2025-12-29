@@ -69,20 +69,20 @@ export const PROJECTS = [
     title: "Aeviathan Sentinel",
     category: "Security",
     desc: "Sistem monitoring berbasis Whatsapp & Javascript.",
-    image: "https://i.ibb.co.com/XZJVfGSG/Aeviathan.png",
+    image: "/images/project/Aeviathan.webp",
   },
     {
     id: 2,
     title: "Aeviathan Sovereign",
     category: "General",
     desc: "Sistem bot whatsapp serbaguna berbasis Baileys.",
-    image: "https://i.ibb.co.com/rG7tbSDX/Sovereign.png",
+    image: "/images/project/Sovereign.webp",
   },
     {
     id: 3,
     title: "TypologyID",
     category: "General",
     desc: "Typology Card Generator berbasis React.js",
-    image: "https://i.ibb.co.com/kV0W87zn/typologyid.png",
+    image: "/images/project/TypologyId.webp",
   }
 ];

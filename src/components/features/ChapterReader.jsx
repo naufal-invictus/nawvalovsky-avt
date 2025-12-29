@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowLeft, ChevronRight, ChevronLeft, Award, CheckCircle, Quote, Sparkles, Book, Image as ImageIcon, Camera, Share2, Bookmark } from 'lucide-react';
-import { FadeContent } from '../ui/FadeContent';
 import { MagnetButton } from '../ui/MagnetButton';
 import { QuizInterface } from './QuizInterface';
 import { Certificate } from './Certificate';
@@ -246,7 +245,6 @@ export const ChapterReader = ({ chapter, onBack }) => {
   if (viewState === 'input-name') {
     return (
         <div className="min-h-screen flex flex-col items-center justify-center px-6 bg-[var(--bg-main)] text-center font-sans">
-            <FadeContent>
                 <div className="mb-8 inline-flex p-6 rounded-full bg-[var(--bg-surface)] text-[var(--link-normal)] border border-[var(--border-card)] shadow-lg shadow-blue-500/10">
                     <Award size={48} />
                 </div>
@@ -274,7 +272,6 @@ export const ChapterReader = ({ chapter, onBack }) => {
                         Klaim Sertifikat
                     </MagnetButton>
                 </div>
-            </FadeContent>
         </div>
     )
   }
@@ -283,7 +280,6 @@ export const ChapterReader = ({ chapter, onBack }) => {
   if (viewState === 'certificate') {
       return (
           <div className="min-h-screen flex flex-col items-center justify-center px-4 bg-[var(--bg-main)] font-sans py-12">
-               <FadeContent>
                     <div className="text-center mb-8">
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--badge-bg)] text-[var(--badge-text)] rounded-full text-xs font-bold uppercase tracking-wide mb-4">
                              <Camera size={14}/> Screenshot Ready
@@ -305,7 +301,6 @@ export const ChapterReader = ({ chapter, onBack }) => {
                             Kembali ke Menu
                         </button>
                     </div>
-               </FadeContent>
           </div>
       )
   }

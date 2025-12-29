@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import Groq from 'groq-sdk';
 import { Send, AlertCircle, RefreshCw, Cpu, ShieldCheck, Hourglass, X } from 'lucide-react';
-import { FadeContent } from '../ui/FadeContent';
 
 // Inisialisasi Groq
 const groq = new Groq({
@@ -110,7 +109,6 @@ export const TobatkanTypology = ({ onBack }) => {
   return (
     // FIX: Container Full Screen, Centered, Padding Aman (pt-32)
     <div className="min-h-screen pt-32 pb-12 w-full flex flex-col items-center justify-center px-4">
-      <FadeContent>
         <div className="w-full max-w-3xl relative">
 
           {/* Main Card */}
@@ -209,7 +207,6 @@ export const TobatkanTypology = ({ onBack }) => {
           )}
 
         </div>
-      </FadeContent>
     </div>
   );
 };

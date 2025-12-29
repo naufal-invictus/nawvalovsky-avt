@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { FadeContent } from '../components/ui/FadeContent';
 import { Cpu, ArrowRight, AppWindow, Hash } from 'lucide-react';
 
 export default function AppList() {
@@ -27,7 +26,6 @@ export default function AppList() {
   return (
     <div className="min-h-screen w-full bg-[var(--bg-main)] flex flex-col justify-center pt-32 pb-12">
       <div className="container-safe">
-        <FadeContent>
           <div className="text-center mb-16 space-y-4">
             <h1 className="font-display text-4xl md:text-5xl font-bold text-[var(--text-primary)]">
               Web Applications
@@ -74,7 +72,6 @@ export default function AppList() {
                <p className="text-sm font-bold text-[var(--text-secondary)]">More coming soon...</p>
             </div>
           </div>
-        </FadeContent>
       </div>
     </div>
   );

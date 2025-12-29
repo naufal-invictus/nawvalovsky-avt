@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, Award } from 'lucide-react';
-import { FadeContent } from '../ui/FadeContent';
 import { MagnetButton } from '../ui/MagnetButton';
 import { cn } from '../../lib/utils';
 
@@ -32,7 +31,6 @@ export const QuizInterface = ({ questions, onComplete, onBack, showResult, score
   if (showResult) {
     return (
       <div className="min-h-screen flex flex-col justify-center items-center px-6 text-center pt-20">
-        <FadeContent>
             <div className="mb-6 inline-block p-4 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20">
                 <Award size={48} />
             </div>
@@ -40,7 +38,6 @@ export const QuizInterface = ({ questions, onComplete, onBack, showResult, score
             <p className="text-[var(--text-secondary)] mb-6 font-sans">Skor Pemahaman Anda</p>
             <div className="text-8xl font-serif text-[var(--accent)] mb-8">{Math.round(score)}</div>
             <MagnetButton onClick={onReset}>Kembali ke Daftar</MagnetButton>
-        </FadeContent>
       </div>
     );
   }
@@ -59,7 +56,6 @@ export const QuizInterface = ({ questions, onComplete, onBack, showResult, score
          <div className="text-xs font-bold text-[var(--accent)] uppercase tracking-widest">Soal {currentQ + 1} / {questions.length}</div>
       </div>
 
-      <FadeContent key={currentQ}>
         <h3 className="font-serif text-2xl text-[var(--text-primary)] mb-8 leading-snug">{q.question}</h3>
 
         <div className="space-y-4">
@@ -95,7 +91,6 @@ export const QuizInterface = ({ questions, onComplete, onBack, showResult, score
             </MagnetButton>
           </div>
         )}
-      </FadeContent>
     </div>
   );
 };

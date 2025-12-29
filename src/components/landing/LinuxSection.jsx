@@ -7,32 +7,32 @@ const LINUX_SETUPS = [
     title: "My Box",
     year: "2024",
     distro: "Arch Linux",
-    img: "https://i.ibb.co.com/jZxm9xbn/Arch-Linux.png"
+    img: "/images/linux/Arch1.webp"
   },
       {
     title: "ST-AT Linux",
     year: "2023",
     distro: "Artic Linux 2",
-    img: "  https://i.ibb.co.com/9mBcLX7Y/SAVE-20240305-210429.jpg"
+    img: "/images/linux/Artic.webp"
   },
 
     {
     title: "ST-AT Linux",
     year: "2022",
     distro: "Artic Linux Arch",
-    img: "https://i.ibb.co.com/HLDY84wd/artic.jpg"
+    img: "/images/linux/Artic2.webp"
   },
     {
     title: "ST-GH Linux",
     year: "2022",
     distro: "Black Arch",
-    img: "https://i.ibb.co.com/nJh5HYr/Black-Arch.png"
+    img: "/images/linux/BlackArch.webp"
   },
   {
     title: "Debian Workspace",
     year: "2019",
     distro: "Debian",
-    img: "https://i.ibb.co.com/RGVbY3MF/Debian.jpg"
+    img: "/images/linux/Debian.webp"
   }
 ];
 

@@ -6,14 +6,18 @@ import chapterIman from './json/Chapter-Iman.json';
 
 const formatChapter = (chapter, readTime) => ({
   ...chapter,
+  id: chapter.id, // Pastikan ID terbawa
   title: chapter.metadata.title,
-  thumbnail: chapter.metadata.thumbnail,
+
+  // PERBAIKAN DI SINI:
+  // Ubah 'thumbnail' menjadi 'image' agar sesuai dengan BlogList.jsx
+  image: chapter.metadata.thumbnail,
+
   category: chapter.metadata.category,
   excerpt: chapter.metadata.description,
   readTime: readTime
 });
 
-// PENTING: Nama variabel export harus 'chapters'
 export const chapters = [
   formatChapter(chapterKekuasaan, "15 min read"),
   formatChapter(chapterKerasulan, "15 min read"),
