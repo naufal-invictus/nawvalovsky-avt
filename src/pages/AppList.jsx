@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { TobatkanTypology } from '../components/apps/TobatkanTypology';
+import { NicknameRoaster } from '../components/apps/NicknameRoaster';
+
 import { FadeContent } from '../components/ui/FadeContent';
 import { Cpu, ArrowRight, Sparkles, AppWindow } from 'lucide-react';
 
@@ -10,12 +12,23 @@ export default function AppList() {
   if (activeApp === 'tobatkan-typology') {
     return <TobatkanTypology onBack={() => setActiveApp(null)} />;
   }
+      if (activeApp === 'rickname-roaster') {
+    return <NicknameRoaster onBack={() => setActiveApp(null)} />;
+  }
 
   const apps = [
     {
       id: 'tobatkan-typology',
       title: 'Tobatkan Typology',
       desc: 'Roasting machine buat lu yang kebanyakan ngomongin MBTI tapi lupa napak tanah.',
+      icon: Cpu,
+      status: 'Live',
+      color: 'bg-blue-500' // Warna ikon spesifik
+    },
+    {
+      id: 'rickname-roaster',
+      title: 'Nickname-Roaster',
+      desc: 'Roasting machine buat nickname cringe.',
       icon: Cpu,
       status: 'Live',
       color: 'bg-blue-500' // Warna ikon spesifik
