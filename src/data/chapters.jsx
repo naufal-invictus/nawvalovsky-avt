@@ -5,7 +5,8 @@ import chapterSunnah from './json/Chapter-Sunnah.json';
 import chapterIman from './json/Chapter-Iman.json';
 import chapterSoceng from './json/Chapter-Soceng.json';
 import chapterScamUpdate from './json/Chapter-Scam-Update.json';
-import chapterCppSorting from './json/Chapter-Cpp-Sorting.json';
+import chapterBubbleSort from './json/Chapter-BubbleSort.json';
+import chapterSelectionSort from './json/Chapter-SelectionSort.json';
 
 
 const formatChapter = (chapter, readTime) => ({
@@ -26,7 +27,8 @@ export const chapters = [
     formatChapter(chapterCysec, "5 min read"),
     formatChapter(chapterSoceng, "5 min read"),
     formatChapter(chapterScamUpdate, "6 min read"),
-    formatChapter(chapterCppSorting, "10 min read"),
+    formatChapter(chapterBubbleSort, "10 min read"),
+    formatChapter(chapterSelectionSort, "10 min read"),
 
   formatChapter(chapterKekuasaan, "15 min read"),
   formatChapter(chapterKerasulan, "15 min read"),

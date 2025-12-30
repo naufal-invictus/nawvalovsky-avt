@@ -215,6 +215,28 @@ export const ChapterReader = ({ chapter, onBack }) => {
                <div className="mt-4 text-xs font-bold text-[var(--accent)] uppercase tracking-widest">Renungan</div>
            </div>
         );
+      case 'code':
+        return (
+          <div key={idx} className={cn("my-8 rounded-xl overflow-hidden bg-[#1e1e1e] border border-[var(--border-dim)] shadow-lg text-left", bfcClass)}>
+             {/* Header Mac-style */}
+             <div className="flex items-center justify-between px-4 py-3 bg-[#252526] border-b border-white/10">
+                <span className="text-xs font-mono font-bold text-gray-400 uppercase tracking-wider">
+                  {block.language || 'Code'}
+                </span>
+                <div className="flex gap-1.5">
+                   <div className="w-3 h-3 rounded-full bg-[#ff5f56]" />
+                   <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
+                   <div className="w-3 h-3 rounded-full bg-[#27c93f]" />
+                </div>
+             </div>
+             {/* Code Area */}
+             <div className="p-5 overflow-x-auto">
+                <pre className="font-mono text-sm md:text-base text-[#d4d4d4] leading-relaxed">
+                   <code>{block.code}</code>
+                </pre>
+             </div>
+          </div>
+        );
 
       default: return null;
     }

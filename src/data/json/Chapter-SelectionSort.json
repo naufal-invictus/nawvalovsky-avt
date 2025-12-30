@@ -1,0 +1,280 @@
+{
+  "id": "chapter-selectionsort",
+  "metadata": {
+    "title": "Selection Sort: Si Paling Pemilih",
+    "subtitle": "Cari Dulu, Tukar Kemudian",
+    "description": "Tutorial Selection Sort. Algoritma yang lebih hemat tenaga (minim swap) dibanding Bubble Sort. Full code + logika dasar.",
+    "thumbnail": "/images/blog/CysecThumbnail.webp",
+    "tags": ["C++", "Algoritma", "Coding"],
+    "category": "Programming"
+  },
+  "content": [
+    {
+      "section_id": "intro-select",
+      "blocks": [
+        { "type": "heading", "text": "Jangan Asal Tukar, Pilih Dulu!" },
+        {
+          "type": "paragraph",
+          "text": "Kalau **Bubble Sort** itu kayak orang panikan yang dikit-dikit tukeran tempat, **Selection Sort** itu tipe 'Cool & Calm'."
+        },
+        {
+          "type": "paragraph",
+          "text": "Dia nggak bakal nuker sembarangan. Dia bakal **SCANNING** dulu satu barisan, cari siapa yang paling pendek (Minimum), baru disuruh maju ke depan SEKALI aja. Jadi lebih efisien tenaga."
+        }
+      ]
+    },
+    {
+      "section_id": "concept-min",
+      "blocks": [
+        { "type": "heading", "text": "Step 1: Konsep 'Si Terkecil'" },
+        {
+          "type": "paragraph",
+          "text": "Misi utama kita: Cari angka paling kecil di antara tumpukan data yang belum urut."
+        },
+        {
+          "type": "analogy",
+          "title": "Analogi Casting Film",
+          "text": "Sutradara (Program) nyari pemeran kurcaci. Dia audisi semua peserta (Looping). Dia nggak langsung milih peserta pertama, tapi dia catat dulu siapa yang 'Paling Pendek Sementara'. Kalau nemu yang lebih pendek, catatannya diupdate. Pas audisi kelar, baru yang terpilih dipanggil ke panggung."
+        }
+      ]
+    },
+    {
+      "section_id": "setup-select",
+      "blocks": [
+        { "type": "heading", "text": "Step 2: Setup Awal" },
+        {
+          "type": "paragraph",
+          "text": "Siapkan `int main()` standar. Kita bakal mainan index di sini, jadi fokus ya."
+        },
+        {
+          "type": "code",
+          "language": "cpp",
+          "code": "#include <iostream>\nusing namespace std;\n\nvoid selectionSort(int arr[], int n) {\n    // Disini nanti logika kita\n}\n\nint main() {\n    int arr[] = {20, 12, 10, 15, 2};\n    int n = 5;\n    selectionSort(arr, n);\n    return 0;\n}"
+        }
+      ]
+    },
+    {
+      "section_id": "logic-finding-min",
+      "blocks": [
+        { "type": "heading", "text": "Step 3: Logic Mencari Minimum" },
+        {
+          "type": "paragraph",
+          "text": "Kita butuh variabel `minIndex` buat nyimpen LOKASI angka terkecil. Inget, simpen lokasinya (index), bukan nilainya."
+        },
+        {
+          "type": "code",
+          "language": "cpp",
+          "code": "for(int j = i+1; j < n; j++) {\n    // Jika nemu angka yang lebih kecil dari pemegang rekor saat ini\n    if(arr[j] < arr[minIndex]) {\n        minIndex = j; // Update pemegang rekor baru!\n    }\n}"
+        },
+        {
+          "type": "paragraph",
+          "text": "Kode di atas cuma 'Scanning'. Belum ada pertukaran."
+        }
+      ]
+    },
+    {
+      "section_id": "swap-moment",
+      "blocks": [
+        { "type": "heading", "text": "Step 4: The Moment of Swap" },
+        {
+          "type": "paragraph",
+          "text": "Setelah loop dalam (`j`) selesai scanning sampai ujung, kita udah tau siapa juara terkecilnya (`minIndex`)."
+        },
+        {
+          "type": "paragraph",
+          "text": "Sekarang saatnya tukar angka di posisi `i` (posisi antrian saat ini) dengan angka di `minIndex`."
+        },
+        {
+          "type": "code",
+          "language": "cpp",
+          "code": "// Tukar pemain lama (i) dengan pemain terpilih (minIndex)\nint temp = arr[minIndex];\narr[minIndex] = arr[i];\narr[i] = temp;"
+        }
+      ]
+    },
+    {
+      "section_id": "full-code-asc",
+      "blocks": [
+        { "type": "heading", "text": "Step 5: Full Code (Ascending)" },
+        {
+          "type": "paragraph",
+          "text": "Gabungkan loop luar (iterasi posisi) dan loop dalam (pencarian min). Ini kode lengkap Selection Sort."
+        },
+        {
+          "type": "code",
+          "language": "cpp",
+          "code": "void selectionSort(int arr[], int n) {\n    for(int i = 0; i < n-1; i++) {\n        // Anggap posisi i adalah yang terkecil sementara\n        int minIndex = i;\n        \n        // Cari penantang di sisa array (i+1 sampai n)\n        for(int j = i+1; j < n; j++) {\n            if(arr[j] < arr[minIndex]) {\n                minIndex = j; // Ketemu yang lebih kecil\n            }\n        }\n        \n        // SWAP dilakukan DI LUAR loop j (Cuma 1x per ronde i)\n        // Tukar angka di i dengan angka terkecil yang ditemukan\n        swap(arr[i], arr[minIndex]);\n    }\n}"
+        }
+      ]
+    },
+    {
+      "section_id": "dry-run-select",
+      "blocks": [
+        { "type": "heading", "text": "Visualisasi: Langkah demi Langkah" },
+        {
+          "type": "paragraph",
+          "text": "Data: `[20, 12, 10, 15, 2]`"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Ronde 1 (i=0):** Kandidat awal `20`. Scan... `12` lebih kecil. Scan... `10` lebih kecil. Scan... `2` paling kecil. Fix `minIndex` = 4 (isi 2). **Tukar 20 & 2**. Hasil: `[2, 12, 10, 15, 20]`.",
+            "**Ronde 2 (i=1):** Kandidat awal `12`. Scan... `10` lebih kecil. Fix `minIndex` = 2. **Tukar 12 & 10**. Hasil: `[2, 10, 12, 15, 20]`.",
+            "**Ronde 3:** `12` udah paling kecil di sisa array. Gak ada tukar (tukar diri sendiri).",
+            "**Selesai.**"
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "descending-mode",
+      "blocks": [
+        { "type": "heading", "text": "Challenge: Mode Descending (Gede -> Kecil)" },
+        {
+          "type": "paragraph",
+          "text": "Kalau tadi kita cari juara terkecil (`min`), sekarang kita ubah mindset: Cari juara **TERBESAR (`max`)**."
+        },
+        {
+          "type": "code",
+          "language": "cpp",
+          "code": "void selectionDesc(int arr[], int n) {\n    for(int i = 0; i < n-1; i++) {\n        int maxIndex = i; // Ganti nama variabel biar enak dibaca\n        \n        for(int j = i+1; j < n; j++) {\n            // Cari yang LEBIH BESAR (>)\n            if(arr[j] > arr[maxIndex]) {\n                maxIndex = j;\n            }\n        }\n        swap(arr[i], arr[maxIndex]);\n    }\n}"
+        },
+        {
+          "type": "paragraph",
+          "text": "Tinggal ganti `<` jadi `>` dan nama variabel biar nggak bingung."
+        }
+      ]
+    },
+    {
+      "section_id": "full-code-implementation-select",
+      "blocks": [
+        { "type": "heading", "text": "Step 6: Praktek Final" },
+        {
+          "type": "paragraph",
+          "text": "Coba jalanin kode ini buat ngurutin nilai ulangan."
+        },
+        {
+          "type": "code",
+          "language": "cpp",
+          "code": "#include <iostream>\n#include <algorithm> // Buat fungsi swap bawaan\nusing namespace std;\n\nvoid selectionSort(int arr[], int n) {\n    for(int i = 0; i < n-1; i++) {\n        int minIdx = i;\n        for(int j = i+1; j < n; j++) {\n            if(arr[j] < arr[minIdx]) minIdx = j;\n        }\n        swap(arr[i], arr[minIdx]);\n        \n        // Debugging: Liat prosesnya\n        cout << \"Step \" << i+1 << \": \";\n        for(int k=0; k<n; k++) cout << arr[k] << \" \";\n        cout << endl;\n    }\n}\n\nint main() {\n    int nilai[] = {65, 20, 90, 45, 10};\n    int n = 5;\n    cout << \"Awal: 65 20 90 45 10\" << endl;\n    selectionSort(nilai, n);\n    return 0;\n}"
+        }
+      ]
+    },
+    {
+      "section_id": "vs-bubble",
+      "blocks": [
+        { "type": "heading", "text": "Selection Sort vs Bubble Sort" },
+        {
+          "type": "paragraph",
+          "text": "Mana yang lebih GG? Cek perbandingannya:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Jumlah Tukar (Swap):** Selection Sort MENANG TELAK. Dia cuma swap maks `n` kali. Bubble sort bisa ribuan kali.",
+            "**Jumlah Cek (Compare):** Sama aja. Dua-duanya harus scanning data (O(n²)).",
+            "**Kapan Pake Selection?** Kalau operasi penulisan ke memori (Swap) itu 'mahal' atau bikin lemot, Selection Sort lebih bagus karena jarang nulis."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "common-mistakes",
+      "blocks": [
+        { "type": "heading", "text": "Jebakan Batman (Common Errors)" },
+        {
+          "type": "image",
+          "src": "/images/blog/Ransom.webp",
+          "caption": "Satu typo, beda nasib.",
+          "position": "left"
+        },
+        {
+          "type": "paragraph",
+          "text": "Hati-hati sama hal ini:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Lupa Reset Index:** `minIndex = i` harus ada DI DALAM loop pertama. Kalau ditaruh di luar, dia nggak bakal reset tiap ronde.",
+            "**Salah Start Loop J:** Loop `j` harus mulai dari `i+1`. Kalau mulai dari `0`, nanti yang udah urut di depan malah diacak-acak lagi."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "complexity",
+      "blocks": [
+        { "type": "heading", "text": "Kenapa Masih Lambat?" },
+        {
+          "type": "paragraph",
+          "text": "Walaupun lebih hemat swap, Selection Sort tetap punya 'penyakit' **O(n²)**. Artinya, kalau datanya ada 1000, dia butuh sekitar 1 juta operasi perbandingan."
+        },
+        {
+          "type": "paragraph",
+          "text": "Jadi ini algoritma buat belajar logika dasar, bukan buat ngurutin Big Data perusahaan ya!"
+        }
+      ]
+    },
+    {
+      "section_id": "challenge-select",
+      "blocks": [
+        { "type": "heading", "text": "Challenge Time!" },
+        {
+          "type": "paragraph",
+          "text": "Coba modifikasi kode Selection Sort di atas biar bisa ngurutin **Karakter (Huruf)** dari 'z' ke 'a'. Petunjuk: `char` di C++ itu sebenernya angka (ASCII), jadi bisa dibandingin pake `>` juga."
+        }
+      ]
+    },
+    {
+      "section_id": "quiz-intro-select",
+      "blocks": [
+        { "type": "heading", "text": "Tes Logika Seleksi" },
+        {
+          "type": "paragraph",
+          "text": "Udah paham bedanya nyari dulu vs langsung tukar? Buktikan di kuis ini."
+        }
+      ]
+    },
+    {
+      "section_id": "closing-select",
+      "blocks": [
+        { "type": "heading", "text": "Closing: The Power of Choice" },
+        {
+          "type": "reflection",
+          "text": "Selection Sort ngajarin kita buat teliti memilih sebelum bertindak. Nggak usah grasah-grusuh (banyak swap), cukup satu tindakan tapi tepat sasaran."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Apa perbedaan utama Selection Sort dibanding Bubble Sort?",
+      "options": ["Selection Sort lebih boros memori", "Selection Sort melakukan lebih sedikit Swap (Penukaran)", "Selection Sort tidak menggunakan Loop", "Selection Sort hanya untuk data string"],
+      "correct": 1,
+      "feedback": "Benar! Dia cuma swap sekali per putaran loop luar."
+    },
+    {
+      "question": "Pada Selection Sort Ascending, variabel 'minIndex' digunakan untuk...",
+      "options": ["Menyimpan NILAI terkecil", "Menyimpan INDEX (Posisi) dari nilai terkecil", "Menghitung jumlah data", "Menyimpan nilai terbesar"],
+      "correct": 1,
+      "feedback": "Tepat. Kita simpan posisinya biar nanti bisa diswap."
+    },
+    {
+      "question": "Loop bagian dalam (inner loop) pada Selection Sort dimulai dari...",
+      "options": ["0", "i", "i + 1", "n - 1"],
+      "correct": 2,
+      "feedback": "Benar. Mulai dari sebelah kanannya 'i' (karena i adalah kandidat awal)."
+    },
+    {
+      "question": "Jika kita ingin mengubah Selection Sort menjadi Descending, apa yang dicari?",
+      "options": ["Nilai Minimum", "Nilai Maximum", "Nilai Rata-rata", "Nilai Tengah"],
+      "correct": 1,
+      "feedback": "Betul. Cari yang paling GEDE (Max) buat ditaruh depan."
+    },
+    {
+      "question": "Manakah pernyataan yang benar tentang kompleksitas Selection Sort?",
+      "options": ["Sangat cepat untuk data jutaan", "O(n log n)", "O(n²) / Kuadratik", "Hanya butuh 1 kali loop"],
+      "correct": 2,
+      "feedback": "Valid. Masih tergolong lambat (O(n²)) sama kayak Bubble."
+    }
+  ]
+}

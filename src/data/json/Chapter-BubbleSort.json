@@ -1,0 +1,289 @@
+{
+  "id": "chapter-bubblesort",
+  "metadata": {
+    "title": "Bubble Sort: Si Paling Gelembung",
+    "subtitle": "Ngoding Sorting dari Depan & Belakang",
+    "description": "Tutorial full praktek Bubble Sort. Kita bedah cara standar (Ascending) dan cara unik 'serangan dari belakang' pake decrement (--).",
+    "thumbnail": "/images/blog/CysecThumbnail.webp",
+    "tags": ["C++", "Algoritma", "Coding"],
+    "category": "Programming"
+  },
+  "content": [
+    {
+      "section_id": "intro",
+      "blocks": [
+        { "type": "heading", "text": "POV: Lo Lagi Ngantri Sembako" },
+        {
+          "type": "paragraph",
+          "text": "Bayangin lo lagi baris, tapi aturannya aneh: Lo cuma boleh ngobrol sama orang di depan/belakang lo. Kalau dia lebih tinggi dari lo, lo wajib tukeran tempat."
+        },
+        {
+          "type": "paragraph",
+          "text": "Itulah **Bubble Sort**. Algoritma yang kerjanya cuma *bandingin tetangga sebelah*, kalau salah posisi langsung TUKAR (Swap). Terus diulang-ulang sampe barisan rapi. Simpel tapi *effort* banget."
+        }
+      ]
+    },
+    {
+      "section_id": "setup",
+      "blocks": [
+        { "type": "heading", "text": "Step 1: Siapin Kandang Data" },
+        {
+          "type": "paragraph",
+          "text": "Sebelum main tuker-tukeran, kita butuh datanya dulu. Buka text editor favorit lo (VS Code/DevC++), ketik *starter pack* ini."
+        },
+        {
+          "type": "code",
+          "language": "cpp",
+          "code": "#include <iostream>\nusing namespace std;\n\n// Fungsi buat nampilin array biar ga capek ngetik ulang\nvoid printArray(int arr[], int size) {\n    for(int i = 0; i < size; i++) {\n        cout << arr[i] << \" \";\n    }\n    cout << endl;\n}\n\nint main() {\n    // Ini data berantakan kita\n    int data[] = {64, 34, 25, 12, 22, 11, 90};\n    int n = sizeof(data)/sizeof(data[0]);\n\n    cout << \"Data Awal: \";\n    printArray(data, n);\n    \n    // Nanti kita panggil fungsi sorting di sini\n    return 0;\n}"
+        }
+      ]
+    },
+    {
+      "section_id": "swap-logic",
+      "blocks": [
+        { "type": "heading", "text": "Step 2: Jurus 'Swap' (Tukar)" },
+        {
+          "type": "paragraph",
+          "text": "Inti dari Bubble Sort adalah **SWAP**. Lo nggak bisa langsung tuker `a = b` gitu aja, datanya bakal ketimpa/hilang. Kita butuh variabel bantuan (`temp`)."
+        },
+        {
+          "type": "analogy",
+          "title": "Gelas Kopi & Teh",
+          "text": "Lo punya Gelas A (Kopi) dan Gelas B (Teh). Mau tuker isinya? Lo butuh Gelas C (Kosong) buat nampung sementara. Tuang Kopi ke C, Teh ke A, baru isi C ke B."
+        },
+        {
+          "type": "code",
+          "language": "cpp",
+          "code": "if (kiri > kanan) {\n    int temp = kiri;  // Simpan 'kiri' di tempat aman\n    kiri = kanan;     // Timpa 'kiri' dengan 'kanan'\n    kanan = temp;     // Isi 'kanan' dengan simpanan tadi\n}"
+        }
+      ]
+    },
+    {
+      "section_id": "standard-bubble",
+      "blocks": [
+        { "type": "heading", "text": "Step 3: Bubble Sort Standar (Ascending)" },
+        {
+          "type": "paragraph",
+          "text": "Kita mulai dari yang klasik: **Urut Kecil ke Besar**. Strateginya adalah mendorong angka besar ke KANAN (belakang) kayak gelembung udara naik ke atas air."
+        },
+        {
+          "type": "paragraph",
+          "text": "Perhatikan loop-nya pake `i++` dan `j++`. Ini gerakan maju dari kiri ke kanan."
+        },
+        {
+          "type": "code",
+          "language": "cpp",
+          "code": "void bubbleSortAsc(int arr[], int n) {\n    // Loop i: Menghitung berapa kali kita harus mengulang proses\n    for(int i = 0; i < n-1; i++) {\n        \n        // Loop j: Jalan dari depan, bandingin tetangga\n        // Kenapa 'n-i-1'? Karena i angka di belakang udah pasti urut!\n        for(int j = 0; j < n-i-1; j++) {\n            \n            // Kalau KIRI LEBIH GEDE dari KANAN, TUKAR!\n            if(arr[j] > arr[j+1]) {\n                int temp = arr[j];\n                arr[j] = arr[j+1];\n                arr[j+1] = temp;\n            }\n        }\n    }\n}"
+        }
+      ]
+    },
+    {
+      "section_id": "dry-run-asc",
+      "blocks": [
+        { "type": "heading", "text": "Visualisasi: Apa yang terjadi?" },
+        {
+          "type": "paragraph",
+          "text": "Misal data: `[5, 1, 4]`"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Cek 5 vs 1:** 5 > 1? Ya. Tukar! -> `[1, 5, 4]`",
+            "**Cek 5 vs 4:** 5 > 4? Ya. Tukar! -> `[1, 4, 5]`",
+            "**Selesai Pass 1:** Angka `5` udah di pojok kanan (posisi bener).",
+            "**Pass 2:** Cek 1 vs 4. Aman. Cek 4 vs 5 (ga perlu dicek lagi sebenernya). Selesai."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "backward-intro",
+      "blocks": [
+        { "type": "heading", "text": "Step 4: Serangan Balik (Pake --)" },
+        {
+          "type": "image",
+          "src": "/images/blog/Hat.webp",
+          "caption": "Kadang, mundur itu strategi terbaik.",
+          "position": "right"
+        },
+        {
+          "type": "paragraph",
+          "text": "Bosen main dari depan? Sekarang kita coba **Bubble Sort dari Belakang**. Logikanya: Kita seret angka KECIL ke DEPAN (Kiri)."
+        },
+        {
+          "type": "paragraph",
+          "text": "Di sini kita bakal pake operator `j--` (decrement). Loop berjalan mundur dari index terakhir menuju awal."
+        }
+      ]
+    },
+    {
+      "section_id": "backward-code",
+      "blocks": [
+        { "type": "heading", "text": "Code: Bubble Sort Mundur (--)" },
+        {
+          "type": "paragraph",
+          "text": "Fokus ke `for` loop bagian dalam. Kita mulai dari `n-1` (ujung kanan) dan mundur ke kiri."
+        },
+        {
+          "type": "code",
+          "language": "cpp",
+          "code": "void bubbleSortBackwards(int arr[], int n) {\n    for(int i = 0; i < n-1; i++) {\n        \n        // Loop j MULAI DARI BELAKANG (n-1)\n        // Berhenti di 'i' (karena posisi 0..i udah diisi angka kecil)\n        // Pake 'j--' buat mundur\n        for(int j = n-1; j > i; j--) {\n            \n            // Bandingin sama tetangga SEBELAH KIRI (j-1)\n            // Kalau KANAN LEBIH KECIL dari KIRI, Tukar!\n            if(arr[j] < arr[j-1]) {\n                int temp = arr[j];\n                arr[j] = arr[j-1];\n                arr[j-1] = temp;\n            }\n        }\n    }\n}"
+        },
+        {
+          "type": "paragraph",
+          "text": "Hasilnya sama (Ascending), tapi caranya beda. Kalau yang tadi nyundul angka gede ke kanan, yang ini nyeret angka kecil ke kiri."
+        }
+      ]
+    },
+    {
+      "section_id": "optimization-theory",
+      "blocks": [
+        { "type": "heading", "text": "Step 5: Masalah Si Rajin" },
+        {
+          "type": "paragraph",
+          "text": "Bubble sort itu rajin banget (baca: kurang pinter). Misal data `[1, 2, 3, 4, 5]` (udah urut), dia tetep bakal ngecek satu-satu sampe abis. *Wasting time*, bro!"
+        },
+        {
+          "type": "paragraph",
+          "text": "Solusinya? Kita pasang **CCTV (Flag)**. Kalau dalam satu kali putaran SATPAM nggak ngeliat ada penukaran, berarti data udah rapi. Bubarkan barisan!"
+        }
+      ]
+    },
+    {
+      "section_id": "optimization-code",
+      "blocks": [
+        { "type": "heading", "text": "Code: Optimized Bubble Sort" },
+        {
+          "type": "paragraph",
+          "text": "Tambahin variabel `bool ditukar`. Ini adalah bentuk final Bubble Sort terbaik."
+        },
+        {
+          "type": "code",
+          "language": "cpp",
+          "code": "void bubbleSortOptimized(int arr[], int n) {\n    for(int i = 0; i < n-1; i++) {\n        bool ditukar = false; // Reset flag tiap ronde\n        \n        for(int j = 0; j < n-i-1; j++) {\n            if(arr[j] > arr[j+1]) {\n                // Ada pertukaran, tandai!\n                swap(arr[j], arr[j+1]); \n                ditukar = true;\n            }\n        }\n        \n        // Cek CCTV: Kalau gak ada yang ditukar, STOP (Break)\n        if (ditukar == false) {\n            break; \n        }\n    }\n}"
+        }
+      ]
+    },
+    {
+      "section_id": "full-code-implementation",
+      "blocks": [
+        { "type": "heading", "text": "Step 6: Satukan Semuanya (Full Code)" },
+        {
+          "type": "paragraph",
+          "text": "Copy paste ini ke compiler lo. Coba jalankan dan lihat bedanya."
+        },
+        {
+          "type": "code",
+          "language": "cpp",
+          "code": "#include <iostream>\nusing namespace std;\n\nvoid bubbleBackwards(int arr[], int n) {\n    cout << \"Proses Sorting Mundur:\" << endl;\n    for(int i = 0; i < n-1; i++) {\n        cout << \"Ronde \" << i+1 << \": \";\n        for(int j = n-1; j > i; j--) {\n            if(arr[j] < arr[j-1]) {\n                swap(arr[j], arr[j-1]);\n            }\n        }\n        // Intip array tiap ronde\n        for(int k=0; k<n; k++) cout << arr[k] << \" \";\n        cout << endl;\n    }\n}\n\nint main() {\n    int data[] = {64, 22, 11, 90, 12};\n    int n = 5;\n    \n    bubbleBackwards(data, n);\n    \n    cout << \"\\nHasil Akhir: \";\n    for(int i=0; i<n; i++) cout << data[i] << \" \";\n    \n    return 0;\n}"
+        }
+      ]
+    },
+    {
+      "section_id": "descending-challenge",
+      "blocks": [
+        { "type": "heading", "text": "Challenge: Urut Kebalik (Descending)" },
+        {
+          "type": "paragraph",
+          "text": "Gimana kalau bos minta data urut dari **GEDE ke KECIL**? Jangan panik."
+        },
+        {
+          "type": "paragraph",
+          "text": "Kuncinya cuma di tanda panah perbandingan `if`."
+        },
+        {
+          "type": "code",
+          "language": "cpp",
+          "code": "// Ubah > jadi <\nif (arr[j] < arr[j+1]) {\n    swap(arr[j], arr[j+1]);\n}"
+        },
+        {
+          "type": "paragraph",
+          "text": "Dengan kode di atas, angka KECIL yang bakal didorong ke kanan (belakang). Jadi yang gede numpuk di depan."
+        }
+      ]
+    },
+    {
+      "section_id": "pros-cons",
+      "blocks": [
+        { "type": "heading", "text": "Kelebihan & Kekurangan" },
+        {
+          "type": "list",
+          "items": [
+            "**Pro:** Logicnya paling gampang dipahami manusia. Gampang ngodeteksi data yang udah urut (pake flag).",
+            "**Cons:** Lambat banget buat data banyak (O(n²)). Bayangin ngurutin 1 juta data, bisa ditinggal ngopi 3 gelas.",
+            "**Kesimpulan:** Bagus buat belajar, jelek buat aplikasi production skala besar."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "debugging-tips",
+      "blocks": [
+        { "type": "heading", "text": "Tips Anti Error" },
+        {
+          "type": "paragraph",
+          "text": "Kalau kode lo error atau hasilnya ngaco, cek 2 hal ini:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Batas Loop:** Perhatikan `n-1` atau `n`. Kalau pake `j+1`, batasnya harus `n-1` biar nggak *Index Out of Bound*.",
+            "**Tanda Kurung:** Pastikan kurung kurawal `{ }` fungsi swap bener. Kalau lupa kurung, yang ketuker cuma satu variabel doang."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "quiz-intro",
+      "blocks": [
+        { "type": "heading", "text": "Uji Pemahaman Lo" },
+        {
+          "type": "paragraph",
+          "text": "Yakin udah paham konsep 'gelembung' dan 'serangan belakang'? Gass kita tes di kuis!"
+        }
+      ]
+    },
+    {
+      "section_id": "closing",
+      "blocks": [
+        { "type": "heading", "text": "Closing Statement" },
+        {
+          "type": "reflection",
+          "text": "Bubble Sort mengajarkan kita bahwa perubahan kecil (swap tetangga) yang dilakukan konsisten, lama-lama bakal membereskan kekacauan besar."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Apa syarat utama terjadinya SWAP di Bubble Sort Ascending (Kecil -> Besar)?",
+      "options": ["Jika Kiri < Kanan", "Jika Kiri > Kanan", "Jika Kiri == Kanan", "Jika Kiri + Kanan = 10"],
+      "correct": 1,
+      "feedback": "Betul. Kalau kiri lebih gede, dia harus minggir ke kanan."
+    },
+    {
+      "question": "Jika kita menggunakan loop `j--` (dari belakang), elemen apa yang dipindahkan ke posisi depan?",
+      "options": ["Elemen Terbesar", "Elemen Terkecil", "Elemen Tengah", "Elemen Acak"],
+      "correct": 1,
+      "feedback": "Tepat. Loop mundur 'menyeret' angka kecil ke kiri (depan)."
+    },
+    {
+      "question": "Apa fungsi variabel 'temp' dalam proses swap?",
+      "options": ["Hiasan doang", "Menghapus data", "Menyimpan nilai sementara biar nggak ketimpa", "Menambah kecepatan"],
+      "correct": 2,
+      "feedback": "Benar. Tanpa temp, data lo bakal hilang ketimpa."
+    },
+    {
+      "question": "Bagaimana cara mengoptimalkan Bubble Sort agar berhenti jika data sudah urut?",
+      "options": ["Pakai break dan flag (penanda)", "Pakai doa", "Pakai 3 loop", "Hapus kodenya"],
+      "correct": 0,
+      "feedback": "Sip. Pake flag 'isSwapped' biar efisien."
+    },
+    {
+      "question": "Berapa kompleksitas waktu rata-rata Bubble Sort?",
+      "options": ["O(1) - Kilat", "O(n) - Cepat", "O(n²) - Lambat (Kuadratik)", "O(log n) - Sedang"],
+      "correct": 2,
+      "feedback": "Valid. Lambat karena loop di dalam loop."
+    }
+  ]
+}
