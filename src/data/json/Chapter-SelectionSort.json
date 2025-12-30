@@ -4,7 +4,7 @@
     "title": "Selection Sort: Si Paling Pemilih",
     "subtitle": "Cari Dulu, Tukar Kemudian",
     "description": "Tutorial Selection Sort. Algoritma yang lebih hemat tenaga (minim swap) dibanding Bubble Sort. Full code + logika dasar.",
-    "thumbnail": "/images/blog/CysecThumbnail.webp",
+    "thumbnail": "/images/blog/C++.webp",
     "tags": ["C++", "Algoritma", "Coding"],
     "category": "Programming"
   },
