@@ -1,59 +1,72 @@
 {
   "id": "chapter-aws-s3",
   "metadata": {
-    "title": "AWS S3: Gudang Data Unlimited",
-    "subtitle": "Simpan File & Bikin Web Tanpa Server",
-    "description": "Tutorial Amazon S3. Bedanya Object Storage vs Block Storage, dan cara hosting website html simpel langsung dari S3.",
-    "thumbnail": "/images/blog/AWS-Logo.webp",
-    "tags": ["S3", "Storage", "Web Hosting"],
+    "title": "Deep Dive S3: Gudang Unlimited",
+    "subtitle": "Hosting Web & Automasi via CLI",
+    "description": "Panduan lengkap Amazon S3. Mulai dari bikin bucket, hosting website tanpa server, sampai trik 'Sync' otomatis pake Command Line biar kerjaan lo efisien.",
+    "thumbnail": "/images/blog/Nongkrong.webp",
+    "tags": ["S3", "Storage", "CLI", "Web Hosting"],
     "category": "AWS Storage"
   },
   "content": [
     {
-      "section_id": "s3-intro",
+      "section_id": "intro-s3",
       "blocks": [
-        { "type": "heading", "text": "Harddisk di Awan (S3)" },
-        { "type": "paragraph", "text": "**Amazon S3 (Simple Storage Service)** itu kayak Google Drive versi super canggih buat aplikasi." },
-        { "type": "paragraph", "text": "S3 adalah **Object Storage**. Artinya dia nyimpen data sebagai 'Objek' (File) di dalam wadah yang disebut **Bucket**. Kapasitasnya? *Unlimited*. Lo mau simpen 1 foto atau 1 triliun foto, S3 sanggup." }
+        { "type": "heading", "text": "Apa Itu Amazon S3?" },
+        { "type": "paragraph", "text": "**Amazon S3 (Simple Storage Service)** adalah layanan penyimpanan objek (Object Storage). Bayangin ini kayak Google Drive, tapi level enterprise dan bisa diakses lewat kodingan." },
+        { "type": "paragraph", "text": "Kapasitasnya? **Unlimited**. Lo bisa simpan data dari ukuran beberapa bytes sampai 5 Terabytes per satu file. Netflix nyimpen film-filmnya di sini." }
       ]
     },
     {
-      "section_id": "ebs-vs-s3",
+      "section_id": "bucket-object",
       "blocks": [
-        { "type": "heading", "text": "Bedanya sama EBS?" },
-        { "type": "analogy", "title": "Gudang vs Bagasi Mobil", "text": "EBS (Elastic Block Store) itu kayak Harddisk/SSD yang nempel di Laptop (EC2). Kalau S3 itu kayak Gudang Raksasa. EBS butuh EC2 buat diakses, S3 bisa diakses lewat internet langsung." }
-      ],
-      "list": {
-          "items": [
-              "**EBS:** Block Storage. Cepet, buat install OS & Database. Nempel di EC2.",
-              "**S3:** Object Storage. Buat simpen foto, video, backup, log file."
-          ]
-      }
-    },
-    {
-      "section_id": "s3-classes",
-      "blocks": [
-        { "type": "heading", "text": "Kelas Penyimpanan S3" },
-        { "type": "paragraph", "text": "S3 punya 'kasta' harga tergantung seberapa sering lo akses datanya:" },
+        { "type": "heading", "text": "Bucket & Object" },
         { "type": "list", "items": [
-            "**S3 Standard:** Buat data yang sering diakses. Paling mahal.",
-            "**S3 Infrequent Access (IA):** Buat data jarang dibuka (misal sebulan sekali). Biaya simpen murah, biaya ambil agak mahal.",
-            "**S3 Glacier:** Buat arsip tahunan. Murah banget, TAPI kalau mau ambil datanya butuh waktu berjam-jam (dicairin dulu es-nya)."
+            "**Bucket:** Wadah utama (kayak folder root). Namanya harus **UNIK SEDUNIA**. Kalau nama `my-photo` udah dipake orang lain di Amerika, lo gak bisa pake nama itu.",
+            "**Object:** File yang lo simpen (foto, video, dokumen). Setiap objek punya Key (nama file), Value (isi data), dan Metadata."
           ]
         }
       ]
     },
     {
+      "section_id": "storage-classes",
+      "blocks": [
+        { "type": "heading", "text": "Pilih Kelas Biar Hemat" },
+        { "type": "paragraph", "text": "Jangan simpan sampah di brankas emas. Pilih kelas penyimpanan yang pas:" },
+        { "type": "list", "items": [
+            "**S3 Standard:** Data sering diakses. Mahal dikit, tapi cepet.",
+            "**S3 Intelligent-Tiering:** Pinter. Dia mindahin sendiri data yang jarang dipake ke kelas murah.",
+            "**S3 Glacier:** Buat arsip tahunan. Murah banget, tapi ngambil datanya butuh waktu jam-jaman (dicairin dulu)."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "security-block",
+      "blocks": [
+        { "type": "heading", "text": "Keamanan: Block Public Access" },
+        { "type": "paragraph", "text": "Secara default, S3 itu **Private**. Gak ada yang bisa liat file lo selain lo sendiri." },
+        { "type": "paragraph", "text": "Ada fitur **Block Public Access**. Ini kayak gembok master. Kalau ini nyala, settingan apapun yang mencoba bikin file jadi publik bakal diblokir. Demi keamanan, jangan dimatiin kecuali lo tau apa yang lo lakuin (misal buat hosting web)." }
+      ]
+    },
+    {
+      "section_id": "static-web-concept",
+      "blocks": [
+        { "type": "heading", "text": "Fitur Keren: Static Website Hosting" },
+        { "type": "paragraph", "text": "Punya file HTML/CSS/JS? Lo gak perlu sewa server mahal-mahal. Upload aja ke S3, nyalain fitur **Static Website Hosting**, boom! Web lo live." },
+        { "type": "paragraph", "text": "Ini disebut **Serverless**. Lo gak perlu pusing mikirin OS, patching, atau server down. S3 yang urus availability-nya." }
+      ]
+    },
+    {
       "section_id": "practice-bucket",
       "blocks": [
-        { "type": "heading", "text": "Praktek 1: Bikin Bucket" },
+        { "type": "heading", "text": "Praktek 1: Bikin Bucket Website" },
         { "type": "list", "items": [
-            "1. Buka Console -> Cari **S3**.",
-            "2. Klik **Create Bucket**.",
-            "3. Nama Bucket harus **UNIK SEDUNIA**. Gak boleh sama kayak orang lain. Misal: `belajar-aws-nama-lo-123`.",
-            "4. Region: Samain aja (Singapore).",
-            "5. *Block Public Access*: Hilangkan centang ini (Uncheck) biar bisa diakses publik (Hanya untuk latihan ini ya!). Centang kotak peringatan 'I acknowledge...'.",
-            "6. Create Bucket."
+            "1. Buka AWS Console -> S3 -> **Create bucket**.",
+            "2. Nama: `cafe-bakery-web-nama-lo` (Harus unik!).",
+            "3. Region: Pilih yang deket (Singapore).",
+            "4. **PENTING:** Uncheck (Hapus centang) 'Block all public access'. Centang kotak peringatan di bawahnya.",
+            "5. Create bucket."
           ]
         }
       ]
@@ -61,29 +74,23 @@
     {
       "section_id": "practice-upload",
       "blocks": [
-        { "type": "heading", "text": "Praktek 2: Upload File" },
-        { "type": "paragraph", "text": "Klik nama bucket lo, lalu klik **Upload**. Masukin foto kucing atau file apa aja. Klik Upload." }
-      ]
-    },
-    {
-      "section_id": "static-web",
-      "blocks": [
-        { "type": "heading", "text": "Praktek 3: Website Tanpa Server" },
-        { "type": "paragraph", "text": "Salah satu fitur keren S3 adalah **Static Website Hosting**. Kita bisa bikin web tanpa nyewa EC2!" },
-        { "type": "paragraph", "text": "Siapkan file `index.html` sederhana di komputer lo:" },
-        { "type": "code", "language": "html", "code": "<html>\n<body>\n  <h1>Halo Dunia!</h1>\n  <p>Website ini jalan di S3 lho.</p>\n</body>\n</html>" },
-        { "type": "paragraph", "text": "Upload `index.html` tadi ke Bucket lo." }
+        { "type": "heading", "text": "Praktek 2: Upload File Web" },
+        { "type": "paragraph", "text": "Bikin file `index.html` simpel di laptop lo:" },
+        { "type": "code", "language": "html", "code": "<html><h1>Selamat Datang di Kafe Gue!</h1></html>" },
+        { "type": "paragraph", "text": "Upload file itu ke bucket yang baru lo buat via Console (klik Upload -> Add files)." }
       ]
     },
     {
       "section_id": "enable-hosting",
       "blocks": [
-        { "type": "heading", "text": "Aktifkan Hosting" },
+        { "type": "heading", "text": "Praktek 3: Nyalain Hosting" },
         { "type": "list", "items": [
-            "1. Di menu Bucket, klik tab **Properties**.",
-            "2. Scroll paling bawah ke **Static website hosting** -> Edit -> **Enable**.",
-            "3. Di bagian 'Index document', ketik `index.html`.",
-            "4. Save changes."
+            "1. Masuk ke tab **Properties** bucket tadi.",
+            "2. Scroll ke paling bawah: **Static website hosting**.",
+            "3. Klik Edit -> **Enable**.",
+            "4. Di 'Index document', ketik `index.html`.",
+            "5. Save changes.",
+            "6. Scroll lagi ke bawah, lo bakal dapet **Bucket website endpoint** (Link URL web lo)."
           ]
         }
       ]
@@ -91,44 +98,109 @@
     {
       "section_id": "bucket-policy",
       "blocks": [
-        { "type": "heading", "text": "Buka Pintu (Policy)" },
-        { "type": "paragraph", "text": "Terakhir, kita harus izinkan dunia baca file kita. Ke tab **Permissions** -> **Bucket Policy** -> Edit. Paste kode ini (Ganti `NAMA-BUCKET-LO`):" },
-        { "type": "code", "language": "json", "code": "{\n    \"Version\": \"2012-10-17\",\n    \"Statement\": [\n        {\n            \"Sid\": \"PublicReadGetObject\",\n            \"Effect\": \"Allow\",\n            \"Principal\": \"*\",\n            \"Action\": \"s3:GetObject\",\n            \"Resource\": \"arn:aws:s3:::NAMA-BUCKET-LO/*\"\n        }\n    ]\n}" },
-        { "type": "paragraph", "text": "Save. Sekarang scroll lagi ke bawah Properties, klik link **Bucket website endpoint**. TADA! Web lo online." }
+        { "type": "heading", "text": "Praktek 4: Buka Pintu (Policy)" },
+        { "type": "paragraph", "text": "Pas lo buka link tadi, pasti **403 Forbidden**. Kenapa? Karena belum dikasih izin baca." },
+        { "type": "paragraph", "text": "Ke tab **Permissions** -> **Bucket Policy** -> Edit. Paste JSON ini (Ganti `NAMA-BUCKET`):" },
+        { "type": "code", "language": "json", "code": "{\n    \"Version\": \"2012-10-17\",\n    \"Statement\": [\n        {\n            \"Sid\": \"PublicReadGetObject\",\n            \"Effect\": \"Allow\",\n            \"Principal\": \"*\",\n            \"Action\": \"s3:GetObject\",\n            \"Resource\": \"arn:aws:s3:::NAMA-BUCKET/*\"\n        }\n    ]\n}" }
       ]
     },
     {
-      "section_id": "closing-s3",
+      "section_id": "cli-intro",
       "blocks": [
-        { "type": "heading", "text": "Awas Bocor!" },
-        { "type": "reflection", "text": "S3 Public itu bahaya kalau buat data rahasia (KTP, Database). Pastikan fitur Public Access cuma nyala buat file yang emang mau disebar (seperti gambar website). Kalau data pribadi, Gembok!" }
+        { "type": "heading", "text": "Level Up: Pake AWS CLI" },
+        { "type": "paragraph", "text": "Klik-klik di Console itu lambat buat pro. Kita pake **AWS CLI (Command Line Interface)**. Lo bisa perintahin AWS dari terminal laptop lo." },
+        { "type": "paragraph", "text": "Sebelum mulai, lo butuh **Access Key ID** dan **Secret Access Key**. Ini didapet dari bikin User IAM." }
+      ]
+    },
+    {
+      "section_id": "cli-configure",
+      "blocks": [
+        { "type": "heading", "text": "Praktek 5: Konfigurasi CLI" },
+        { "type": "paragraph", "text": "Buka terminal/CMD, ketik perintah ini buat login:" },
+        { "type": "code", "language": "bash", "code": "aws configure" },
+        { "type": "paragraph", "text": "Masukin Access Key & Secret Key lo. Default region isi `ap-southeast-1` (Singapore), format isi `json`." }
+      ]
+    },
+    {
+      "section_id": "cli-commands",
+      "blocks": [
+        { "type": "heading", "text": "Perintah Dasar S3 CLI" },
+        { "type": "paragraph", "text": "Coba ketik ini di terminal:" },
+        { "type": "list", "items": [
+            "**aws s3 ls** : List semua bucket lo.",
+            "**aws s3 ls s3://nama-bucket** : Liat isi file di dalam bucket.",
+            "**aws s3 mb s3://bucket-baru** : Make Bucket (Bikin bucket baru)."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "cp-vs-sync",
+      "blocks": [
+        { "type": "heading", "text": "Copy (cp) vs Sync" },
+        { "type": "paragraph", "text": "Ada dua cara upload file lewat CLI:" },
+        { "type": "list", "items": [
+            "**aws s3 cp**: Copy biasa. Upload semua file, gak peduli udah ada atau belum.",
+            "**aws s3 sync**: Ini jurus rahasia. Dia cuma upload file yang **BERUBAH** atau **BARU**. Jauh lebih efisien buat update website!"
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "practice-sync",
+      "blocks": [
+        { "type": "heading", "text": "Praktek 6: Update Web Otomatis" },
+        { "type": "paragraph", "text": "Misal lo abis ngedit `index.html` di folder `website-gue`. Upload perubahannya pake sync:" },
+        { "type": "code", "language": "bash", "code": "aws s3 sync ./website-gue s3://bucket-web-lo --acl public-read" },
+        { "type": "paragraph", "text": "Perintah di atas bakal sinkronisasi folder lokal ke S3. Kalau file gak berubah, gak bakal diupload ulang. Hemat kuota & waktu!" }
+      ]
+    },
+    {
+      "section_id": "automation-script",
+      "blocks": [
+        { "type": "heading", "text": "Automasi: Bikin Script Deploy" },
+        { "type": "paragraph", "text": "Biar makin hacker, simpan perintah tadi di file `deploy.bat` (Windows) atau `deploy.sh` (Mac/Linux). Klik dua kali, website terupdate otomatis. Gak perlu buka browser lagi." }
+      ]
+    },
+    {
+      "section_id": "versioning",
+      "blocks": [
+        { "type": "heading", "text": "Versioning: Tombol Undo" },
+        { "type": "paragraph", "text": "Aktifin **Bucket Versioning** kalau lo takut file ketimpa atau kehapus gak sengaja. S3 bakal nyimpen semua versi file lo. Kalau salah update, tinggal restore versi sebelumnya." }
+      ]
+    },
+    {
+      "section_id": "closing-s3-ext",
+      "blocks": [
+        { "type": "heading", "text": "Closing" },
+        { "type": "reflection", "text": "S3 itu skill wajib. Gabungin S3 + CLI `sync`, lo udah punya alur kerja (workflow) developer profesional buat deploy aplikasi statis dalam hitungan detik." }
       ]
     }
   ],
   "quiz": [
     {
-      "question": "S3 termasuk jenis penyimpanan apa?",
-      "options": ["Block Storage", "Object Storage", "File Storage", "Database"],
+      "question": "Apa syarat utama nama Bucket S3?",
+      "options": ["Boleh sama dengan bucket lain", "Harus unik secara global (sedunia)", "Hanya unik di akun kita", "Harus mengandung angka"],
       "correct": 1,
-      "feedback": "Benar. S3 menyimpan data sebagai Objek."
+      "feedback": "Benar. Nama bucket itu kayak domain web, gak boleh kembar sedunia."
     },
     {
-      "question": "Kelas S3 mana yang paling murah untuk arsip jangka panjang (tapi lambat diambil)?",
-      "options": ["S3 Standard", "S3 Intelligent-Tiering", "S3 Glacier", "S3 Express"],
+      "question": "Perintah CLI mana yang paling efisien untuk mengupdate website karena hanya mengupload file yang berubah?",
+      "options": ["aws s3 cp", "aws s3 mv", "aws s3 sync", "aws s3 ls"],
       "correct": 2,
-      "feedback": "Tepat. Glacier kayak es, beku dan murah."
+      "feedback": "Tepat! Sync cuma kirim file baru/berubah. Cp kirim semuanya ulang."
     },
     {
-      "question": "Apa syarat nama S3 Bucket?",
-      "options": ["Boleh sama dengan orang lain", "Harus unik secara global (sedunia)", "Boleh pakai huruf kapital", "Harus mengandung angka"],
-      "correct": 1,
-      "feedback": "Sip. Nama bucket itu kayak nama domain, gak boleh kembar."
+      "question": "Fitur apa yang memungkinkan file HTML di S3 bisa diakses sebagai website?",
+      "options": ["S3 Glacier", "Transfer Acceleration", "Static Website Hosting", "Object Lock"],
+      "correct": 2,
+      "feedback": "Betul. Serverless hosting termurah."
     },
     {
-      "question": "Fitur S3 apa yang memungkinkan kita menaruh file HTML agar bisa diakses sebagai website?",
-      "options": ["S3 Versioning", "Static Website Hosting", "S3 Replication", "Transfer Acceleration"],
+      "question": "Perintah 'aws configure' digunakan untuk...",
+      "options": ["Membuat bucket", "Login dan mengatur kredensial (Access Key)", "Menghapus file", "Mengupload file"],
       "correct": 1,
-      "feedback": "Benar. Hosting web statis murah meriah."
+      "feedback": "Sip. Buat setting kunci rahasia biar CLI bisa akses akun lo."
     }
   ]
 }

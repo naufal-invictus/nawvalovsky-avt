@@ -1,135 +1,179 @@
 {
   "id": "chapter-aws-basics",
   "metadata": {
-    "title": "AWS Cloud 101: Komputer Gaib",
-    "subtitle": "Kenapa Harus Pindah ke Awan?",
-    "description": "Lupakan beli server fisik yang mahal dan ribet. Belajar konsep dasar Cloud Computing, bedanya IaaS/PaaS/SaaS, dan kenapa startup pake AWS.",
-    "thumbnail": "/images/blog/AWS-Logo.webp",
-    "tags": ["AWS", "Cloud", "Basic"],
+    "title": "AWS Cloud 101: Revolusi Komputer",
+    "subtitle": "Kenapa Dunia Pindah ke Awan?",
+    "description": "Bongkar tuntas konsep Cloud Computing. Dari analogi Pizza, bedanya CapEx vs OpEx, sampai kenapa startup di garasi bisa saingan sama korporat global.",
+    "thumbnail": "/images/blog/CysecThumbnail.webp",
+    "tags": ["AWS", "Cloud", "Fundamental"],
     "category": "Cloud Computing"
   },
   "content": [
     {
-      "section_id": "intro-cloud",
+      "section_id": "intro-definition",
       "blocks": [
-        { "type": "heading", "text": "Komputer Lo Sering Lemot?" },
-        { "type": "paragraph", "text": "Bayangin lo mau bikin startup. Dulu (Zaman Batu IT), lo harus beli server fisik, siapin ruangan ber-AC dingin banget, bayar listrik mahal, dan nyewa satpam buat jagain tuh server." },
-        { "type": "paragraph", "text": "Sekarang? **Cloud Computing** solusinya. Cloud itu simpelnya: **Nyewa komputer orang lain (Amazon) lewat internet.**" },
-        { "type": "quote", "text": "Cloud Computing is just someone else's computer.", "author": "Anak IT Reality" }
+        { "type": "heading", "text": "Apa Itu Cloud Computing?" },
+        { "type": "paragraph", "text": "Simpelnya: **Cloud Computing adalah pengiriman sumber daya IT (Server, Database, Storage) melalui internet dengan harga pay-as-you-go.**" },
+        { "type": "paragraph", "text": "Bayangin lo butuh listrik. Lo nggak bikin pembangkit listrik sendiri di belakang rumah kan? Lo tinggal colok ke PLN, pake, terus bayar tagihan bulan depan. Cloud itu PLN-nya dunia komputer." }
       ]
     },
     {
-      "section_id": "capex-opex",
+      "section_id": "traditional-vs-cloud",
       "blocks": [
-        { "type": "heading", "text": "Kaum Mendang-Mending (CapEx vs OpEx)" },
-        { "type": "paragraph", "text": "Dalam bisnis, ada dua jenis pengeluaran:" },
-        { "type": "list", "items": [
-            "**CapEx (Capital Expense):** Bayar gede di depan. Beli gedung, beli server 100 juta. Padahal belum tentu aplikasinya laku.",
-            "**OpEx (Operational Expense):** Bayar eceran sesuai pemakaian (Pay-as-you-go). Ini modelnya Cloud."
-          ]
-        },
-        { "type": "analogy", "title": "Beli Mobil vs Naik Taksi Online", "text": "On-Premise (Server Fisik) itu kayak beli mobil mewah. Lo harus bayar lunas, bayar pajak, ganti oli, cuci sendiri. Cloud itu kayak naik Taksi Online. Lo cuma bayar pas lo butuh jalan. Kalau gak jalan? Ya gak bayar." }
+        { "type": "heading", "text": "On-Premise vs Cloud" },
+        { "type": "analogy", "title": "Beli Mobil vs Naik Taksi", "text": "On-Premise (Server Fisik) itu kayak beli mobil. Lo harus keluar duit gede di awal (DP), bayar pajak, servis rutin, ganti oli, dan kalau mobilnya mogok, lo yang pusing. Cloud itu kayak Taksi Online. Lo tinggal pesen lewat HP, mobil dateng, lo pake, bayar sesuai jarak. Nggak perlu mikirin bensin atau pajak." }
       ]
     },
     {
-      "section_id": "pizza-model",
+      "section_id": "six-advantages-1",
       "blocks": [
-        { "type": "heading", "text": "Pizza as a Service (Model Layanan)" },
-        { "type": "paragraph", "text": "Di Cloud, ada 3 model layanan utama. Biar gampang, kita pake analogi Pizza." },
-        { "type": "image", "src": "/images/blog/Triad.webp", "caption": "Tingkatan tanggung jawab di Cloud.", "position": "right" }
+        { "type": "heading", "text": "6 Keunggulan Cloud: #1 CapEx jadi OpEx" },
+        { "type": "paragraph", "text": "**Trade Capital Expense (CapEx) for Variable Expense (OpEx).**" },
+        { "type": "paragraph", "text": "Dulu, mau bikin startup harus modal 100 Juta buat beli server (CapEx). Sekarang? $0 di depan. Lo cuma bayar operasional (OpEx) saat server nyala. Gagal bikin startup? Matikan server, biaya stop. Nggak ada server bekas numpuk di gudang." }
       ]
     },
     {
-      "section_id": "iaas",
+      "section_id": "six-advantages-2",
+      "blocks": [
+        { "type": "heading", "text": "Keunggulan #2: Economies of Scale" },
+        { "type": "paragraph", "text": "**Benefit from massive economies of scale.**" },
+        { "type": "paragraph", "text": "Karena Amazon beli jutaan server sekaligus, mereka dapet harga grosir super murah. Diskon ini diteruskan ke kita. Makanya harga AWS sering turun dari tahun ke tahun, bukan naik." }
+      ]
+    },
+    {
+      "section_id": "six-advantages-3",
+      "blocks": [
+        { "type": "heading", "text": "Keunggulan #3: Stop Guessing" },
+        { "type": "paragraph", "text": "**Stop guessing capacity.**" },
+        { "type": "paragraph", "text": "Dulu orang IT main dukun: *'Kira-kira user kita bakal 1000 atau 1 juta ya?'* Kalau tebakan salah, server meledak atau mubazir. Di Cloud, kapasitas server bisa **Elastis**. Butuh dikit pake dikit, butuh banyak dia melar sendiri." }
+      ]
+    },
+    {
+      "section_id": "six-advantages-4",
+      "blocks": [
+        { "type": "heading", "text": "Keunggulan #4: Speed & Agility" },
+        { "type": "paragraph", "text": "**Increase speed and agility.**" },
+        { "type": "paragraph", "text": "Di kantor lama, minta server baru butuh 2 minggu (pengajuan, beli, kirim, rakit). Di AWS? Cuma **2 Menit** klik-klik jadi. Developer bisa eksperimen gila-gilaan. Salah? Hapus. Bener? Scale up." }
+      ]
+    },
+    {
+      "section_id": "six-advantages-5",
+      "blocks": [
+        { "type": "heading", "text": "Keunggulan #5: Fokus ke Bisnis" },
+        { "type": "paragraph", "text": "**Stop spending money running and maintaining data centers.**" },
+        { "type": "paragraph", "text": "AWS yang ngurusin gedung, satpam, listrik, AC, dan kabel. Lo fokus aja bikin aplikasi yang keren. Jangan abisin waktu ngurusin AC server yang bocor." }
+      ]
+    },
+    {
+      "section_id": "six-advantages-6",
+      "blocks": [
+        { "type": "heading", "text": "Keunggulan #6: Go Global" },
+        { "type": "paragraph", "text": "**Go global in minutes.**" },
+        { "type": "paragraph", "text": "Aplikasi lo viral di Amerika? Tinggal copy sistem lo ke Region AWS US-East (Virginia) dalam beberapa klik. User di Amerika bakal akses ngebut banget karena servernya ada di tetangga mereka." }
+      ]
+    },
+    {
+      "section_id": "service-models-intro",
+      "blocks": [
+        { "type": "heading", "text": "Model Layanan: Pizza as a Service" },
+        { "type": "paragraph", "text": "Di Cloud, lo bisa milih mau seberapa ribet lo ngurusin teknisnya. Kita bagi jadi 3 level:" },
+        { "type": "image", "src": "/images/blog/Triad.webp", "caption": "IaaS, PaaS, SaaS adalah tingkatan kendali.", "position": "right" }
+      ]
+    },
+    {
+      "section_id": "iaas-detail",
       "blocks": [
         { "type": "heading", "text": "1. IaaS (Infrastructure as a Service)" },
-        { "type": "paragraph", "text": "**Analogi:** Lo beli bahan mentah (tepung, keju), tapi lo sewa dapur orang buat masaknya." },
-        { "type": "paragraph", "text": "Di sini AWS nyediain 'Besi' (Hardware & Jaringan). Lo yang urus OS, Aplikasi, dan Datanya. Lo punya kontrol penuh." },
-        { "type": "code", "language": "text", "code": "Contoh: Amazon EC2 (Virtual Server)" }
+        { "type": "paragraph", "text": "**Analogi:** Sewa Dapur Kosong. Lo bawa bahan sendiri, resep sendiri, masak sendiri." },
+        { "type": "paragraph", "text": "AWS kasih Hardware (Networking, Storage, Server fisik). Lo urus OS (Windows/Linux), data, dan aplikasi. Lo punya kontrol penuh tapi kerjaan paling banyak. Contoh: **Amazon EC2**." }
       ]
     },
     {
-      "section_id": "paas",
+      "section_id": "paas-detail",
       "blocks": [
         { "type": "heading", "text": "2. PaaS (Platform as a Service)" },
-        { "type": "paragraph", "text": "**Analogi:** Lo pesen pizza delivery. Lo gak peduli dapurnya kotor apa bersih, yang penting pizzanya nyampe." },
-        { "type": "paragraph", "text": "Lo cuma bawa kodingan (Code) & Data. AWS yang urus OS, Patching, dan Hardware. Developer demen banget ini karena gak ribet." },
-        { "type": "code", "language": "text", "code": "Contoh: AWS Elastic Beanstalk, Heroku" }
+        { "type": "paragraph", "text": "**Analogi:** Pesen Pizza Delivery. Lo gak tau dapurnya kayak apa, lo cuma tau pizzanya dateng." },
+        { "type": "paragraph", "text": "AWS urus Hardware + OS + Patching. Lo cuma fokus **Upload Code** (Java, Python, PHP). Developer demen ini karena gak perlu pusing mikirin update Windows. Contoh: **AWS Elastic Beanstalk, RDS**." }
       ]
     },
     {
-      "section_id": "saas",
+      "section_id": "saas-detail",
       "blocks": [
         { "type": "heading", "text": "3. SaaS (Software as a Service)" },
-        { "type": "paragraph", "text": "**Analogi:** Lo makan di resto mewah. Terima jadi, tinggal makan." },
-        { "type": "paragraph", "text": "Produk udah jadi. Lo gak perlu tau servernya di mana, kodingannya gimana. Tinggal login dan pake." },
-        { "type": "code", "language": "text", "code": "Contoh: Gmail, Zoom, Dropbox, Salesforce" }
+        { "type": "paragraph", "text": "**Analogi:** Makan di Restoran Mewah. Terima jadi." },
+        { "type": "paragraph", "text": "Produk udah jadi, lo tinggal login dan pake. Lo gak tau servernya di mana, databasenya apa. Contoh: **Gmail, Dropbox, Zoom**." }
       ]
     },
     {
       "section_id": "deployment-models",
       "blocks": [
-        { "type": "heading", "text": "Cara Masangnya (Deployment)" },
+        { "type": "heading", "text": "Cara Gelar Lapak (Deployment)" },
         { "type": "list", "items": [
-            "**Public Cloud:** Punya AWS/Google/Azure. Dipake rame-rame (Multi-tenant). Murah & Elastis.",
-            "**Private Cloud:** Server fisik milik sendiri, cuma dipake perusahaan lo. Mahal tapi privacy super terjaga (biasanya Bank).",
-            "**Hybrid Cloud:** Gabungan keduanya. Data rahasia di Private, data umum di Public."
+            "**Public Cloud:** Server AWS dipake rame-rame (multi-tenant) sama jutaan orang lain. Murah, aman, elastis.",
+            "**Private Cloud (On-Premise):** Server fisik milik sendiri, cuma dipake kantor lo. Mahal, privasi total (biasanya Bank/Militer).",
+            "**Hybrid Cloud:** Gabungan. Data nasabah rahasia ditaruh di Private, Website promosi ditaruh di Public AWS."
           ]
         }
       ]
     },
     {
-      "section_id": "practice-console",
+      "section_id": "shared-responsibility",
       "blocks": [
-        { "type": "heading", "text": "Praktek: Masuk ke AWS Console" },
-        { "type": "paragraph", "text": "Teori mulu bosen. Yuk kita liat 'Dashboard Pesawat' AWS. Pastikan lo udah daftar **AWS Free Tier** (butuh Kartu Kredit/Debit Jenius/Jago)." },
+        { "type": "heading", "text": "Shared Responsibility Model" },
+        { "type": "paragraph", "text": "Di AWS, keamanan itu **Tanggung Jawab Bersama**. Jangan mentang-mentang pake Cloud terus lo bebas taruh password '123456'." },
         { "type": "list", "items": [
-            "1. Login ke **aws.amazon.com/console**.",
-            "2. Masuk sebagai **Root User** (Bos Besar).",
-            "3. Di pojok kanan atas, pilih **Region**. Pilih yang deket, misal **Singapore (ap-southeast-1)** biar ngebut."
+            "**AWS Menjaga 'OF' the Cloud:** Keamanan fisik gedung, CCTV, kabel bawah laut, hardware, hypervisor.",
+            "**User Menjaga 'IN' the Cloud:** Password user, enkripsi data, update OS, firewall (Security Group)."
           ]
         }
       ]
     },
     {
-      "section_id": "security-root",
+      "section_id": "console-tour",
       "blocks": [
-        { "type": "heading", "text": "Penting: Jangan Pake Root User!" },
-        { "type": "paragraph", "text": "Akun Root itu ibarat kunci brankas utama. Kalau kehack, kelar hidup lo. Best practicenya: Bikin user baru (IAM User) buat sehari-hari." }
+        { "type": "heading", "text": "Praktek: AWS Management Console" },
+        { "type": "paragraph", "text": "Tempat nongkrong kita nanti adalah **AWS Console**. Dashboard berbasis web buat ngatur semua service." },
+        { "type": "paragraph", "text": "Ada juga cara lain buat akses AWS: **CLI (Command Line)** buat yang jago ngetik kode, dan **SDK (Software Development Kit)** buat integrasi ke kodingan aplikasi." }
       ]
     },
     {
       "section_id": "closing-basics",
       "blocks": [
         { "type": "heading", "text": "Kesimpulan Bab 1" },
-        { "type": "reflection", "text": "Cloud mengubah cara kita bisnis. Dari yang harus modal gede di awal (CapEx), jadi bayar recehan sesuai kebutuhan (OpEx). Fokus ke inovasi, bukan kabel server." }
+        { "type": "reflection", "text": "Cloud bukan cuma soal 'Server Murah'. Ini soal mengubah mindset dari 'Beli Aset' (CapEx) jadi 'Sewa Layanan' (OpEx), biar kita bisa gagal cepat, bangkit cepat, dan inovasi tanpa batas." }
       ]
     }
   ],
   "quiz": [
     {
-      "question": "Apa keuntungan utama dari Cloud Computing (OpEx)?",
-      "options": ["Bayar mahal di depan", "Harus punya gedung sendiri", "Pay-as-you-go (Bayar sesuai pemakaian)", "Tidak butuh internet"],
+      "question": "Apa keuntungan finansial utama berpindah dari On-Premise ke Cloud?",
+      "options": ["Bayar pajak lebih murah", "Mengubah CapEx (Modal) menjadi OpEx (Operasional)", "Mendapat server gratis selamanya", "Tidak perlu membayar listrik"],
+      "correct": 1,
+      "feedback": "Benar. Kita tidak perlu investasi modal besar di depan."
+    },
+    {
+      "question": "Siapa yang bertanggung jawab mengupdate OS jika kita menggunakan layanan IaaS (EC2)?",
+      "options": ["AWS", "Kita (Customer)", "Pemerintah", "Teknisi Internet"],
+      "correct": 1,
+      "feedback": "Tepat. Di IaaS, OS adalah tanggung jawab Customer."
+    },
+    {
+      "question": "Fitur apa yang memungkinkan kita menambah server otomatis saat trafik tinggi?",
+      "options": ["Auto Scaling", "Amazon S3", "AWS Lambda", "CloudFront"],
+      "correct": 0,
+      "feedback": "Betul. Elastisitas adalah kunci Cloud."
+    },
+    {
+      "question": "Contoh layanan SaaS adalah...",
+      "options": ["Amazon EC2", "Windows Server", "Gmail", "Kabel LAN"],
       "correct": 2,
-      "feedback": "Betul. Bayar pas dipake doang, kayak token listrik."
+      "feedback": "Sip. Gmail adalah software yang tinggal pakai."
     },
     {
-      "question": "Layanan di mana kita hanya mengatur Aplikasi & Data (tanpa mikirin OS/Server) disebut...",
-      "options": ["IaaS", "PaaS", "SaaS", "On-Premise"],
+      "question": "Apa arti 'Economies of Scale' dalam konteks AWS?",
+      "options": ["Ekonomi sedang sulit", "Karena AWS beli banyak server, harga per unit jadi murah", "Harga server makin mahal tiap tahun", "Hanya perusahaan besar yang boleh pakai AWS"],
       "correct": 1,
-      "feedback": "Tepat. Platform as a Service."
-    },
-    {
-      "question": "Contoh layanan SaaS yang sering kita pakai sehari-hari adalah...",
-      "options": ["Amazon EC2", "Gmail", "Linux Terminal", "Kabel LAN"],
-      "correct": 1,
-      "feedback": "Benar. Gmail itu software yang tinggal pake."
-    },
-    {
-      "question": "Apa itu Hybrid Cloud?",
-      "options": ["Awan mendung", "Gabungan Public & Private Cloud", "Hanya Private Cloud", "Server di rumah teman"],
-      "correct": 1,
-      "feedback": "Sip. Kombinasi on-premise dan cloud."
+      "feedback": "Benar. Grosiran selalu lebih murah."
     }
   ]
 }

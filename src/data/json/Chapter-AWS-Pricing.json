@@ -1,120 +1,137 @@
 {
   "id": "chapter-aws-pricing",
   "metadata": {
-    "title": "AWS Pricing: Biar Gak Boncos",
-    "subtitle": "Region, AZ, dan Cara Hitung Duit Cloud",
-    "description": "Memahami struktur global AWS (Region & AZ) dan strategi memilih harga biar dompet aman sentosa.",
-    "thumbnail": "/images/blog/AWS-Logo.webp",
-    "tags": ["Pricing", "Region", "Cost"],
+    "title": "AWS Pricing: Hitung Duit di Awan",
+    "subtitle": "Biar Nggak Kaget Tagihan Akhir Bulan",
+    "description": "Kita bedah fundamental harga di AWS, konsep TCO, dan cara pakai kalkulator harga biar budget startup lo aman.",
+    "thumbnail": "/images/blog/Gembok.webp",
+    "tags": ["Pricing", "Cost", "TCO"],
     "category": "AWS Economics"
   },
   "content": [
     {
-      "section_id": "global-infra",
+      "section_id": "pricing-intro",
       "blocks": [
-        { "type": "heading", "text": "Peta Dunia AWS" },
-        { "type": "paragraph", "text": "AWS itu jaringannya ada di seluruh dunia. Kita harus paham 2 istilah keramat ini:" },
-        { "type": "list", "items": [
-            "**Region:** Lokasi geografis fisik (Negara/Kota). Contoh: *Singapore (ap-southeast-1)*, *US East (N. Virginia)*.",
-            "**Availability Zone (AZ):** Data center fisik di dalam Region. Satu Region minimal punya 2-3 AZ. Misal: `ap-southeast-1a`, `ap-southeast-1b`."
-          ]
-        },
-        { "type": "analogy", "title": "Komplek Perumahan", "text": "Region itu 'Kota Jakarta'. AZ itu 'Kecamatan Tebet' dan 'Kecamatan Kemang'. Kalau Tebet mati lampu (Banjir/Bencana), Kemang masih nyala. Makanya kita sebar server di beda AZ biar aman (High Availability)." }
+        { "type": "heading", "text": "Filosofi Harga AWS" },
+        { "type": "paragraph", "text": "AWS punya prinsip sederhana: Bayar apa yang lo pakai. Nggak ada kontrak jangka panjang, lo bisa stop kapan aja." }
       ]
     },
     {
-      "section_id": "pricing-pillar",
+      "section_id": "cost-drivers",
       "blocks": [
-        { "type": "heading", "text": "Bayar Apa Aja Sih?" },
-        { "type": "paragraph", "text": "Di AWS, lo ditagih berdasarkan 3 hal utama:" },
+        { "type": "heading", "text": "3 Driver Utama Biaya" },
         { "type": "list", "items": [
-            "**Compute:** Dihitung per jam/detik server nyala.",
-            "**Storage:** Dihitung per GB data yang lo simpen.",
-            "**Data Transfer OUT:** Dihitung per GB data yang KELUAR dari AWS ke internet."
-          ]
-        },
-        { "type": "paragraph", "text": "**Ingat:** Data Transfer IN (Upload ke AWS) biasanya **GRATIS**. AWS seneng kalau lo nitip data, tapi bayar kalau mau ngambil banyak-banyak." }
-      ]
-    },
-    {
-      "section_id": "ec2-pricing-models",
-      "blocks": [
-        { "type": "heading", "text": "Menu Harga EC2" },
-        { "type": "paragraph", "text": "Beda cara bayar, beda diskon. Pilih sesuai kebutuhan:" },
-        { "type": "list", "items": [
-            "**On-Demand:** Bayar normal, bisa stop kapan aja. Paling fleksibel tapi paling mahal. (Cocok buat testing).",
-            "**Savings Plans / Reserved:** Kontrak 1 atau 3 tahun. Diskon gede (sampai 72%). (Cocok buat server yang nyala 24/7 selamanya).",
-            "**Spot Instance:** Lelang kapasitas sisa. Diskon gila-gilaan (sampai 90%), TAPI AWS bisa ambil balik servernya sewaktu-waktu. (Cocok buat proses data background yang boleh putus)."
+            "**Compute:** Dihitung per jam atau detik.",
+            "**Storage:** Dihitung per GB data yang lo simpan.",
+            "**Data Transfer:** Biasanya bayar buat data yang KELUAR dari AWS ke internet."
           ]
         }
       ]
     },
     {
-      "section_id": "tco-calculator",
+      "section_id": "inbound-vs-outbound",
       "blocks": [
-        { "type": "heading", "text": "TCO & Calculator" },
-        { "type": "paragraph", "text": "**TCO (Total Cost of Ownership):** Perbandingan biaya 'Punya Server Sendiri' vs 'Pake AWS'. Biasanya AWS menang karena lo gak bayar listrik, gedung, dan gaji teknisi AC." },
-        { "type": "paragraph", "text": "AWS nyediain **AWS Pricing Calculator**. Lo bisa simulasi: *'Kalau gue pake 2 server EC2 + 100GB Storage di Singapore, sebulan abis berapa ya?'*" }
+        { "type": "heading", "text": "Data Transfer: Masuk vs Keluar" },
+        { "type": "paragraph", "text": "Lo nggak ditagih buat data transfer MASUK (Inbound). AWS cuma nagih data yang KELUAR (Outbound) ke internet." }
       ]
     },
     {
-      "section_id": "practice-calc",
+      "section_id": "free-tier",
       "blocks": [
-        { "type": "heading", "text": "Praktek: Simulasi Harga" },
-        { "type": "paragraph", "text": "1. Buka Google, cari **AWS Pricing Calculator**." },
-        { "type": "paragraph", "text": "2. Klik **Create Estimate**." },
-        { "type": "paragraph", "text": "3. Cari Service **EC2** -> Configure." },
-        { "type": "paragraph", "text": "4. Pilih Region **Singapore**." },
-        { "type": "paragraph", "text": "5. Masukkan **t2.micro**, jumlah 1, usage 100% (730 hours/month)." },
-        { "type": "paragraph", "text": "6. Liat estimasinya. Bandingin harga *On-Demand* sama *Savings Plan*. Jauh kan bedanya?" }
+        { "type": "heading", "text": "AWS Free Tier" },
+        { "type": "paragraph", "text": "Buat yang baru belajar, AWS kasih tawaran gratis (Free Tier) supaya lo bisa nyobain layanan mereka tanpa keluar duit sepeser pun." }
       ]
     },
     {
-      "section_id": "support-plans",
+      "section_id": "tco-concept",
       "blocks": [
-        { "type": "heading", "text": "Kalau Ada Masalah?" },
-        { "type": "paragraph", "text": "AWS punya Support Plan:" },
+        { "type": "heading", "text": "TCO (Total Cost of Ownership)" },
+        { "type": "paragraph", "text": "TCO adalah estimasi finansial buat bantu hitung biaya langsung dan nggak langsung dari sebuah sistem." },
+        { "type": "paragraph", "text": "AWS bantu lo kurangi TCO karena lo nggak perlu sewa gedung, bayar listrik AC, atau ganti hardware yang rusak." }
+      ]
+    },
+    {
+      "section_id": "pricing-calculator",
+      "blocks": [
+        { "type": "heading", "text": "AWS Pricing Calculator" },
+        { "type": "paragraph", "text": "Cara terbaik buat estimasi biaya adalah pakai **AWS Pricing Calculator** di website mereka." }
+      ]
+    },
+    {
+      "section_id": "free-services",
+      "blocks": [
+        { "type": "heading", "text": "Layanan Gratisan (No Charge)" },
+        { "type": "paragraph", "text": "Ada layanan yang gratis kodenya tapi sumber dayanya bayar, contoh: **AWS Elastic Beanstalk, CloudFormation, dan IAM**." }
+      ]
+    },
+    {
+      "section_id": "on-demand-pricing",
+      "blocks": [
+        { "type": "heading", "text": "On-Demand Instance" },
+        { "type": "paragraph", "text": "Paling fleksibel, lo bayar per jam/detik. Cocok buat yang belum tahu trafik bakal gimana." }
+      ]
+    },
+    {
+      "section_id": "reserved-instances",
+      "blocks": [
+        { "type": "heading", "text": "Reserved Instances" },
+        { "type": "paragraph", "text": "Kalau lo komitmen pakai server selama 1-3 tahun, lo bisa dapet diskon gede sampai 75%." }
+      ]
+    },
+    {
+      "section_id": "volume-discounts",
+      "blocks": [
+        { "type": "heading", "text": "Banyak Pakai, Banyak Diskon" },
+        { "type": "paragraph", "text": "Beberapa layanan kayak S3 punya skema diskon: makin banyak data yang lo simpan (misal udah level Terabyte), harga per GB-nya bakal makin murah." }
+      ]
+    },
+    {
+      "section_id": "billing-dashboard",
+      "blocks": [
+        { "type": "heading", "text": "Monitoring di Billing Dashboard" },
+        { "type": "paragraph", "text": "Lo bisa liat pemakaian lo real-time lewat Billing Dashboard di Console." }
+      ]
+    },
+    {
+      "section_id": "budgets",
+      "blocks": [
+        { "type": "heading", "text": "Pasang Alarm dengan AWS Budgets" },
+        { "type": "paragraph", "text": "Biar nggak kecolongan, set alarm di AWS Budgets. Kalau tagihan sudah lewat angka tertentu, lo dapet email notifikasi." }
+      ]
+    },
+    {
+      "section_id": "savings-tips",
+      "blocks": [
+        { "type": "heading", "text": "Tips Hemat Biaya" },
         { "type": "list", "items": [
-            "**Basic:** Gratis. Cuma bisa lapor kalau AWS mati total.",
-            "**Developer:** Bisa nanya teknis lewat email.",
-            "**Business:** Bisa chat 24/7 (Cocok buat Production).",
-            "**Enterprise:** Punya 'konsultan pribadi' (TAM). Mahal bingits."
+            "Matiin instance kalau nggak dipakai.",
+            "Hapus volume storage (EBS) yang nggak nempel di server mana pun.",
+            "Pilih Region yang harganya lebih murah."
           ]
         }
       ]
     },
     {
-      "section_id": "closing-pricing",
+      "section_id": "regional-variation",
       "blocks": [
-        { "type": "heading", "text": "Tips Hemat" },
-        { "type": "reflection", "text": "Gunakan **AWS Budgets** buat pasang alarm. Misal: 'Kalau tagihan nyentuh $5, tolong SMS gue'. Biar gak kaget pas akhir bulan." }
+        { "type": "heading", "text": "Beda Region, Beda Harga" },
+        { "type": "paragraph", "text": "Harga di Singapore bisa beda sama di USA karena biaya operasional (listrik, pajak negara) tiap lokasi beda." }
+      ]
+    },
+    {
+      "section_id": "summary",
+      "blocks": [
+        { "type": "heading", "text": "Penutup" },
+        { "type": "reflection", "text": "Kunci sukses di Cloud adalah efisiensi. Estimasikan dulu pakai kalkulator, pantau pakai Dashboard, dan optimalkan pakai Reserved Instance." }
       ]
     }
   ],
   "quiz": [
     {
-      "question": "Apa itu Availability Zone (AZ)?",
-      "options": ["Zona waktu", "Satu atau lebih data center fisik di dalam Region", "Nama lain dari negara", "Kantor marketing AWS"],
+      "question": "Data transfer mana yang biasanya GRATIS di AWS?",
+      "options": ["Outbound", "Inbound", "Antar Region", "Antar AZ"],
       "correct": 1,
-      "feedback": "Betul. AZ itu gedung server fisiknya."
-    },
-    {
-      "question": "Model harga EC2 mana yang paling murah tapi bisa dimatikan paksa oleh AWS?",
-      "options": ["On-Demand", "Reserved Instance", "Spot Instance", "Dedicated Host"],
-      "correct": 2,
-      "feedback": "Tepat. Spot Instance murah tapi berisiko."
-    },
-    {
-      "question": "Biaya transfer data apa yang biasanya GRATIS di AWS?",
-      "options": ["Data Transfer OUT (Keluar)", "Data Transfer IN (Masuk)", "Transfer antar Region", "Transfer ke Internet"],
-      "correct": 1,
-      "feedback": "Sip. Upload (Inbound) itu gratis."
-    },
-    {
-      "question": "Alat untuk memperkirakan biaya bulanan AWS sebelum kita mulai membangun adalah...",
-      "options": ["AWS Cost Explorer", "AWS Pricing Calculator", "AWS Budget", "Billing Dashboard"],
-      "correct": 1,
-      "feedback": "Benar. Calculator buat estimasi di awal."
+      "feedback": "Sip! Inbound (masuk ke AWS) itu biasanya gratis."
     }
   ]
 }

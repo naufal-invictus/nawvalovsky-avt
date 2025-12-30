@@ -1,0 +1,127 @@
+{
+  "id": "chapter-aws-infra",
+  "metadata": {
+    "title": "Infrastruktur Global AWS",
+    "subtitle": "Kenapa Aplikasi AWS Jarang Down?",
+    "description": "Pelajari cara AWS membangun jaringan raksasa di seluruh dunia supaya aplikasi lo aman dari bencana alam atau mati lampu.",
+    "thumbnail": "/images/blog/Triad.webp",
+    "tags": ["Infrastructure", "Global", "Networking"],
+    "category": "AWS Cloud"
+  },
+  "content": [
+    {
+      "section_id": "global-concept",
+      "blocks": [
+        { "type": "heading", "text": "Region & AZ" },
+        { "type": "paragraph", "text": "AWS punya infrastruktur global yang terdiri dari **Region** dan **Availability Zones (AZ)**." }
+      ]
+    },
+    {
+      "section_id": "region-detail",
+      "blocks": [
+        { "type": "heading", "text": "Apa itu Region?" },
+        { "type": "paragraph", "text": "Region adalah lokasi fisik di dunia di mana AWS punya banyak data center. Contoh: ap-southeast-1 (Singapore)." }
+      ]
+    },
+    {
+      "section_id": "az-detail",
+      "blocks": [
+        { "type": "heading", "text": "Apa itu Availability Zone (AZ)?" },
+        { "type": "paragraph", "text": "Di dalam satu Region, ada beberapa AZ. Satu AZ itu terdiri dari satu atau lebih data center yang terisolasi dari AZ lain." },
+        { "type": "paragraph", "text": "Tujuannya: Kalau satu AZ kena bencana (banjir/gempa), AZ lainnya di Region yang sama tetap hidup." }
+      ]
+    },
+    {
+      "section_id": "high-availability",
+      "blocks": [
+        { "type": "heading", "text": "High Availability (HA)" },
+        { "type": "paragraph", "text": "Buat bikin aplikasi anti-down, pasang server lo di minimal 2 AZ yang berbeda. Ini disebut strategi **Multi-AZ**." }
+      ]
+    },
+    {
+      "section_id": "latency-tips",
+      "blocks": [
+        { "type": "heading", "text": "Tips Memilih Region" },
+        { "type": "paragraph", "text": "Pilih Region yang paling dekat sama user lo supaya latensinya rendah (akses cepat)." }
+      ]
+    },
+    {
+      "section_id": "edge-locations",
+      "blocks": [
+        { "type": "heading", "text": "Edge Locations" },
+        { "type": "paragraph", "text": "Selain Region dan AZ, ada **Edge Locations** buat cache data biar konten (kayak video/gambar) nyampe ke user lebih cepet lewat layanan **CloudFront**." }
+      ]
+    },
+    {
+      "section_id": "vpc-intro",
+      "blocks": [
+        { "type": "heading", "text": "Amazon VPC (Virtual Private Cloud)" },
+        { "type": "paragraph", "text": "VPC itu ibarat bikin sekat pribadi di dalam Cloud AWS. Lo bisa atur jaringan lo sendiri, IP address, dan siapa yang boleh masuk." }
+      ]
+    },
+    {
+      "section_id": "security-groups",
+      "blocks": [
+        { "type": "heading", "text": "Security Groups: Satpam Server" },
+        { "type": "paragraph", "text": "Security Groups adalah firewall virtual buat EC2. Lo bisa atur: 'Cuma boleh masuk lewat port 80 (Web) dan 22 (SSH)'." }
+      ]
+    },
+    {
+      "section_id": "elastic-load-balancing",
+      "blocks": [
+        { "type": "heading", "text": "ELB (Elastic Load Balancing)" },
+        { "type": "paragraph", "text": "ELB itu kayak polisi lalu lintas. Dia bagi-bagi beban pengunjung ke beberapa server biar nggak ada satu server yang kepanasan sendirian." }
+      ]
+    },
+    {
+      "section_id": "database-rds",
+      "blocks": [
+        { "type": "heading", "text": "Amazon RDS" },
+        { "type": "paragraph", "text": "Mau database tanpa pusing instal Linux? Pakai RDS. AWS urus patching dan backup-nya, lo tinggal pake." }
+      ]
+    },
+    {
+      "section_id": "storage-s3-infra",
+      "blocks": [
+        { "type": "heading", "text": "Storage S3" },
+        { "type": "paragraph", "text": "S3 simpan data lo secara otomatis di minimal 3 AZ yang berbeda. Makanya tingkat keamanannya (durability) tinggi banget: 99.999999999%." }
+      ]
+    },
+    {
+      "section_id": "compliance",
+      "blocks": [
+        { "type": "heading", "text": "Compliance & Data Sovereignty" },
+        { "type": "paragraph", "text": "Kadang hukum negara wajibin data penduduk nggak boleh keluar negeri. Makanya pilih Region yang sesuai sama aturan hukum bisnis lo." }
+      ]
+    },
+    {
+      "section_id": "global-summary",
+      "blocks": [
+        { "type": "heading", "text": "Cangkupan Global" },
+        { "type": "paragraph", "text": "AWS punya infrastruktur paling luas, bikin lo bisa ekspansi bisnis ke Amerika, Eropa, atau Asia cuma dalam hitungan menit." }
+      ]
+    },
+    {
+      "section_id": "disaster-recovery",
+      "blocks": [
+        { "type": "heading", "text": "Disaster Recovery" },
+        { "type": "paragraph", "text": "Kalau terjadi bencana besar di satu negara, lo bisa cepat pindahin atau nyalain backup server lo di Region negara lain." }
+      ]
+    },
+    {
+      "section_id": "closing-infra",
+      "blocks": [
+        { "type": "heading", "text": "Closing" },
+        { "type": "reflection", "text": "Infrastruktur AWS yang raksasa dan tersebar adalah alasan kenapa aplikasi besar kayak Netflix bisa tetap stabil ditonton jutaan orang sekaligus." }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Apa fungsi utama Availability Zone (AZ)?",
+      "options": ["Bikin harga murah", "Isolasi gangguan (Fault Isolation) agar aplikasi tidak down total", "Mencatat tagihan", "Menyimpan password"],
+      "correct": 1,
+      "feedback": "Tepat! AZ didesain supaya kegagalan di satu tempat nggak nular ke tempat lain."
+    }
+  ]
+}

@@ -1,120 +1,240 @@
 {
   "id": "chapter-aws-ec2",
   "metadata": {
-    "title": "EC2 & Linux: Otak di Awan",
-    "subtitle": "Bikin Komputer Virtual & Scripting Ala Hacker",
-    "description": "Tutorial membuat Amazon EC2 pertama lo dan belajar perintah dasar Linux (Bash Script) buat otomatisasi backup data.",
-    "thumbnail": "/images/blog/AWS-Logo.webp",
-    "tags": ["EC2", "Linux", "Compute"],
+    "title": "Deep Dive EC2: Jantungnya AWS",
+    "subtitle": "Dari Sewa Server sampai Integrasi Service Lain",
+    "description": "Panduan terlengkap tentang Amazon EC2. Kita bahas tuntas cara setup, optimasi biaya, scripting, dan cara menghubungkannya dengan S3, RDS, hingga Lambda.",
+    "thumbnail": "/images/linux/Debian.webp",
+    "tags": ["EC2", "Integration", "Compute"],
     "category": "AWS Compute"
   },
   "content": [
     {
-      "section_id": "what-is-ec2",
+      "section_id": "intro-ec2",
       "blocks": [
-        { "type": "heading", "text": "Apa itu Amazon EC2?" },
-        { "type": "paragraph", "text": "**EC2 (Elastic Compute Cloud)** itu ibarat lo nyewa PC di warnet, tapi PC-nya ada di data center Amazon. Lo bisa pilih speknya mau kentang atau mau dewa." },
-        { "type": "paragraph", "text": "Namanya 'Elastic' karena lo bisa nambah jumlah komputernya jadi 100 biji dalam hitungan menit, terus diapus lagi kalau udah gak butuh." }
+        { "type": "heading", "text": "Apa Itu Amazon EC2?" },
+        { "type": "paragraph", "text": "**Amazon EC2 (Elastic Compute Cloud)** adalah layanan web yang nyediain kapasitas komputasi (server) yang aman dan bisa diubah ukurannya di cloud." },
+        { "type": "paragraph", "text": "Bayangin EC2 itu kayak **Komputer Sewaan** di awan. Lo bisa sewa 1, 100, atau 1000 komputer dalam hitungan menit, pakai sepuasnya, terus balikin kalau udah nggak butuh." }
+      ]
+    },
+    {
+      "section_id": "analogy-ec2",
+      "blocks": [
+        { "type": "heading", "text": "Analogi: Rental Mobil vs Beli Mobil" },
+        { "type": "analogy", "title": "On-Premise vs EC2", "text": "Punya server fisik (On-Premise) itu kayak beli mobil. Lo harus bayar full di awal, bayar pajak, servis rutin, dan kalau rusak lo pusing. EC2 itu kayak rental mobil atau taksi online. Lo cuma bayar pas lo butuh jalan. Kalau lagi diem di garasi (Stopped), biayanya jauh lebih murah (cuma bayar parkir/storage)." }
       ]
     },
     {
       "section_id": "instance-types",
       "blocks": [
-        { "type": "heading", "text": "Tipe-Tipe Instance (Family)" },
-        { "type": "paragraph", "text": "EC2 punya banyak tipe, dikasih nama kayak kode mobil:" },
+        { "type": "heading", "text": "Pilih Mobil Balap atau Truk? (Instance Types)" },
+        { "type": "paragraph", "text": "EC2 punya banyak tipe (Family) sesuai kebutuhan lo:" },
         { "type": "list", "items": [
-            "**General Purpose (T & M):** Buat kerjaan umum. Web server, app ringan. (Cocok buat pemula: `t2.micro`).",
-            "**Compute Optimized (C):** Buat yang butuh otak (CPU) kenceng. Gaming server, rendering.",
-            "**Memory Optimized (R):** Buat yang butuh RAM gede. Database.",
-            "**Storage Optimized (I/D):** Buat yang butuh simpen data cepet banget (IOPS tinggi)."
+            "**General Purpose (T/M):** Seimbang CPU & RAM. Cocok buat web server, repo code, atau buat belajar (`t2.micro`).",
+            "**Compute Optimized (C):** Otaknya (CPU) kenceng banget. Buat gaming server, processing video, machine learning.",
+            "**Memory Optimized (R):** RAM-nya gede gaban. Cocok buat database high-performance yang butuh load data cepet.",
+            "**Storage Optimized (I/D):** Storage I/O kenceng. Buat Big Data processing."
           ]
         }
+      ]
+    },
+    {
+      "section_id": "pricing-models",
+      "blocks": [
+        { "type": "heading", "text": "Cara Bayar (Pricing Models)" },
+        { "type": "paragraph", "text": "Jangan sampe boncos, pilih cara bayar yang pas:" },
+        { "type": "list", "items": [
+            "**On-Demand:** Bayar ketengan per jam/detik. Paling fleksibel, tapi paling mahal. Cocok buat testing.",
+            "**Spot Instances:** Lelang kapasitas sisa. Diskon up to 90%, TAPI bisa diambil paksa AWS kalau ada yang berani bayar lebih mahal. Cocok buat proses yang bisa ditunda.",
+            "**Reserved Instances / Savings Plans:** Kontrak 1 atau 3 tahun. Diskon gede (72%). Cocok buat server produksi yang nyala terus 24/7."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "ami-concept",
+      "blocks": [
+        { "type": "heading", "text": "AMI: Cetakan Kue" },
+        { "type": "paragraph", "text": "**AMI (Amazon Machine Image)** adalah cetakan master dari server lo. Isinya OS (Linux/Windows) dan aplikasi yang udah diinstall." },
+        { "type": "paragraph", "text": "Lo bisa bikin AMI dari server lo yang udah jadi. Jadi kalau mau bikin server baru yang isinya SAMA PERSIS, tinggal pake AMI itu. Nggak perlu instal ulang dari nol." }
+      ]
+    },
+    {
+      "section_id": "lifecycle",
+      "blocks": [
+        { "type": "heading", "text": "Hidup & Matinya Server" },
+        { "type": "list", "items": [
+            "**Running:** Server nyala, lo bayar duit sewa.",
+            "**Stopped:** Server mati (shutdown). Lo NGGAK bayar sewa compute, cuma bayar sewa storage (EBS). Data di RAM ilang.",
+            "**Terminated:** Server dihancurkan selamanya. Nggak bisa balik lagi. Stop bayar total.",
+            "**Hibernate:** Mati suri. Isi RAM disimpan ke harddisk, pas dinyalain balik lagi ke kondisi terakhir."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "storage-ebs",
+      "blocks": [
+        { "type": "heading", "text": "Storage: EBS vs Instance Store" },
+        { "type": "paragraph", "text": "Harddisk di EC2 ada dua jenis:" },
+        { "type": "list", "items": [
+            "**EBS (Elastic Block Store):** Harddisk network. Persisten (data aman walau server di-stop). Bisa dicopot-pasang ke server lain.",
+            "**Instance Store:** Harddisk nempel fisik di server (ephemeral). Super kenceng, TAPI kalau server di-stop, data HILANG. Cuma buat cache/temporary."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "security-group",
+      "blocks": [
+        { "type": "heading", "text": "Security Group: Satpam Digital" },
+        { "type": "paragraph", "text": "**Security Group** bertindak sebagai firewall virtual. Dia ngatur siapa yang boleh masuk (Inbound) dan keluar (Outbound)." },
+        { "type": "paragraph", "text": "Defaultnya: Semua pintu MASUK tertutup (Deny All), semua pintu KELUAR terbuka (Allow All). Lo harus buka port 22 (SSH) atau 80 (HTTP) secara manual." }
+      ]
+    },
+    {
+      "section_id": "key-pair",
+      "blocks": [
+        { "type": "heading", "text": "Key Pair: Kunci Rumah" },
+        { "type": "paragraph", "text": "EC2 nggak pake password biasa, tapi pake **Key Pair** (file `.pem` atau `.ppk`)." },
+        { "type": "paragraph", "text": "Simpan file ini baik-baik! Kalau ilang, lo nggak bisa masuk ke server lo selamanya. Jangan kasih file ini ke sembarang orang." }
+      ]
+    },
+    {
+      "section_id": "user-data",
+      "blocks": [
+        { "type": "heading", "text": "User Data: Pesan Terakhir Sebelum Lahir" },
+        { "type": "paragraph", "text": "**User Data** adalah script yang dijalankan OTOMATIS saat server PERTAMA KALI nyala (booting)." },
+        { "type": "paragraph", "text": "Berguna banget buat instal Apache, update OS, atau download kodingan dari GitHub secara otomatis pas server dibuat. Jadi pas server ready, web udah jalan." }
       ]
     },
     {
       "section_id": "practice-launch",
       "blocks": [
-        { "type": "heading", "text": "Praktek: Launch Instance" },
-        { "type": "paragraph", "text": "Yuk bikin server pertama lo (Gratis pake Free Tier)." },
+        { "type": "heading", "text": "Praktek 1: Launch Instance" },
         { "type": "list", "items": [
-            "1. Buka AWS Console -> Cari **EC2**.",
-            "2. Klik **Launch Instance** (Warna Orange).",
-            "3. Kasih nama: `Server-Belajar-Gue`.",
-            "4. Pilih OS: **Amazon Linux 2** (Paling stabil).",
-            "5. Instance Type: Pilih **t2.micro** (Ada label *Free Tier Eligible*).",
-            "6. Key Pair: Bikin baru, download file `.pem`-nya. JANGAN ILANG! Ini kunci rumah lo.",
-            "7. Klik **Launch Instance**."
+            "1. Buka Console -> EC2 -> **Launch Instance**.",
+            "2. Name: `Server-Production`.",
+            "3. OS: Amazon Linux 2.",
+            "4. Type: `t2.micro` (Free Tier).",
+            "5. Key Pair: Create new -> Download `.pem`.",
+            "6. Network Settings: Centang 'Allow SSH traffic' dan 'Allow HTTP traffic'.",
+            "7. Launch!"
           ]
         }
       ]
     },
     {
-      "section_id": "connect-ssh",
+      "section_id": "correlation-intro",
       "blocks": [
-        { "type": "heading", "text": "Masuk ke Server (SSH)" },
-        { "type": "paragraph", "text": "Tunggu statusnya 'Running'. Klik kanan instance-nya -> **Connect** -> Pilih tab **EC2 Instance Connect**. Klik Connect." },
-        { "type": "paragraph", "text": "Boom! Lo bakal liat layar hitam (Terminal Linux). Welcome to the Matrix." }
+        { "type": "heading", "text": "The Avengers: Integrasi Service Lain" },
+        { "type": "paragraph", "text": "EC2 jarang kerja sendirian. Dia biasanya keroyokan bareng service AWS lain biar sakti. Berikut adalah 6 korelasi utamanya." },
+        { "type": "image", "src": "/images/blog/Triad.webp", "caption": "Ekosistem AWS yang saling terhubung.", "position": "right" }
       ]
     },
     {
-      "section_id": "bash-intro",
+      "section_id": "corr-ebs",
       "blocks": [
-        { "type": "heading", "text": "Bash Scripting: Otomatisasi" },
-        { "type": "paragraph", "text": "Di Linux, kita bisa bikin robot buat ngerjain tugas rutin, namanya **Bash Script**. Kita bakal bikin script buat backup folder." },
-        { "type": "code", "language": "bash", "code": "# Cek kita ada di mana\npwd\n\n# Bikin folder latihan\nmkdir CompanyA\ncd CompanyA" }
+        { "type": "heading", "text": "1. EC2 + EBS (Otak & Ingatan)" },
+        { "type": "paragraph", "text": "Hubungannya kayak **CPU dan Harddisk**. Saat lo bikin EC2, lo pasti butuh EBS buat simpen OS dan Data." },
+        { "type": "paragraph", "text": "**Best Practice:** Pisahkan volume OS (Root) dan Data. Kalau server rusak/terminate, volume Data (EBS tambahan) bisa diselamatkan dan dipasang ke server baru (Detach -> Attach)." }
       ]
     },
     {
-      "section_id": "create-script",
+      "section_id": "corr-s3",
       "blocks": [
-        { "type": "heading", "text": "Praktek: Script Backup.sh" },
-        { "type": "paragraph", "text": "Kita bikin file script baru. Ketik `nano backup.sh` di terminal, lalu copas kode ini:" },
-        { "type": "code", "language": "bash", "code": "#!/bin/bash\n\n# Ambil tanggal hari ini\nDAY=\"$(date +%Y_%m_%d)\"\n\n# Tentukan lokasi backup (file .tar.gz)\nBACKUP=\"/home/ec2-user/backups/$DAY-backup-CompanyA.tar.gz\"\n\n# Kompres folder CompanyA\necho \"Sedang melakukan backup...\"\ntar -csvpzf $BACKUP /home/ec2-user/CompanyA\n\necho \"Backup Selesai! Disimpan di: $BACKUP\"" },
-        { "type": "paragraph", "text": "Simpan dengan `Ctrl+O` lalu Enter, terus keluar `Ctrl+X`." }
+        { "type": "heading", "text": "2. EC2 + S3 (Akses Gudang)" },
+        { "type": "paragraph", "text": "EC2 sering butuh ambil/simpan file di S3 (misal: upload log aplikasi atau download gambar aset)." },
+        { "type": "paragraph", "text": "**PENTING:** Jangan simpan *Access Key* di dalam kodingan di EC2! Gunakan **IAM Role**. Pasang 'Topi Jabatan' (Role) ke EC2 supaya dia punya izin resmi buat akses S3 tanpa password." }
       ]
     },
     {
-      "section_id": "run-script",
+      "section_id": "corr-cloudwatch",
       "blocks": [
-        { "type": "heading", "text": "Jalankan Robotnya" },
-        { "type": "paragraph", "text": "Sebelum dijalankan, kasih izin eksekusi dulu:" },
-        { "type": "code", "language": "bash", "code": "chmod +x backup.sh\n./backup.sh" },
-        { "type": "paragraph", "text": "Kalau berhasil, script itu bakal otomatis membungkus folder `CompanyA` jadi satu file arsip `.tar.gz`. Bayangin kalau lo harus lakuin ini manual tiap hari. Capek kan?" }
+        { "type": "heading", "text": "3. EC2 + CloudWatch (CCTV)" },
+        { "type": "paragraph", "text": "**CloudWatch** adalah layanan monitoring. Dia 'nontonin' EC2 lo: CPU-nya kepanasan nggak? Disk-nya penuh nggak?" },
+        { "type": "paragraph", "text": "**Fitur:** Lo bisa set **Alarm**. Misal: *'Kalau CPU > 80% selama 5 menit, kirim email ke gue!'* atau *'Reboot server otomatis kalau status check gagal'.*" }
       ]
     },
     {
-      "section_id": "cleanup",
+      "section_id": "corr-elb",
       "blocks": [
-        { "type": "heading", "text": "Wajib: Clean Up!" },
-        { "type": "paragraph", "text": "Jangan lupa **Terminate** (Hapus) instance lo kalau udah selesai belajar. Biar nggak makan jatah jam gratisan." },
-        { "type": "image", "src": "/images/blog/Ransom.webp", "caption": "Lupa matiin server = Tagihan Bengkak.", "position": "right" }
+        { "type": "heading", "text": "4. EC2 + ELB (Polisi Lalu Lintas)" },
+        { "type": "paragraph", "text": "**Elastic Load Balancer (ELB)** bertugas membagi trafik pengunjung. Kalau ada 1000 user, ELB bakal bagi rata ke Server A, Server B, dan Server C." },
+        { "type": "paragraph", "text": "Ini bikin aplikasi lo **High Availability**. Kalau Server A mati, ELB pinter, dia bakal stop kirim tamu ke A dan alihkan semua ke B & C." }
+      ]
+    },
+    {
+      "section_id": "corr-autoscaling",
+      "blocks": [
+        { "type": "heading", "text": "5. EC2 + Auto Scaling (Kloning)" },
+        { "type": "paragraph", "text": "**Auto Scaling Group (ASG)** adalah fitur yang bisa nambah/kurang jumlah EC2 otomatis berdasarkan kondisi." },
+        { "type": "paragraph", "text": "Contoh: Konekin CloudWatch sama ASG. *'Kalau CPU rata-rata > 70%, tolong ASG tambah 2 server lagi.'* Pas trafik sepi, kurangi lagi. Hemat biaya, performa terjaga." }
+      ]
+    },
+    {
+      "section_id": "corr-rds",
+      "blocks": [
+        { "type": "heading", "text": "6. EC2 + RDS (App & Database)" },
+        { "type": "paragraph", "text": "Biasanya aplikasi ditaruh di EC2, tapi databasenya JANGAN di EC2 juga. Taruh di **RDS (Relational Database Service)**." },
+        { "type": "paragraph", "text": "Kenapa? Biar EC2-nya fokus mikir (compute), RDS-nya fokus nyimpen data. Atur **Security Group** RDS supaya CUMA menerima koneksi dari Security Group EC2 (Port 3306). Aman terkendali." }
+      ]
+    },
+    {
+      "section_id": "corr-lambda",
+      "blocks": [
+        { "type": "heading", "text": "7. EC2 + Lambda (Remote Control)" },
+        { "type": "paragraph", "text": "**AWS Lambda** adalah kode tanpa server (Serverless). Dia bisa jadi pemicu (trigger) buat EC2." },
+        { "type": "paragraph", "text": "Contoh kasus: Lo mau hemat biaya. Bikin Lambda function buat **Mematikan (Stop) EC2 Development tiap jam 6 sore** dan **Menyalakan (Start) tiap jam 8 pagi**. Pake **EventBridge** buat jadwalin Lambda-nya." }
+      ]
+    },
+    {
+      "section_id": "practice-script",
+      "blocks": [
+        { "type": "heading", "text": "Praktek 2: Bash Script Backup" },
+        { "type": "paragraph", "text": "Login ke EC2 lo via SSH. Kita bikin script otomatisasi backup data sederhana." },
+        { "type": "code", "language": "bash", "code": "#!/bin/bash\n\n# Ambil tanggal hari ini\nDAY=\"$(date +%Y_%m_%d)\"\n\n# Lokasi Backup\nBACKUP=\"/home/ec2-user/backup-$DAY.tar.gz\"\nTARGET=\"/home/ec2-user/data-penting\"\n\n# Kompres Folder\necho \"Mulai backup...\"\ntar -czf $BACKUP $TARGET\necho \"Backup selesai di: $BACKUP\"" },
+        { "type": "paragraph", "text": "Simpan sebagai `backup.sh`, kasih izin `chmod +x backup.sh`, lalu jalankan `./backup.sh`." }
+      ]
+    },
+    {
+      "section_id": "closing-ec2",
+      "blocks": [
+        { "type": "heading", "text": "Penutup: Kuasai EC2" },
+        { "type": "reflection", "text": "EC2 adalah pondasi. Kalau lo paham cara kerja EC2, Storage, Security Group, dan cara dia ngobrol sama service lain (S3/RDS/Lambda), lo udah menguasai 60% dunia AWS." }
       ]
     }
   ],
   "quiz": [
     {
-      "question": "Tipe EC2 instance yang cocok untuk pemula dan gratis (Free Tier) adalah...",
-      "options": ["c5.large", "t2.micro", "r5.xlarge", "z1d.metal"],
+      "question": "Apa fungsi IAM Role pada EC2?",
+      "options": ["Untuk login SSH", "Memberikan izin akses ke service AWS lain (misal S3) secara aman", "Menambah kapasitas RAM", "Membackup data otomatis"],
       "correct": 1,
-      "feedback": "Benar. t2.micro itu kecil irit."
+      "feedback": "Benar. IAM Role menggantikan penyimpanan Access Key/Secret Key di kodingan."
     },
     {
-      "question": "Perintah Linux untuk membuat folder baru adalah...",
-      "options": ["touch", "mkdir", "cd", "rm"],
+      "question": "Service apa yang bertugas memonitor kesehatan (CPU, Disk) dari EC2?",
+      "options": ["AWS Lambda", "Amazon CloudWatch", "AWS Auto Scaling", "Amazon RDS"],
       "correct": 1,
-      "feedback": "Tepat. mkdir = Make Directory."
+      "feedback": "Tepat. CloudWatch adalah CCTV-nya AWS."
     },
     {
-      "question": "Apa fungsi perintah 'chmod +x namafile.sh'?",
-      "options": ["Menghapus file", "Memberi izin eksekusi (executable)", "Mengganti nama", "Membuka file"],
+      "question": "Jika ingin server bertambah otomatis saat CPU tinggi, kita harus menggabungkan EC2 dengan...",
+      "options": ["S3 dan Glacier", "Auto Scaling dan CloudWatch", "Lambda dan SNS", "EBS dan EFS"],
       "correct": 1,
-      "feedback": "Betul. Biar scriptnya bisa dijalankan."
+      "feedback": "Sip. CloudWatch kasih sinyal, Auto Scaling yang eksekusi tambah pasukan."
     },
     {
-      "question": "Jika ingin server dengan performa RAM tinggi (Memory Optimized), pilih family...",
-      "options": ["Family C", "Family R", "Family T", "Family M"],
+      "question": "Harddisk tipe apa yang datanya akan HILANG jika EC2 di-stop?",
+      "options": ["EBS Volume", "Instance Store", "S3 Bucket", "EFS"],
       "correct": 1,
-      "feedback": "Sip. R untuk RAM."
+      "feedback": "Benar. Instance Store itu ephemeral (sementara)."
+    },
+    {
+      "question": "Untuk keamanan database RDS, Security Group RDS sebaiknya hanya membuka port untuk...",
+      "options": ["Semua IP (0.0.0.0/0)", "Security Group milik EC2 App", "IP Laptop Admin", "IP Publik Internet"],
+      "correct": 1,
+      "feedback": "Cerdas. Biar cuma aplikasi (EC2) yang bisa ngobrol sama database."
     }
   ]
 }
