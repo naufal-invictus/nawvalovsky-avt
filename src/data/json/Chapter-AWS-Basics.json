@@ -4,8 +4,8 @@
     "title": "AWS Cloud 101: Revolusi Komputer",
     "subtitle": "Kenapa Dunia Pindah ke Awan?",
     "description": "Bongkar tuntas konsep Cloud Computing. Dari analogi Pizza, bedanya CapEx vs OpEx, sampai kenapa startup di garasi bisa saingan sama korporat global.",
-    "thumbnail": "/images/blog/CysecThumbnail.webp",
-    "tags": ["AWS", "Cloud", "Fundamental"],
+ "thumbnail": "/images/blog/AWS-Logo.webp",
+      "tags": ["AWS", "Cloud", "Fundamental"],
     "category": "Cloud Computing"
   },
   "content": [

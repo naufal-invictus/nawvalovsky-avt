@@ -4,7 +4,7 @@
     "title": "Deep Dive EC2: Jantungnya AWS",
     "subtitle": "Dari Sewa Server sampai Integrasi Service Lain",
     "description": "Panduan terlengkap tentang Amazon EC2. Kita bahas tuntas cara setup, optimasi biaya, scripting, dan cara menghubungkannya dengan S3, RDS, hingga Lambda.",
-    "thumbnail": "/images/linux/Debian.webp",
+     "thumbnail": "/images/blog/AWS-Logo.webp",
     "tags": ["EC2", "Integration", "Compute"],
     "category": "AWS Compute"
   },

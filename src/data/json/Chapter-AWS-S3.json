@@ -4,7 +4,7 @@
     "title": "Deep Dive S3: Gudang Unlimited",
     "subtitle": "Hosting Web & Automasi via CLI",
     "description": "Panduan lengkap Amazon S3. Mulai dari bikin bucket, hosting website tanpa server, sampai trik 'Sync' otomatis pake Command Line biar kerjaan lo efisien.",
-    "thumbnail": "/images/blog/Nongkrong.webp",
+     "thumbnail": "/images/blog/AWS-Logo.webp",
     "tags": ["S3", "Storage", "CLI", "Web Hosting"],
     "category": "AWS Storage"
   },
