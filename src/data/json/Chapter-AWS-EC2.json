@@ -1,0 +1,120 @@
+{
+  "id": "chapter-aws-ec2",
+  "metadata": {
+    "title": "EC2 & Linux: Otak di Awan",
+    "subtitle": "Bikin Komputer Virtual & Scripting Ala Hacker",
+    "description": "Tutorial membuat Amazon EC2 pertama lo dan belajar perintah dasar Linux (Bash Script) buat otomatisasi backup data.",
+    "thumbnail": "/images/blog/AWS-Logo.webp",
+    "tags": ["EC2", "Linux", "Compute"],
+    "category": "AWS Compute"
+  },
+  "content": [
+    {
+      "section_id": "what-is-ec2",
+      "blocks": [
+        { "type": "heading", "text": "Apa itu Amazon EC2?" },
+        { "type": "paragraph", "text": "**EC2 (Elastic Compute Cloud)** itu ibarat lo nyewa PC di warnet, tapi PC-nya ada di data center Amazon. Lo bisa pilih speknya mau kentang atau mau dewa." },
+        { "type": "paragraph", "text": "Namanya 'Elastic' karena lo bisa nambah jumlah komputernya jadi 100 biji dalam hitungan menit, terus diapus lagi kalau udah gak butuh." }
+      ]
+    },
+    {
+      "section_id": "instance-types",
+      "blocks": [
+        { "type": "heading", "text": "Tipe-Tipe Instance (Family)" },
+        { "type": "paragraph", "text": "EC2 punya banyak tipe, dikasih nama kayak kode mobil:" },
+        { "type": "list", "items": [
+            "**General Purpose (T & M):** Buat kerjaan umum. Web server, app ringan. (Cocok buat pemula: `t2.micro`).",
+            "**Compute Optimized (C):** Buat yang butuh otak (CPU) kenceng. Gaming server, rendering.",
+            "**Memory Optimized (R):** Buat yang butuh RAM gede. Database.",
+            "**Storage Optimized (I/D):** Buat yang butuh simpen data cepet banget (IOPS tinggi)."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "practice-launch",
+      "blocks": [
+        { "type": "heading", "text": "Praktek: Launch Instance" },
+        { "type": "paragraph", "text": "Yuk bikin server pertama lo (Gratis pake Free Tier)." },
+        { "type": "list", "items": [
+            "1. Buka AWS Console -> Cari **EC2**.",
+            "2. Klik **Launch Instance** (Warna Orange).",
+            "3. Kasih nama: `Server-Belajar-Gue`.",
+            "4. Pilih OS: **Amazon Linux 2** (Paling stabil).",
+            "5. Instance Type: Pilih **t2.micro** (Ada label *Free Tier Eligible*).",
+            "6. Key Pair: Bikin baru, download file `.pem`-nya. JANGAN ILANG! Ini kunci rumah lo.",
+            "7. Klik **Launch Instance**."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "connect-ssh",
+      "blocks": [
+        { "type": "heading", "text": "Masuk ke Server (SSH)" },
+        { "type": "paragraph", "text": "Tunggu statusnya 'Running'. Klik kanan instance-nya -> **Connect** -> Pilih tab **EC2 Instance Connect**. Klik Connect." },
+        { "type": "paragraph", "text": "Boom! Lo bakal liat layar hitam (Terminal Linux). Welcome to the Matrix." }
+      ]
+    },
+    {
+      "section_id": "bash-intro",
+      "blocks": [
+        { "type": "heading", "text": "Bash Scripting: Otomatisasi" },
+        { "type": "paragraph", "text": "Di Linux, kita bisa bikin robot buat ngerjain tugas rutin, namanya **Bash Script**. Kita bakal bikin script buat backup folder." },
+        { "type": "code", "language": "bash", "code": "# Cek kita ada di mana\npwd\n\n# Bikin folder latihan\nmkdir CompanyA\ncd CompanyA" }
+      ]
+    },
+    {
+      "section_id": "create-script",
+      "blocks": [
+        { "type": "heading", "text": "Praktek: Script Backup.sh" },
+        { "type": "paragraph", "text": "Kita bikin file script baru. Ketik `nano backup.sh` di terminal, lalu copas kode ini:" },
+        { "type": "code", "language": "bash", "code": "#!/bin/bash\n\n# Ambil tanggal hari ini\nDAY=\"$(date +%Y_%m_%d)\"\n\n# Tentukan lokasi backup (file .tar.gz)\nBACKUP=\"/home/ec2-user/backups/$DAY-backup-CompanyA.tar.gz\"\n\n# Kompres folder CompanyA\necho \"Sedang melakukan backup...\"\ntar -csvpzf $BACKUP /home/ec2-user/CompanyA\n\necho \"Backup Selesai! Disimpan di: $BACKUP\"" },
+        { "type": "paragraph", "text": "Simpan dengan `Ctrl+O` lalu Enter, terus keluar `Ctrl+X`." }
+      ]
+    },
+    {
+      "section_id": "run-script",
+      "blocks": [
+        { "type": "heading", "text": "Jalankan Robotnya" },
+        { "type": "paragraph", "text": "Sebelum dijalankan, kasih izin eksekusi dulu:" },
+        { "type": "code", "language": "bash", "code": "chmod +x backup.sh\n./backup.sh" },
+        { "type": "paragraph", "text": "Kalau berhasil, script itu bakal otomatis membungkus folder `CompanyA` jadi satu file arsip `.tar.gz`. Bayangin kalau lo harus lakuin ini manual tiap hari. Capek kan?" }
+      ]
+    },
+    {
+      "section_id": "cleanup",
+      "blocks": [
+        { "type": "heading", "text": "Wajib: Clean Up!" },
+        { "type": "paragraph", "text": "Jangan lupa **Terminate** (Hapus) instance lo kalau udah selesai belajar. Biar nggak makan jatah jam gratisan." },
+        { "type": "image", "src": "/images/blog/Ransom.webp", "caption": "Lupa matiin server = Tagihan Bengkak.", "position": "right" }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Tipe EC2 instance yang cocok untuk pemula dan gratis (Free Tier) adalah...",
+      "options": ["c5.large", "t2.micro", "r5.xlarge", "z1d.metal"],
+      "correct": 1,
+      "feedback": "Benar. t2.micro itu kecil irit."
+    },
+    {
+      "question": "Perintah Linux untuk membuat folder baru adalah...",
+      "options": ["touch", "mkdir", "cd", "rm"],
+      "correct": 1,
+      "feedback": "Tepat. mkdir = Make Directory."
+    },
+    {
+      "question": "Apa fungsi perintah 'chmod +x namafile.sh'?",
+      "options": ["Menghapus file", "Memberi izin eksekusi (executable)", "Mengganti nama", "Membuka file"],
+      "correct": 1,
+      "feedback": "Betul. Biar scriptnya bisa dijalankan."
+    },
+    {
+      "question": "Jika ingin server dengan performa RAM tinggi (Memory Optimized), pilih family...",
+      "options": ["Family C", "Family R", "Family T", "Family M"],
+      "correct": 1,
+      "feedback": "Sip. R untuk RAM."
+    }
+  ]
+}

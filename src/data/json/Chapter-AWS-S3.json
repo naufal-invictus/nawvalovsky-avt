@@ -1,0 +1,134 @@
+{
+  "id": "chapter-aws-s3",
+  "metadata": {
+    "title": "AWS S3: Gudang Data Unlimited",
+    "subtitle": "Simpan File & Bikin Web Tanpa Server",
+    "description": "Tutorial Amazon S3. Bedanya Object Storage vs Block Storage, dan cara hosting website html simpel langsung dari S3.",
+    "thumbnail": "/images/blog/AWS-Logo.webp",
+    "tags": ["S3", "Storage", "Web Hosting"],
+    "category": "AWS Storage"
+  },
+  "content": [
+    {
+      "section_id": "s3-intro",
+      "blocks": [
+        { "type": "heading", "text": "Harddisk di Awan (S3)" },
+        { "type": "paragraph", "text": "**Amazon S3 (Simple Storage Service)** itu kayak Google Drive versi super canggih buat aplikasi." },
+        { "type": "paragraph", "text": "S3 adalah **Object Storage**. Artinya dia nyimpen data sebagai 'Objek' (File) di dalam wadah yang disebut **Bucket**. Kapasitasnya? *Unlimited*. Lo mau simpen 1 foto atau 1 triliun foto, S3 sanggup." }
+      ]
+    },
+    {
+      "section_id": "ebs-vs-s3",
+      "blocks": [
+        { "type": "heading", "text": "Bedanya sama EBS?" },
+        { "type": "analogy", "title": "Gudang vs Bagasi Mobil", "text": "EBS (Elastic Block Store) itu kayak Harddisk/SSD yang nempel di Laptop (EC2). Kalau S3 itu kayak Gudang Raksasa. EBS butuh EC2 buat diakses, S3 bisa diakses lewat internet langsung." }
+      ],
+      "list": {
+          "items": [
+              "**EBS:** Block Storage. Cepet, buat install OS & Database. Nempel di EC2.",
+              "**S3:** Object Storage. Buat simpen foto, video, backup, log file."
+          ]
+      }
+    },
+    {
+      "section_id": "s3-classes",
+      "blocks": [
+        { "type": "heading", "text": "Kelas Penyimpanan S3" },
+        { "type": "paragraph", "text": "S3 punya 'kasta' harga tergantung seberapa sering lo akses datanya:" },
+        { "type": "list", "items": [
+            "**S3 Standard:** Buat data yang sering diakses. Paling mahal.",
+            "**S3 Infrequent Access (IA):** Buat data jarang dibuka (misal sebulan sekali). Biaya simpen murah, biaya ambil agak mahal.",
+            "**S3 Glacier:** Buat arsip tahunan. Murah banget, TAPI kalau mau ambil datanya butuh waktu berjam-jam (dicairin dulu es-nya)."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "practice-bucket",
+      "blocks": [
+        { "type": "heading", "text": "Praktek 1: Bikin Bucket" },
+        { "type": "list", "items": [
+            "1. Buka Console -> Cari **S3**.",
+            "2. Klik **Create Bucket**.",
+            "3. Nama Bucket harus **UNIK SEDUNIA**. Gak boleh sama kayak orang lain. Misal: `belajar-aws-nama-lo-123`.",
+            "4. Region: Samain aja (Singapore).",
+            "5. *Block Public Access*: Hilangkan centang ini (Uncheck) biar bisa diakses publik (Hanya untuk latihan ini ya!). Centang kotak peringatan 'I acknowledge...'.",
+            "6. Create Bucket."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "practice-upload",
+      "blocks": [
+        { "type": "heading", "text": "Praktek 2: Upload File" },
+        { "type": "paragraph", "text": "Klik nama bucket lo, lalu klik **Upload**. Masukin foto kucing atau file apa aja. Klik Upload." }
+      ]
+    },
+    {
+      "section_id": "static-web",
+      "blocks": [
+        { "type": "heading", "text": "Praktek 3: Website Tanpa Server" },
+        { "type": "paragraph", "text": "Salah satu fitur keren S3 adalah **Static Website Hosting**. Kita bisa bikin web tanpa nyewa EC2!" },
+        { "type": "paragraph", "text": "Siapkan file `index.html` sederhana di komputer lo:" },
+        { "type": "code", "language": "html", "code": "<html>\n<body>\n  <h1>Halo Dunia!</h1>\n  <p>Website ini jalan di S3 lho.</p>\n</body>\n</html>" },
+        { "type": "paragraph", "text": "Upload `index.html` tadi ke Bucket lo." }
+      ]
+    },
+    {
+      "section_id": "enable-hosting",
+      "blocks": [
+        { "type": "heading", "text": "Aktifkan Hosting" },
+        { "type": "list", "items": [
+            "1. Di menu Bucket, klik tab **Properties**.",
+            "2. Scroll paling bawah ke **Static website hosting** -> Edit -> **Enable**.",
+            "3. Di bagian 'Index document', ketik `index.html`.",
+            "4. Save changes."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "bucket-policy",
+      "blocks": [
+        { "type": "heading", "text": "Buka Pintu (Policy)" },
+        { "type": "paragraph", "text": "Terakhir, kita harus izinkan dunia baca file kita. Ke tab **Permissions** -> **Bucket Policy** -> Edit. Paste kode ini (Ganti `NAMA-BUCKET-LO`):" },
+        { "type": "code", "language": "json", "code": "{\n    \"Version\": \"2012-10-17\",\n    \"Statement\": [\n        {\n            \"Sid\": \"PublicReadGetObject\",\n            \"Effect\": \"Allow\",\n            \"Principal\": \"*\",\n            \"Action\": \"s3:GetObject\",\n            \"Resource\": \"arn:aws:s3:::NAMA-BUCKET-LO/*\"\n        }\n    ]\n}" },
+        { "type": "paragraph", "text": "Save. Sekarang scroll lagi ke bawah Properties, klik link **Bucket website endpoint**. TADA! Web lo online." }
+      ]
+    },
+    {
+      "section_id": "closing-s3",
+      "blocks": [
+        { "type": "heading", "text": "Awas Bocor!" },
+        { "type": "reflection", "text": "S3 Public itu bahaya kalau buat data rahasia (KTP, Database). Pastikan fitur Public Access cuma nyala buat file yang emang mau disebar (seperti gambar website). Kalau data pribadi, Gembok!" }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "S3 termasuk jenis penyimpanan apa?",
+      "options": ["Block Storage", "Object Storage", "File Storage", "Database"],
+      "correct": 1,
+      "feedback": "Benar. S3 menyimpan data sebagai Objek."
+    },
+    {
+      "question": "Kelas S3 mana yang paling murah untuk arsip jangka panjang (tapi lambat diambil)?",
+      "options": ["S3 Standard", "S3 Intelligent-Tiering", "S3 Glacier", "S3 Express"],
+      "correct": 2,
+      "feedback": "Tepat. Glacier kayak es, beku dan murah."
+    },
+    {
+      "question": "Apa syarat nama S3 Bucket?",
+      "options": ["Boleh sama dengan orang lain", "Harus unik secara global (sedunia)", "Boleh pakai huruf kapital", "Harus mengandung angka"],
+      "correct": 1,
+      "feedback": "Sip. Nama bucket itu kayak nama domain, gak boleh kembar."
+    },
+    {
+      "question": "Fitur S3 apa yang memungkinkan kita menaruh file HTML agar bisa diakses sebagai website?",
+      "options": ["S3 Versioning", "Static Website Hosting", "S3 Replication", "Transfer Acceleration"],
+      "correct": 1,
+      "feedback": "Benar. Hosting web statis murah meriah."
+    }
+  ]
+}

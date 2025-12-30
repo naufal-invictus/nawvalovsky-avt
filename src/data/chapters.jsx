@@ -1,39 +1,59 @@
+// Core Chapters (Cysec & Sorting)
 import chapterCysec from './json/Chapter-Cysec.json';
-import chapterKekuasaan from './json/Chapter-Kekuasaan.json';
-import chapterKerasulan from './json/Chapter-Kerasulan.json';
-import chapterSunnah from './json/Chapter-Sunnah.json';
-import chapterIman from './json/Chapter-Iman.json';
 import chapterSoceng from './json/Chapter-Soceng.json';
 import chapterScamUpdate from './json/Chapter-Scam-Update.json';
 import chapterBubbleSort from './json/Chapter-BubbleSort.json';
 import chapterSelectionSort from './json/Chapter-SelectionSort.json';
 
+// AWS Cloud Chapters (AWS Re/Start)
+import chapterAWSBasics from './json/Chapter-AWS-Basics.json';
+import chapterAWSEC2 from './json/Chapter-AWS-EC2.json';
+import chapterAWSPricing from './json/Chapter-AWS-Pricing.json';
+import chapterAWSS3 from './json/Chapter-AWS-S3.json';
 
+// Wisdom/History Chapters
+import chapterKekuasaan from './json/Chapter-Kekuasaan.json';
+import chapterKerasulan from './json/Chapter-Kerasulan.json';
+import chapterSunnah from './json/Chapter-Sunnah.json';
+import chapterIman from './json/Chapter-Iman.json';
+
+/**
+ * Helper untuk menyeragamkan struktur data JSON ke props yang
+ * dibutuhkan oleh komponen BlogList.jsx dan ChapterReader.jsx
+ */
 const formatChapter = (chapter, readTime) => ({
   ...chapter,
-  id: chapter.id, // Pastikan ID terbawa
+  id: chapter.id,
   title: chapter.metadata.title,
 
-  // PERBAIKAN DI SINI:
-  // Ubah 'thumbnail' menjadi 'image' agar sesuai dengan BlogList.jsx
+  // Mapping thumbnail ke image agar konsisten dengan BlogList
   image: chapter.metadata.thumbnail,
 
   category: chapter.metadata.category,
   excerpt: chapter.metadata.description,
-  readTime: readTime
+  readTime: readTime,
+  tags: chapter.metadata.tags || []
 });
 
 export const chapters = [
-    formatChapter(chapterCysec, "5 min read"),
-    formatChapter(chapterSoceng, "5 min read"),
-    formatChapter(chapterScamUpdate, "6 min read"),
-    formatChapter(chapterBubbleSort, "10 min read"),
-    formatChapter(chapterSelectionSort, "10 min read"),
+  // --- CYBERSECURITY SERIES ---
+  formatChapter(chapterCysec, "5 min read"),
+  formatChapter(chapterSoceng, "5 min read"),
+  formatChapter(chapterScamUpdate, "6 min read"),
 
+  // --- AWS CLOUD PRACTITIONER (AWS RE/START) ---
+  formatChapter(chapterAWSBasics, "10 min read"),
+  formatChapter(chapterAWSEC2, "15 min read"),
+  formatChapter(chapterAWSPricing, "10 min read"),
+  formatChapter(chapterAWSS3, "12 min read"),
+
+  // --- PROGRAMMING & ALGORITHM ---
+  formatChapter(chapterBubbleSort, "10 min read"),
+  formatChapter(chapterSelectionSort, "10 min read"),
+
+  // --- WISDOM & PHILOSOPHY ---
   formatChapter(chapterKekuasaan, "15 min read"),
   formatChapter(chapterKerasulan, "15 min read"),
   formatChapter(chapterSunnah, "20 min read"),
   formatChapter(chapterIman, "12 min read"),
-
-
 ];
