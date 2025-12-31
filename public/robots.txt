@@ -1,4 +1,1 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://nawvalovsky.vercel.app/sitemap.xml
+User-agent: * Allow: /sitemap.xml Sitemap: https://yourwebsite.com/sitemap.xml
