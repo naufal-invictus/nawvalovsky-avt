@@ -4,7 +4,7 @@
     "title": "Enneagram Type 3: The Achiever",
     "subtitle": "Si Paling Ambis yang Haus Validasi",
     "description": "Bahas tuntas Tipe 3: Mulai dari si 'Humble Brag' (SP3), si 'Panjat Sosial' (SO3), sampai si 'Bucin Prestasi' (SX3). Panduan biar lo gak burnout ngejar validasi orang lain.",
-    "thumbnail": "/images/blog/Type3-Cover.webp",
+    "thumbnail": "/images/blog/E3-Cover.webp",
     "tags": ["Typology", "Psychology", "Self-Development"],
     "category": "Typology"
   },
@@ -15,7 +15,7 @@
         { "type": "heading", "text": "1. Intro: Manusia 'Human Doing'" },
         {
           "type": "image",
-          "src": "/images/blog/Type3-Intro.webp",
+          "src": "/images/blog/E3-1.webp",
           "caption": "POV: Tipe 3 pas lagi mode 'Grind Don't Stop' demi ngejar target hidup.",
           "position": "center"
         },
@@ -47,7 +47,7 @@
         { "type": "heading", "text": "3. Perasaan? Masukin Kotak Dulu!" },
         {
           "type": "image",
-          "src": "/images/blog/Type3-Success.webp",
+          "src": "/images/blog/E3-Em.webp",
           "caption": "Ilustrasi seseorang yang menyimpan topeng emosi ke dalam kotak demi profesionalitas.",
           "position": "right"
         },
@@ -70,7 +70,7 @@
         { "type": "heading", "text": "5. SO3: The Real Panjat Sosial" },
         {
           "type": "image",
-          "src": "/images/blog/Type3-Social.webp",
+          "src": "/images/blog/E3-So.webp",
           "caption": "Cahaya sorot panggung dan tepuk tangan adalah bensin utama Tipe SO3.",
           "position": "left"
         },
@@ -124,7 +124,7 @@
         { "type": "heading", "text": "8. Resep Obat Kuat Mental" },
         {
           "type": "image",
-          "src": "/images/blog/Type3-Growth.webp",
+          "src": "/images/blog/E3-Lv.webp",
           "caption": "Momen hening untuk refleksi: 'Apa yang sebenernya gue mau?'.",
           "position": "center"
         },
