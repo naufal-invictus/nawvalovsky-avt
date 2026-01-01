@@ -1,166 +1,128 @@
 {
   "id": "chapter-enneagram-3",
-  "title": "Enneagram Type 3: THE ACHIEVER",
-  "author": "Rumah sakit penderita penyakit typology gila - tanto",
-  "category": "Typology",
-  "readTime": "15 min",
-  "image": "/images/blog/Type3-Cover.webp",
+  "metadata": {
+    "title": "Enneagram Type 3: THE ACHIEVER",
+    "subtitle": "Si Ambisius yang Menawan & Haus Prestasi",
+    "description": "Kupas tuntas Enneagram 3: Si 'Achiever' yang percaya diri namun takut gagal. Pelajari motivasi, sayap (wings), hingga cara mereka untuk benar-benar bahagia.",
+    "thumbnail": "/images/blog/Type3-Cover.webp",
+    "tags": ["Typology", "Enneagram", "Psychology"],
+    "category": "Typology"
+  },
   "content": [
     {
-      "type": "heading",
-      "text": "Tipe Enneagram 3 Secara Singkat"
-    },
-    {
-      "type": "paragraph",
-      "text": "Tipe Tiga memiliki kepercayaan diri yang tinggi, menarik, dan menawan. Ambisius, kompeten, dan energik, mereka juga bisa sangat mementingkan status dan sangat termotivasi untuk maju. Mereka diplomatis dan tenang, tetapi juga bisa terlalu khawatir dengan citra diri dan apa yang orang lain pikirkan tentang mereka."
-    },
-    {
-      "type": "paragraph",
-      "text": "Mereka biasanya memiliki masalah dengan kecanduan kerja dan daya saing. Pada kondisi terbaiknya, mereka mampu menerima diri sendiri, otentik, dan menjadi teladan yang menginspirasi orang lain."
-    },
-    {
-      "type": "image",
-      "src": "/images/blog/Type3-Intro.webp",
-      "caption": "Ilustrasi sosok Tipe 3 yang tampil percaya diri, karismatik, dan siap menghadapi tantangan dunia dengan ambisi tinggi."
-    },
-    {
-      "type": "list",
-      "items": [
-        "**Ketakutan Mendasar:** Takut menjadi tidak berharga atau tidak memiliki pencapaian.",
-        "**Keinginan Dasar:** Merasa berharga, diterima, dan layak.",
-        "**Motivasi Utama:** Ingin diakui, membedakan diri dari orang lain, mendapatkan perhatian, dan membuat orang lain terkesan."
+      "section_id": "intro",
+      "blocks": [
+        { "type": "heading", "text": "Tipe Enneagram 3 Secara Singkat" },
+        {
+          "type": "image",
+          "src": "/images/blog/Type3-Intro.webp",
+          "caption": "Sosok Tipe 3 yang tampil percaya diri, karismatik, dan siap menaklukkan dunia.",
+          "position": "center"
+        },
+        { "type": "paragraph", "text": "Tipe Tiga memiliki kepercayaan diri yang tinggi, menarik, dan menawan. Ambisius, kompeten, dan energik, mereka juga bisa sangat mementingkan status dan sangat termotivasi untuk maju." },
+        { "type": "paragraph", "text": "Mereka diplomatis dan tenang, tetapi juga bisa terlalu khawatir dengan citra diri dan apa yang orang lain pikirkan tentang mereka. Masalah utama mereka biasanya adalah kecanduan kerja dan daya saing." },
+        {
+          "type": "list",
+          "items": [
+            "**Ketakutan Mendasar:** Takut menjadi tidak berharga atau gagal.",
+            "**Keinginan Dasar:** Merasa berharga, diterima, dan layak.",
+            "**Motivasi Utama:** Ingin diakui, membedakan diri, dan membuat orang lain terkesan."
+          ]
+        }
       ]
     },
     {
-      "type": "heading",
-      "text": "Sayap (Wings)"
-    },
-    {
-      "type": "list",
-      "items": [
-        "**3w2 (Sayap Dua) - 'Sang Penarik Hati':** Lebih hangat, suka menolong, dan menginginkan kedekatan sosial.",
-        "**3w4 (Sayap Empat) - 'Sang Profesional':** Lebih fokus pada pekerjaan, artistik, dan introspektif."
+      "section_id": "overview",
+      "blocks": [
+        { "type": "heading", "text": "Gambaran Umum: Sang Pencapai" },
+        {
+          "type": "image",
+          "src": "/images/blog/Type3-Success.webp",
+          "caption": "Bagi Tipe 3, kesuksesan adalah oksigen. Mereka ingin menjadi bintang di bidangnya.",
+          "position": "right"
+        },
+        { "type": "paragraph", "text": "Kami menamai tipe ini 'Sang Pencapai' karena saat sehat, mereka benar-benar mencapai hal-hal besar. Mereka adalah 'bintang' alami yang sering dikagumi karena prestasi mereka." },
+        { "type": "paragraph", "text": "Tipe Tiga bertindak sebagai 'teladan' karena perwujudan kualitas yang dihargai sosial. Mereka ingin memastikan hidup mereka sukses—entah itu kaya raya, akademisi top, atau artis terkenal—sesuai definisi lingkungan mereka." }
       ]
     },
     {
-      "type": "separator"
-    },
-    {
-      "type": "heading",
-      "text": "Gambaran Umum: Sang Pencapai"
-    },
-    {
-      "type": "paragraph",
-      "text": "Kami menamai tipe kepribadian Tiga sebagai 'Sang Pencapai' karena ketika mereka sehat, Tipe Tiga benar-benar dapat mencapai hal-hal besar. Mereka adalah 'bintang' dari sifat manusia. Orang sering mengagumi mereka karena keanggunan dan prestasi pribadi mereka. Tipe Tiga yang sehat tahu betapa baiknya perasaan mengembangkan diri dan menyumbangkan kemampuan mereka kepada dunia."
-    },
-    {
-      "type": "paragraph",
-      "text": "Tipe Tiga seringkali sukses dan disukai karena mereka paling percaya pada diri sendiri. Mereka bertindak sebagai 'teladan' karena perwujudan kualitas yang dihargai secara sosial. Tipe Tiga ingin memastikan hidup mereka sukses, apa pun definisi kesuksesan yang diberikan oleh keluarga atau lingkungan sosial mereka—entah itu kekayaan, akademis, popularitas, atau status religius."
-    },
-    {
-      "type": "image",
-      "src": "/images/blog/Type3-Success.webp",
-      "caption": "Visualisasi seseorang yang sedang menaiki tangga kesuksesan atau berdiri di puncak pencapaian, merepresentasikan dorongan Tipe 3 untuk menjadi yang terbaik."
-    },
-    {
-      "type": "heading",
-      "text": "Dilema Emosional: Perasaan dalam Kotak"
-    },
-    {
-      "type": "paragraph",
-      "text": "Meskipun mereka adalah tipe utama dalam Pusat Perasaan (Heart Center), Tipe Tiga tidak dikenal sebagai orang yang 'berperasaan'. Sebaliknya, mereka adalah orang-orang yang bertindak (doers). Seolah-olah mereka 'menyimpan perasaan mereka dalam kotak' agar mereka dapat maju dengan apa yang ingin mereka capai. Mereka percaya emosi dapat menghambat kinerja, sehingga mereka mengganti perasaan dengan pemikiran dan tindakan praktis."
-    },
-    {
-      "type": "paragraph",
-      "text": "Masalah mendasarnya adalah dalam ketergesaan untuk menjadi 'berharga', Tipe Tiga bisa menjadi terasing dari diri mereka sendiri. Mereka mungkin tidak lagi tahu apa yang benar-benar mereka inginkan. Perhatian yang mereka terima dari menjadi 'seseorang' adalah oksigen mereka, tetapi itu datang dengan harga hilangnya kontak dengan diri sejati."
-    },
-    {
-      "type": "separator"
-    },
-    {
-      "type": "heading",
-      "text": "Tingkat Perkembangan (Levels of Development)"
-    },
-    {
-      "type": "paragraph",
-      "text": "Kesehatan psikologis Tipe 3 dapat bergerak dari yang paling sehat hingga tidak sehat:"
-    },
-    {
-      "type": "list",
-      "items": [
-        "**Sehat (Level 1-3):** Menerima diri sendiri, otentik, rendah hati, dan menjadi teladan yang menginspirasi. Mereka tidak lagi berakting, melainkan benar-benar menjadi diri sendiri.",
-        "**Rata-rata (Level 4-6):** Sangat peduli dengan kinerja dan citra. Mulai pragmatis, membandingkan diri dengan orang lain, dan menjadi 'chameleon' (berubah sesuai harapan). Muncul narsisme dan kesombongan sebagai pertahanan.",
-        "**Tidak Sehat (Level 7-9):** Takut gagal hingga menjadi eksploitatif, menipu, atau bahkan dendam. Bisa melakukan sabotase terhadap orang lain untuk mempertahankan ilusi superioritas."
+      "section_id": "dilemma",
+      "blocks": [
+        { "type": "heading", "text": "Dilema: Perasaan dalam Kotak" },
+        { "type": "paragraph", "text": "Uniknya, meski Tipe 3 ada di Pusat Perasaan (Heart Center), mereka tidak dikenal 'baperan'. Sebaliknya, mereka adalah *doers* (pelaku)." },
+        { "type": "paragraph", "text": "Mereka seolah 'menyimpan perasaan dalam kotak' agar bisa fokus berprestasi. Mereka percaya emosi cuma menghambat kinerja. Akibatnya, mereka sering terasing dari diri sendiri dan bingung: *'Sebenarnya apa yang AKU inginkan, bukan yang orang lain ingin aku lakukan?'*" }
       ]
     },
     {
-      "type": "image",
-      "src": "/images/blog/Type3-Levels.webp",
-      "caption": "Diagram atau grafik yang menunjukkan spektrum kesehatan mental Tipe 3, dari otentisitas di puncak hingga penipuan diri di dasar."
-    },
-    {
-      "type": "separator"
-    },
-    {
-      "type": "heading",
-      "text": "Subtipe: Self-Preservation 3 (SP3) - Keamanan"
-    },
-    {
-      "type": "paragraph",
-      "text": "Dikenal sebagai **Tipe Tandingan (Countertype)**. SP3 bekerja keras untuk mencapai rasa aman dan kemandirian. Mereka ingin menjadi model kualitas terbaik (orang tua terbaik, pekerja terbaik) tetapi tidak ingin terlihat sombong. Mereka memiliki 'kesombongan karena tidak memiliki kesombongan'."
-    },
-    {
-      "type": "paragraph",
-      "text": "SP3 sering terlihat seperti Tipe 1 (kaku dan bertanggung jawab) atau Tipe 6 (cemas akan keamanan), tetapi motivasi utamanya tetaplah citra diri—menjadi orang yang berbudi luhur dan tidak bercela."
-    },
-    {
-      "type": "heading",
-      "text": "Subtipe: Social 3 (SO3) - Prestise"
-    },
-    {
-      "type": "paragraph",
-      "text": "Ini adalah Tipe 3 yang paling 'klasik' dan paling terlihat sombong. Mereka butuh panggung, pengakuan, dan gelar. SO3 sangat cerdas secara sosial, tahu cara 'menjual' diri, dan memiliki mentalitas korporat. Bagi mereka, citra adalah segalanya. Mereka paling kompetitif dan agresif dalam mengejar status."
-    },
-    {
-      "type": "image",
-      "src": "/images/blog/Type3-Social.webp",
-      "caption": "Gambar seseorang yang sedang berbicara di depan umum atau menerima penghargaan, mencerminkan kebutuhan SO3 akan pengakuan publik dan prestise."
-    },
-    {
-      "type": "heading",
-      "text": "Subtipe: Sexual 3 (SX3) - Karisma"
-    },
-    {
-      "type": "paragraph",
-      "text": "Fokus SX3 bukan pada uang atau jabatan, tetapi pada **daya tarik** dan hubungan. Mereka ingin menjadi diinginkan. Mereka sering bekerja keras untuk mendukung 'orang lain' (pasangan atau tim) agar terlihat sukses, karena keberhasilan orang tersebut adalah keberhasilan mereka juga."
-    },
-    {
-      "type": "paragraph",
-      "text": "Mereka bisa terlihat manis, pemalu, dan suka menolong (mirip Tipe 2), namun di dalamnya ada kekosongan identitas yang besar. Mereka memakai topeng 'pria/wanita ideal' untuk mendapatkan cinta."
-    },
-    {
-      "type": "separator"
-    },
-    {
-      "type": "heading",
-      "text": "Rekomendasi Pengembangan Diri"
-    },
-    {
-      "type": "paragraph",
-      "text": "Untuk tumbuh, Tipe 3 harus belajar bahwa **Kejujuran adalah kuncinya**. Berhentilah mencoba membuat orang terkesan. Anda jauh lebih mengesankan saat menjadi otentik."
-    },
-    {
-      "type": "list",
-      "items": [
-        "**Beristirahatlah:** Jangan biarkan ambisi membakar habis diri Anda. Ambil jeda untuk bernapas dan terhubung dengan diri sendiri.",
-        "**Kembangkan Kesadaran Sosial:** Terlibatlah dalam proyek yang tidak menguntungkan citra diri Anda, tetapi murni untuk orang lain.",
-        "**Cari 'Keinginan Hati':** Tanyakan pada diri sendiri, 'Apa yang sebenarnya SAYA inginkan?', bukan apa yang orang lain ingin saya lakukan."
+      "section_id": "levels",
+      "blocks": [
+        { "type": "heading", "text": "Level Kesehatan Mental Tipe 3" },
+        {
+          "type": "image",
+          "src": "/images/blog/Type3-Levels.webp",
+          "caption": "Grafik naik turun kondisi mental Tipe 3, dari otentik hingga manipulatif.",
+          "position": "left"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Sehat (Level 1-3):** Menerima diri apa adanya, otentik, rendah hati, dan menjadi inspirasi nyata tanpa perlu pamer.",
+            "**Rata-rata (Level 4-6):** Sangat peduli citra, *workaholic*, mulai membandingkan diri, dan menjadi 'bunglon' yang berubah sesuai harapan orang.",
+            "**Tidak Sehat (Level 7-9):** Takut gagal akut, bisa menipu, oportunis, bahkan menghancurkan orang lain demi menjaga ilusi kehebatan mereka."
+          ]
+        }
       ]
     },
     {
-      "type": "image",
-      "src": "/images/blog/Type3-Growth.webp",
-      "caption": "Ilustrasi seseorang yang sedang bermeditasi atau melihat cermin dengan wajah asli tanpa topeng, simbol kembali ke jati diri yang otentik."
+      "section_id": "sp3",
+      "blocks": [
+        { "type": "heading", "text": "Subtipe: Self-Preservation 3 (SP3) - Keamanan" },
+        { "type": "paragraph", "text": "Ini adalah **Countertype**. SP3 tidak suka pamer secara blak-blakan. Mereka bekerja keras demi rasa aman dan kemandirian." },
+        { "type": "paragraph", "text": "Filosofi mereka unik: *'Kesombongan karena tidak memiliki kesombongan'*. Mereka ingin menjadi model manusia terbaik (orang tua terbaik, karyawan terbaik) tapi ingin terlihat rendah hati. Sering dikira Tipe 1 atau 6." }
+      ]
+    },
+    {
+      "section_id": "so3",
+      "blocks": [
+        { "type": "heading", "text": "Subtipe: Social 3 (SO3) - Prestise" },
+        {
+          "type": "image",
+          "src": "/images/blog/Type3-Social.webp",
+          "caption": "Tipe 3 Sosial sangat menikmati panggung, gelar, dan pengakuan publik.",
+          "position": "right"
+        },
+        { "type": "paragraph", "text": "Ini adalah Tipe 3 yang paling 'klasik'. Mereka butuh panggung, gelar, dan pengakuan publik. Sangat cerdas secara sosial dan tahu cara *branding* diri." },
+        { "type": "paragraph", "text": "Bagi mereka, citra adalah segalanya. Mereka kompetitif, punya mentalitas korporat, dan agresif dalam mengejar status tertinggi di kelompoknya." }
+      ]
+    },
+    {
+      "section_id": "sx3",
+      "blocks": [
+        { "type": "heading", "text": "Subtipe: Sexual 3 (SX3) - Karisma" },
+        { "type": "paragraph", "text": "Fokus SX3 bukan uang atau jabatan, tapi **Daya Tarik**. Mereka ingin menjadi sosok yang diinginkan secara personal." },
+        { "type": "paragraph", "text": "Mereka sering terlihat manis, pemalu, dan suka menolong (mirip Tipe 2). Seringkali mereka mendedikasikan hidup untuk mendukung kesuksesan pasangannya, karena bagi mereka: *'Kalau pasanganku sukses, berarti aku sukses memilih dan mendukungnya.'*" }
+      ]
+    },
+    {
+      "section_id": "growth",
+      "blocks": [
+        { "type": "heading", "text": "Rekomendasi Pengembangan Diri" },
+        {
+          "type": "image",
+          "src": "/images/blog/Type3-Growth.webp",
+          "caption": "Momen hening untuk berkaca ke dalam diri, kunci kesembuhan Tipe 3.",
+          "position": "center"
+        },
+        { "type": "paragraph", "text": "Wahai Tipe 3, ingatlah: **Kejujuran adalah kuncinya**. Anda akan jauh lebih mengesankan saat menjadi otentik daripada saat membual tentang prestasi." },
+        {
+          "type": "list",
+          "items": [
+            "**Beristirahatlah:** Jangan biarkan ambisi membakar habis dirimu. Ambil jeda.",
+            "**Cari 'Keinginan Hati':** Tanya pada diri sendiri, 'Apa yang sebenarnya SAYA rasakan?', bukan apa yang 'seharusnya' dirasakan.",
+            "**Koneksi Nyata:** Luangkan waktu untuk hubungan yang tulus tanpa agenda tersembunyi."
+          ]
+        }
+      ]
     }
   ],
   "quiz": [
@@ -172,47 +134,52 @@
         "Takut tidak memiliki identitas unik",
         "Takut akan konflik dan perpecahan"
       ],
-      "answer": 1
+      "correct": 1,
+      "feedback": "Benar. Mereka takut dianggap gagal atau *worthless*."
     },
     {
       "question": "Mengapa Tipe 3 sering disebut 'menyimpan perasaan dalam kotak'?",
       "options": [
-        "Karena mereka tidak punya perasaan sama sekali",
-        "Karena mereka percaya emosi menghambat efisiensi dan kinerja",
+        "Karena mereka tidak punya perasaan",
+        "Karena mereka percaya emosi menghambat efisiensi kerja",
         "Karena mereka ingin menyakiti orang lain",
-        "Karena mereka lebih suka logika daripada intuisi"
+        "Karena mereka lebih suka logika matematika"
       ],
-      "answer": 1
+      "correct": 1,
+      "feedback": "Tepat. Emosi dianggap gangguan bagi *performance* mereka."
     },
     {
-      "question": "Subtipe manakah yang disebut sebagai 'Countertype' karena berusaha menyembunyikan kesombongannya?",
+      "question": "Subtipe manakah yang disebut 'Countertype' karena berusaha terlihat rendah hati?",
       "options": [
         "Sexual 3 (SX3)",
         "Social 3 (SO3)",
         "Self-Preservation 3 (SP3)",
         "Semua salah"
       ],
-      "answer": 2
+      "correct": 2,
+      "feedback": "SP3 memiliki 'kesombongan karena tidak memiliki kesombongan'."
     },
     {
-      "question": "Apa motivasi utama dari Tipe 3 Sayap 2 (3w2)?",
+      "question": "Apa motivasi utama Tipe 3 Sayap 2 (3w2 - Sang Penarik Hati)?",
       "options": [
         "Menjadi profesional dan introspektif",
-        "Menjadi penarik hati dan disukai orang lain",
-        "Menjadi pemimpin yang otoriter",
-        "Menjadi seniman yang unik"
+        "Menjadi menarik, suka menolong, dan disukai orang",
+        "Menjadi pemimpin otoriter",
+        "Menjadi seniman unik"
       ],
-      "answer": 1
+      "correct": 1,
+      "feedback": "3w2 lebih hangat dan ingin kedekatan sosial."
     },
     {
       "question": "Langkah pengembangan diri apa yang paling krusial bagi Tipe 3?",
       "options": [
-        "Bekerja lebih keras untuk sukses",
+        "Bekerja lebih keras lagi",
         "Belajar memanipulasi citra lebih baik",
-        "Berhenti sejenak dan belajar menjadi otentik/jujur pada diri sendiri",
+        "Berhenti sejenak dan belajar jujur pada diri sendiri (Otentik)",
         "Menyembunyikan kegagalan rapat-rapat"
       ],
-      "answer": 2
+      "correct": 2,
+      "feedback": "Kejujuran dan Otentisitas adalah jalan penyembuhan mereka."
     }
   ]
 }
