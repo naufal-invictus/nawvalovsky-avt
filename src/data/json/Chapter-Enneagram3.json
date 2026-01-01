@@ -3,181 +3,207 @@
   "metadata": {
     "title": "Enneagram Type 3: The Achiever",
     "subtitle": "Si Paling Ambis yang Haus Validasi",
-    "description": "Bahas tuntas Tipe 3: Sosok 'Superstar' yang ngeri banget kalau gagal. Kenapa mereka hobi banget kerja keras bagai kuda? Cek di sini.",
-    "thumbnail": "/images/blog/E3-Cover.webp",
-    "tags": ["Typology", "Enneagram", "Psychology"],
+    "description": "Bahas tuntas Tipe 3: Mulai dari si 'Humble Brag' (SP3), si 'Panjat Sosial' (SO3), sampai si 'Bucin Prestasi' (SX3). Panduan biar lo gak burnout ngejar validasi orang lain.",
+    "thumbnail": "/images/blog/Type3-Cover.webp",
+    "tags": ["Typology", "Psychology", "Self-Development"],
     "category": "Typology"
   },
   "content": [
     {
       "section_id": "intro",
       "blocks": [
-        { "type": "heading", "text": "1. Intro: Si Paling 'High Performer'" },
+        { "type": "heading", "text": "1. Intro: Manusia 'Human Doing'" },
         {
           "type": "image",
-          "src": "/images/blog/E3-1.webp",
-          "caption": "POV: Tipe 3 pas lagi mode 'Grind Don't Stop'.",
+          "src": "/images/blog/Type3-Intro.webp",
+          "caption": "POV: Tipe 3 pas lagi mode 'Grind Don't Stop' demi ngejar target hidup.",
           "position": "center"
         },
-        { "type": "paragraph", "text": "Kenalan yuk sama **Enneagram 3**. Kalau di sekolah, ini tipe murid yang nilainya bagus, aktif OSIS, kapten basket, dan masih sempet update instastory estetik. Mereka punya energi *Charming*, kompeten, dan ambisius banget." },
-        { "type": "paragraph", "text": "Tapi hati-hati, di balik senyum 'sempurna' itu, mereka sering banget *overthinking* soal citra diri. Motto hidup mereka kurang lebih: **\"I Achieve, Therefore I Am\"** (Gue berprestasi, maka gue ada)." },
+        { "type": "paragraph", "text": "Kenalan sama **Enneagram 3**. Kalau manusia lain disebut *Human Being*, Tipe 3 ini lebih cocok disebut **Human Doing**. Kenapa? Karena bagi mereka, harga diri itu diukur dari *apa yang mereka lakukan*, bukan *siapa mereka sebenarnya*." },
+        { "type": "paragraph", "text": "Mereka ini charming, energinya gak abis-abis, dan kompetitif parah. Kalau ada pemilihan Ketua OSIS, Mahasiswa Berprestasi, atau Karyawan Teladan, biasanya mereka yang menang. Tapi hati-hati, di balik piala-piala itu, ada ketakutan besar: **\"Kalau gue gagal, gue sampah.\"**" }
+      ]
+    },
+    {
+      "section_id": "core-dynamics",
+      "blocks": [
+        { "type": "heading", "text": "2. The Core: Mesin Penggerak" },
+        { "type": "paragraph", "text": "Biar paham kenapa mereka se-ambis itu, kita bedah isinya:" },
         {
           "type": "list",
           "items": [
-            "**Ketakutan Terbesar:** Jadi orang yang gak berguna (Failure/Flop).",
-            "**Keinginan Dasar:** Merasa berharga dan dikagumi.",
-            "**Motivasi:** Pengen dapet bintang emas, pengen beda dari yang lain, dan pengen semua mata tertuju padanya."
+            "**Ketakutan Dasar:** Takut jadi *loser*, gak berharga, atau gagal total.",
+            "**Keinginan Dasar:** Merasa berharga, dikagumi, dan diterima karena prestasi.",
+            "**Strategi:** Jadi 'Chameleon' (Bunglon). Mereka jago banget menyesuaikan diri sama ekspektasi lingkungan. Kalau lingkungan bilang 'Sukses = Kaya', mereka bakal cari duit. Kalau 'Sukses = Pintar', mereka bakal ngejar gelar S3."
           ]
-        }
+        },
+        { "type": "paragraph", "text": "Mereka punya 'Wings' atau sayap yang ngasih bumbu tambahan:" },
+        { "type": "paragraph", "text": "**3w2 (The Charmer):** Ambis tapi *people pleaser*. Pengen sukses biar disayang orang." },
+        { "type": "paragraph", "text": "**3w4 (The Professional):** Ambis tapi *introvert*. Pengen sukses lewat karya yang berkelas." }
       ]
     },
     {
-      "section_id": "wings",
+      "section_id": "emotional-box",
       "blocks": [
-        { "type": "heading", "text": "2. Sayap-Sayap Patah (Wings)" },
-        { "type": "paragraph", "text": "Tipe 3 gak berdiri sendiri, ada 'bumbu' tambahan dari tetangga sebelahnya:" },
-        { "type": "paragraph", "text": "**3w2 (The Charmer):** Tipe 3 yang lebih *people-oriented*. Mereka ambis, tapi caranya dengan bikin orang lain seneng. Bunglon sosial banget lah." },
-        { "type": "paragraph", "text": "**3w4 (The Professional):** Tipe 3 yang lebih introver dan fokus ke karya. Mereka pengen sukses tapi dengan cara yang 'unik' dan berkelas. Agak *moody* dikit." }
-      ]
-    },
-    {
-      "section_id": "dilemma",
-      "blocks": [
-        { "type": "heading", "text": "3. Perasaan Kok Disimpen di Kotak?" },
+        { "type": "heading", "text": "3. Perasaan? Masukin Kotak Dulu!" },
         {
           "type": "image",
-          "src": "/images/blog/E3-Em.webp",
-          "caption": "Emosi? Nanti dulu deh, lagi ngejar target nih.",
+          "src": "/images/blog/Type3-Success.webp",
+          "caption": "Ilustrasi seseorang yang menyimpan topeng emosi ke dalam kotak demi profesionalitas.",
           "position": "right"
         },
-        { "type": "paragraph", "text": "Meskipun Tipe 3 itu masuk kategori **Heart Center** (Perasa), uniknya mereka justru jarang pake perasaan. Kenapa? Karena bagi mereka, **Baper = Menghambat Kinerja**." },
-        { "type": "paragraph", "text": "Mereka jago banget *packing* perasaan sedih atau capek ke dalam kotak, dikunci rapet-rapet, terus lanjut kerja lagi. Keren sih produktif, tapi bahayanya mereka bisa lupa sama *jati diri* mereka sendiri. Saking seringnya pake topeng 'Saya Sukses', mereka lupa wajah aslinya kayak gimana." }
-      ]
-    },
-    {
-      "section_id": "levels",
-      "blocks": [
-        { "type": "heading", "text": "4. Level Kesehatan Mental (Health Bar)" },
-        {
-          "type": "image",
-          "src": "/images/blog/E3-Lv.webp",
-          "caption": "Cek status mental lo, lagi di level mana?",
-          "position": "left"
-        },
-        { "type": "list",
-          "items": [
-            "**Sehat (Level 1-3):** Otentik! Gak perlu pamer pun orang tau dia keren. Rendah hati dan jadi inspirasi nyata.",
-            "**Rata-rata (Level 4-6):** Mulai *Insecure*. Kerja keras bagai kuda demi validasi. Takut banget kalah saing. Mulai poles-poles citra di medsos biar kelihatan 'Wah'.",
-            "**Tidak Sehat (Level 7-9):** Toxic Abis. Halalin segala cara buat menang. Bisa nipu, sikut kanan-kiri, atau manipulatif demi nutupin kegagalan."
-          ]
-        }
+        { "type": "paragraph", "text": "Tipe 3 percaya kalau **Emosi = Hambatan**. Sedih? Marah? Capek? Itu semua cuma bakal ngerusak *performance*. Jadi solusinya? **Represi**." },
+        { "type": "paragraph", "text": "Mereka jago banget masukin perasaan ke dalam kotak, dikunci, terus dibuang ke laut. Hasilnya? Mereka jadi mesin produktivitas. Tapi efek sampingnya ngeri: Mereka jadi **Gak Kenal Diri Sendiri**. Sering banget Tipe 3 bingung: *\"Sebenarnya gue suka ini karena gue beneran suka, atau karena orang lain bakal muji gue kalau gue ngelakuin ini?\"*" }
       ]
     },
     {
       "section_id": "sp3",
       "blocks": [
-        { "type": "heading", "text": "5. Subtipe SP3: Ambis Jalur Senyap" },
-        { "type": "paragraph", "text": "Ini Tipe 3 yang aneh, sering disebut **Countertype**. Kenapa? Karena mereka **Gak Suka Pamer**. Mereka pengen sukses, pengen kaya, tapi diem-diem aja." },
-        { "type": "paragraph", "text": "Filosofinya: *\"Gue harus jadi yang terbaik, tapi gue gak mau kelihatan sombong.\"* Mereka ini *Workaholic* sejati yang ngejar rasa aman finansial. Sering dikira Tipe 1 atau 6 karena kaku dan rajin banget." }
+        { "type": "heading", "text": "4. SP3: Si 'Humble Brag' (Countertype)" },
+        { "type": "paragraph", "text": "Ini Tipe 3 yang paling unik, sering disebut **Countertype**. Kalau Tipe 3 biasanya suka pamer (vanity), SP3 ini punya prinsip: **\"Kesombongan karena tidak memiliki kesombongan.\"**" },
+        { "type": "paragraph", "text": "Mereka pengen banget jadi yang terbaik (orang tua terbaik, pekerja terbaik), tapi mereka **anti** kelihatan sombong. Mereka pengen orang lain muji mereka sebagai 'orang baik yang rendah hati'. Ribet kan?" },
+        { "type": "paragraph", "text": "SP3 ini *Workaholic* sejati. Mereka ngejar keamanan finansial dan kemandirian. Sering banget salah dikira sebagai Tipe 1 (karena kaku & perfeksionis) atau Tipe 6 (karena cemas soal keamanan). Padahal motifnya tetep satu: **Citra Diri**." }
       ]
     },
     {
       "section_id": "so3",
       "blocks": [
-        { "type": "heading", "text": "6. Subtipe SO3: The Real Influencer" },
+        { "type": "heading", "text": "5. SO3: The Real Panjat Sosial" },
         {
           "type": "image",
-          "src": "/images/blog/E3-So.webp",
-          "caption": "Panggung adalah rumahku, tepuk tangan adalah makananku.",
-          "position": "right"
+          "src": "/images/blog/Type3-Social.webp",
+          "caption": "Cahaya sorot panggung dan tepuk tangan adalah bensin utama Tipe SO3.",
+          "position": "left"
         },
-        { "type": "paragraph", "text": "Nah ini Tipe 3 yang paling 'Stereotip'. Butuh panggung, butuh gelar, butuh sertifikat dipajang di dinding. Mereka sangat peduli sama **Prestise**." },
-        { "type": "paragraph", "text": "Jago banget *Personal Branding*. Kalau di perusahaan, mereka ini tipe yang cepet banget naik jabatan karena tau cara 'menjual' diri ke bos. Tapi hati-hati, kadang isinya kosong, cuma kemasan doang yang bagus." }
+        { "type": "paragraph", "text": "Nah, ini definisi Tipe 3 yang ada di buku-buku. **Haus Prestise**. Mereka butuh panggung, butuh gelar, dan butuh pengakuan publik." },
+        { "type": "paragraph", "text": "SO3 ini punya mentalitas korporat banget. Mereka tau cara 'menjual diri', cara *branding*, dan cara naik tangga sosial dengan cepat. Bagi mereka, **Citra adalah Mata Uang**. Kalau gak bisa dipamerin di LinkedIn atau Instagram, ngapain dikerjain?" },
+        { "type": "paragraph", "text": "Sisi gelapnya? Mereka bisa jadi sangat kompetitif, agresif, dan 'dingin'. Orang lain cuma dilihat sebagai alat bantu atau batu loncatan buat sukses." }
       ]
     },
     {
       "section_id": "sx3",
       "blocks": [
-        { "type": "heading", "text": "7. Subtipe SX3: Si Penakluk Hati" },
-        { "type": "paragraph", "text": "Kalau SP3 ngejar duit, SO3 ngejar gelar, nah SX3 ini ngejar **Daya Tarik**. Mereka pengen banget jadi sosok yang 'Diinginkan' (Desirable)." },
-        { "type": "paragraph", "text": "Sering dikira Tipe 2 karena suka nolong dan manis. Tapi motifnya beda: Mereka support orang lain (biasanya pasangan/keluarga) biar pasangannya sukses. Kalau pasangannya sukses, mereka merasa sukses juga karena berhasil 'menciptakan' bintang. *Couple Goals* hunter banget deh." }
+        { "type": "heading", "text": "6. SX3: Si Bucin Validasi" },
+        { "type": "paragraph", "text": "Kalau SP3 ngejar duit, SO3 ngejar jabatan, SX3 ini ngejar **Daya Tarik (Desirability)**. Mereka pengen banget jadi sosok yang diinginkan secara seksual atau romantis." },
+        { "type": "paragraph", "text": "Uniknya, mereka sering mempromosikan *orang lain* (pasangan, keluarga, tim) daripada diri sendiri. Logikanya: **\"Kalau gue bisa bikin pasangan gue sukses dan keren, berarti gue sukses memilih pasangan.\"**" },
+        { "type": "paragraph", "text": "SX3 ini sering kelihatan manis, pemalu, dan penolong (mirip Tipe 2). Tapi di dalamnya ada kekosongan besar. Mereka merasa harus 'sempurna' secara fisik dan sikap biar layak dicintai. Mereka sering punya fantasi hidup ala 'Prince & Princess' yang bahagia selamanya." }
+      ]
+    },
+    {
+      "section_id": "levels",
+      "blocks": [
+        { "type": "heading", "text": "7. Cek Ombak: Sehat atau Toxic?" },
+        { "type": "paragraph", "text": "**Level Sehat (The Role Model):**" },
+        { "type": "list",
+        "items": [
+             "Menerima diri apa adanya (Otentik).",
+             "Rendah hati beneran, bukan settingan.",
+             "Menginspirasi orang lain tanpa perlu maksa."
+            ]
+        },
+        { "type": "paragraph", "text": "**Level Rata-rata (The Pragmatist):**" },
+        { "type": "list",
+            "items": [
+             "Mulai cemas soal citra ('Gue kelihatan gendut gak ya?', 'Postingan gue likes-nya dikit amat').",
+             "Kerja keras bagai kuda (Workaholic).",
+             "Mulai 'memoles' kebenaran biar kelihatan lebih wow."
+            ]
+        },
+        { "type": "paragraph", "text": "**Level Tidak Sehat (The Deceiver):**" },
+        { "type": "list",
+            "items": [
+             "Nipu, manipulatif, dan halalin segala cara.",
+             "Iri dengki sama kesuksesan orang lain.",
+             "Bisa nyabotase temen sendiri biar dia yang menang."
+            ]
+        }
       ]
     },
     {
       "section_id": "growth",
       "blocks": [
-        { "type": "heading", "text": "8. Tips Healing Buat Tipe 3" },
+        { "type": "heading", "text": "8. Resep Obat Kuat Mental" },
         {
           "type": "image",
-          "src": "/images/blog/E3-1.webp",
-          "caption": "Tarik napas, istirahat bentar. Dunia gak bakal kiamat kalau lo tidur siang.",
+          "src": "/images/blog/Type3-Growth.webp",
+          "caption": "Momen hening untuk refleksi: 'Apa yang sebenernya gue mau?'.",
           "position": "center"
         },
-        { "type": "paragraph", "text": "**1. Jujur sama Diri Sendiri:** Berhenti bentar, tanya ke hati kecil: *\"Gue ngelakuin ini karena gue suka, atau biar dipuji orang?\"*" },
-        { "type": "paragraph", "text": "**2. Istirahat Itu Produktif:** Lo bukan robot, bestie. Rebahan bentar gak bikin lo jadi sampah masyarakat kok." },
-        { "type": "paragraph", "text": "**3. Cari Temen Tulus:** Cari circle yang nerima lo pas lagi *gembel*, bukan cuma pas lo lagi *shining shimmering splendid*." }
+        { "type": "paragraph", "text": "Buat Tipe 3 yang lagi baca ini sambil *multitasking* kerjaan lain, tolong berhenti bentar. Ini resep buat lo:" },
+        { "type": "paragraph", "text": "1. **Jujur Itu Kunci:** Berhenti *flexing*. Lo lebih keren pas lo jujur soal kegagalan lo daripada pas lo pamer kesuksesan palsu." },
+        { "type": "paragraph", "text": "2. **Istirahat Itu Ibadah:** Lo bukan robot. Ambil napas. Dunia gak bakal kiamat kalau lo tidur siang atau main game bentar." },
+        { "type": "paragraph", "text": "3. **Cari Temen 'Gembel':** Cari temen yang bisa nerima lo pas lo lagi kucel, miskin, dan gagal. Itu baru temen sejati, bukan fans." }
+      ]
+    },
+    {
+      "section_id": "closing",
+      "blocks": [
+        { "type": "heading", "text": "9. Kesimpulan: Lo Udah Berharga Kok!" },
+        { "type": "paragraph", "text": "Pesan terakhir buat Tipe 3: **You are a Human Being, not a Human Doing.**" },
+        { "type": "paragraph", "text": "Nilai lo itu ada di keberadaan lo, bukan di piala lo. Belajarlah buat dicintai apa adanya, bukan karena prestasi lo. Susah sih, tapi *worth it* banget buat kedamaian hati." }
       ]
     }
   ],
+
+
     "references": [
     "Rumah sakit penderita penyakit typology gila - tanto",
     "Enneagram Institute. (n.d.). Type Three: The Achiever."
   ],
   "quiz": [
     {
-      "question": "Apa ketakutan terbesar (Nightmare) bagi seorang Enneagram 3?",
+      "question": "Apa prinsip hidup utama dari Subtipe SP3 (Self-Preservation)?",
       "options": [
-        "Hidup tanpa aturan",
-        "Dianggap gagal atau tidak berharga",
-        "Kehilangan kebebasan",
-        "Konflik sama temen"
+        "Pamer kekayaan di medsos",
+        "Kesombongan karena tidak memiliki kesombongan (Humble Brag)",
+        "Menjadi artis terkenal",
+        "Hidup santai tanpa target"
       ],
       "correct": 1,
-      "feedback": "Bener banget! Gagal adalah musuh utama mereka."
+      "feedback": "Betul! Mereka ingin jadi yang terbaik tapi anti dibilang sombong."
     },
     {
-      "question": "Kenapa Tipe 3 sering disebut 'Chameleon' (Bunglon)?",
+      "question": "Kenapa Tipe 3 disebut 'Human Doing'?",
       "options": [
-        "Karena kulitnya bisa berubah warna",
-        "Karena suka memelihara reptil",
-        "Karena bisa menyesuaikan diri demi memenuhi ekspektasi orang lain",
-        "Karena hobi sembunyi"
-      ],
-      "correct": 2,
-      "feedback": "Yup, mereka jago menyesuaikan 'topeng' sesuai situasi."
-    },
-    {
-      "question": "Subtipe mana yang punya prinsip 'Sombong karena tidak sombong' (Lowkey Ambis)?",
-      "options": [
-        "Social 3 (SO3)",
-        "Sexual 3 (SX3)",
-        "Self-Preservation 3 (SP3)",
-        "Semua Benar"
-      ],
-      "correct": 2,
-      "feedback": "SP3 itu tipe yang ambis tapi gak mau kelihatan show-off."
-    },
-    {
-      "question": "Apa mantra 'Healing' terbaik buat Tipe 3?",
-      "options": [
-        "Gas Terus Jangan Kasih Kendor!",
-        "Fake it until you make it",
-        "Lo berharga apa adanya, bukan karena prestasimu",
-        "Tidur adalah untuk orang lemah"
-      ],
-      "correct": 2,
-      "feedback": "Validasi terbaik datang dari dalam diri, bukan dari piala."
-    },
-    {
-      "question": "Di kondisi tidak sehat (Unhealthy), Tipe 3 cenderung...",
-      "options": [
-        "Menjadi sangat dermawan",
-        "Manipulatif dan menipu demi menjaga citra",
-        "Menjadi sangat santai",
-        "Masa bodoh dengan orang lain"
+        "Karena mereka robot buatan Elon Musk",
+        "Karena mereka mengukur harga diri dari apa yang mereka KERJAKAN/CAPAI",
+        "Karena mereka suka olahraga",
+        "Karena mereka tidak punya hati"
       ],
       "correct": 1,
-      "feedback": "Hati-hati, demi citra mereka bisa halalin segala cara."
+      "feedback": "Tepat. Prestasi adalah oksigen mereka."
+    },
+    {
+      "question": "Apa motivasi tersembunyi dari Tipe SX3 (Sexual 3)?",
+      "options": [
+        "Mendukung orang lain agar mereka terlihat sukses dan dicintai",
+        "Mengumpulkan uang sebanyak-banyaknya",
+        "Menjadi pemimpin perusahaan",
+        "Menyendiri di gunung"
+      ],
+      "correct": 0,
+      "feedback": "Benar. Mereka mempromosikan orang lain sebagai cara untuk merasa berharga."
+    },
+    {
+      "question": "Di level tidak sehat (Unhealthy), Tipe 3 bisa menjadi...",
+      "options": [
+        "Sangat dermawan",
+        "Oportunis, penipu, dan pendendam",
+        "Sangat malas",
+        "Penuh kasih sayang tulus"
+      ],
+      "correct": 1,
+      "feedback": "Hati-hati, ambisi buta bisa bikin mereka halalin segala cara."
+    },
+    {
+      "question": "Langkah penyembuhan (Growth) terbaik buat Tipe 3 adalah...",
+      "options": [
+        "Kerja lembur bagai kuda",
+        "Beli mobil baru",
+        "Belajar JUJUR pada perasaan sendiri & Berani terlihat lemah",
+        "Pamer di Instagram"
+      ],
+      "correct": 2,
+      "feedback": "Kejujuran (Truthfulness) adalah jalan ninja mereka menuju kedamaian."
     }
   ]
 }
