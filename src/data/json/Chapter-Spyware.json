@@ -1,0 +1,333 @@
+{
+  "id": "chapter-spyware",
+  "metadata": {
+    "title": "Spyware: Mata-Mata Tak Kasat Mata di Saku Lo",
+    "subtitle": "Diam-diam Menghanyutkan (Isi Rekening)",
+    "description": "Kupas tuntas soal Spyware, si pengintip digital yang lebih ngeri dari mantan yang gagal move on. Lengkap dengan bedah kode dan cara musnahinnya.",
+    "thumbnail": "/images/blog/CysecThumbnail.webp",
+    "tags": ["Keamanan", "Malware", "Privasi"],
+    "category": "Teknologi"
+  },
+  "content": [
+    {
+      "section_id": "intro-hook",
+      "blocks": [
+        { "type": "heading", "text": "HP Lo Panas Sendiri? Hati-Hati!" },
+        {
+          "type": "paragraph",
+          "text": "Pernah nggak sih lo lagi nggak ngapa-ngapain, HP ditaruh di meja, tapi pas dipegang anget banget? Atau kuota data tiba-tiba ludes padahal cuma buka WA? Jangan-jangan ada 'tamu tak diundang' yang lagi kerja lembur di background HP lo."
+        },
+        {
+          "type": "paragraph",
+          "text": "Kenalan yuk sama **Spyware**. Ini bukan sekadar virus bikin lemot, tapi ini adalah **intelijen digital** yang disusupin buat ngevlog keseharian lo tanpa izin."
+        }
+      ]
+    },
+    {
+      "section_id": "what-is-spyware",
+      "blocks": [
+        { "type": "heading", "text": "Apa Itu Spyware?" },
+        {
+          "type": "paragraph",
+          "text": "Sesuai namanya, *Spy* (Mata-mata) + *Software*. Ini adalah program jahat yang tugas utamanya satu: **NGINTIP**. Dia nggak ngerusak file kayak Ransomware, dia justru pengen sistem lo tetep jalan normal supaya lo nggak sadar kalau lagi dimata-matai."
+        },
+        {
+          "type": "paragraph",
+          "text": "Dia nyatet semua yang lo ketik (termasuk password), ngambil screenshot layar, nyalain kamera/mic diem-diem, sampai nyolong daftar kontak lo."
+        }
+      ]
+    },
+    {
+      "section_id": "analogy-time",
+      "blocks": [
+        { "type": "heading", "text": "Analogi: Si Teman Bermuka Dua" },
+        {
+          "type": "analogy",
+          "title": "Tamu Tak Diundang",
+          "text": "Bayangin lo punya temen yang lo ajak nginep di rumah (lo install aplikasi). Di depan lo, dia baik banget, bantu bersih-bersih. Tapi pas lo tidur, dia bangun, buka-buka lemari lo, fotoin buku harian lo, nyalin kunci rumah lo, terus laporin itu semua ke bosnya lewat jendela. Lo nggak sadar karena pas lo bangun, dia pura-pura tidur lagi. Itulah Spyware."
+        }
+      ]
+    },
+    {
+      "section_id": "how-it-works",
+      "blocks": [
+        { "type": "heading", "text": "Gimana Cara Kerjanya?" },
+        {
+          "type": "paragraph",
+          "text": "Spyware itu licik. Dia jarang datang sendirian. Biasanya dia 'nebeng' di aplikasi lain. Lo download game bajakan, eh di dalamnya ada 'bonus' Spyware."
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Infiltrasi:** Masuk lewat link phising, file unduhan, atau aplikasi gratisan yang mencurigakan.",
+            "**Eksekusi:** Jalan diem-diem di background (Latar Belakang) tanpa ikon aplikasi.",
+            "**Pengumpulan Data:** Merekam keystroke (pencetan keyboard), lokasi GPS, riwayat browsing.",
+            "**Eksfiltrasi:** Ngirim data curian itu ke server si penjahat (Command & Control Server)."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "types-of-spyware",
+      "blocks": [
+        { "type": "heading", "text": "Jenis-Jenis Mata-Mata Digital" },
+        {
+          "type": "paragraph",
+          "text": "Nggak semua Spyware itu sama. Mereka punya spesialisasi masing-masing:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Keylogger:** Si pencatat tombol. Apapun yang lo ketik, password IG, PIN M-Banking, chat ke selingkuhan, semua dicatat.",
+            "**Adware:** Ini yang bikin HP lo muncul iklan judi slot tiap 5 menit. Ngeselin dan ngintip profil belanja lo.",
+            "**Infostealer:** Fokus nyolong data spesifik kayak cookies browser atau file wallet kripto.",
+            "**Stalkerware:** Biasanya dipasang sama orang terdekat (pacar posesif) buat ngelacak lokasi dan baca WA lo."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "code-example",
+      "blocks": [
+        { "type": "heading", "text": "Bedah Kode: Keylogger Sederhana" },
+        {
+          "type": "paragraph",
+          "text": "Biar lo ada gambaran gimana simpelnya logika Spyware bekerja, liat contoh kode Python di bawah ini. (DISCLAIMER: Ini cuma buat edukasi ya, jangan dipake buat jahat!)."
+        },
+        {
+          "type": "code",
+          "language": "python",
+          "code": "from pynput.keyboard import Listener\n\n# Fungsi ini jalan tiap ada tombol ditekan\ndef on_press(key):\n    # Buka file 'log.txt' dan tambah (append) huruf yang diketik\n    with open('log.txt', 'a') as f:\n        # Hapus tanda petik biar rapi\n        f.write(str(key).replace(\"'\", \"\"))\n\n# Program mendengarkan keyboard terus menerus\nwith Listener(on_press=on_press) as listener:\n    listener.join()\n\n# Hasilnya? File log.txt bakal berisi: 'halo123passwordgue'"
+        },
+        {
+          "type": "paragraph",
+          "text": "Ngeri kan? Cuma butuh beberapa baris kode buat nyatet semua rahasia lo. Hacker tinggal nambahin fitur buat kirim file `log.txt` itu ke email mereka."
+        }
+      ]
+    },
+    {
+      "section_id": "case-study-global",
+      "blocks": [
+        { "type": "heading", "text": "Contoh Kasus: Pegasus (The King of Spyware)" },
+        {
+          "type": "paragraph",
+          "text": "Kalau ada raja diraja spyware, namanya **Pegasus** buatan NSO Group. Ini bukan level kaleng-kaleng, harganya miliaran rupiah per lisensi."
+        },
+        {
+          "type": "paragraph",
+          "text": "Pegasus bisa melakukan **Zero-Click Exploit**. Artinya, HP lo bisa kena sadap TANPA lo klik link apapun. Cuma dapet misscall di WA, spyware-nya langsung masuk, hapus jejak panggilan, dan boom! HP lo jadi milik mereka."
+        },
+        {
+          "type": "quote",
+          "text": "Target Pegasus biasanya jurnalis, aktivis, atau pejabat tinggi. Tapi teknologinya makin lama makin murah dan bisa ditiru penjahat biasa.",
+          "author": "Laporan Amnesty International"
+        }
+      ]
+    },
+    {
+      "section_id": "case-study-local",
+      "blocks": [
+        { "type": "heading", "text": "Contoh Kasus Lokal: Pinjol Ilegal" },
+        {
+          "type": "paragraph",
+          "text": "Di Indonesia, Spyware sering berwujud aplikasi **Pinjaman Online Ilegal**. Pas lo install, dia minta izin akses *Contacts* dan *Gallery*."
+        },
+        {
+          "type": "paragraph",
+          "text": "Begitu lo telat bayar, mereka pakai data kontak yang udah mereka sedot buat neror bos lo, ortu lo, bahkan mantan lo, bilang kalau lo maling duit perusahaan. Foto-foto di galeri lo juga bisa diedit dan disebar."
+        }
+      ]
+    },
+    {
+      "section_id": "symptoms",
+      "blocks": [
+        { "type": "heading", "text": "Tanda-Tanda HP Lo Terinfeksi" },
+        {
+          "type": "paragraph",
+          "text": "Spyware emang jago sembunyi, tapi dia ninggalin jejak. Cek tanda-tanda ini:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Baterai Bocor:** Habis drastis padahal HP diem.",
+            "**Data Usage Melonjak:** Tiba-tiba kuota habis 2GB padahal cuma chatting.",
+            "**HP Lemot/Panas:** Karena prosesor kerja keras ngurusin spyware.",
+            "**Suara Aneh Saat Nelpon:** Ada bunyi 'kresek-kresek' atau gema yang nggak wajar (bisa jadi tanda penyadapan).",
+            "**Setting Berubah Sendiri:** Tiba-tiba 'Install from Unknown Source' jadi aktif."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "prevention",
+      "blocks": [
+        { "type": "heading", "text": "Jurus Menangkal Mata-Mata" },
+        {
+          "type": "paragraph",
+          "text": "Mencegah lebih baik daripada nyesel seumur hidup. Lakukan ini:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Stop Download APK Mod/Bajakan:** Itu sarang penyakit.",
+            "**Cek Permission:** Kalau aplikasi 'Senter' minta izin akses 'Kontak' dan 'Lokasi', HAPUS! Itu nggak masuk akal.",
+            "**Update OS:** Update itu bukan cuma bikin tampilan baru, tapi nambal celah keamanan.",
+            "**Pakai Antivirus:** Google Play Protect cukup oke, tapi scan manual sesekali perlu."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "handling",
+      "blocks": [
+        { "type": "heading", "text": "Cara Mengusir Spyware (Exorcism Digital)" },
+        {
+          "type": "paragraph",
+          "text": "Kalau udah terlanjur kena, gimana? Jangan panik, lakukan langkah ini:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "1. **Putuskan Koneksi:** Matikan WiFi dan Data Seluler biar dia nggak bisa kirim data ke tuannya.",
+            "2. **Safe Mode:** Masuk ke Safe Mode di Android (tahan tombol power -> tekan lama 'Power Off'). Di mode ini, aplikasi pihak ketiga nggak jalan.",
+            "3. **Cari Admin Apps:** Cek di setting keamanan, cari 'Device Admin Apps'. Kalau ada aplikasi asing yang jadi admin, cabut haknya lalu uninstall.",
+            "4. **Factory Reset:** Ini jalan ninja terakhir dan paling ampuh. Hapus semua sampai ke akar-akarnya (Data lo juga ilang, jadi backup dulu yang penting-penting aja)."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "myth-busting",
+      "blocks": [
+        { "type": "heading", "text": "Mitos vs Fakta" },
+        {
+          "type": "paragraph",
+          "text": "Banyak yang salah kaprah soal keamanan:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Mitos:** Pakai Incognito Mode di Chrome bikin aman dari Spyware.",
+            "**Fakta:** SALAH! Incognito cuma nggak nyimpen history di browser lo, tapi Spyware yang udah tertanam di HP tetep bisa liat layar lo.",
+            "**Mitos:** iPhone nggak bisa kena virus/spyware.",
+            "**Fakta:** Lebih susah ditembus IYA, tapi mustahil ENGGAK. Kasus Pegasus membuktikan iPhone pun bisa jebol."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "ethics",
+      "blocks": [
+        { "type": "heading", "text": "Sisi Gelap: Stalkerware Pasangan" },
+        {
+          "type": "paragraph",
+          "text": "Ada fenomena sedih di mana Spyware dijual legal sebagai 'Parental Control' tapi disalahgunakan buat nyadap pasangan (Selingkuh App). Ini ilegal dan melanggar privasi berat. Hubungan yang sehat itu dibangun pakai kepercayaan, bukan pakai keylogger, Bro."
+        }
+      ]
+    },
+    {
+      "section_id": "future",
+      "blocks": [
+        { "type": "heading", "text": "Masa Depan Spyware" },
+        {
+          "type": "paragraph",
+          "text": "Ke depan, Spyware bakal makin pintar pakai AI. Dia bisa niru suara lo (Voice Deepfake) buat nipu orang tua lo minta transferan. Perang siber bakal makin personal."
+        }
+      ]
+    },
+    {
+      "section_id": "conclusion",
+      "blocks": [
+        { "type": "heading", "text": "Kesimpulan: Privasi Itu Mahal" },
+        {
+          "type": "reflection",
+          "text": "Data lo adalah aset paling berharga di abad 21. Jagain data lo kayak lo jagain dompet di pasar rame. Jangan lengah, jangan asal klik, dan jadilah user yang sadar keamanan."
+        },
+        {
+          "type": "paragraph",
+          "text": "Inget, nggak ada sistem yang 100% aman, tapi lo bisa bikin usaha hacker jadi 100x lebih susah."
+        }
+      ]
+    }
+  ],
+  "references": [
+    "Kaspersky: What is Spyware?",
+    "Citizen Lab: The Pegasus Project",
+    "Malwarebytes: Spyware Removal Guide",
+    "UU PDP (Perlindungan Data Pribadi) Indonesia"
+  ],
+  "quiz": [
+    {
+      "question": "Apa tujuan utama dari Spyware?",
+      "options": ["Merusak perangkat keras", "Mengumpulkan data pengguna secara diam-diam", "Menampilkan animasi lucu", "Mempercepat koneksi internet"],
+      "correct": 1,
+      "feedback": "Benar! Tugasnya adalah memata-matai tanpa ketahuan."
+    },
+    {
+      "question": "Jenis Spyware yang merekam setiap tombol keyboard yang ditekan disebut...",
+      "options": ["Screenlogger", "Keylogger", "Buttonlogger", "Typelogger"],
+      "correct": 1,
+      "feedback": "Tepat. Key = Tombol, Logger = Pencatat."
+    },
+    {
+      "question": "Apa nama Spyware canggih buatan NSO Group yang bisa melakukan 'Zero-Click Exploit'?",
+      "options": ["Unicorn", "Pegasus", "Phoenix", "Dragon"],
+      "correct": 1,
+      "feedback": "Benar. Dinamai seperti kuda bersayap mitologi."
+    },
+    {
+      "question": "Dalam analogi di materi, Spyware diibaratkan sebagai...",
+      "options": ["Maling yang mendobrak pintu", "Tamu yang pura-pura baik tapi mencuri saat kita tidur", "Satpam yang galak", "Tukang paket yang salah alamat"],
+      "correct": 1,
+      "feedback": "Betul. Sifat utamanya adalah manipulatif dan diam-diam."
+    },
+    {
+      "question": "Manakah di bawah ini yang MERUPAKAN gejala HP terkena Spyware?",
+      "options": ["Layar menjadi lebih cerah", "Baterai cepat habis dan HP panas", "Speaker menjadi lebih ngebass", "Sinyal 4G berubah jadi 5G"],
+      "correct": 1,
+      "feedback": "Tepat. Itu tanda prosesor bekerja keras di latar belakang."
+    },
+    {
+      "question": "Apa itu 'Zero-Click Exploit'?",
+      "options": ["Klik 0 kali (tidak perlu interaksi korban)", "Klik kanan mouse", "Klik tombol power", "Klik berkali-kali sampai error"],
+      "correct": 0,
+      "feedback": "Benar. Ini metode serangan paling berbahaya karena korban tidak perlu melakukan apa-apa."
+    },
+    {
+      "question": "Mengapa aplikasi Pinjol Ilegal sering dikategorikan sebagai Spyware?",
+      "options": ["Karena bunganya rendah", "Karena mengambil data kontak dan galeri tanpa izin yang wajar", "Karena aplikasinya berat", "Karena logonya seram"],
+      "correct": 1,
+      "feedback": "Benar. Mereka menyalahgunakan izin akses (permissions)."
+    },
+    {
+      "question": "Apa langkah paling ampuh (jalan ninja) untuk menghapus Spyware membandel?",
+      "options": ["Restart HP", "Ganti Casing HP", "Factory Reset (Kembali ke Pengaturan Pabrik)", "Hapus history browser"],
+      "correct": 2,
+      "feedback": "Tepat. Ini akan menghapus semua data dan sistem kembali bersih."
+    },
+    {
+      "question": "Benarkah Incognito Mode melindungi kita dari Spyware?",
+      "options": ["Benar, 100% aman", "Salah, Incognito hanya tidak menyimpan history browser", "Benar, kalau pakai Chrome", "Salah, Incognito justru mengundang virus"],
+      "correct": 1,
+      "feedback": "Benar (jawabannya Salah). Spyware di OS tetap bisa melihat layar Incognito."
+    },
+    {
+      "question": "Apa itu Stalkerware?",
+      "options": ["Software buat stalking mantan di IG", "Spyware yang dipasang orang terdekat untuk melacak lokasi/chat korban", "Game petualangan stalker", "Alat penguat sinyal"],
+      "correct": 1,
+      "feedback": "Tepat. Sering disalahgunakan dalam hubungan toxic."
+    },
+    {
+      "question": "Jika aplikasi Senter (Flashlight) meminta izin akses Kontak dan Lokasi, apa yang harus dilakukan?",
+      "options": ["Izinkan saja biar cepat", "Tolak dan Uninstall, itu mencurigakan", "Tanya teman", "Kasih bintang 5"],
+      "correct": 1,
+      "feedback": "Benar. Izin akses harus relevan dengan fungsi aplikasi."
+    },
+    {
+      "question": "Apa fungsi perintah 'listener.join()' dalam contoh kode Python Keylogger?",
+      "options": ["Menggabungkan file", "Membuat program berjalan terus menerus memantau keyboard", "Bergabung ke grup WA", "Menghapus log"],
+      "correct": 1,
+      "feedback": "Tepat. Itu membuat program standby mendengarkan input."
+    }
+  ]
+}
