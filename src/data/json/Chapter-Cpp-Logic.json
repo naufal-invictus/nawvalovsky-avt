@@ -1,0 +1,259 @@
+{
+  "id": "chapter-cpp-logic-advanced",
+  "metadata": {
+    "title": "Logika C++: Master Class",
+    "subtitle": "Dari Dasar hingga Short-Circuit & De Morgan",
+    "description": "Modul lengkap logika pemrograman. Membongkar cara kerja compiler mengeksekusi keputusan, urutan prioritas operator, dan teknik optimasi kondisi.",
+    "thumbnail": "/images/blog/LogicGateAdvanced.webp",
+    "tags": ["C++", "Algorithm", "Logic", "Computer Science"],
+    "category": "Programming"
+  },
+  "content": [
+    {
+      "section_id": "intro-logic-deep",
+      "blocks": [
+        { "type": "heading", "text": "Pola Pikir 0 dan 1" },
+        {
+          "type": "paragraph",
+          "text": "Kita sering menganggap komputer itu pintar. Salah besar. Komputer itu cuma sakelar lampu super cepat. Dia cuma tahu 'Nyala' (1/True) atau 'Mati' (0/False)."
+        },
+        {
+          "type": "paragraph",
+          "text": "Di C++, tipe data `bool` (Boolean) adalah fondasi dari semua kecerdasan buatan, game, dan sistem operasi. Kalau kamu gagal paham di sini, kodemu akan penuh bug tak terlihat."
+        }
+      ]
+    },
+    {
+      "section_id": "operator-recap",
+      "blocks": [
+        { "type": "heading", "text": "The Big Three (Rekap Cepat)" },
+        {
+          "type": "list",
+          "items": [
+            "**&& (AND):** Si Perfeksionis. Semua harus True biar hasil akhirnya True.",
+            "**|| (OR):** Si Pemalas. Satu aja True, dia langsung bilang True.",
+            "**! (NOT):** Si Pembaliksa. True jadi False, False jadi True."
+          ]
+        },
+        {
+          "type": "code",
+          "language": "cpp",
+          "code": "bool A = true; bool B = false;\n\ncout << (A && B); // 0 (False)\ncout << (A || B); // 1 (True)\ncout << (!A);     // 0 (False)"
+        }
+      ]
+    },
+    {
+      "section_id": "precedence",
+      "blocks": [
+        { "type": "heading", "text": "Siapa Duluan? (Operator Precedence)" },
+        {
+          "type": "paragraph",
+          "text": "Ini jebakan klasik pemula. Di Matematika, perkalian dikerjakan sebelum pertambahan ($3 + 4 \\times 5 = 23$, bukan $35$). Di Logika juga sama!"
+        },
+        {
+          "type": "callout",
+          "type_variant": "warning",
+          "text": "Hukum Urutan: NOT (!) > AND (&&) > OR (||)"
+        },
+        {
+          "type": "analogy",
+          "title": "Bedah Kasus",
+          "text": "Lihat ekspresi ini: `true || false && false`. \nKalau dibaca dari kiri: (True || False) -> True. Lalu (True && False) -> Hasil akhir **FALSE**. \nTAPI INI SALAH! \n\nKarena AND lebih kuat, dia dikerjakan dulu: `false && false` -> False. \nBaru hasilnya di-OR-kan: `true || (False)` -> Hasil akhir **TRUE**."
+        },
+        {
+          "type": "paragraph",
+          "text": "Tips: Gunakan tanda kurung `()` untuk memaksa urutan yang kamu mau. Jangan biarkan compiler menebak maumu."
+        }
+      ]
+    },
+    {
+      "section_id": "short-circuit",
+      "blocks": [
+        { "type": "heading", "text": "Short-Circuit Evaluation: Cara Komputer Malas" },
+        {
+          "type": "paragraph",
+          "text": "C++ itu efisien (baca: malas). Dia nggak akan mengecek sisa kondisi kalau hasilnya sudah pasti."
+        },
+        {
+          "type": "list",
+          "title": "Aturan Malas:",
+          "items": [
+            "**Pada OR (||):** Jika kondisi kiri sudah `TRUE`, kanan GAK AKAN DILIHAT. (Karena hasil pasti True).",
+            "**Pada AND (&&):** Jika kondisi kiri sudah `FALSE`, kanan GAK AKAN DILIHAT. (Karena hasil pasti False)."
+          ]
+        },
+        {
+          "type": "code",
+          "language": "cpp",
+          "code": "int x = 10;\n// x > 5 itu TRUE. Maka (x++) TIDAK DIJALANKAN!\nif (x > 5 || x++ < 20) {\n    cout << x; // Output tetap 10, bukan 11.\n}"
+        },
+        {
+          "type": "paragraph",
+          "text": "Hati-hati menaruh *increment* (++) atau fungsi penting di sebelah kanan operator logika. Bisa-bisa nggak tereksekusi!"
+        }
+      ]
+    },
+    {
+      "section_id": "de-morgan",
+      "blocks": [
+        { "type": "heading", "text": "Hukum De Morgan (Membalik Logika)" },
+        {
+          "type": "paragraph",
+          "text": "Kadang kita perlu membalik logika yang rumit. Augustus De Morgan punya rumusnya:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Rule 1: `!(A && B)`  SAMA DENGAN  `!A || !B`",
+            "Rule 2: `!(A || B)`  SAMA DENGAN  `!A && !B`"
+          ]
+        },
+        {
+          "type": "analogy",
+          "title": "Analogi Warung",
+          "text": "Kalimat: 'Saya TIDAK mau (Nasi DAN Ayam)'. \nArtinya: Saya boleh makan Nasi saja (tanpa ayam), atau Ayam saja (tanpa nasi), atau tidak dua-duanya. \nJadi: (Tidak Nasi) ATAU (Tidak Ayam)."
+        }
+      ]
+    },
+    {
+      "section_id": "common-pitfalls",
+      "blocks": [
+        { "type": "heading", "text": "Dosa Besar Programmer C++" },
+        {
+          "type": "paragraph",
+          "text": "1. **Assignment vs Equality**: Menulis `if (x = 5)` bukannya `if (x == 5)`. `x = 5` akan mengisi x dengan 5, dan karena 5 bukan 0, kondisinya dianggap TRUE selamanya."
+        },
+        {
+          "type": "paragraph",
+          "text": "2. **Integer sebagai Boolean**: C++ menganggap `0` itu False, dan `apapun selain 0` (termasuk -1, 100) itu True. Hati-hati saat operasi matematika masuk ke dalam if."
+        }
+      ]
+    },
+    {
+      "section_id": "challenge-project",
+      "blocks": [
+        { "type": "heading", "text": "FINAL PROJECT: Authentication System Level 5" },
+        {
+          "type": "paragraph",
+          "text": "Buat program simulasi login Admin Server NASA dengan kriteria:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "User bisa login jika: (Username Benar && Password Benar).",
+            "TAPI, jika `fail_count` (gagal login) sudah > 3, login ditolak walau password benar (Akun Terkunci).",
+            "KECUALI, jika user punya `master_key`, dia bisa bypass semuanya (termasuk akun terkunci).",
+            "Gunakan kombinasi `if`, `else if`, dan nested logic."
+          ]
+        },
+        {
+          "type": "code",
+          "language": "cpp",
+          "code": "// Starter Logic Idea\nbool isLocked = (failCount > 3);\nif (masterKey || (!isLocked && passCorrect)) {\n   // Welcome\n}"
+        }
+      ]
+    },
+    {
+      "section_id": "deploy-task",
+      "blocks": [
+        { "type": "heading", "text": "Misi Deployment" },
+        {
+          "type": "paragraph",
+          "text": "Upload kodemu ke GitHub dengan nama repo `cpp-logic-mastery`. Pastikan ada file `README.md` yang menjelaskan logika 'Short-Circuit' yang kamu pakai di dalam kode (misal di komentar)."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Berapakah hasil dari: (true && false) || (true && true)?",
+      "options": ["True", "False", "Error", "Null"],
+      "correct": 0,
+      "feedback": "(True && False) = False. (True && True) = True. Maka False || True = TRUE."
+    },
+    {
+      "question": "Jika `int a = 0`, apa hasil dari `if (a = 5)`?",
+      "options": ["Error Syntax", "Kondisi bernilai False", "Kondisi bernilai True", "Program Crash"],
+      "correct": 2,
+      "feedback": "Jebakan! Ini adalah assignment (=), bukan perbandingan (==). Nilai a jadi 5. Karena 5 bukan nol, C++ menganggapnya TRUE."
+    },
+    {
+      "question": "Dalam ekspresi `A || B`, jika A bernilai TRUE, apa yang terjadi pada B?",
+      "options": ["B tetap dievaluasi", "B tidak dievaluasi (Short-circuit)", "B harus bernilai False", "B harus bernilai True"],
+      "correct": 1,
+      "feedback": "Benar. Karena A sudah True, hasil akhir pasti True. B diabaikan."
+    },
+    {
+      "question": "Manakah urutan prioritas operator yang BENAR dari tinggi ke rendah?",
+      "options": ["|| lalu && lalu !", "! lalu && lalu ||", "&& lalu || lalu !", "Semua setara"],
+      "correct": 1,
+      "feedback": "NOT (!) paling kuat, lalu AND (&&), terakhir OR (||)."
+    },
+    {
+      "question": "Apa hasil dari `! (5 > 2)`?",
+      "options": ["True", "False", "5", "2"],
+      "correct": 1,
+      "feedback": "5 > 2 itu True. NOT True = False."
+    },
+    {
+      "question": "De Morgan Law: `!(A && B)` setara dengan...",
+      "options": ["!A && !B", "!A || !B", "A || B", "A && B"],
+      "correct": 1,
+      "feedback": "Ingat: NOT masuk, operator di tengah berbalik (AND jadi OR)."
+    },
+    {
+      "question": "int x = 1; if(x-- && x++). Berapa nilai akhir x?",
+      "options": ["0", "1", "2", "3"],
+      "correct": 1,
+      "feedback": "Tahap 1: `x--` (post-decrement). Dipakai 1 (True), lalu x jadi 0. Tahap 2: Karena kiri True, kanan dieksekusi `x++`. Dipakai 0 (False), lalu x jadi 1. Kondisi if gagal, tapi x kembali jadi 1."
+    },
+    {
+      "question": "Apa output dari: `cout << (10 > 5 && 2 == 3 || 1)` ?",
+      "options": ["0", "1", "False", "Error"],
+      "correct": 1,
+      "feedback": "Hitung AND dulu: (True && False) = False. Lalu OR: (False || 1). Ingat 1 itu True. Hasilnya True (1)."
+    },
+    {
+      "question": "Manakah kondisi yang PASTI menyebabkan Infinite Loop?",
+      "options": ["while(false)", "while(!true)", "while(1 || 0)", "while(0 && 1)"],
+      "correct": 2,
+      "feedback": "1 || 0 hasilnya 1 (True). while(true) akan berjalan selamanya."
+    },
+    {
+      "question": "Variable boolean `bool lapar = 100;` Apakah ini valid?",
+      "options": ["Tidak, error", "Ya, bernilai True", "Ya, bernilai False", "Hanya valid di C"],
+      "correct": 1,
+      "feedback": "Valid. Di C++, angka non-nol apapun yang dimasukkan ke bool akan dikonversi menjadi True (1)."
+    },
+    {
+      "question": "Jika `bool A = false`, `bool B = true`. Hasil `A || !B && A` adalah...",
+      "options": ["True", "False", "Error", "Undefined"],
+      "correct": 1,
+      "feedback": "Prioritas: !B dulu (False). Lalu AND: False && False = False. Terakhir OR: False || False = FALSE."
+    },
+    {
+      "question": "Apa fungsi tanda kurung `()` dalam logika?",
+      "options": ["Hiasan", "Mengubah tipe data", "Memaksa urutan evaluasi", "Membuat komentar"],
+      "correct": 2,
+      "feedback": "Tanda kurung punya prioritas tertinggi, mengalahkan operator standar."
+    },
+    {
+      "question": "Logika `if (! (!A))` sama dengan...",
+      "options": ["if (A)", "if (!A)", "if (false)", "if (true)"],
+      "correct": 0,
+      "feedback": "Negasi ganda (Double Negative). Tidak (Tidak A) = A."
+    },
+    {
+      "question": "Manakah sintaks yang BENAR untuk 'x di antara 1 dan 10'?",
+      "options": ["1 < x < 10", "x > 1 && x < 10", "x > 1 || x < 10", "x >< 10"],
+      "correct": 1,
+      "feedback": "`1 < x < 10` itu sintaks matematika, bukan C++. Di C++ harus dipisah pakai AND."
+    },
+    {
+      "question": "Apa output `cout << (true + true)`?",
+      "options": ["True", "2", "Error", "Unknown"],
+      "correct": 1,
+      "feedback": "Di C++, true bernilai integer 1. Jadi 1 + 1 = 2. (Ini disebut Implicit Casting)."
+    }
+  ]
+}
