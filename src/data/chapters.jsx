@@ -6,6 +6,7 @@ import chapterBubbleSort from './json/Chapter-BubbleSort.json';
 import chapterSelectionSort from './json/Chapter-SelectionSort.json';
 import chapterSpyware from './json/Chapter-Spyware.json';
 import chapterArtSkipping from './json/Chapter-Art-Skipping.json';
+import chapterArrayFungsi from './json/Chapter-ArrayFungsi-Complete.json';
 
 // AWS Cloud Chapters (AWS Re/Start)
 import chapterAWSBasics from './json/Chapter-AWS-Basics.json';
@@ -46,6 +47,8 @@ export const chapters = [
   formatChapter(chapterScamUpdate, "6 min read"),
   formatChapter(chapterSpyware, "12 min read"),
   formatChapter(chapterArtSkipping, "15 min read"),
+    formatChapter(chapterArrayFungsi, "15 min read"),
+
 
 
   // --- AWS CLOUD PRACTITIONER (AWS RE/START) ---

@@ -1,0 +1,285 @@
+{
+  "id": "chapter-array-fungsi-complete",
+  "metadata": {
+    "title": "Masterclass C++: Array & Fungsi (20 Slides Edition)",
+    "subtitle": "Panduan Komplit: Dari Dasar sampe Jebakan Pointer",
+    "description": "Materi lengkap setara 20 slide presentasi. Membahas tuntas Fungsi Void/Return, Array Multidimensi, Passing Array, hingga Best Practices. Dilengkapi 15 soal kuis level 'Neraka'.",
+    "thumbnail": "/images/blog/C++.webp",
+    "tags": ["C++", "Array", "Fungsi", "Deep Dive"],
+    "category": "Programming"
+  },
+  "content": [
+    {
+      "section_id": "part1-intro",
+      "blocks": [
+        { "type": "heading", "text": "Part 1: Kenapa Hidup Butuh Fungsi?" },
+        {
+          "type": "paragraph",
+          "text": "Bayangin lo mau bikin game. Kalau semua kode lo tumpuk di `main()`, itu bakal kayak kamar kosan cowok: berantakan dan susah dicari barangnya."
+        },
+        {
+          "type": "paragraph",
+          "text": "**Fungsi** adalah cara kita memecah masalah besar jadi potongan kecil (Modular). Prinsipnya: *Write Once, Call Anywhere*."
+        }
+      ]
+    },
+    {
+      "section_id": "part1-anatomy",
+      "blocks": [
+        { "type": "heading", "text": "Anatomi Fungsi: Kepala & Badan" },
+        {
+          "type": "code",
+          "language": "cpp",
+          "code": "// TipeKembalian NamaFungsi(Parameter) {\n//    Body (Logika)\n//    return Nilai; (Kalau bukan void)\n// }\n\nint jumlahkan(int a, int b) {\n    return a + b;\n}"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Return Type:** Hasil akhirnya apa? (`int`, `double`, atau `void`).",
+            "**Parameter:** Bahan bakunya apa? (`int a`, `int b`).",
+            "**Body:** Mesin pengolahnya."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "part1-void-return",
+      "blocks": [
+        { "type": "heading", "text": "Void vs Non-Void: Beda Kasta" },
+        {
+          "type": "analogy",
+          "title": "Kurir vs Koki",
+          "text": "**Void (Kurir):** Tugasnya cuma nganter/mencetak. 'Woy anter ini!'. Beres. Gak perlu lapor balik.\n**Non-Void (Koki):** 'Masak nasi goreng!'. Dia bakal balik lagi bawa piring nasi goreng (**Return Value**) buat lo makan."
+        },
+        {
+          "type": "code",
+          "language": "cpp",
+          "code": "void sapa() { cout << \"Halo!\"; } // Gak ada return\nint kuadrat(int x) { return x*x; } // Wajib return"
+        }
+      ]
+    },
+    {
+      "section_id": "part1-prototype",
+      "blocks": [
+        { "type": "heading", "text": "Prototype: Spoiler Alert" },
+        {
+          "type": "paragraph",
+          "text": "C++ itu bacanya dari atas ke bawah. Kalau lo panggil fungsi yang kodenya ada di bawah `main()`, dia bakal error 'Who is this?'."
+        },
+        {
+          "type": "paragraph",
+          "text": "Solusinya: Kasih **Prototype** (Deklarasi) di paling atas, kayak ngasih kartu nama duluan."
+        },
+        {
+          "type": "code",
+          "language": "cpp",
+          "code": "void cetak(string nama); // Prototype (Janji)\n\nint main() {\n    cetak(\"Budi\"); // Aman, udah kenalan\n    return 0;\n}\n\nvoid cetak(string nama) { // Definisi Asli\n    cout << nama;\n}"
+        }
+      ]
+    },
+    {
+      "section_id": "part2-array-basics",
+      "blocks": [
+        { "type": "heading", "text": "Part 2: Array (Larik)" },
+        {
+          "type": "paragraph",
+          "text": "Variabel biasa cuma muat 1 nilai. Array itu kayak gerbong kereta, bisa muat banyak data sejenis secara berurutan di memori."
+        },
+        {
+          "type": "warning",
+          "title": "Aturan Emas Index",
+          "text": "Index SELALU mulai dari 0. Array size 5 isinya index [0], [1], [2], [3], [4]. Jangan coba-coba akses [5]!"
+        },
+        {
+          "type": "code",
+          "language": "cpp",
+          "code": "int angka[3]; // Deklarasi doang (Isinya sampah memori)\nint nilai[] = {10, 20, 30}; // Auto size 3\n\n// Looping Array\nfor(int i=0; i<3; i++) {\n    cout << nilai[i] << endl;\n}"
+        }
+      ]
+    },
+    {
+      "section_id": "part2-multidim",
+      "blocks": [
+        { "type": "heading", "text": "Array Multidimensi (Matrix)" },
+        {
+          "type": "paragraph",
+          "text": "Array di dalam Array. Bayangin kayak tabel Excel (Baris x Kolom)."
+        },
+        {
+          "type": "code",
+          "language": "cpp",
+          "code": "int matriks[2][3] = {\n    {1, 2, 3}, // Baris 0\n    {4, 5, 6}  // Baris 1\n};\n\n// Akses angka 6 (Baris 1, Kolom 2)\ncout << matriks[1][2];"
+        }
+      ]
+    },
+    {
+      "section_id": "part3-integration",
+      "blocks": [
+        { "type": "heading", "text": "Part 3: The Crossover (Array + Fungsi)" },
+        {
+          "type": "paragraph",
+          "text": "Ini materi krusial. Gimana cara masukin Array ke Fungsi? Inget: **Array itu manja, dia nggak tau ukurannya sendiri pas dipindah.**"
+        },
+        {
+          "type": "paragraph",
+          "text": "Saat lo kirim array ke fungsi, lo sebenernya ngirim **Alamat Memori (Pointer)**. Jadi fungsi bisa ngedit data asli lo!"
+        },
+        {
+          "type": "code",
+          "language": "cpp",
+          "code": "// WAJIB bawa parameter ukuran (size)\nvoid cetakArray(int arr[], int size) {\n    for(int i=0; i<size; i++) cout << arr[i];\n}\n\nint main() {\n    int data[] = {1,2,3};\n    cetakArray(data, 3);\n}"
+        }
+      ]
+    },
+    {
+      "section_id": "part3-sizeof-trap",
+      "blocks": [
+        { "type": "heading", "text": "Jebakan Batman: Sizeof" },
+        {
+          "type": "paragraph",
+          "text": "Jangan pernah pake `sizeof(arr)` DI DALAM FUNGSI. Hasilnya bakal salah (biasanya 8 byte doang, ukuran pointer), bukan ukuran total array."
+        },
+        {
+          "type": "paragraph",
+          "text": "Hitung ukuran `n` di `main()`, terus lempar `n` itu ke fungsi."
+        }
+      ]
+    },
+    {
+      "section_id": "part4-case-study",
+      "blocks": [
+        { "type": "heading", "text": "Part 4: Studi Kasus & Modifikasi" },
+        {
+          "type": "paragraph",
+          "text": "Kita bikin fungsi `kaliDua` yang mengubah nilai asli array."
+        },
+        {
+          "type": "code",
+          "language": "cpp",
+          "code": "void kaliDua(int arr[], int n) {\n    for(int i=0; i<n; i++) {\n        arr[i] *= 2; // Mengubah data di Main!\n    }\n}\n\n// Fungsi hitung total (Return value)\nint total(const int arr[], int n) {\n    int sum = 0;\n    for(int i=0; i<n; i++) sum += arr[i];\n    return sum;\n}"
+        },
+        {
+          "type": "paragraph",
+          "text": "**Tips:** Pake `const` di parameter (`const int arr[]`) kalau fungsinya cuma buat baca data, biar aman gak keganti."
+        }
+      ]
+    },
+    {
+      "section_id": "part4-best-practices",
+      "blocks": [
+        { "type": "heading", "text": "Best Practices & Common Mistakes" },
+        {
+          "type": "list",
+          "items": [
+            "**Nama Fungsi:** Pake kata kerja (`hitung`, `cetak`, `cari`).",
+            "**Boundaries:** Hati-hati loop `i <= size`. Harusnya `i < size`.",
+            "**Uninitialized:** Array tanpa nilai awal isinya angka setan (garbage value).",
+            "**Modular:** Satu fungsi, satu tanggung jawab."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "quiz-intro",
+      "blocks": [
+        { "type": "heading", "text": "Ujian Neraka (15 Soal)" },
+        {
+          "type": "paragraph",
+          "text": "Siapkan mental. Soal ini dirancang buat ngejebak logika pointer dan scope lo."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Diketahui `int arr[5] = {1, 2, 3, 4, 5};`. Apa output dari `cout << arr[5];`?",
+      "options": ["5", "0", "Error Compile", "Undefined Behavior (Sampah Memori)"],
+      "correct": 3,
+      "feedback": "Index 5 itu di luar pagar! Index cuma sampe 4. Isinya bisa apa aja (sampah)."
+    },
+    {
+      "question": "Apa output kode ini? `void ubah(int a[]) { a[0]=99; } int main() { int x[]={1}; ubah(x); cout << x[0]; }`",
+      "options": ["1", "99", "Error", "0"],
+      "correct": 1,
+      "feedback": "Betul 99. Array dipassing by address/reference, jadi aslinya berubah."
+    },
+    {
+      "question": "Manakah deklarasi fungsi yang SALAH fatal?",
+      "options": ["void hitung(int a);", "int hitung();", "void hitung() { return 5; }", "int hitung(int a) { return a; }"],
+      "correct": 2,
+      "feedback": "Void kok return angka? Haram hukumnya."
+    },
+    {
+      "question": "Berapa elemen array ini? `int arr[] = {10, 20, 30};` (Di 32-bit system, int=4 byte)",
+      "options": ["3", "12", "4", "Error"],
+      "correct": 0,
+      "feedback": "3 Elemen. Ukuran total 12 bytes / 4 bytes per int = 3."
+    },
+    {
+      "question": "Array `A[2][3] = {{1,2,3},{4,5,6}}`. Angka 6 ada di index mana?",
+      "options": ["A[1][2]", "A[2][3]", "A[2][2]", "A[1][3]"],
+      "correct": 0,
+      "feedback": "Baris ke-2 (index 1), Kolom ke-3 (index 2). Jadi A[1][2]."
+    },
+    {
+      "question": "Bahaya dari loop `for(int i=0; i<=5; i++)` pada array size 5 adalah?",
+      "options": ["Loop gak jalan", "Syntax Error", "Buffer Overflow (Akses ilegal)", "Loop cuma jalan 4 kali"],
+      "correct": 2,
+      "feedback": "Pake <=5 berarti dia akses index 5. Padahal max index 4. Bahaya!"
+    },
+    {
+      "question": "`int x=10; void f(){ int x=20; } main(){ f(); cout<<x; }` Outputnya?",
+      "options": ["20", "10", "30", "Error"],
+      "correct": 1,
+      "feedback": "10. Variabel x di dalam fungsi itu lokal, gak ngaruh ke x di main."
+    },
+    {
+      "question": "Apa fungsi perintah `return;` (kosong) di dalam void?",
+      "options": ["Return 0", "Error", "Early Exit (Keluar paksa)", "Repeat Function"],
+      "correct": 2,
+      "feedback": "Buat kabur/berhenti dari fungsi sebelum kode bawahnya jalan."
+    },
+    {
+      "question": "Jika parameter fungsi `void tampil(const int arr[])`, lalu kita tulis `arr[0]=5;` di dalamnya, apa yang terjadi?",
+      "options": ["Array berubah", "Compile Error", "Warning", "Crash"],
+      "correct": 1,
+      "feedback": "Compile Error. `const` bikin array jadi read-only."
+    },
+    {
+      "question": "Fungsi `double bagi(int a, int b) { return a/b; }`. Panggil `bagi(5,2)`. Hasil?",
+      "options": ["2.5", "2.0", "2", "Error"],
+      "correct": 1,
+      "feedback": "Jawabannya 2.0. Karena 5 dan 2 itu int, 5/2 = 2 (bulat). Baru dicast ke double."
+    },
+    {
+      "question": "Output `sizeof(arr)` jika dipanggil DI DALAM fungsi parameter `int arr[]` pada OS 64-bit?",
+      "options": ["400", "100", "8 (Ukuran Pointer)", "4"],
+      "correct": 2,
+      "feedback": "Ingat! Array di parameter fungsi dianggap pointer. Ukuran pointer biasanya 8 bytes."
+    },
+    {
+      "question": "`int arr[5] = {1, 2};`. Apa nilai dari `arr[3]`?",
+      "options": ["Random", "2", "0", "Error"],
+      "correct": 2,
+      "feedback": "0. Kalau inisialisasi sebagian, sisanya otomatis diisi 0."
+    },
+    {
+      "question": "Prototype `void hitung(float);` tapi Definisi `void hitung(int x) {...}`. Efeknya?",
+      "options": ["Jalan normal", "Compile Error (Mismatch)", "Runtime Error", "Diam saja"],
+      "correct": 1,
+      "feedback": "Error Mismatch. Tanda tangan fungsi (signature) harus sama persis."
+    },
+    {
+      "question": "Algoritma ini ngapain? `if(a[i] > x) x = a[i];` dalam loop?",
+      "options": ["Rata-rata", "Cari Minimum", "Cari Maksimum", "Sorting"],
+      "correct": 2,
+      "feedback": "Cari Maksimum. Kalau nemu yang lebih gede, simpen."
+    },
+    {
+      "question": "Loop `if(i % 2 == 0) continue; sum += arr[i];`. Apa yang dijumlahkan?",
+      "options": ["Semua angka", "Angka index Genap", "Angka index Ganjil", "Tidak ada"],
+      "correct": 2,
+      "feedback": "Index genap kena continue (skip). Jadi yang dijumlah cuma index ganjil."
+    }
+  ]
+}
