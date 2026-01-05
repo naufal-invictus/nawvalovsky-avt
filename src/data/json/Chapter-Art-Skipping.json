@@ -1,0 +1,282 @@
+{
+  "id": "chapter-cpp-control-flow",
+  "metadata": {
+    "title": "Mastering Control Flow: Tampil & Loncat",
+    "subtitle": "Teknik Manipulasi Loop dan Logika Kondisional Lanjut",
+    "description": "Tutorial hardcore 20 slide tentang cara mengendalikan loop sesuka hati. Belajar kapan harus 'continue', kapan 'break', dan merancang logika if-else yang bersih.",
+    "thumbnail": "/images/blog/C++.webp",
+    "tags": ["C++", "Control Flow", "Practice"],
+    "category": "Programming"
+  },
+  "content": [
+    {
+      "section_id": "slide-1-intro",
+      "blocks": [
+        { "type": "heading", "text": "Slide 1: Intro - Jangan Cuma Lurus" },
+        { "type": "paragraph", "text": "Looping standar (`for i=1 to 100`) itu membosankan. Di dunia nyata, data itu kotor. Kamu perlu bisa memilah mana yang ditampilkan, mana yang dibuang, dan mana yang diproses khusus." },
+        { "type": "paragraph", "text": "Bab ini fokus pada **Control Flow**: seni mengatur lalu lintas data di dalam programmu." }
+      ]
+    },
+    {
+      "section_id": "slide-2-theory-continue",
+      "blocks": [
+        { "type": "heading", "text": "Slide 2: Senjata Rahasia 'continue'" },
+        { "type": "paragraph", "text": "Banyak pemula cuma tahu `break` (berhenti total). Padahal `continue` itu MVP sebenarnya." },
+        { "type": "callout", "type_variant": "info", "text": "Definisi: 'continue' artinya SKIP putaran ini saja, lalu lanjut ke putaran berikutnya. Program TIDAK mati." },
+        { "type": "code", "language": "cpp", "code": "for(int i=0; i<5; i++) {\n    if(i == 2) continue; // Skip angka 2\n    cout << i; \n}\n// Output: 0 1 3 4 (2 hilang)" }
+      ]
+    },
+    {
+      "section_id": "slide-3-practice-basic-skip",
+      "blocks": [
+        { "type": "heading", "text": "Slide 3: Praktik Dasar - Filter Angka Genap" },
+        { "type": "paragraph", "text": "Kita mulai pemanasan. Tampilkan hanya angka ganjil dari 1-10 menggunakan logika 'skip'." },
+        { "type": "code", "language": "cpp", "code": "for (int i = 1; i <= 10; i++) {\n    // Jika genap, SKIP!\n    if (i % 2 == 0) {\n        continue;\n    }\n    cout << i << \" \";\n}\n// Output: 1 3 5 7 9" }
+      ]
+    },
+    {
+      "section_id": "slide-4-pattern-logic",
+      "blocks": [
+        { "type": "heading", "text": "Slide 4: Misi Utama - Pola 'Tampil-Loncat'" },
+        { "type": "paragraph", "text": "Sesuai request: Kita mau pola **1-10 Tampil**, **11-20 Lewat**, **21-30 Tampil**. Bagaimana menerjemahkan ini ke kode?" },
+        { "type": "paragraph", "text": "Strategi: Identifikasi 'Zona Terlarang'. Zona terlarang kita adalah 11 sampai 20." },
+        { "type": "code", "language": "cpp", "code": "int i = 1;\n// Anggap loop sampai 30\nif (i >= 11 && i <= 20) {\n    // Ini ZONA MERAH. Jangan print apa-apa.\n}" }
+      ]
+    },
+    {
+      "section_id": "slide-5-coding-pattern-1",
+      "blocks": [
+        { "type": "heading", "text": "Slide 5: Implementasi Pola 1 (Cara If-Else)" },
+        { "type": "paragraph", "text": "Cara paling manusiawi: Definisikan kapan harus 'Print'." },
+        { "type": "code", "language": "cpp", "code": "for (int i = 1; i <= 30; i++) {\n    // Print JIKA (1-10) ATAU (21-30)\n    if ((i >= 1 && i <= 10) || (i >= 21 && i <= 30)) {\n        cout << i << \" \";\n    }\n    // Selain itu otomatis lewat\n}" }
+      ]
+    },
+    {
+      "section_id": "slide-6-coding-pattern-2",
+      "blocks": [
+        { "type": "heading", "text": "Slide 6: Implementasi Pola 2 (Cara Continue)" },
+        { "type": "paragraph", "text": "Cara programmer pro: Definisikan kapan harus 'Skip'. Ini membuat kode utama lebih bersih (tidak menjorok ke dalam)." },
+        { "type": "code", "language": "cpp", "code": "for (int i = 1; i <= 30; i++) {\n    // Guard Clause: Hadang di pintu depan\n    if (i >= 11 && i <= 20) continue;\n\n    // Kode logika utama aman di sini\n    cout << i << \" \";\n}" }
+      ]
+    },
+    {
+      "section_id": "slide-7-complex-pattern",
+      "blocks": [
+        { "type": "heading", "text": "Slide 7: Tantangan Pola Kompleks" },
+        { "type": "paragraph", "text": "Level up! Pola: Tampil 1-10, Lewat 11-20, Tampil 21-30, Lewat 31-40, Tampil HANYA 41. Loop sampai 50." },
+        { "type": "paragraph", "text": "Analisa Zona Lewat: (11-20), (31-40), (42-50)." },
+        { "type": "code", "language": "cpp", "code": "bool zona1 = (i >= 11 && i <= 20);\nbool zona2 = (i >= 31 && i <= 40);\nbool zona3 = (i > 41);\n\nif (zona1 || zona2 || zona3) continue;" }
+      ]
+    },
+    {
+      "section_id": "slide-8-full-code-complex",
+      "blocks": [
+        { "type": "heading", "text": "Slide 8: Full Code Pola Kompleks" },
+        { "type": "paragraph", "text": "Salin dan jalankan ini untuk melihat hasilnya." },
+        { "type": "code", "language": "cpp", "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << \"Pola Loncat Indah:\\n\";\n    for (int i = 1; i <= 50; i++) {\n        // Filter Filter Filter\n        if (i >= 11 && i <= 20) continue;\n        if (i >= 31 && i <= 40) continue;\n        if (i > 41) continue;\n\n        cout << i << \" \";\n    }\n    return 0;\n}" }
+      ]
+    },
+    {
+      "section_id": "slide-9-modulo-trick",
+      "blocks": [
+        { "type": "heading", "text": "Slide 9: Trik Modulo (%)" },
+        { "type": "paragraph", "text": "Bagaimana kalau polanya: 5 Tampil, 5 Lewat, 5 Tampil, 5 Lewat... sampai kiamat? Capek kalau pakai `if` manual." },
+        { "type": "paragraph", "text": "Gunakan matematika. Kita bisa pakai sisa bagi." },
+        { "type": "code", "language": "cpp", "code": "// Contoh: Tampil 1-5, Skip 6-10, Tampil 11-15...\n// Pola berulang setiap 10 angka.\nint sisa = i % 10;\nif (sisa >= 6 || sisa == 0) continue;" }
+      ]
+    },
+    {
+      "section_id": "slide-10-logic-inversion",
+      "blocks": [
+        { "type": "heading", "text": "Slide 10: Logic Inversion (Membalik Logika)" },
+        { "type": "paragraph", "text": "Kadang lebih mudah mendata apa yang kita mau, lalu kasih tanda `!` (NOT)." },
+        { "type": "code", "language": "cpp", "code": "bool mauTampil = (i <= 10) || (i >= 21 && i <= 30) || (i == 41);\n\nif (!mauTampil) {\n    continue; // Kalau GAK mau tampil, ya skip.\n}\ncout << i;" }
+      ]
+    },
+    {
+      "section_id": "slide-11-nested-loops",
+      "blocks": [
+        { "type": "heading", "text": "Slide 11: Studi Kasus - Printer Rusak" },
+        { "type": "paragraph", "text": "Simulasi: Printer macet di halaman kelipatan 5, tapi halaman 25 spesial bisa ngeprint." },
+        { "type": "code", "language": "cpp", "code": "for (int page = 1; page <= 30; page++) {\n    // Logika Rusak: Kelipatan 5 KECUALI 25\n    if (page % 5 == 0 && page != 25) {\n        cout << \"[Paper Jam] \";\n        continue;\n    }\n    cout << \"Print Hal \" << page << endl;\n}" }
+      ]
+    },
+    {
+      "section_id": "slide-12-break-vs-continue",
+      "blocks": [
+        { "type": "heading", "text": "Slide 12: Break vs Continue (Duel Maut)" },
+        { "type": "paragraph", "text": "Jangan sampai tertukar. Salah pakai bisa fatal." },
+        { "type": "list", "items": [
+            "**Kasus A:** Cari angka 7. Ketemu -> `break`. (Karena sudah ketemu, ngapain cari lagi?)",
+            "**Kasus B:** Print semua KECUALI angka 7. Ketemu 7 -> `continue`. (Abaikan 7, lanjut 8, 9, dst)."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "slide-13-while-loop-trap",
+      "blocks": [
+        { "type": "heading", "text": "Slide 13: Jebakan di While Loop" },
+        { "type": "callout", "type_variant": "warning", "text": "BAHAYA: 'continue' di dalam while loop sering bikin infinite loop jika increment ditaruh di tempat salah." },
+        { "type": "code", "language": "cpp", "code": "int i = 0;\nwhile (i < 5) {\n    if (i == 3) continue; // BAHAYA! i tidak bertambah, loop selamanya di 3.\n    cout << i;\n    i++; \n}\n// Solusi: taruh i++ sebelum continue atau gunakan for loop." }
+      ]
+    },
+    {
+      "section_id": "slide-14-challenge-fizzbuzz",
+      "blocks": [
+        { "type": "heading", "text": "Slide 14: Mini Challenge - Ganjil Genap Jakarta" },
+        { "type": "paragraph", "text": "Buat loop tanggal 1-30." },
+        { "type": "list", "items": [
+            "Jika tanggal ganjil: Print 'Boleh Lewat'",
+            "Jika tanggal genap: Print 'Tilang!'",
+            "TAPI, tanggal libur (Minggu) bebas tilang. Anggap tanggal 7, 14, 21, 28 adalah Minggu."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "slide-15-challenge-solution",
+      "blocks": [
+        { "type": "heading", "text": "Slide 15: Solusi Ganjil Genap" },
+        { "type": "code", "language": "cpp", "code": "for (int tgl = 1; tgl <= 30; tgl++) {\n    if (tgl % 7 == 0) {\n        cout << tgl << \": Bebas (Minggu)\\n\";\n        continue;\n    }\n    if (tgl % 2 != 0) cout << tgl << \": Boleh Lewat\\n\";\n    else cout << tgl << \": Tilang!\\n\";\n}" }
+      ]
+    },
+    {
+      "section_id": "slide-16-if-else-logic",
+      "blocks": [
+        { "type": "heading", "text": "Slide 16: Praktik IF-Else Lanjut - Guardian Clause" },
+        { "type": "paragraph", "text": "Hindari `if` yang bersarang (nested) terlalu dalam kayak inception. Gunakan pola 'Satpam' (Guardian Clause)." },
+        { "type": "code", "language": "cpp", "code": "// JANGAN GINI:\nif (login) {\n  if (admin) {\n     if (active) { ... }\n  }\n}\n\n// MENDING GINI (Flat):\nif (!login) return;\nif (!admin) return;\nif (!active) return;\n// Lakukan aksi..." }
+      ]
+    },
+    {
+      "section_id": "slide-17-logic-combo",
+      "blocks": [
+        { "type": "heading", "text": "Slide 17: Praktik Validasi Form" },
+        { "type": "paragraph", "text": "Skenario: User daftar akun. Syarat: (Umur > 17) DAN (Email Valid) DAN (Password Kuat)." },
+        { "type": "code", "language": "cpp", "code": "if (umur > 17 && emailValid && passKuat) {\n    cout << \"Akun Dibuat\";\n} else {\n    // Masalah: User gak tau salahnya di mana.\n    cout << \"Gagal\"; \n}" }
+      ]
+    },
+    {
+      "section_id": "slide-18-logic-feedback",
+      "blocks": [
+        { "type": "heading", "text": "Slide 18: Memberikan Feedback Spesifik" },
+        { "type": "paragraph", "text": "Perbaiki kode slide 17 agar user tahu salahnya." },
+        { "type": "code", "language": "cpp", "code": "if (umur <= 17) {\n    cout << \"Belum cukup umur\";\n} else if (!emailValid) {\n    cout << \"Email ngaco\";\n} else if (!passKuat) {\n    cout << \"Password lemah\";\n} else {\n    cout << \"Akun Dibuat!\";\n}" }
+      ]
+    },
+    {
+      "section_id": "slide-19-flag-method",
+      "blocks": [
+        { "type": "heading", "text": "Slide 19: Metode Bendera (Flag)" },
+        { "type": "paragraph", "text": "Kadang logika terlalu rumit untuk satu `if`. Gunakan variabel `bool` sebagai penampung." },
+        { "type": "code", "language": "cpp", "code": "bool layakDapatDiskon = false;\n\nif (member) layakDapatDiskon = true;\nif (ultah && belanjaBanyak) layakDapatDiskon = true;\nif (blacklist) layakDapatDiskon = false; // Override\n\nif (layakDapatDiskon) beriDiskon();" }
+      ]
+    },
+    {
+      "section_id": "slide-20-final-summary",
+      "blocks": [
+        { "type": "heading", "text": "Slide 20: Rangkuman Master Logic" },
+        { "type": "list", "items": [
+            "**Control Flow:** Gunakan `continue` untuk skip, `break` untuk stop.",
+            "**Pattern:** Gunakan matematika (`%`) atau range (`&&`) untuk pola berulang.",
+            "**Code Style:** Utamakan kode yang rata kiri (Guardian Clause) daripada `if` beranak pinak.",
+            "**Feedback:** Logika if-else bertingkat berguna untuk memberi pesan error yang spesifik."
+          ]
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Output dari: for(int i=0; i<3; i++) { if(i==1) continue; cout << i; }",
+      "options": ["0 1 2", "0 2", "0", "Error"],
+      "correct": 1,
+      "feedback": "Saat i=1, continue dieksekusi, jadi print dilewati. Output: 0, lalu 2."
+    },
+    {
+      "question": "Apa bahaya utama menggunakan 'continue' di dalam while-loop?",
+      "options": ["Program crash", "Memory bocor", "Infinite loop jika increment terlewati", "Variable reset"],
+      "correct": 2,
+      "feedback": "Benar! Jika `i++` ada di bawah `continue`, i tidak akan pernah bertambah."
+    },
+    {
+      "question": "Logic: !(A && B) sama dengan...",
+      "options": ["!A && !B", "!A || !B", "A || B", "A && B"],
+      "correct": 1,
+      "feedback": "Hukum De Morgan: Negasi AND adalah OR dari negasi masing-masing."
+    },
+    {
+      "question": "Manakah kode yang paling efisien untuk skip angka 1-50?",
+      "options": ["if(i>=1 && i<=50) continue;", "if(i<51) break;", "if(i==1 || i==2...) continue;", "if(i!=51) exit;"],
+      "correct": 0,
+      "feedback": "Opsi 1 langsung mengecek range dengan 2 kondisi sederhana."
+    },
+    {
+      "question": "Jika `x=5`, apa hasil `if(x=10)`?",
+      "options": ["False", "True", "Error", "5"],
+      "correct": 1,
+      "feedback": "Assignment operator (=) mengubah x jadi 10. 10 bukan 0, jadi dianggap True."
+    },
+    {
+      "question": "Syntax `break` digunakan untuk...",
+      "options": ["Keluar dari if", "Keluar dari fungsi", "Keluar dari loop/switch", "Restart komputer"],
+      "correct": 2,
+      "feedback": "Break menghentikan loop terdekat atau switch case."
+    },
+    {
+      "question": "Berapa kali 'Halo' dicetak? for(int i=0; i<10; i+=2) cout << 'Halo';",
+      "options": ["10", "5", "4", "Infinite"],
+      "correct": 1,
+      "feedback": "i bernilai: 0, 2, 4, 6, 8. Total 5 kali."
+    },
+    {
+      "question": "Dalam logika: True || False && False hasilnya...",
+      "options": ["False", "True", "Error", "Null"],
+      "correct": 1,
+      "feedback": "AND lebih kuat. False && False = False. Lalu True || False = True."
+    },
+    {
+      "question": "Cara melewati iterasi loop saat index bernilai ganjil adalah...",
+      "options": ["if (i % 2 == 0) continue;", "if (i % 2 != 0) break;", "if (i % 2 != 0) continue;", "if (i / 2 == 1) continue;"],
+      "correct": 2,
+      "feedback": "Ganjil berarti sisa bagi tidak nol (`!= 0`). Gunakan continue."
+    },
+    {
+      "question": "Apa output: int i=0; do { cout << i; i++; } while(i < 0);",
+      "options": ["Tidak ada output", "0", "0123...", "Error"],
+      "correct": 1,
+      "feedback": "Do-while minimal jalan sekali. Cetak 0, lalu cek kondisi (1 < 0) False, berhenti."
+    },
+    {
+      "question": "Operator '%' (Modulo) mengembalikan nilai...",
+      "options": ["Hasil bagi", "Sisa bagi", "Persentase", "Rata-rata"],
+      "correct": 1,
+      "feedback": "Sisa hasil pembagian integer."
+    },
+    {
+      "question": "Manakah 'Guardian Clause' yang benar?",
+      "options": ["if(valid) { proses(); }", "if(!valid) return; proses();", "if(valid==true) proses();", "while(valid) proses();"],
+      "correct": 1,
+      "feedback": "Cek kondisi gagal di awal, lalu return. Ini membuat kode di bawahnya lebih bersih."
+    },
+    {
+      "question": "Loop `for(;;)` artinya...",
+      "options": ["Loop kosong", "Error Syntax", "Infinite Loop", "Loop 1 kali"],
+      "correct": 2,
+      "feedback": "Ini adalah cara standar menulis infinite loop di C/C++ selain while(true)."
+    },
+    {
+      "question": "Tipe data apa yang paling hemat memori untuk status True/False?",
+      "options": ["int", "double", "bool", "string"],
+      "correct": 2,
+      "feedback": "Bool dirancang khusus untuk 1 bit informasi (meski implementasinya sering 1 byte)."
+    },
+    {
+      "question": "Jika `a=true` dan `b=false`, maka `!a || b` adalah...",
+      "options": ["True", "False", "Error", "1"],
+      "correct": 1,
+      "feedback": "!a (False). False || False = False."
+    }
+  ]
+}
