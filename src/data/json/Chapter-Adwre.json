@@ -1,0 +1,354 @@
+{
+  "id": "chapter-adware",
+  "metadata": {
+    "title": "Adware: Sales Maksa di Layar Lo",
+    "subtitle": "Gratisan yang Bayar Pakai Kesabaran",
+    "description": "Bahas tuntas soal Adware, si pengganggu yang hobi nyampah iklan. Dari cara masuk, bahayanya buat privasi, sampai bedah kode simpel cara kerjanya.",
+    "thumbnail": "/images/blog/CysecThumbnail.webp",
+    "tags": ["Keamanan", "Malware", "Iklan"],
+    "category": "Teknologi"
+  },
+  "content": [
+    {
+      "section_id": "intro-hook",
+      "blocks": [
+        { "type": "heading", "text": "Lagi Asik Main, Tiba-tiba Iklan Judi?" },
+        {
+          "type": "paragraph",
+          "text": "Pernah nggak sih lo lagi seru-serunya *push rank* atau lagi *scroll* medsos, eh tiba-tiba layar ketutup iklan obat kuat atau judi slot? Di-close susah, tombol 'X'-nya kecil banget kayak harapan balikan sama mantan."
+        },
+        {
+          "type": "paragraph",
+          "text": "Selamat, gadget lo kemungkinan besar udah terjangkit **Adware**. Ini bukan cuma soal gangguan visual, tapi ada *tamu tak diundang* yang lagi pesta di sistem lo."
+        }
+      ]
+    },
+    {
+      "section_id": "what-is-adware",
+      "blocks": [
+        { "type": "heading", "text": "Apa Itu Adware?" },
+        {
+          "type": "paragraph",
+          "text": "Adware adalah singkatan dari **Advertising-supported Software**. Intinya, ini software yang dirancang buat maksa lo ngeliat iklan."
+        },
+        {
+          "type": "paragraph",
+          "text": "Tujuannya simpel: **Duit**. Pembuat adware dapet komisi setiap kali iklan itu muncul (impression) atau setiap kali lo nggak sengaja nge-klik (pay-per-click)."
+        }
+      ]
+    },
+    {
+      "section_id": "analogy-time",
+      "blocks": [
+        { "type": "heading", "text": "Analogi: Sales Buntut" },
+        {
+          "type": "analogy",
+          "title": "Si Pengikut Setia",
+          "text": "Bayangin lo lagi jalan-jalan di mall. Tiba-tiba ada sales ngintilin lo kemana-mana. Lo masuk toilet, dia nyodorin brosur. Lo makan, dia tempel stiker diskon di jidat lo. Dia nggak nyopet dompet lo sih, tapi dia bikin hidup lo nggak tenang dan nyatet barang apa aja yang lo lirik buat lapor ke bosnya. Itulah Adware."
+        }
+      ]
+    },
+    {
+      "section_id": "entry-point",
+      "blocks": [
+        { "type": "heading", "text": "Lewat Mana Dia Masuk?" },
+        {
+          "type": "paragraph",
+          "text": "Adware itu kayak penumpang gelap. Dia biasanya masuk lewat teknik **Bundling**."
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Install Aplikasi Gratisan:** Lo download video player gratis, tapi lo main klik 'Next-Next' aja tanpa baca.",
+            "**Jebakan Checklist:** Di instalasi itu, ada kotak kecil tercentang otomatis yang bilang *'I agree to install Super Search Toolbar'*. Karena lo males baca, lo izinin dia masuk.",
+            "**Situs Download Abal-abal:** Tombol 'Download' yang asli kecil, tapi ada 5 tombol 'Download' palsu yang isinya iklan sampah."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "symptoms",
+      "blocks": [
+        { "type": "heading", "text": "Gejala HP/Laptop Kena Adware" },
+        {
+          "type": "paragraph",
+          "text": "Cek gadget lo sekarang, ada tanda-tanda ini nggak?"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Pop-up Gila:** Iklan muncul bahkan saat lo nggak buka browser.",
+            "**Homepage Berubah:** Lo buka Chrome, eh yang muncul bukan Google tapi 'Ask.com' atau search engine nggak jelas.",
+            "**Browser Lemot:** Buka satu tab aja rasanya kayak nungguin jodoh, lama banget.",
+            "**Toolbar Asing:** Tiba-tiba ada bar tambahan di browser isinya tombol-tombol nggak guna."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "privacy-risk",
+      "blocks": [
+        { "type": "heading", "text": "Bahaya Privasi: Dia Tau Lo Suka Apa" },
+        {
+          "type": "paragraph",
+          "text": "Jangan salah, Adware bukan cuma nampilin iklan asal-asalan. Adware modern itu **Pintar**."
+        },
+        {
+          "type": "paragraph",
+          "text": "Dia melacak *history browsing* lo. Kalau lo sering buka situs sepatu, dia bakal nampilin iklan sepatu. Keliatannya membantu? Padahal itu artinya **privasi lo udah jebol**. Data kebiasaan lo dijual ke pengiklan tanpa izin."
+        }
+      ]
+    },
+    {
+      "section_id": "mobile-adware",
+      "blocks": [
+        { "type": "heading", "text": "Adware di HP (Android/iOS)" },
+        {
+          "type": "paragraph",
+          "text": "Di HP, Adware sering nyamar jadi aplikasi *Utility* kayak 'Battery Saver', 'Phone Booster', atau 'Free Wallpaper'."
+        },
+        {
+          "type": "paragraph",
+          "text": "Pas diinstall, dia minta izin *'Display over other apps'*. Akibatnya, pas lo lagi buka WA, tiba-tiba ketutup iklan satu layar penuh. Baterai lo bakal boros banget karena dia jalan terus di background buat download iklan."
+        }
+      ]
+    },
+    {
+      "section_id": "browser-hijack",
+      "blocks": [
+        { "type": "heading", "text": "Browser Hijacker" },
+        {
+          "type": "paragraph",
+          "text": "Ini level lanjutan dari Adware. Dia ngebajak browser lo."
+        },
+        {
+          "type": "paragraph",
+          "text": "Pernah nggak lo ngetik di *address bar* mau ke Google, tapi malah diredirect ke situs pencarian aneh penuh iklan? Itu kerjaan Browser Hijacker. Tujuannya maksa lo liat iklan di situs mereka biar *traffic* mereka naik."
+        }
+      ]
+    },
+    {
+      "section_id": "prevention",
+      "blocks": [
+        { "type": "heading", "text": "Cara Menolak Tamu Tak Diundang" },
+        {
+          "type": "paragraph",
+          "text": "Biar nggak kemasukan Adware, biasakan:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Baca Dulu, Baru Next:** Pas install software, pilih mode **Custom/Advanced Installation**. Jangan 'Express/Recommended'.",
+            "**Uncheck Kotak Misterius:** Hapus centang di tawaran software tambahan.",
+            "**Pakai AdBlocker:** Extension kayak uBlock Origin bisa nahan script iklan jahat.",
+            "**Download di Sumber Resmi:** Play Store atau situs resmi developernya, bukan *bagas31* atau *kuyhaa* (kecuali lo tau resikonya)."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "removal",
+      "blocks": [
+        { "type": "heading", "text": "Ngusir Adware yang Udah Betah" },
+        {
+          "type": "paragraph",
+          "text": "Kalau udah terlanjur kena, lakukan 'Exorcism' ini:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Uninstall Apps Aneh:** Cek Control Panel atau Settings, buang aplikasi yang lo nggak merasa install.",
+            "**Reset Browser:** Kembalikan settingan Chrome/Firefox ke *Default*.",
+            "**Scan Anti-Malware:** Pakai software khusus kayak Malwarebytes. Antivirus biasa kadang nggak nganggap Adware sebagai virus berbahaya (dianggap *Potentially Unwanted Program* / PUP)."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "legal-gray-area",
+      "blocks": [
+        { "type": "heading", "text": "Legal tapi Ngeselin?" },
+        {
+          "type": "paragraph",
+          "text": "Banyak Adware yang sebenernya 'Legal'. Kenapa? Karena di *End User License Agreement* (EULA) yang panjang banget itu, sebenernya tertulis: *'Dengan menginstall ini, Anda setuju kami menampilkan iklan'*."
+        },
+        {
+          "type": "paragraph",
+          "text": "Masalahnya, siapa sih yang baca EULA? Lo langsung klik 'I Agree' kan? Jadi secara teknis, lo sendiri yang ngizinin mereka masuk."
+        }
+      ]
+    },
+    {
+      "section_id": "case-study",
+      "blocks": [
+        { "type": "heading", "text": "Studi Kasus: Superfish" },
+        {
+          "type": "paragraph",
+          "text": "Pernah denger kasus **Lenovo Superfish** (2015)? Laptop baru Lenovo dikasih pre-install software 'Superfish' yang katanya buat bantu visual search."
+        },
+        {
+          "type": "paragraph",
+          "text": "Ternyata, Superfish ini Adware yang nyuntikin iklan ke browser pengguna. Lebih parahnya, dia make sertifikat keamanan palsu yang bikin hacker gampang nyuri data perbankan pengguna. Lenovo kena denda jutaan dolar gara-gara ini."
+        }
+      ]
+    },
+    {
+      "section_id": "coding-intro",
+      "blocks": [
+        { "type": "heading", "text": "Praktik 1: Logika Dasar Adware" },
+        {
+          "type": "paragraph",
+          "text": "Oke, sekarang kita masuk ke dapur pacu. Gimana sih cara kerja Adware secara koding? (Disclaimer: Edukasi Only!)."
+        },
+        {
+          "type": "paragraph",
+          "text": "Adware butuh dua hal utama: **Trigger** (Pemicu) dan **Payload** (Aksi Iklan)."
+        },
+        {
+          "type": "code",
+          "language": "python",
+          "code": "# Konsep Logika Sederhana\nimport time\n\n# Trigger: Setiap 10 menit\nwhile True:\n    time.sleep(600) \n    \n    # Payload: Munculkan Iklan\n    print('IKLAN: DISKON 90% GILA GILAAN!! KLIK SINI!')"
+        },
+        {
+          "type": "paragraph",
+          "text": "Simpel kan? Dia cuma loop waktu, terus eksekusi perintah."
+        }
+      ]
+    },
+    {
+      "section_id": "coding-browser",
+      "blocks": [
+        { "type": "heading", "text": "Praktik 2: Memaksa Buka Browser" },
+        {
+          "type": "paragraph",
+          "text": "Adware yang lebih agresif bakal maksa ngebuka browser lo ke situs tertentu."
+        },
+        {
+          "type": "code",
+          "language": "python",
+          "code": "import webbrowser\nimport time\nimport random\n\nlist_situs_iklan = [\n    'http://situs-judi-abal.com',\n    'http://obat-kuat-palsu.net',\n    'http://menang-iphone-gratis.xyz'\n]\n\n# Loop yang bikin kesel\nwhile True:\n    # Tunggu waktu acak biar nggak ketebak\n    delay = random.randint(30, 120)\n    time.sleep(delay)\n    \n    # Buka tab baru secara paksa\n    target = random.choice(list_situs_iklan)\n    webbrowser.open_new(target)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Bayangin kode ini jalan di background. Lo lagi ngetik skripsi, tiba-tiba *Pop!* Browser kebuka sendiri."
+        }
+      ]
+    },
+    {
+      "section_id": "coding-full-sim",
+      "blocks": [
+        { "type": "heading", "text": "Praktik 3: Simulasi Adware GUI" },
+        {
+          "type": "paragraph",
+          "text": "Ini contoh script Python sederhana pakai *Tkinter* buat bikin pop-up yang susah ditutup (Simulasi)."
+        },
+        {
+          "type": "code",
+          "language": "python",
+          "code": "import tkinter as tk\nimport random\n\ndef munculkan_iklan():\n    jendela = tk.Tk()\n    jendela.title('IKLAN MEMBANDEL')\n    jendela.geometry('300x200')\n    \n    # Bikin posisi acak di layar\n    x = random.randint(0, 800)\n    y = random.randint(0, 600)\n    jendela.geometry(f'+{x}+{y}')\n    \n    label = tk.Label(jendela, text='SELAMAT ANDA MENANG!', font=('Arial', 14))\n    label.pack(pady=50)\n    \n    # Mencegah jendela ditutup user (simulasi jahat)\n    # jendela.protocol('WM_DELETE_WINDOW', lambda: None)\n    \n    jendela.mainloop()\n\n# Panggil fungsi ini berkali-kali dalam loop untuk efek 'Spam'\nmunculkan_iklan()"
+        },
+        {
+          "type": "reflection",
+          "text": "Kode di atas cuma simulasi. Adware asli jauh lebih rumit, bisa sembunyi dari Task Manager dan otomatis nyala pas PC dihidupkan (Startup)."
+        }
+      ]
+    }
+  ],
+  "references": [
+    "Malwarebytes: Adware Explained",
+    "Kaspersky: Adware Removal Guide",
+    "Norton: How Adware Works"
+  ],
+  "quiz": [
+    {
+      "question": "Apa kepanjangan dari Adware?",
+      "options": ["Additional Software", "Advertising-supported Software", "Advanced Warfare", "Admin Software"],
+      "correct": 1,
+      "feedback": "Benar. Software yang disupport oleh iklan."
+    },
+    {
+      "question": "Apa tujuan utama pembuat Adware?",
+      "options": ["Mencuri data bank", "Merusak hardware", "Mendapatkan uang dari tayangan iklan", "Membantu pengguna mencari barang"],
+      "correct": 2,
+      "feedback": "Tepat. Motif utamanya adalah ekonomi (duit iklan)."
+    },
+    {
+      "question": "Teknik di mana Adware disisipkan bersama software gratisan disebut...",
+      "options": ["Phishing", "Bundling", "Hacking", "Crackling"],
+      "correct": 1,
+      "feedback": "Benar. 'Bundling' alias paket hemat yang mematikan."
+    },
+    {
+      "question": "Gejala paling umum jika PC terkena Adware adalah...",
+      "options": ["Layar menjadi biru (Blue Screen)", "Banyak Pop-up iklan muncul sendiri", "Suara speaker hilang", "Keyboard tidak berfungsi"],
+      "correct": 1,
+      "feedback": "Betul. Pop-up iklan yang tidak wajar adalah ciri khasnya."
+    },
+    {
+      "question": "Apa itu Browser Hijacker?",
+      "options": ["Software pembajak akun FB", "Adware yang mengubah settingan homepage dan search engine browser", "Browser khusus hacker", "Orang yang mencuri laptop"],
+      "correct": 1,
+      "feedback": "Tepat. Dia membajak arah tujuan browsing lo."
+    },
+    {
+      "question": "Apa bahaya privasi dari Adware?",
+      "options": ["Adware bisa merekam percakapan telepon", "Adware bisa melacak history browsing untuk profiling iklan", "Adware bisa mematikan kamera", "Adware bisa menghapus foto"],
+      "correct": 1,
+      "feedback": "Benar. Tracking kebiasaan browsing adalah ancaman privasinya."
+    },
+    {
+      "question": "Mengapa Adware sering dianggap 'Legal' atau 'Grey Area'?",
+      "options": ["Karena pembuatnya orang baik", "Karena pengguna menyetujui EULA (End User License Agreement) saat install", "Karena tidak merusak file", "Karena ada izin pemerintah"],
+      "correct": 1,
+      "feedback": "Tepat. Secara teknis pengguna klik 'Agree' tanpa membaca."
+    },
+    {
+      "question": "Apa fungsi library 'webbrowser' dalam contoh kode Python di materi?",
+      "options": ["Membuat website", "Membuka browser ke alamat URL tertentu", "Menutup browser", "Menghapus history"],
+      "correct": 1,
+      "feedback": "Benar. Digunakan untuk memaksa membuka situs iklan."
+    },
+    {
+      "question": "Manakah cara pencegahan Adware yang paling efektif saat install software?",
+      "options": ["Pilih 'Express Installation'", "Pilih 'Custom Installation' dan baca tiap checklist", "Klik Next secepat mungkin", "Matikan monitor"],
+      "correct": 1,
+      "feedback": "Betul. Di mode Custom biasanya opsi adware disembunyikan."
+    },
+    {
+      "question": "Apa yang dimaksud PUP dalam istilah keamanan?",
+      "options": ["Potentially Unwanted Program", "Program Untuk Penipu", "Public Utility Program", "Power User Protocol"],
+      "correct": 0,
+      "feedback": "Benar. Program yang mungkin tidak diinginkan (kategori halus untuk Adware)."
+    },
+    {
+      "question": "Kasus 'Superfish' terjadi pada laptop merek apa?",
+      "options": ["Dell", "Lenovo", "Asus", "HP"],
+      "correct": 1,
+      "feedback": "Tepat. Kasus Lenovo tahun 2015."
+    },
+    {
+      "question": "Dalam contoh koding simulasi GUI, library apa yang digunakan untuk membuat jendela pop-up?",
+      "options": ["NumPy", "Tkinter", "Pandas", "Django"],
+      "correct": 1,
+      "feedback": "Benar. Tkinter adalah library standar Python untuk GUI."
+    },
+    {
+      "question": "Apa dampak Adware pada perangkat HP?",
+      "options": ["Baterai awet", "Baterai cepat habis dan kuota boros", "Sinyal makin kuat", "Kamera makin jernih"],
+      "correct": 1,
+      "feedback": "Betul. Proses download iklan di background memakan daya dan data."
+    },
+    {
+      "question": "Jika browser sudah terlanjur kena hijack, apa langkah perbaikannya?",
+      "options": ["Beli laptop baru", "Reset browser ke pengaturan default", "Ganti provider internet", "Install ulang Windows langsung"],
+      "correct": 1,
+      "feedback": "Tepat. Reset browser biasanya cukup untuk menghapus settingan hijack."
+    },
+    {
+      "question": "Mengapa tombol 'Download' di situs file sharing sering ada banyak dan palsu?",
+      "options": ["Karena desain webnya jelek", "Itu adalah jebakan Adware (Iklan yang menyamar)", "Supaya user punya banyak pilihan", "Error sistem"],
+      "correct": 1,
+      "feedback": "Benar. Itu teknik 'Deceptive Pattern' untuk menipu user agar mengklik iklan."
+    }
+  ]
+}
