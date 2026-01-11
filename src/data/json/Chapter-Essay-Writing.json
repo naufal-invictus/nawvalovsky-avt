@@ -1,33 +1,95 @@
 {
   "id": "chapter-essay-writing",
   "metadata": {
-    "title": "Essay Writing: Seni 'Bacot' Terstruktur",
-    "subtitle": "Debat Kusir vs Argumentative Essay",
-    "description": "Tutorial nulis opini biar nggak kayak debat kusir di medsos. Kita bedah dua topik panas: Mahasiswa pakai AI & Masih perlukah Kuliah?",
+    "title": "Essay Writing: The Ultimate Guide",
+    "subtitle": "From Grammar Basics to Critical Thinking",
+    "description": "A complete guide to ace your English essay. Mastering Nouns, Verbs, Tenses, and debating hot topics like AI & University degrees.",
     "thumbnail": "/images/blog/Hat.webp",
-    "tags": ["Writing", "Critical Thinking", "Skill"],
-    "category": "Self-Dev"
+    "tags": ["English", "Writing", "Grammar"],
+    "category": "Education"
   },
   "content": [
     {
-      "section_id": "intro",
+      "section_id": "grammar-1",
       "blocks": [
-        { "type": "heading", "text": "1. Bukan Sekadar Curhat Colongan" },
-        { "type": "paragraph", "text": "Lo pasti sering liat orang berantem di kolom komentar Instagram/TikTok kan? Nah, **Argumentative Essay** itu sebenernya sama: lo punya opini dan pengen orang lain setuju sama lo." },
-        { "type": "paragraph", "text": "Bedanya, essay itu pake **Data** dan **Logika**, bukan pake emosi apalagi *capslock* jebol. Kuncinya 3: Claim (Ngomong apa), Evidence (Buktinya mana), Reasoning (Masuk akal gak)." }
+        { "type": "heading", "text": "1. Back to Basics: Nouns & Verbs" },
+        { "type": "paragraph", "text": "Before we fight about AI, let's fix your engine. You can't drive a car without wheels." },
+        { "type": "paragraph", "text": "**Noun (The Thing):** People, places, or objects. Example: *Student, Campus, Laptop, Anxiety.*" },
+        { "type": "paragraph", "text": "**Verb (The Action):** What the noun does. Example: *Write, Sleep, Procrastinate, Submit.*" },
+        { "type": "paragraph", "text": "Rule #1: Every sentence needs at least a Subject (Noun) and a Verb. 'Running fast' is not a sentence. 'He runs fast' is." }
       ]
     },
     {
-      "section_id": "structure",
+      "section_id": "grammar-2",
       "blocks": [
-        { "type": "heading", "text": "2. Anatomi Essay: Teori Burger" },
-        { "type": "paragraph", "text": "Essay yang enak dibaca itu kayak Burger yang rapi:" },
+        { "type": "heading", "text": "2. Prepositions: The GPS of Language" },
+        { "type": "paragraph", "text": "Prepositions tell us **Where** and **When**. Don't get lost!" },
         { "type": "list",
-        "items": [
-            "**Introduction (Roti Atas):** Pancingan biar orang mau baca + Inti argumen lo (Thesis Statement).",
-            "**Body Paragraphs (Daging):** Isinya argumen-argumen daging. Jangan cuma tepung (basa-basi) doang.",
-            "**Counter-Argument (Sayur/Keju):** Bahas sisi lawan biar lo kelihatan objektif, terus bantah deh.",
-            "**Conclusion (Roti Bawah):** Bungkus semuanya biar kenyang."
+          "items": [
+            "**IN:** Enclosed spaces or general times. *In the classroom, In 2024, In the morning.*",
+            "**ON:** Surfaces or specific days. *On the table, On Monday, On the screen.*",
+            "**AT:** Specific points or times. *At the bus stop, At 7 PM, At home.*"
+          ]
+        },
+        { "type": "paragraph", "text": "Wrong: 'I came to campus *in* Monday.' \nRight: 'I came to campus **on** Monday.'" }
+      ]
+    },
+    {
+      "section_id": "grammar-3",
+      "blocks": [
+        { "type": "heading", "text": "3. Time Travel: Simple Tenses" },
+        { "type": "paragraph", "text": "In essays, time matters. Be consistent." },
+        { "type": "paragraph", "text": "**Past Tense (V2):** History. Completed action. \n*Example: I **wrote** the essay yesterday.*" },
+        { "type": "paragraph", "text": "**Present Tense (V1):** Facts, habits, or general truths. \n*Example: AI **helps** students work faster.*" },
+        { "type": "paragraph", "text": "**Future Tense (Will + V1):** Plans or predictions. \n*Example: We **will see** more robots in the future.*" }
+      ]
+    },
+    {
+      "section_id": "grammar-4",
+      "blocks": [
+        { "type": "heading", "text": "4. In The Moment: Continuous Tense" },
+        { "type": "paragraph", "text": "Use this for actions that are **ongoing** (happening right now or at a specific time)." },
+        { "type": "paragraph", "text": "Formula: **To Be + Verb-ing**" },
+        { "type": "paragraph", "text": "**Present Continuous:** *I **am studying** right now.* (Don't disturb me!)" },
+        { "type": "paragraph", "text": "**Past Continuous:** *I **was sleeping** when the lecturer called.* (Oops!)" }
+      ]
+    },
+    {
+      "section_id": "grammar-5",
+      "blocks": [
+        { "type": "heading", "text": "5. Opinion Verbs: Stop Saying 'I Think'" },
+        { "type": "paragraph", "text": "Want to sound smart and professional? Upgrade your vocabulary." },
+        { "type": "paragraph", "text": "Instead of *'I think'*, use these power verbs:" },
+        { "type": "list",
+          "items": [
+            "**Argue:** *I argue that AI is beneficial.*",
+            "**Believe:** *Many experts believe that...*",
+            "**Assert:** *The author asserts that...*",
+            "**Contend:** *Critics contend that university is expensive.*"
+          ]
+        },
+        { "type": "paragraph", "text": "This is how you get an 'A' in writing." }
+      ]
+    },
+    {
+      "section_id": "essay-intro",
+      "blocks": [
+        { "type": "heading", "text": "6. Essay Logic: Not Just a Rant" },
+        { "type": "paragraph", "text": "Now, let's talk about **Argumentative Essays**. It's not about shouting your opinion; it's about **persuading** the reader." },
+        { "type": "paragraph", "text": "The Holy Trinity of Argument:" },
+        { "type": "paragraph", "text": "1. **Claim:** What do you believe?\n2. **Evidence:** Data, facts, examples.\n3. **Reasoning:** Why does the evidence support your claim?" }
+      ]
+    },
+    {
+      "section_id": "essay-structure",
+      "blocks": [
+        { "type": "heading", "text": "7. Anatomy of an Essay (Burger Theory)" },
+        { "type": "paragraph", "text": "Keep your essay structured like a good burger:" },
+        { "type": "list",
+          "items": [
+            "**Introduction (Top Bun):** Hook + Background + **Thesis Statement**.",
+            "**Body Paragraphs (The Meat):** One idea per paragraph. Use the **PEEL** method.",
+            "**Conclusion (Bottom Bun):** Summarize and give a final thought (The 'So What?')."
           ]
         }
       ]
@@ -35,172 +97,138 @@
     {
       "section_id": "topic1-intro",
       "blocks": [
-        { "type": "heading", "text": "3. Studi Kasus 1: AI vs Mahasiswa" },
-        { "type": "image", "src": "/images/blog/CysecThumbnail.webp", "caption": "Robot vs Otak Lo, siapa menang?", "position": "right" },
-        { "type": "paragraph", "text": "Topik panas nih: **'Boleh nggak sih mahasiswa pake AI (ChatGPT dkk) buat ngerjain tugas akhir?'**" },
-        { "type": "paragraph", "text": "Kalau lo jawab 'Boleh dong, kan canggih', lo bisa kena cap plagiat. Kalau jawab 'Haram!', lo ketinggalan zaman. Essay yang bagus itu nggak hitam-putih, bro." }
+        { "type": "heading", "text": "8. Case Study 1: AI in University" },
+        { "type": "image", "src": "/images/blog/CysecThumbnail.webp", "caption": "To use or not to use?", "position": "right" },
+        { "type": "paragraph", "text": "Topic: **'Should uni students use AI for completing their final paper?'**" },
+        { "type": "paragraph", "text": "It's a trap! If you say 'NO', you are outdated. If you say 'YES', you risk plagiarism. You need a **nuanced** answer." }
       ]
     },
     {
-      "section_id": "topic1-pros",
+      "section_id": "topic1-pros-cons",
       "blocks": [
-        { "type": "heading", "text": "4. Tim PRO: AI Itu Asisten, Bukan Joki" },
-        { "type": "paragraph", "text": "Kalau lo di kubu pendukung, argumen lo harusnya soal **Produktivitas**. AI itu ibarat kalkulator buat anak Matematika." },
-        { "type": "paragraph", "text": "Thesis yang keren: 'Mahasiswa harusnya diajarin pake AI sebagai *Research Assistant* buat brainstorming ide, bukan buat *Generate* tulisan mentah-mentah.'" }
-      ]
-    },
-    {
-      "section_id": "topic1-cons",
-      "blocks": [
-        { "type": "heading", "text": "5. Tim KONTRA: Otak Lo Jadi Atrofi" },
-        { "type": "paragraph", "text": "Bahayanya AI itu satu: **Ketergantungan**. Kalau dikit-dikit nanya AI, otak lo bakal kaget pas disuruh mikir sendiri (Atrofi Otak)." },
-        { "type": "paragraph", "text": "Belum lagi soal **Halusinasi**. AI itu sering ngarang bebas. Kalau lo nggak cek ulang (Fact Check), siap-siap aja skripsi lo isinya hoax." }
+        { "type": "heading", "text": "9. AI: The Good & The Ugly" },
+        { "type": "paragraph", "text": "**PROS (Efficiency):** AI is a great *Research Assistant*. It helps with brainstorming and grammar checking. It boosts productivity." },
+        { "type": "paragraph", "text": "**CONS (Atrophy):** Over-reliance leads to 'Brain Rot'. If ChatGPT writes everything, you learn nothing. Also, AI often **hallucinates** (makes up fake facts)." }
       ]
     },
     {
       "section_id": "topic1-verdict",
       "blocks": [
-        { "type": "heading", "text": "6. Jalan Tengah: Ethical Use" },
-        { "type": "paragraph", "text": "Jadi solusinya gimana? **Augmentation, not Replacement**. Pake AI buat benerin grammar atau cari struktur ide itu oke. Tapi analisis dan opini? Itu wajib dari otak lo sendiri." },
-        { "type": "paragraph", "text": "Jangan biarkan robot yang nyetir, lo tetep sopirnya." }
+        { "type": "heading", "text": "10. AI Verdict: Ethical Augmentation" },
+        { "type": "paragraph", "text": "The best stance: **Ethical Use.**" },
+        { "type": "paragraph", "text": "Thesis Idea: *'Universities should not ban AI but integrate it as a supportive tool, ensuring students use it for augmentation rather than replacement.'*" },
+        { "type": "paragraph", "text": "You are the pilot; AI is just the co-pilot." }
       ]
     },
     {
       "section_id": "topic2-intro",
       "blocks": [
-        { "type": "heading", "text": "7. Studi Kasus 2: Kuliah Itu Penting Gak?" },
-        { "type": "image", "src": "/images/blog/Nongkrong.webp", "caption": "Kuliah cuma buat nongkrong atau cari ilmu?", "position": "left" },
-        { "type": "paragraph", "text": "Topik debat abadi: **'Perlu nggak sih kuliah tinggi-tinggi kalau ujungnya jualan bakso juga?'**" },
-        { "type": "paragraph", "text": "Zaman sekarang ilmu ada di YouTube/Udemy. Ijazah masih laku nggak sih?" }
+        { "type": "heading", "text": "11. Case Study 2: Is Uni Worth It?" },
+        { "type": "image", "src": "/images/blog/Hat.webp", "caption": "Degree vs Skills.", "position": "left" },
+        { "type": "paragraph", "text": "Topic: **'Should people go to uni to get a higher level of education?'**" },
+        { "type": "paragraph", "text": "In the age of YouTube and Bootcamps, is a 4-year degree still relevant? This is a classic debate: **Traditional vs. Self-Taught.**" }
       ]
     },
     {
-      "section_id": "topic2-yes",
+      "section_id": "topic2-pros-cons",
       "blocks": [
-        { "type": "heading", "text": "8. Tim YES: Network & Pola Pikir" },
-        { "type": "paragraph", "text": "Kuliah itu bukan cuma ngejar IPK, tapi **Networking**. Temen sekelas lo sekarang bisa jadi bos lo atau investor lo 10 tahun lagi." },
-        { "type": "paragraph", "text": "Selain itu, kuliah ngelatih **Structured Thinking**. Belajar sendiri (otodidak) emang bisa, tapi biasanya bolong-bolong pengetahuannya." }
-      ]
-    },
-    {
-      "section_id": "topic2-no",
-      "blocks": [
-        { "type": "heading", "text": "9. Tim NO: ROI & Utang" },
-        { "type": "paragraph", "text": "Masalah utama kuliah: **Mahal & Lama**. Di dunia IT atau Kreatif, portofolio lo lebih dilihat daripada gelar S1." },
-        { "type": "paragraph", "text": "Ngapain kuliah 4 tahun kalau ikut bootcamp 6 bulan udah bisa gaji 2 digit? Ini soal **ROI (Return on Investment)**." }
+        { "type": "heading", "text": "12. Uni: Network vs. ROI" },
+        { "type": "paragraph", "text": "**YES (Structure):** University provides a **structured curriculum** and, most importantly, **Networking**. Your classmates are your future partners." },
+        { "type": "paragraph", "text": "**NO (Cost):** It's expensive and slow. For IT or Creative fields, your **Portfolio** matters more than your paper degree. We call this the **ROI (Return on Investment)** issue." }
       ]
     },
     {
       "section_id": "topic2-verdict",
       "blocks": [
-        { "type": "heading", "text": "10. Kesimpulan: Tergantung Jurusan" },
-        { "type": "paragraph", "text": "Jawabannya: **Kontekstual**. Lo mau jadi Dokter atau Hakim? Ya wajib kuliah, malpraktek lo kalau belajar dari YouTube." },
-        { "type": "paragraph", "text": "Tapi kalau lo mau jadi *Programmer* atau *Desainer*, kuliah itu 'Jalan Tol', tapi bukan satu-satunya jalan." }
-      ]
-    },
-    {
-      "section_id": "writing-thesis",
-      "blocks": [
-        { "type": "heading", "text": "11. Senjata Rahasia: Thesis Statement" },
-        { "type": "paragraph", "text": "Ini jantungnya essay lo. Biasanya ditaruh di akhir paragraf pertama." },
-        { "type": "paragraph", "text": "❌ **Jelek:** 'Menurut gue AI itu bagus.' (Terlalu umum, nggak nendang).\n✅ **Keren:** 'Meskipun AI berisiko bikin malas, pelarangan total itu sia-sia; kampus justru harus mengintegrasikan literasi AI ke kurikulum.'" }
+        { "type": "heading", "text": "13. Uni Verdict: It Depends" },
+        { "type": "paragraph", "text": "The answer is **Contextual.**" },
+        { "type": "paragraph", "text": "For Doctors/Lawyers? **Mandatory.** (Please don't learn surgery from TikTok)." },
+        { "type": "paragraph", "text": "For Programmers/Artists? **Optional.** A degree helps, but skills pay the bills." }
       ]
     },
     {
       "section_id": "writing-peel",
       "blocks": [
-        { "type": "heading", "text": "12. Jangan Asal Nulis: Pake Rumus PEEL" },
-        { "type": "paragraph", "text": "Biar paragraf lo nggakal ngalor-ngidul, pake rumus ini:" },
+        { "type": "heading", "text": "14. The Secret Weapon: PEEL Method" },
+        { "type": "paragraph", "text": "Use this formula for every Body Paragraph:" },
         { "type": "list",
           "items": [
-            "**P - Point:** Kalimat utama paragraf (Lo mau ngomong apa?).",
-            "**E - Evidence:** Buktinya mana? (Data/Fakta/Contoh).",
-            "**E - Explanation:** Jelasin kenapa bukti itu dukung poin lo.",
-            "**L - Link:** Sambungin balik ke topik utama."
+            "**P - Point:** What is the main idea?",
+            "**E - Evidence:** Give an example or fact.",
+            "**E - Explanation:** Analyze it. Why does it matter?",
+            "**L - Link:** Connect it back to the main topic."
           ]
         }
       ]
     },
     {
-      "section_id": "writing-counter",
-      "blocks": [
-        { "type": "heading", "text": "13. Teknik Counter-Argument (Biar Kelihatan Pinter)" },
-        { "type": "paragraph", "text": "Jangan cuma nyerocos argumen lo sendiri. Coba akui argumen lawan, terus 'gebuk' balik." },
-        { "type": "paragraph", "text": "Contoh: *'Emang sih kuliah itu mahal (Lawan), TAPI jaringan alumni yang lo dapet itu aset seumur hidup yang nggak ternilai (Bantahan).'* -> Ini namanya **Refutation**." }
-      ]
-    },
-    {
       "section_id": "writing-connectors",
       "blocks": [
-        { "type": "heading", "text": "14. Transisi: Biar Nggak Kaku" },
-        { "type": "paragraph", "text": "Tulisan lo jangan kayak robot rusak yang patah-patah. Pake kata sambung (Transition Words):" },
-        { "type": "paragraph", "text": "Mau nambahin ide? Pake **'Furthermore'**. Mau ngebantah? Pake **'However'**. Mau nyimpulin? Pake **'Consequently'**." }
+        { "type": "heading", "text": "15. Connectors & Transitions" },
+        { "type": "paragraph", "text": "Make your essay flow like water, not rocks." },
+        { "type": "paragraph", "text": "**To Add:** Furthermore, Moreover, In addition.\n**To Contrast:** However, On the other hand, Conversely.\n**To Conclude:** Therefore, Consequently, As a result." }
       ]
     },
     {
-      "section_id": "conclusion-tips",
+      "section_id": "exercise-1",
       "blocks": [
-        { "type": "heading", "text": "15. Closing Statement: So What?" },
-        { "type": "paragraph", "text": "Conclusion jangan cuma copy-paste intro. Berikan efek 'Gong'-nya. Jawab pertanyaan: *'Terus kenapa kalau masalah ini penting?'*" },
-        { "type": "paragraph", "text": "Kasih prediksi masa depan atau *Call to Action*. Bikin pembaca lo mikir pas selesai baca." }
+        { "type": "heading", "text": "EXERCISE 1: Grammar Check" },
+        { "type": "paragraph", "text": "Correct this sentence:" },
+        { "type": "paragraph", "text": "*'She go to campus in Monday.'*" },
+        { "type": "paragraph", "text": "(Hint: Check the Verb and the Preposition!)" }
       ]
     },
     {
-      "section_id": "latihan-1",
+      "section_id": "exercise-2",
       "blocks": [
-        { "type": "heading", "text": "LATIHAN 1: Brainstorming Kilat" },
-        { "type": "paragraph", "text": "Ambil HP/Kertas. Tulis **3 alesan** kenapa orang zaman *now* **NGGAK PERLU** kuliah." },
-        { "type": "paragraph", "text": "Contoh gue: 1. Biaya UKT selangit, 2. Materi kuliah sering *outdated*, 3. ..." }
+        { "type": "heading", "text": "EXERCISE 2: Tense Swap" },
+        { "type": "paragraph", "text": "Change this sentence to **Past Continuous**:" },
+        { "type": "paragraph", "text": "*'I study English.'*" },
+        { "type": "paragraph", "text": "Target: Action happening in the past." }
       ]
     },
     {
-      "section_id": "latihan-2",
+      "section_id": "exercise-3",
       "blocks": [
-        { "type": "heading", "text": "LATIHAN 2: Fix The Thesis" },
-        { "type": "paragraph", "text": "Benerin *Thesis Statement* cupu ini biar jadi keren:" },
-        { "type": "paragraph", "text": "**'AI is helpful for students.'** -> Coba tambahin unsur 'Meskipun' (Concession) dan bikin lebih spesifik. Gas!" }
+        { "type": "heading", "text": "EXERCISE 3: Upgrade Your Verb" },
+        { "type": "paragraph", "text": "Rewrite this to sound more academic:" },
+        { "type": "paragraph", "text": "*'I think AI is bad for students.'*" },
+        { "type": "paragraph", "text": "(Use: Argue / Contend / Assert)" }
       ]
     },
     {
-      "section_id": "latihan-3",
+      "section_id": "exercise-4",
       "blocks": [
-        { "type": "heading", "text": "LATIHAN 3: Detektif Logika" },
-        { "type": "paragraph", "text": "Ada yang bilang: *'Kalau mahasiswa dibolehin pake AI, nanti lama-lama nggak ada manusia yang bisa nulis, terus peradaban hancur.'*" },
-        { "type": "paragraph", "text": "Ini sesat pikir (**Logical Fallacy**) jenis apa? Lebay banget kan mikirnya kejauhan." }
+        { "type": "heading", "text": "EXERCISE 4: Thesis Statement" },
+        { "type": "paragraph", "text": "Create a Thesis Statement for the 'University' topic." },
+        { "type": "paragraph", "text": "Remember: Be specific. Don't just say 'Uni is good'." }
       ]
     },
     {
-      "section_id": "latihan-4",
+      "section_id": "exercise-5",
       "blocks": [
-        { "type": "heading", "text": "LATIHAN 4: Sambung Kalimat" },
-        { "type": "paragraph", "text": "Gabungin dua kalimat ini pake kata **'However'** atau **'Therefore'**:" },
-        { "type": "paragraph", "text": "A: 'Kuliah menyediakan fasilitas networking.'\nB: 'Biaya kuliah seringkali jadi beban finansial berat.'" }
-      ]
-    },
-    {
-      "section_id": "latihan-5",
-      "blocks": [
-        { "type": "heading", "text": "LATIHAN 5: Mini Essay Challenge" },
-        { "type": "paragraph", "text": "Pilih topik AI atau Kuliah. Tulis **SATU paragraf** aja (5 kalimat) pake metode **PEEL** (Point, Evidence, Explanation, Link)." },
-        { "type": "paragraph", "text": "Ingat: Point dulu, baru bukti, terus jelasin, baru tutup." }
+        { "type": "heading", "text": "EXERCISE 5: Connector Challenge" },
+        { "type": "paragraph", "text": "Connect these two sentences:" },
+        { "type": "paragraph", "text": "A: 'University is expensive.'\nB: 'Graduates often earn higher salaries.'" },
+        { "type": "paragraph", "text": "(Use: However / Therefore / Furthermore)" }
       ]
     }
   ],
   "quiz": [
-    { "question": "Metode PEEL itu singkatan dari apa sih?", "options": ["Point, Evidence, Explanation, Link", "Paragraph, End, Edit, Last", "Plan, Execute, Evaluate, Learn", "Point, Example, End, Link"], "correct": 0, "feedback": "PEEL: Point (Inti), Evidence (Bukti), Explanation (Penjelasan), Link (Koneksi)." },
-    { "question": "Posisi 'Thesis Statement' yang paling pas ada di mana?", "options": ["Awal paragraf Intro", "Akhir paragraf Intro", "Tengah Body Paragraph", "Di Conclusion aja"], "correct": 1, "feedback": "Biasanya di kalimat terakhir paragraf pembuka (Intro)." },
-    { "question": "Teknik mengakui argumen lawan terus membantahnya disebut...", "options": ["Conclusion", "Counter-Argument / Refutation", "Thesis", "Introduction"], "correct": 1, "feedback": "Biar lo kelihatan objektif dan nggak bias." },
-    { "question": "Risiko paling bahaya kalau mahasiswa 100% ngandelin AI adalah...", "options": ["Tugas cepet kelar", "Integritas Akademik & Halusinasi Data", "Dosen seneng", "Kuota habis"], "correct": 1, "feedback": "AI bisa ngarang bebas (Halusinasi) dan bikin lo jadi plagiator." },
-    { "question": "Kata transisi buat nunjukin pertentangan (kontras) itu yang mana?", "options": ["Furthermore", "However", "Therefore", "In addition"], "correct": 1, "feedback": "However = Akan tetapi (buat belokin argumen)." },
-    { "question": "Apa itu 'ROI' dalam debat pentingnya kuliah?", "options": ["Return on Investment", "Rate of Interest", "Risk of Inflation", "Right of Internet"], "correct": 0, "feedback": "Balik modal gak nih biaya kuliah sama gaji nanti?" },
-    { "question": "Mana contoh Thesis Statement yang PALING KEREN?", "options": ["Gue pikir kuliah itu bagus.", "Kuliah penting buat semua orang.", "Meski mahal, kuliah krusial buat bidang spesialis kayak kedokteran demi keamanan publik.", "Kuliah jelek karena Bill Gates DO."], "correct": 2, "feedback": "Spesifik, berimbang, dan punya alesan kuat." },
-    { "question": "Fungsi utama 'Conclusion' itu apa?", "options": ["Ngulang intro plek-ketiplek", "Nambahin argumen baru", "Ngebungkus poin & ngasih 'So What?'", "Nulis daftar pustaka"], "correct": 2, "feedback": "Jangan nambah ide baru di closing, bungkus aja." },
-    { "question": "Argumen 'Kalau pake AI nanti manusia jadi bodoh semua' itu termasuk...", "options": ["Slippery Slope (Sesat Pikir)", "Fakta Ilmiah", "Thesis yang bagus", "Saran Dosen"], "correct": 0, "feedback": "Slippery Slope: Mikir kejauhan ke dampak buruk tanpa dasar." },
-    { "question": "Cara paling etis pake AI buat tugas kampus adalah...", "options": ["Jadiin Ghost Writer", "Suruh ngerjain ujian", "Jadiin Asisten Riset / Brainstorming", "Copy paste semuanya"], "correct": 2, "feedback": "AI itu alat bantu (Co-pilot), bukan Joki." },
-    { "question": "Dalam debat kuliah, argumen 'Networking' biasanya dipake kubu mana?", "options": ["Pro (Mendukung Kuliah)", "Kontra (Menolak Kuliah)", "Netral", "Golput"], "correct": 0, "feedback": "Jejaring alumni itu aset mahal dari kuliah." },
-    { "question": "Kata 'Consequently' itu artinya mirip sama...", "options": ["But (Tapi)", "As a result (Akibatnya)", "Because (Karena)", "Or (Atau)"], "correct": 1, "feedback": "Buat nunjukin sebab-akibat." },
-    { "question": "Plagiarisme itu apa sih?", "options": ["Nulis pake sumber", "Nyomot karya orang tanpa izin/kredit", "Nulis sendiri", "Pake sinonim"], "correct": 1, "feedback": "Dosa besar di kampus, bisa di-DO lo." },
-    { "question": "Kalimat pembuka yang fungsinya mancing perhatian pembaca disebut...", "options": ["Thesis", "Hook", "Link", "Evidence"], "correct": 1, "feedback": "Hook: Kail pancingan biar orang penasaran." },
-    { "question": "Buat bidang IT/Desain, alternatif selain kuliah yang fokus ke skill praktis adalah...", "options": ["Bootcamp & Sertifikasi", "Baca novel fiksi", "Tidur siang", "Marathon Drakor"], "correct": 0, "feedback": "Bootcamp lebih cepet dan to-the-point." }
+    { "question": "Which sentence uses the correct preposition?", "options": ["I study at Monday.", "I study on Monday.", "I study in Monday.", "I study to Monday."], "correct": 1, "feedback": "Use 'ON' for days (On Monday, On Sunday)." },
+    { "question": "What is the formula for Present Continuous Tense?", "options": ["Subject + Verb 1", "Subject + Will + Verb", "Subject + To Be + Verb-ing", "Subject + Verb 2"], "correct": 2, "feedback": "Example: I am writing." },
+    { "question": "Instead of 'I think', which word is more academic?", "options": ["I guess", "I argue", "Maybe", "I feel"], "correct": 1, "feedback": "'Argue', 'Assert', or 'Contend' are strong opinion verbs." },
+    { "question": "Which of these is a NOUN?", "options": ["Run", "Happy", "University", "Quickly"], "correct": 2, "feedback": "University is a place/thing." },
+    { "question": "In the PEEL method, what does 'E' stand for?", "options": ["End & Exit", "Evidence & Explanation", "Easy & Early", "Enter & Escape"], "correct": 1, "feedback": "Evidence (Proof) and Explanation (Analysis)." },
+    { "question": "Which tense is used for actions completed in the past?", "options": ["Present Continuous", "Future Tense", "Simple Past (V2)", "Present Perfect"], "correct": 2, "feedback": "Example: I wrote (V2) the essay." },
+    { "question": "What is a 'Thesis Statement'?", "options": ["The first sentence of the essay", "The main argument of the essay", "The list of references", "The conclusion"], "correct": 1, "feedback": "It states your main position/stance." },
+    { "question": "Which connector shows CONTRAST?", "options": ["Furthermore", "Therefore", "However", "In addition"], "correct": 2, "feedback": "However means 'But' in a fancy way." },
+    { "question": "What is the main risk of using AI for assignments?", "options": ["It is too expensive", "Academic dishonesty & Hallucinations", "It is too slow", "It uses too much internet"], "correct": 1, "feedback": "AI can make up facts (Hallucinate) and cause plagiarism issues." },
+    { "question": "'Atrophy' in the context of AI means...", "options": ["Getting stronger", "Wasting away / Weakening", "Growing fast", "Computing"], "correct": 1, "feedback": "Brain atrophy means your thinking skills get weaker." },
+    { "question": "Which field usually requires a university degree the most?", "options": ["Graphic Design", "Medicine (Doctor)", "Web Development", "Photography"], "correct": 1, "feedback": "Safety-critical fields require formal education." },
+    { "question": "Correct the sentence: 'She are studying.'", "options": ["She am studying", "She is studying", "She be studying", "She were studying"], "correct": 1, "feedback": "She + Is." },
+    { "question": "What does ROI stand for?", "options": ["Rate of Internet", "Return on Investment", "Risk of Injury", "Right of Information"], "correct": 1, "feedback": "Is the money you pay worth the value you get?" },
+    { "question": "A 'Hallucination' in AI means...", "options": ["The AI is dreaming", "The AI generates false information confidently", "The AI is broken", "The AI is smart"], "correct": 1, "feedback": "AI acts confident even when it's wrong." },
+    { "question": "What is the best way to use AI in university?", "options": ["Copy paste everything", "Don't use it at all", "Use it as a research assistant / co-pilot", "Ask it to write the exam"], "correct": 2, "feedback": "Augmentation, not Replacement." }
   ]
 }
