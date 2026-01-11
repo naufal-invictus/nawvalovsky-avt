@@ -1,0 +1,212 @@
+{
+  "id": "chapter-grammar",
+  "metadata": {
+    "title": "Grammar: The Hardcore Mode",
+    "subtitle": "Mastering Tenses, Sentences & Modals",
+    "description": "Stop guessing, start engineering your sentences. Deep dive into Complex Structures, The 12 Tenses, and The Nuances of Modals.",
+    "thumbnail": "/images/blog/C++.webp",
+    "tags": ["English", "Grammar", "Hardcore"],
+    "category": "Education"
+  },
+  "content": [
+    {
+      "section_id": "intro",
+      "blocks": [
+        { "type": "heading", "text": "1. Grammar is Logic Code" },
+        { "type": "paragraph", "text": "Think of Grammar as the syntax of a programming language. If your syntax is wrong, your message won't 'compile' in the listener's brain." },
+        { "type": "paragraph", "text": "We are moving beyond 'Subject + Verb'. We are building complex architecture." }
+      ]
+    },
+    {
+      "section_id": "sentence-1",
+      "blocks": [
+        { "type": "heading", "text": "2. The Blueprint: Sentence Types" },
+        { "type": "paragraph", "text": "You can't write a novel with just simple sentences. You need variety." },
+        { "type": "paragraph", "text": "**1. Simple Sentence:** One Independent Clause.\n*Example: The server crashed.*" },
+        { "type": "paragraph", "text": "It’s punchy, but too many of these make you sound like a robot." }
+      ]
+    },
+    {
+      "section_id": "sentence-2",
+      "blocks": [
+        { "type": "heading", "text": "3. Compound Sentences (The Bridge)" },
+        { "type": "paragraph", "text": "This connects two equal ideas using **FANBOYS** (For, And, Nor, But, Or, Yet, So)." },
+        { "type": "paragraph", "text": "*Example: The code was buggy, **but** it ran successfully.*" },
+        { "type": "paragraph", "text": "Rule: Always put a comma before the FANBOYS connector." }
+      ]
+    },
+    {
+      "section_id": "sentence-3",
+      "blocks": [
+        { "type": "heading", "text": "4. Complex Sentences (The Hierarchy)" },
+        { "type": "paragraph", "text": "One Independent Clause + One Dependent Clause. This shows cause and effect." },
+        { "type": "paragraph", "text": "*Example: **Although** the UI is ugly, the backend is solid.*" },
+        { "type": "paragraph", "text": "Key players: Because, Although, If, When, Since." }
+      ]
+    },
+    {
+      "section_id": "sentence-4",
+      "blocks": [
+        { "type": "heading", "text": "5. Compound-Complex (God Mode)" },
+        { "type": "paragraph", "text": "The ultimate flex. Two Independent Clauses + One Dependent Clause." },
+        { "type": "paragraph", "text": "*Example: I hate bugs **because** they waste my time, **and** I refuse to fix them on weekends.*" },
+        { "type": "paragraph", "text": "Master this, and your essays will look professional." }
+      ]
+    },
+    {
+      "section_id": "tenses-intro",
+      "blocks": [
+        { "type": "heading", "text": "6. The Tense Matrix" },
+        { "type": "paragraph", "text": "Tenses are just **Time** (Past, Present, Future) x **Aspect** (Simple, Continuous, Perfect, Perfect Continuous)." },
+        { "type": "paragraph", "text": "Stop memorizing formulas. Understand the *nature* of the action." }
+      ]
+    },
+    {
+      "section_id": "tense-simple",
+      "blocks": [
+        { "type": "heading", "text": "7. Simple Tenses: The Facts" },
+        { "type": "paragraph", "text": "Use these for facts, habits, or completed events. No drama." },
+        { "type": "paragraph", "text": "**Present Simple:** *Water freezes at 0°C.* (Fact)\n**Past Simple:** *I deleted the file.* (Done)\n**Future Simple:** *I will sleep.* (Prediction)" }
+      ]
+    },
+    {
+      "section_id": "tense-continuous",
+      "blocks": [
+        { "type": "heading", "text": "8. Continuous: The 'Loading Bar'" },
+        { "type": "paragraph", "text": "If the action is **in progress**, use Continuous (Be + V-ing)." },
+        { "type": "paragraph", "text": "**Present Cont:** *I am coding right now.* (Don't disturb)\n**Past Cont:** *I was sleeping when you called.* (Interrupted action)" }
+      ]
+    },
+    {
+      "section_id": "tense-perfect",
+      "blocks": [
+        { "type": "heading", "text": "9. Perfect: The 'Status Report'" },
+        { "type": "paragraph", "text": "Perfect tense connects the past to another point. Focus on the **result**, not the time." },
+        { "type": "paragraph", "text": "**Present Perfect:** *I **have finished** the task.* (Result is visible now)\n**Past Perfect:** *I **had left** before he arrived.* (Past before Past)" }
+      ]
+    },
+    {
+      "section_id": "tense-perfect-cont",
+      "blocks": [
+        { "type": "heading", "text": "10. Perfect Continuous: The Marathon" },
+        { "type": "paragraph", "text": "Focus on the **duration** of an action that started in the past and is still going." },
+        { "type": "paragraph", "text": "*I **have been waiting** for 3 hours.*" },
+        { "type": "paragraph", "text": "It emphasizes the exhaustion or the length of the process." }
+      ]
+    },
+    {
+      "section_id": "future-forms",
+      "blocks": [
+        { "type": "heading", "text": "11. Future: Will vs. Going To" },
+        { "type": "paragraph", "text": "They are NOT the same." },
+        { "type": "paragraph", "text": "**Going to:** Plans you already made. *I am going to buy a laptop.* (Plan)" },
+        { "type": "paragraph", "text": "**Will:** Spontaneous decisions or predictions. *I'll answer the phone.* (Just decided)" }
+      ]
+    },
+    {
+      "section_id": "modals-intro",
+      "blocks": [
+        { "type": "heading", "text": "12. Modals: Setting the Mood" },
+        { "type": "paragraph", "text": "Modals (Can, Must, Should, etc.) add 'flavor' to the verb. They express possibility, ability, or obligation." },
+        { "type": "paragraph", "text": "Rule: Modals are never followed by 'to'. (Wrong: *I must to go*)." }
+      ]
+    },
+    {
+      "section_id": "modals-ability",
+      "blocks": [
+        { "type": "heading", "text": "13. Ability: Can vs. Could" },
+        { "type": "paragraph", "text": "**Can:** General ability in present. *I can swim.*" },
+        { "type": "paragraph", "text": "**Could:** General ability in past. *I could run fast when I was young.*" },
+        { "type": "paragraph", "text": "**Was able to:** Specific achievement in past. *The fire was huge, but I was able to escape.* (Not 'Could escape')." }
+      ]
+    },
+    {
+      "section_id": "modals-obligation",
+      "blocks": [
+        { "type": "heading", "text": "14. Obligation: Must vs. Have To" },
+        { "type": "paragraph", "text": "The nuance is subtle." },
+        { "type": "paragraph", "text": "**Must:** Internal obligation (I feel I need to). *I must call my mom.*" },
+        { "type": "paragraph", "text": "**Have to:** External rule. *You have to wear a uniform.*" },
+        { "type": "paragraph", "text": "**Mustn't:** Prohibition (Don't do it!)." },
+        { "type": "paragraph", "text": "**Don't have to:** No obligation (You can do it if you want, but not forced)." }
+      ]
+    },
+    {
+      "section_id": "modals-advice",
+      "blocks": [
+        { "type": "heading", "text": "15. Advice: Should vs. Ought To" },
+        { "type": "paragraph", "text": "Use these to give recommendations without being bossy." },
+        { "type": "paragraph", "text": "**Should:** Standard advice. *You should sleep.*" },
+        { "type": "paragraph", "text": "**Had Better:** Strong warning. *You had better leave now (or else something bad happens).*" }
+      ]
+    },
+    {
+      "section_id": "modals-prob",
+      "blocks": [
+        { "type": "heading", "text": "16. Probability: The Guessing Game" },
+        { "type": "paragraph", "text": "How sure are you?" },
+        { "type": "paragraph", "text": "**Must:** 99% Sure. *He looks tired, he must be sick.*" },
+        { "type": "paragraph", "text": "**Could/Might/May:** 50% Possible. *It might rain.*" },
+        { "type": "paragraph", "text": "**Can't:** 99% Impossible. *That can't be true!*" }
+      ]
+    },
+    {
+      "section_id": "modals-past",
+      "blocks": [
+        { "type": "heading", "text": "17. Modals of Lost Opportunity" },
+        { "type": "paragraph", "text": "Talking about the past with regret." },
+        { "type": "paragraph", "text": "**Should have V3:** *I should have studied.* (But I didn't)." },
+        { "type": "paragraph", "text": "**Could have V3:** *I could have won.* (But I didn't try)." }
+      ]
+    },
+    {
+      "section_id": "voice-passive",
+      "blocks": [
+        { "type": "heading", "text": "18. Passive Voice Shift" },
+        { "type": "paragraph", "text": "Sometimes the Object is more important than the Subject." },
+        { "type": "paragraph", "text": "Active: *Hacker stole the data.*" },
+        { "type": "paragraph", "text": "Passive: *The data **was stolen** (by the hacker).*" },
+        { "type": "paragraph", "text": "Use this for formal reports or when the 'doer' is unknown." }
+      ]
+    },
+    {
+      "section_id": "sv-agreement",
+      "blocks": [
+        { "type": "heading", "text": "19. The Deadly Trap: S-V Agreement" },
+        { "type": "paragraph", "text": "Singular Subject = Singular Verb. Plural Subject = Plural Verb." },
+        { "type": "paragraph", "text": "Trap: *'The list of errors **is** long.'* (Subject is List, not Errors)." },
+        { "type": "paragraph", "text": "Trap: *'Everyone **has** a dream.'* (Everyone is singular)." }
+      ]
+    },
+    {
+      "section_id": "closing",
+      "blocks": [
+        { "type": "heading", "text": "20. Final Boss: Context" },
+        { "type": "paragraph", "text": "Grammar rules are tools, not chains. The ultimate goal is clarity." },
+        { "type": "paragraph", "text": "Don't overcomplicate your sentences just to show off. A simple, correct sentence is better than a complex, broken one." }
+      ]
+    }
+  ],
+  "quiz": [
+    { "question": "I ______ working on this project since morning.", "options": ["am", "have been", "was", "had"], "correct": 1, "feedback": "Since + Duration = Perfect Continuous." },
+    { "question": "By the time you arrive, I ______ finished the report.", "options": ["will finish", "will have finished", "have finished", "am finishing"], "correct": 1, "feedback": "Future Perfect: Action completed before a future time." },
+    { "question": "You ______ smoke in the hospital. It's forbidden.", "options": ["don't have to", "mustn't", "shouldn't", "needn't"], "correct": 1, "feedback": "Mustn't indicates prohibition." },
+    { "question": "Identify the sentence type: 'I wanted to go, but it rained.'", "options": ["Simple", "Compound", "Complex", "Compound-Complex"], "correct": 1, "feedback": "Two independent clauses connected by 'but'." },
+    { "question": "The team ______ winning the match right now.", "options": ["is", "are", "have", "were"], "correct": 0, "feedback": "Collective noun 'Team' acts as singular here." },
+    { "question": "He ______ be rich. He drives a Ferrari.", "options": ["can", "should", "must", "might"], "correct": 2, "feedback": "Must = High probability deduction." },
+    { "question": "If I ______ you, I would accept the offer.", "options": ["was", "am", "were", "had been"], "correct": 2, "feedback": "Conditional Type 2 (Unreal) uses 'Were' for all subjects." },
+    { "question": "She said she ______ busy the day before.", "options": ["is", "was", "had been", "has been"], "correct": 2, "feedback": "Reported speech backshift: Past Simple becomes Past Perfect." },
+    { "question": "We ______ to submit the paper by Friday.", "options": ["must", "should", "have", "can"], "correct": 2, "feedback": "Have TO. Must/Should/Can cannot be followed by 'to'." },
+    { "question": "Look at those clouds! It ______ rain.", "options": ["will", "is going to", "shall", "might to"], "correct": 1, "feedback": "Going to = Prediction based on visible evidence." },
+    { "question": "I remember ______ the door.", "options": ["lock", "to lock", "locking", "locked"], "correct": 2, "feedback": "Remember + V-ing = Memory of past action." },
+    { "question": "Which sentence is Compound-Complex?", "options": ["I run fast.", "I run fast because I am scared.", "I run fast, but he runs faster.", "I run fast because I am scared, but he still catches me."], "correct": 3, "feedback": "2 Independent clauses + 1 Dependent clause." },
+    { "question": "You ______ bought milk. We already have plenty.", "options": ["shouldn't have", "mustn't have", "couldn't have", "needn't have"], "correct": 3, "feedback": "Needn't have = You did it, but it wasn't necessary." },
+    { "question": "Neither the boss nor the employees ______ happy.", "options": ["is", "are", "was", "has"], "correct": 1, "feedback": "Neither/Nor follows the subject closest to the verb (employees = plural)." },
+    { "question": "The police ______ investigating the crime.", "options": ["is", "are", "has", "was"], "correct": 1, "feedback": "'Police' is always plural." },
+    { "question": "I wish I ______ harder for the exam last week.", "options": ["study", "studied", "had studied", "would study"], "correct": 2, "feedback": "Regret about the past = Past Perfect." },
+    { "question": "Passive Voice of: 'Someone is cleaning the room.'", "options": ["The room is cleaned.", "The room has been cleaned.", "The room is being cleaned.", "The room was being cleaned."], "correct": 2, "feedback": "Present Continuous Passive: Is/Am/Are + Being + V3." },
+    { "question": "Which modal expresses a specific past ability?", "options": ["Could", "Was able to", "Might", "Must"], "correct": 1, "feedback": "For a specific successful event, use 'Was able to', not 'Could'." },
+    { "question": "It's time we ______ home.", "options": ["go", "went", "have gone", "will go"], "correct": 1, "feedback": "It's time + Past Simple (Subjunctive mood)." },
+    { "question": "Not only the students but also the teacher ______ confused.", "options": ["was", "were", "have", "are"], "correct": 0, "feedback": "Not only/But also follows the second subject (teacher = singular)." }
+  ]
+}

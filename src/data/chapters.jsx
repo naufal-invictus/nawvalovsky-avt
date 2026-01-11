@@ -25,6 +25,7 @@ import chapterZakat from './json/Chapter-Zakat.json';
 import chapterEssay from './json/Chapter-Essay-Writing.json';
 // Wisdom/History Chapters
 import chapterEnneagram3 from './json/Chapter-Enneagram3.json';
+import chapterGrammar from './json/Chapter-Grammar.json';
 /**
  * Helper untuk menyeragamkan struktur data JSON ke props yang
  * dibutuhkan oleh komponen BlogList.jsx dan ChapterReader.jsx
@@ -68,7 +69,7 @@ export const chapters = [
   formatChapter(chapterSelectionSort, "10 min read"),
 formatChapter(chapterZakat, "10 min read"),
   formatChapter(chapterEssay, "15 min read"),
-  // --- WISDOM & PHILOSOPHY ---
+formatChapter(chapterGrammar, "20 min read"),
   formatChapter(chapterKekuasaan, "15 min read"),
   formatChapter(chapterKerasulan, "15 min read"),
   formatChapter(chapterSunnah, "20 min read"),
