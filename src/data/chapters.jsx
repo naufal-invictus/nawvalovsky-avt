@@ -21,6 +21,7 @@ import chapterKekuasaan from './json/Chapter-Kekuasaan.json';
 import chapterKerasulan from './json/Chapter-Kerasulan.json';
 import chapterSunnah from './json/Chapter-Sunnah.json';
 import chapterIman from './json/Chapter-Iman.json';
+import chapterZakat from './json/Chapter-Zakat.json';
 
 // Wisdom/History Chapters
 import chapterEnneagram3 from './json/Chapter-Enneagram3.json';
@@ -65,7 +66,7 @@ export const chapters = [
   // --- PROGRAMMING & ALGORITHM ---
   formatChapter(chapterBubbleSort, "10 min read"),
   formatChapter(chapterSelectionSort, "10 min read"),
-
+formatChapter(chapterZakat, "10 min read"),
   // --- WISDOM & PHILOSOPHY ---
   formatChapter(chapterKekuasaan, "15 min read"),
   formatChapter(chapterKerasulan, "15 min read"),
