@@ -1,9 +1,9 @@
 {
   "id": "chapter-zakat",
   "metadata": {
-    "title": "Zakat & Ekonomi Umat",
-    "subtitle": "Membersihkan Harta, Memberdayakan Jiwa",
-    "description": "Panduan lengkap tentang Zakat, Infaq, Shadaqah, hingga Wakaf. Pelajari cara membersihkan harta agar berkah dan tidak menjadi 'sampah' spiritual.",
+    "title": "Zakat: Antivirus Harta",
+    "subtitle": "Membersihkan Jiwa, Menghapus 'Malware' Kikir",
+    "description": "Zakat itu bukan sekadar pajak, tapi mekanisme 'pembersihan cache' harta agar berkah. Pelajari bedanya dengan Shadaqah, Infaq, hingga bahaya Rasywah.",
     "thumbnail": "/images/blog/Islam.webp",
     "tags": ["Fiqih", "Ekonomi", "Zakat"],
     "category": "Syariah"
@@ -12,155 +12,150 @@
     {
       "section_id": "intro",
       "blocks": [
-        { "type": "heading", "text": "1. Definisi Zakat: Bukan Sekadar Pajak" },
-        { "type": "paragraph", "text": "Secara bahasa, Zakat memiliki arti **Thaharah** (Suci) dan **Barakah** (Berkah). Ini bukan sekadar pungutan liar, tapi mekanisme spiritual." },
-        { "type": "paragraph", "text": "Ibarat file komputer, harta kita perlu di-scan dari 'virus' ketamakan. Zakat adalah antivirusnya yang membersihkan (mensucikan) jiwa pemiliknya dari cinta harta berlebihan." }
+        { "type": "heading", "text": "1. Konsep Dasar: Thaharah & Barakah" },
+        { "type": "paragraph", "text": "Bayangkan harta kita seperti penyimpanan *hard drive*. Kalau terlalu penuh dan tidak pernah dibersihkan, sistemnya bakal lemot atau bahkan *crash*." },
+        { "type": "paragraph", "text": "Secara bahasa, Zakat artinya **Thaharah** (Suci) dan **Barakah** (Berkah). Ini adalah mekanisme *cleaning* spiritual untuk membersihkan pemiliknya dari 'virus' cinta harta yang berlebihan." }
       ]
     },
     {
       "section_id": "syara",
       "blocks": [
-        { "type": "heading", "text": "2. Definisi Secara Syara'" },
-        { "type": "paragraph", "text": "Menurut istilah syara', zakat adalah pemberian yang **wajib** diberikan dari harta tertentu, menurut sifat dan ukuran tertentu, kepada golongan tertentu." },
-        { "type": "paragraph", "text": "Jadi tidak sembarang harta, dan tidak sembarang penerima. Ada aturan mainnya, persis seperti SOP perusahaan." }
+        { "type": "heading", "text": "2. Definisi Syara': SOP Pemberian" },
+        { "type": "paragraph", "text": "Menurut istilah syara', zakat bukan sekadar bagi-bagi uang. Ada SOP-nya: Pemberian yang **wajib** diberikan dari harta tertentu, dengan ukuran tertentu, kepada golongan tertentu." },
+        { "type": "paragraph", "text": "Jadi tidak bisa asal transfer. Harus tepat sasaran sesuai aturan 'Developer' (Allah SWT)." }
       ]
     },
     {
       "section_id": "istilah",
       "blocks": [
-        { "type": "heading", "text": "3. Nama Lain Zakat di Al-Quran" },
-        { "type": "paragraph", "text": "Di dalam Al-Quran, Zakat sering disebut dengan istilah lain yang punya makna mendalam:" },
-        { "type": "paragraph", "text": "1. **Shadaqah** (At-Taubah: 103)" },
-        { "type": "paragraph", "text": "2. **Al-Haq** (Al-An'am: 141)" },
-        { "type": "paragraph", "text": "3. **An-Nafaqah** (At-Taubah: 34)" },
-        { "type": "paragraph", "text": "Semua istilah ini merujuk pada kewajiban mengeluarkan sebagian harta." }
+        { "type": "heading", "text": "3. Nama Lain (Alias) Zakat" },
+        { "type": "paragraph", "text": "Di Al-Quran, Zakat punya beberapa nama samaran yang keren:" },
+        { "type": "paragraph", "text": "1. **Shadaqah** (At-Taubah: 103) - Bukti kejujuran iman." },
+        { "type": "paragraph", "text": "2. **Al-Haq** (Al-An'am: 141) - Hak orang lain di harta kita." },
+        { "type": "paragraph", "text": "3. **An-Nafaqah** (At-Taubah: 34) - Belanja di jalan Allah." }
       ]
     },
     {
       "section_id": "penerima-1",
       "blocks": [
-        { "type": "heading", "text": "4. Target Sasaran (Asnaf) Bagian 1" },
-        { "type": "paragraph", "text": "Siapa yang berhak menerima 'transferan' zakat ini? Berdasarkan surat **At-Taubah ayat 60**, ada 8 golongan. Empat yang pertama adalah:" },
-        { "type": "paragraph", "text": "1. **Fakir:** Tidak punya harta/pekerjaan sama sekali." },
-        { "type": "paragraph", "text": "2. **Miskin:** Punya pekerjaan tapi tidak cukup." },
-        { "type": "paragraph", "text": "3. **Amil:** Panitia/pengurus zakat." },
-        { "type": "paragraph", "text": "4. **Mualaf:** Orang yang baru masuk Islam atau perlu dijinakkan hatinya." }
+        { "type": "heading", "text": "4. The Chosen Ones (Asnaf Part 1)" },
+        { "type": "paragraph", "text": "Siapa yang berhak menerima 'transferan' ini? Surat **At-Taubah ayat 60** menetapkan 8 golongan VIP. Empat yang pertama:" },
+        { "type": "paragraph", "text": "1. **Fakir:** Tidak punya aset/pekerjaan sama sekali (Saldo 0)." },
+        { "type": "paragraph", "text": "2. **Miskin:** Kerja tapi gaji 'koma' (Tanggal tua langsung minus)." },
+        { "type": "paragraph", "text": "3. **Amil:** Panitia/EO yang mengurus zakat." },
+        { "type": "paragraph", "text": "4. **Mualaf:** Orang yang perlu di-'support' hatinya karena baru masuk Islam." }
       ]
     },
     {
       "section_id": "penerima-2",
       "blocks": [
-        { "type": "heading", "text": "5. Target Sasaran (Asnaf) Bagian 2" },
-        { "type": "paragraph", "text": "Empat golongan berikutnya adalah:" },
-        { "type": "paragraph", "text": "5. **Riqab:** Hamba sahaya (untuk memerdekakan)." },
-        { "type": "paragraph", "text": "6. **Gharim:** Orang yang terlilit hutang (bukan hutang maksiat)." },
+        { "type": "heading", "text": "5. The Chosen Ones (Asnaf Part 2)" },
+        { "type": "paragraph", "text": "Empat golongan berikutnya:" },
+        { "type": "paragraph", "text": "5. **Riqab:** Hamba sahaya (Zaman dulu untuk memerdekakan budak)." },
+        { "type": "paragraph", "text": "6. **Gharim:** Orang yang terlilit hutang (Bukan hutang paylater konsumtif ya!)." },
         { "type": "paragraph", "text": "7. **Fi Sabilillah:** Pejuang di jalan Allah." },
-        { "type": "paragraph", "text": "8. **Ibnu Sabil:** Musafir yang kehabisan bekal." }
+        { "type": "paragraph", "text": "8. **Ibnu Sabil:** *Backpacker*/Musafir yang kehabisan bekal di jalan." }
       ]
     },
     {
       "section_id": "zakat-mal",
       "blocks": [
-        { "type": "heading", "text": "6. Zakat Mal (Harta)" },
-        { "type": "paragraph", "text": "Zakat Mal meliputi emas, perak, binatang ternak, hasil tani, dan perniagaan. Harta ini ibarat aset yang kena pajak progresif akhirat." },
-        { "type": "paragraph", "text": "**Syarat & Hitungan Emas/Perak:**" },
-        { "type": "paragraph", "text": "Jika sudah punya emas minimal **80 gram** atau perak **560 gram**, wajib dikeluarkan zakatnya sebesar **2.5%**." }
+        { "type": "heading", "text": "6. Zakat Mal: Pajak Aset" },
+        { "type": "paragraph", "text": "Kalau kita punya emas/perak yang diam saja (idle asset), itu ada zakatnya." },
+        { "type": "paragraph", "text": "**Rumusnya:** Punya Emas min. **80 gr** atau Perak **560 gr**? Wajib keluarkan **2.5%**." },
+        { "type": "paragraph", "text": "Bayangkan 2.5% itu biaya langganan keamanan harta agar tidak hilang dicuri atau kena musibah." }
       ]
     },
     {
       "section_id": "zakat-tani",
       "blocks": [
         { "type": "heading", "text": "7. Zakat Pertanian & Peternakan" },
-        { "type": "paragraph", "text": "Untuk hasil tanaman dan buah-buahan, zakatnya berkisar antara **5-10%** dari nisabnya (minimal sekitar 1kg hasil panen bersih)." },
-        { "type": "paragraph", "text": "Untuk binatang, aturannya spesifik:" },
-        { "type": "paragraph", "text": "- 5 ekor unta = zakatnya 1 kambing." },
-        { "type": "paragraph", "text": "- 30 ekor sapi/kerbau = 1 ekor sapi umur 2 tahun." },
-        { "type": "paragraph", "text": "- 40 ekor kambing = 1 ekor kambing." }
+        { "type": "paragraph", "text": "Punya sawah atau peternakan? Jangan lupa bagi hasil sama yang menciptakan tanah." },
+        { "type": "paragraph", "text": "**Tanaman:** Zakatnya 5-10% kalau panen sudah mencapai nisab (sekitar 1kg bersih)." },
+        { "type": "paragraph", "text": "**Binatang:** Ada hitungan unik. 5 Unta = zakat 1 Kambing. 40 Kambing = zakat 1 Kambing. 30 Sapi = zakat 1 Sapi (umur 2 th)." }
       ]
     },
     {
       "section_id": "zakat-fitrah-def",
       "blocks": [
-        { "type": "heading", "text": "8. Zakat Fitrah (Penyuci Jiwa)" },
-        { "type": "paragraph", "text": "Zakat Fitrah adalah zakat terhadap jiwa (nafs). Ini adalah 'biaya langganan' tahunan yang wajib dibayar setiap Muslim yang masih hidup di bulan Ramadhan." },
-        { "type": "paragraph", "text": "Tujuannya untuk membersihkan orang yang berpuasa dari ucapan kotor dan perbuatan sia-sia selama Ramadhan." }
+        { "type": "heading", "text": "8. Zakat Fitrah: Reset Jiwa" },
+        { "type": "paragraph", "text": "Kalau Zakat Mal itu membersihkan harta, **Zakat Fitrah** itu membersihkan *user*-nya (jiwa/nafs)." },
+        { "type": "paragraph", "text": "Fungsinya seperti tombol *Refresh* setelah sebulan penuh berpuasa, membersihkan diri dari ucapan kotor dan perbuatan sia-sia." }
       ]
     },
     {
       "section_id": "zakat-fitrah-teknis",
       "blocks": [
-        { "type": "heading", "text": "9. Teknis Zakat Fitrah" },
-        { "type": "paragraph", "text": "**Berapa bayarnya?**" },
-        { "type": "paragraph", "text": "Sebanyak **2.5 kg beras** (makanan pokok) atau uang yang setara harganya untuk setiap orang." },
-        { "type": "paragraph", "text": "**Kapan bayarnya?**" },
-        { "type": "paragraph", "text": "Dikeluarkan sebelum Shalat Idul Fitri. Waktu utamanya adalah sebelum subuh hari raya hingga sebelum shalat dimulai." }
+        { "type": "heading", "text": "9. Teknis Bayar Fitrah" },
+        { "type": "paragraph", "text": "**Tarif:** Murah banget, cuma **2.5 kg beras** (atau uang seharga itu) per orang." },
+        { "type": "paragraph", "text": "**Deadline:** *Strict*! Harus dibayar sebelum Shalat Idul Fitri dimulai. Waktu terbaik adalah pagi hari sebelum berangkat shalat (Subuh - Id)." }
       ]
     },
     {
       "section_id": "konsekuensi-negatif",
       "blocks": [
-        { "type": "heading", "text": "10. Apa Jadinya Jika Tidak Berzakat?" },
-        { "type": "paragraph", "text": "Menahan zakat punya efek domino yang parah bagi masyarakat (Konsekuensi Pelaksanaan Zakat):" },
-        { "type": "paragraph", "text": "1. **Kesenjangan Sosial:** Muncul jurang kaya-miskin yang mendorong gaya hidup hedonis." },
-        { "type": "paragraph", "text": "2. **Kriminalitas:** Mendorong eksploitasi, pencurian, penipuan, dan korupsi karena yang miskin terdesak dan yang kaya serakah." }
+        { "type": "heading", "text": "10. Warning: Efek Samping Pelit" },
+        { "type": "paragraph", "text": "Apa jadinya kalau sistem zakat macet? (Konsekuensi Pelaksanaan Zakat):" },
+        { "type": "paragraph", "text": "1. **Social Gap:** Jurang kaya-miskin makin lebar. Yang kaya makin hedon, yang miskin makin terjepit." },
+        { "type": "paragraph", "text": "2. **Chaos:** Memicu kejahatan. Orang miskin bisa nekat mencuri atau menipu karena terdesak eksploitasi si kaya." }
       ]
     },
     {
       "section_id": "konsekuensi-positif",
       "blocks": [
-        { "type": "heading", "text": "11. Dampak Positif Zakat" },
-        { "type": "paragraph", "text": "Jika zakat jalan, masyarakat akan sehat. Dampaknya:" },
-        { "type": "paragraph", "text": "Tercipta hubungan saling menghargai, tolong-menolong, persaudaraan, keamanan, dan perasaan berkedudukan sama rata antar manusia." }
+        { "type": "heading", "text": "11. Impact: Harmoni Sosial" },
+        { "type": "paragraph", "text": "Kalau zakat lancar, *vibe* masyarakat jadi asik:" },
+        { "type": "paragraph", "text": "Muncul rasa saling menghargai, tolong-menolong, dan rasa aman. Tidak ada lagi iri dengki antara 'Si Bos' dan 'Si Kecil'. Semua merasa bersaudara." }
       ]
     },
     {
       "section_id": "shadaqah-fidyah",
       "blocks": [
-        { "type": "heading", "text": "12. Shadaqah & Fidyah" },
-        { "type": "paragraph", "text": "**Shadaqah:** Pemberian harta secara sukarela kepada orang/lembaga. Ingat, 'Tiap kebajikan itu adalah shadaqah'." },
-        { "type": "paragraph", "text": "**Fidyah:** Denda/penebusan bagi orang yang tidak mampu berpuasa Ramadhan (karena tua renta/sakit menahun). Wajib memberi makan fakir miskin sebagai gantinya." }
+        { "type": "heading", "text": "12. Fitur Lain: Shadaqah & Fidyah" },
+        { "type": "paragraph", "text": "**Shadaqah:** Ini versi *Freemium* alias sukarela. Kapan aja, berapa aja. Senyum pun dihitung shadaqah." },
+        { "type": "paragraph", "text": "**Fidyah:** Ini denda/tebusan. Kalau tidak bisa puasa karena sakit tua/menahun, bayar fidyah (memberi makan orang miskin) sebagai gantinya." }
       ]
     },
     {
       "section_id": "infaq-wakaf",
       "blocks": [
-        { "type": "heading", "text": "13. Infaq & Wakaf" },
-        { "type": "paragraph", "text": "**Infaq:** Memberikan sebagian harta untuk kepentingan umum atau orang miskin." },
-        { "type": "paragraph", "text": "**Wakaf:** Pemberian harta yang sifatnya **permanen/abadi** untuk kepentingan sosial. Contoh: Tanah untuk masjid, sumur untuk desa. Pahalanya mengalir terus (Passive Income Akhirat)." }
+        { "type": "heading", "text": "13. Investasi Abadi: Infaq & Wakaf" },
+        { "type": "paragraph", "text": "**Infaq:** Mengeluarkan sebagian harta untuk kebaikan umum." },
+        { "type": "paragraph", "text": "**Wakaf:** Ini level sultan akhirat. Memberikan aset permanen (tanah/bangunan) untuk umat. Pahalanya **Passive Income** yang mengalir terus walau kita sudah meninggal." }
       ]
     },
     {
       "section_id": "hibah-jizyah",
       "blocks": [
         { "type": "heading", "text": "14. Hibah & Jizyah" },
-        { "type": "paragraph", "text": "**Hibah:** Pemberian hadiah murni tanpa mengharapkan ganti rugi atau balasan apapun." },
-        { "type": "paragraph", "text": "**Jizyah:** Pajak yang dikenakan kepada warga negara non-muslim yang tinggal di negara Islam, sebagai jaminan keamanan bagi mereka." }
+        { "type": "paragraph", "text": "**Hibah:** *Pure* hadiah. Ngasih tanpa harap kembali." },
+        { "type": "paragraph", "text": "**Jizyah:** Pajak proteksi untuk warga non-muslim di negara Islam. Sebagai gantinya, mereka dijamin keamanannya oleh negara." }
       ]
     },
     {
       "section_id": "rasywah",
       "blocks": [
-        { "type": "heading", "text": "15. Warning: Rasywah (Suap)" },
-        { "type": "paragraph", "text": "Jangan sampai tertukar antara hadiah dengan suap." },
-        { "type": "paragraph", "text": "**Rasywah** adalah pemberian yang diberikan untuk menyalahkan yang benar atau membenarkan yang salah. Hukumnya tercela dan haram. Ini adalah musuh utama keadilan." }
+        { "type": "heading", "text": "15. RED FLAG: Rasywah" },
+        { "type": "paragraph", "text": "Hati-hati tertukar! **Rasywah** (Suap) adalah pemberian untuk membenarkan yang salah atau menyalahkan yang benar." },
+        { "type": "paragraph", "text": "Ini musuh keadilan. Jangan pernah terima atau memberi 'uang pelicin' ini. Hukumnya tercela!" }
       ]
     }
   ],
   "quiz": [
-    { "question": "Secara bahasa, kata 'Zakat' memiliki arti...", "options": ["Pajak & Denda", "Thaharah (Suci) & Barakah", "Beban & Tanggungan", "Pemberian Sukarela"], "correct": 1, "feedback": "Zakat artinya Tumbuh, Suci, dan Berkah." },
-    { "question": "Golongan yang berhak menerima zakat (Mustahik) dijelaskan dalam Al-Quran surat...", "options": ["Al-Baqarah: 43", "At-Taubah: 60", "Al-Anam: 141", "Yasin: 10"], "correct": 1, "feedback": "Dalil asnaf zakat ada di At-Taubah ayat 60." },
-    { "question": "Berapa nisab (batas minimal) kepemilikan emas agar wajib zakat?", "options": ["50 gram", "80 gram", "100 gram", "1 kg"], "correct": 1, "feedback": "Menurut teks, nisab emas adalah 80g." },
-    { "question": "Berapa kadar zakat yang harus dikeluarkan untuk emas dan perak?", "options": ["2.5%", "5%", "10%", "20%"], "correct": 0, "feedback": "Zakat mal (harta) umumnya 2.5%." },
-    { "question": "Zakat yang bertujuan membersihkan jiwa dan dikeluarkan sebelum shalat Idul Fitri disebut...", "options": ["Zakat Mal", "Zakat Profesi", "Zakat Fitrah", "Infaq"], "correct": 2, "feedback": "Zakat Fitrah (Zakat Nafs/Jiwa)." },
-    { "question": "Besaran Zakat Fitrah yang lazim dikeluarkan berupa beras adalah...", "options": ["1 kg", "2.5 kg", "5 kg", "10 kg"], "correct": 1, "feedback": "2.5 kg makanan pokok per orang." },
-    { "question": "Istilah 'Gharim' dalam penerima zakat artinya...", "options": ["Orang yang berperang", "Orang yang terlilit hutang", "Orang yang dalam perjalanan", "Pengurus zakat"], "correct": 1, "feedback": "Gharim adalah orang yang berhutang (bukan untuk maksiat)." },
-    { "question": "Pemberian harta yang bersifat permanen untuk kepentingan sosial disebut...", "options": ["Hibah", "Wakaf", "Hadiah", "Jizyah"], "correct": 1, "feedback": "Wakaf sifatnya abadi/permanen manfaatnya." },
-    { "question": "Pemberian untuk menyalahkan yang benar atau membenarkan yang salah disebut...", "options": ["Rasywah", "Hibah", "Shadaqah", "Uang Tinta"], "correct": 0, "feedback": "Rasywah (Suap) hukumnya tercela." },
-    { "question": "Salah satu dampak negatif jika zakat tidak dijalankan adalah...", "options": ["Masyarakat makin kaya", "Adanya jurang kaya-miskin & kriminalitas", "Inflasi turun", "Pajak negara naik"], "correct": 1, "feedback": "Kesenjangan sosial memicu kejahatan." },
-    { "question": "Penebusan bagi orang yang tidak sanggup puasa (sakit tua/menahun) disebut...", "options": ["Qadha", "Fidyah", "Kafarat", "Dam"], "correct": 1, "feedback": "Fidyah wajib bagi yang tidak mampu puasa permanen." },
-    { "question": "Berikut ini adalah istilah lain zakat dalam Al-Quran, KECUALI...", "options": ["Shadaqah", "Al-Haq", "An-Nafaqah", "Al-Jizyah"], "correct": 3, "feedback": "Jizyah adalah pajak untuk non-muslim, bukan istilah zakat." },
-    { "question": "Zakat 1 ekor kambing wajib dikeluarkan jika seseorang memiliki kambing sebanyak...", "options": ["10 ekor", "20 ekor", "40 ekor", "100 ekor"], "correct": 2, "feedback": "Nisab kambing dimulai dari 40 ekor." },
-    { "question": "Pemberian yang tidak mengharapkan ganti rugi atau balasan disebut...", "options": ["Jual beli", "Sewa", "Hibah", "Gadai"], "correct": 2, "feedback": "Hibah adalah pemberian murni." },
-    { "question": "Kapan batas akhir waktu pembayaran Zakat Fitrah?", "options": ["Pertengahan Ramadhan", "Sebelum Shalat Idul Fitri", "Setelah Shalat Idul Fitri", "Boleh kapan saja"], "correct": 1, "feedback": "Harus sebelum shalat Id (sebelum khatib naik mimbar)." }
+    { "question": "Zakat secara bahasa artinya 'Thaharah', yang bermakna...", "options": ["Beban", "Suci & Bersih", "Pajak", "Hutang"], "correct": 1, "feedback": "Thaharah artinya Suci, Barakah artinya Berkah." },
+    { "question": "Surat apa yang menjelaskan 8 golongan penerima zakat (Mustahik)?", "options": ["Al-Fatihah", "At-Taubah: 60", "Al-Baqarah: 183", "Yasin"], "correct": 1, "feedback": "Cek At-Taubah ayat 60." },
+    { "question": "Berapa batas minimal (nisab) kepemilikan emas agar wajib zakat?", "options": ["50 gram", "80 gram", "1 kg", "10 gram"], "correct": 1, "feedback": "Jika sudah punya 80g emas, wajib dizakatkan." },
+    { "question": "Zakat yang berfungsi menyucikan jiwa (nafs) disebut...", "options": ["Zakat Mal", "Zakat Fitrah", "Zakat Profesi", "Wakaf"], "correct": 1, "feedback": "Fitrah berkaitan dengan jiwa dan Idul Fitri." },
+    { "question": "Deadline pembayaran Zakat Fitrah adalah...", "options": ["Sebelum puasa", "Sebelum Shalat Idul Fitri", "Setelah lebaran", "Kapan saja"], "correct": 1, "feedback": "Lewat dari shalat Id, dihitung sedekah biasa." },
+    { "question": "Istilah 'Gharim' merujuk kepada...", "options": ["Orang kaya", "Orang yang terlilit hutang", "Panitia zakat", "Musafir"], "correct": 1, "feedback": "Hutang yang bukan untuk maksiat." },
+    { "question": "Apa dampak negatif jika zakat tidak ditunaikan?", "options": ["Ekonomi meroket", "Kesenjangan sosial & Kriminalitas", "Masyarakat damai", "Tidak ada dampak"], "correct": 1, "feedback": "Jurang kaya-miskin memicu kejahatan." },
+    { "question": "Pemberian aset permanen untuk kepentingan umat disebut...", "options": ["Infaq", "Wakaf", "Hibah", "Hadiah"], "correct": 1, "feedback": "Wakaf sifatnya abadi (tanah, sumur, gedung)." },
+    { "question": "Rasywah adalah istilah untuk...", "options": ["Sedekah", "Suap/Sogok", "Hadiah tulus", "Pajak"], "correct": 1, "feedback": "Suap hukumnya haram dan tercela." },
+    { "question": "Zakat Mal untuk emas dan perak prosentasenya adalah...", "options": ["2.5%", "5%", "10%", "50%"], "correct": 0, "feedback": "2.5% adalah tarif standar zakat harta." },
+    { "question": "Fidyah wajib dibayar oleh...", "options": ["Orang sehat", "Orang yang tidak mampu puasa permanen (tua/sakit)", "Anak kecil", "Musafir"], "correct": 1, "feedback": "Pengganti puasa bagi yang tak sanggup lagi." },
+    { "question": "Istilah 'Amil' dalam zakat berarti...", "options": ["Penyumbang", "Panitia/Pengelola Zakat", "Penerima", "Saksi"], "correct": 1, "feedback": "Amil adalah petugas operasional zakat." },
+    { "question": "Salah satu nama lain zakat dalam Al-Quran adalah 'An-Nafaqah' yang terdapat di surat...", "options": ["At-Taubah: 34", "Al-Baqarah", "An-Nas", "Al-Ikhlas"], "correct": 0, "feedback": "Sesuai data sumber (At-Taubah: 34)." },
+    { "question": "Berapa zakat untuk 40 ekor kambing?", "options": ["1 Ekor Kambing", "2 Ekor Kambing", "1 Ekor Sapi", "Uang tunai"], "correct": 0, "feedback": "40-120 ekor kambing, zakatnya 1 ekor." },
+    { "question": "Hubungan harmonis dan rasa aman adalah dampak ... dari zakat.", "options": ["Negatif", "Positif", "Netral", "Sampingan"], "correct": 1, "feedback": "Zakat menciptakan persaudaraan sosial." }
   ]
 }
